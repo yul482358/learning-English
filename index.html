@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · English Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="progress.html">Progress</a><a href="review.html">Review</a><a href="errors.html">Errors</a><a href="words.html">Ogden 850</a></nav>
+<main class="container">
+<section class="hero"><p class="eyebrow">Personal English Learning System</p><h1>Ogden English Dashboard</h1><p>用 Ogden Basic English 850 作为底层词库，追踪你的真实表达、复习队列和主动使用能力。</p></section><section id="dashboard" class="grid cards"></section><section class="panel"><h2>Today’s Suggested Task</h2><p id="suggested-task"></p><div id="today-focus" class="chips"></div></section>
+</main>
+<script src="assets/app.js"></script>
+<script>loadDashboard()</script>
+</body>
+</html>

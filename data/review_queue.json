@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-05-27T16:42:51.417517+00:00",
+  "updated_at": "2026-05-27T16:42:51.417517+00:00",
+  "review_policy": {
+    "priority_order": [
+      "recurring_errors",
+      "weak_expression_chunks",
+      "conversation_use",
+      "core_ogden_words"
+    ],
+    "completion_rule": "Move an item toward mastered only after the learner uses it naturally in self-generated output or dialogue.",
+    "do_not_mark_mastered_for": "Recognition, multiple choice, or copying assistant examples."
+  },
+  "queue": [
+    {
+      "item": "in daily life",
+      "type": "collocation",
+      "priority": 5,
+      "due": "next_session",
+      "prompt": "Use this phrase to start a short paragraph about a real daily problem."
+    },
+    {
+      "item": "keep doing",
+      "type": "verb_pattern",
+      "priority": 5,
+      "due": "next_session",
+      "prompt": "Describe an action you repeat even when you want to stop."
+    },
+    {
+      "item": "spend time on / spend time doing",
+      "type": "collocation",
+      "priority": 5,
+      "due": "next_session",
+      "prompt": "Compare how much time you spend on your phone and reading."
+    },
+    {
+      "item": "make time for",
+      "type": "collocation",
+      "priority": 5,
+      "due": "next_session",
+      "prompt": "Say what you want to make time for and what gets in the way."
+    },
+    {
+      "item": "some advice",
+      "type": "countability",
+      "priority": 4,
+      "due": "next_session",
+      "prompt": "Ask someone for advice naturally."
+    },
+    {
+      "item": "feel bad about it",
+      "type": "natural_expression",
+      "priority": 4,
+      "due": "next_session",
+      "prompt": "Explain a habit or mistake and how you feel about it."
+    },
+    {
+      "item": "find it hard to",
+      "type": "sentence_pattern",
+      "priority": 4,
+      "due": "next_session",
+      "prompt": "Say one thing you find hard to do and why."
+    },
+    {
+      "item": "control my phone use",
+      "type": "expression_chunk",
+      "priority": 4,
+      "due": "next_session",
+      "prompt": "Explain whether you can control your phone use."
+    }
+  ]
+}

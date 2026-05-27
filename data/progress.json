@@ -1,0 +1,119 @@
+{
+  "created_at": "2026-05-27T16:42:51.417517+00:00",
+  "updated_at": "2026-05-27T16:42:51.417517+00:00",
+  "source_files": {
+    "words_json": "/opt/data/ogden/ogden_850_words.json",
+    "words_csv": "/opt/data/ogden/ogden_850_words.csv",
+    "words_markdown": "/opt/data/ogden/ogden_850_words.md"
+  },
+  "learner_goal": "Active English communication using Ogden Basic English 850 as core material.",
+  "mastery_scale": {
+    "0": "recognition only",
+    "1": "can make a simple sentence",
+    "2": "can use in personal expression",
+    "3": "can use naturally in conversation",
+    "4": "can flexibly extend and paraphrase"
+  },
+  "expression_progress": {
+    "in daily life": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "Use instead of 'at daily life'."
+    },
+    "control my phone use": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "Natural noun phrase for controlling phone use."
+    },
+    "keep doing": {
+      "status": "target",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "Use for repeated/uncontrolled action: I keep watching short videos."
+    },
+    "spend time on": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "spend time on my phone; spend time reading."
+    },
+    "waste a lot of time": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "time is usually uncountable; avoid 'many time'."
+    },
+    "make time for": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "I can't seem to make time for reading."
+    },
+    "some advice": {
+      "status": "weak",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "advice is uncountable; avoid 'a advice'."
+    },
+    "feel bad about it": {
+      "status": "target",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 1,
+      "source": "initial diagnostic",
+      "notes": "More natural than 'feel sadness' in this context."
+    },
+    "bad habit": {
+      "status": "target",
+      "level": 1,
+      "success_count": 0,
+      "mistake_count": 0,
+      "source": "initial diagnostic",
+      "notes": "Useful phrase for behavior issues."
+    },
+    "find it hard to": {
+      "status": "target",
+      "level": 0,
+      "success_count": 0,
+      "mistake_count": 0,
+      "source": "assistant recommendation",
+      "notes": "Useful pattern: I find it hard to stop."
+    }
+  },
+  "word_focus": {
+    "high_priority_core_words": [
+      "get",
+      "make",
+      "take",
+      "put",
+      "keep",
+      "give",
+      "go",
+      "come",
+      "seem",
+      "thing",
+      "way",
+      "time",
+      "part",
+      "point"
+    ],
+    "note": "Track words through expression chunks, not isolated definitions."
+  },
+  "session_history": []
+}

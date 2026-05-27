@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Progress · English Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="progress.html">Progress</a><a href="review.html">Review</a><a href="errors.html">Errors</a><a href="words.html">Ogden 850</a></nav>
+<main class="container">
+<header class="pagehead"><h1>Progress</h1><p>表达块掌握进度。目标不是认识，而是能在对话里自然使用。</p></header><div class="toolbar"><input id="progress-search" placeholder="Search expressions..."><select id="progress-status"><option value="">All status</option><option>weak</option><option>target</option><option>mastered</option></select></div><section id="progress-table" class="panel"></section>
+</main>
+<script src="assets/app.js"></script>
+<script>loadProgress()</script>
+</body>
+</html>
