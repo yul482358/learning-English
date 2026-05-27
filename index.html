@@ -12,39 +12,57 @@
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<nav class="topnav vocab-nav"><a href="index.html">Learn</a><a href="words.html">Words</a><a href="stats.html">Stats</a></nav>
-<main class="container app-container">
-<section class="hero vocab-hero"><p class="eyebrow">Ogden Basic English 850</p><h1>背 850 个真正基础的英语词。</h1><p>一张一张翻卡片，听发音，看例句。掌握状态只保存在你的浏览器本地，不再做每日复盘任务。</p></section>
-<section class="study-shell">
-  <aside class="study-side panel">
-    <h2>Study Settings</h2>
-    <label>Category</label>
-    <select id="study-cat"><option value="">全部分类</option><option value="op">Operations</option><option value="gt">General Things</option><option value="pt">Picturable Things</option><option value="qg">Qualities General</option><option value="qo">Qualities Opposites</option></select>
-    <label>Mode</label>
-    <select id="study-mode"><option value="all">全部单词</option><option value="new">未标记</option><option value="learning">学习中</option><option value="known">已掌握</option></select>
-    <div class="study-actions">
-      <button id="shuffle-btn" class="primary-btn">Shuffle</button>
-      <button id="reset-filter-btn" class="ghost-btn">Reset</button>
+<body class="momo-page">
+<main class="momo-app">
+  <header class="momo-top">
+    <div>
+      <div class="momo-brand">Ogden 850</div>
+      <div id="deck-subtitle" class="momo-subtitle">Basic English Vocabulary</div>
     </div>
-    <div id="study-count" class="study-count"></div>
-  </aside>
-  <section class="flashcard-wrap">
-    <article id="flashcard" class="flashcard"></article>
-    <div class="flash-actions">
-      <button id="prev-card" class="ghost-btn">← Prev</button>
-      <button id="speak-card" class="primary-btn">▶ Speak</button>
-      <button id="next-card" class="ghost-btn">Next →</button>
-    </div>
-    <div class="mark-actions">
-      <button id="mark-new" class="mark-btn">未标记</button>
-      <button id="mark-learning" class="mark-btn learning">学习中</button>
-      <button id="mark-known" class="mark-btn known">已掌握</button>
+    <a class="momo-link" href="words.html">词库</a>
+  </header>
+
+  <section class="momo-progress-card">
+    <div class="progress-meta"><span id="progress-text">0 / 0</span><span id="today-mode">今日学习</span></div>
+    <div class="learn-bar"><span id="learn-bar-fill"></span></div>
+  </section>
+
+  <section class="deck-controls">
+    <select id="deck-cat"><option value="">全部分类</option><option value="op">Operations 操作词</option><option value="gt">General Things 一般事物</option><option value="pt">Picturable Things 可画事物</option><option value="qg">Qualities 性质词</option><option value="qo">Opposites 对立词</option></select>
+    <select id="deck-size"><option value="20">20 词</option><option value="50">50 词</option><option value="100">100 词</option><option value="850">全部</option></select>
+  </section>
+
+  <section class="memory-card" id="memory-card">
+    <div class="card-status"><span id="card-category">Category</span><span id="card-state">点击卡片看答案</span></div>
+    <button id="speak-word" class="round-speak">▶</button>
+    <div id="card-word" class="memory-word">Loading</div>
+    <div id="card-ipa" class="memory-ipa"></div>
+    <div id="answer-block" class="answer-block hidden">
+      <div id="card-zh" class="memory-zh"></div>
+      <p id="card-def" class="memory-def"></p>
+      <div class="memory-example"><span id="card-example-en"></span><br><small id="card-example-zh"></small></div>
     </div>
   </section>
-</section>
+
+  <section class="recall-actions">
+    <button id="again-btn" class="recall-btn again"><b>忘记</b><span>Again</span></button>
+    <button id="hard-btn" class="recall-btn hard"><b>模糊</b><span>Hard</span></button>
+    <button id="good-btn" class="recall-btn good"><b>认识</b><span>Good</span></button>
+  </section>
+
+  <section class="quick-stats">
+    <div><b id="known-count">0</b><span>认识</span></div>
+    <div><b id="hard-count">0</b><span>模糊</span></div>
+    <div><b id="again-count">0</b><span>忘记</span></div>
+  </section>
+
+  <nav class="bottom-tabs">
+    <a class="active" href="index.html">学习</a>
+    <a href="words.html">词库</a>
+    <a href="stats.html">统计</a>
+  </nav>
 </main>
 <script src="assets/app.js"></script>
-<script>loadVocabHome()</script>
+<script>loadMomoHome()</script>
 </body>
 </html>
