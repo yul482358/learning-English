@@ -1,7 +1,7 @@
 {
-  "name": "English OS · Ogden Learning",
-  "short_name": "English OS",
-  "description": "Personal adaptive English learning dashboard based on Ogden Basic English 850.",
+  "name": "Ogden 850 Vocabulary",
+  "short_name": "Ogden 850",
+  "description": "A simple flashcard app for Ogden Basic English 850 words.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
