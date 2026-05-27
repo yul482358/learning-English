@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-27T17:31:24.647009+00:00",
+  "entries": [
+    {
+      "date": "2026-05-27",
+      "title": "Day 1 · Phone use and reading habit",
+      "type": "diagnostic",
+      "summary": "Initial diagnostic based on a real-life paragraph about phone use, TikTok/short videos, reading habit, and self-control.",
+      "focus_expressions": [
+        "in daily life",
+        "control my phone use",
+        "keep doing",
+        "spend time on",
+        "waste a lot of time",
+        "make time for",
+        "some advice",
+        "feel bad about it",
+        "find it hard to"
+      ],
+      "observations": [
+        "Vocabulary recognition is not the main bottleneck.",
+        "Main focus should be collocations, sentence patterns, and natural output.",
+        "The learner can express meaning, but needs more English-ready chunks instead of direct translation."
+      ],
+      "corrections": [
+        {
+          "from": "at daily life",
+          "to": "in daily life / in my daily life",
+          "note": "Use in for life context."
+        },
+        {
+          "from": "control use phone",
+          "to": "control my phone use",
+          "note": "Use a noun phrase after control."
+        },
+        {
+          "from": "I always to watch",
+          "to": "I always watch / I keep watching",
+          "note": "No to after always; keep doing shows repeated behavior."
+        },
+        {
+          "from": "lost many time",
+          "to": "waste a lot of time",
+          "note": "time is usually uncountable."
+        },
+        {
+          "from": "a useful advice",
+          "to": "some useful advice",
+          "note": "advice is uncountable."
+        },
+        {
+          "from": "feel sadness",
+          "to": "feel sad / feel bad about it",
+          "note": "Use adjective or natural phrase."
+        }
+      ],
+      "suggested_review": [
+        "in daily life",
+        "keep doing",
+        "spend time on / spend time doing",
+        "make time for",
+        "some advice",
+        "feel bad about it"
+      ],
+      "next_task": "Describe one habit you want to change using: keep doing, make time for, spend time on, and find it hard to."
+    }
+  ]
+}
