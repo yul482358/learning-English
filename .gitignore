@@ -1,3 +1,5 @@
+node_modules/
+test_load.js
 .env
 *.log
 .DS_Store

@@ -1,4 +1,5 @@
 const STORE_KEY='ogden850.status.v2';
+const OLD_STORE_KEYS=['ogden850.status.v1'];
 const SESSION_KEY='ogden850.session.v1';
 const getJSON=p=>fetch(p).then(r=>r.json());
 function el(tag,cls,html){const e=document.createElement(tag); if(cls)e.className=cls; if(html!==undefined)e.innerHTML=html; return e}
@@ -6,15 +7,21 @@ function escapeText(s=''){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<
 function safeJS(s=''){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ')}
 function getStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'{}')}catch{return {}}}
 function setStore(s){localStorage.setItem(STORE_KEY,JSON.stringify(s))}
-function getStatus(word){return (getStore()[word]||{}).status||'new'}
-function setWordResult(word,result){const s=getStore(); const old=s[word]||{}; const now=new Date().toISOString(); s[word]={...old,status:result,last_seen:now,count:(old.count||0)+1}; setStore(s)}
+function normalizeStatus(raw){
+  if(!raw)return 'new';
+  if(typeof raw==='string')return ({known:'good',learning:'hard',new:'new',good:'good',hard:'hard',again:'again'}[raw]||'new');
+  if(typeof raw==='object')return normalizeStatus(raw.status);
+  return 'new';
+}
+function getStatus(word){return normalizeStatus(getStore()[word])}
+function setWordResult(word,result){const s=getStore(); const oldRaw=s[word]||{}; const old=(oldRaw&&typeof oldRaw==='object')?oldRaw:{status:normalizeStatus(oldRaw),count:0}; const now=new Date().toISOString(); s[word]={...old,status:result,last_seen:now,count:(old.count||0)+1}; setStore(s)}
 function speak(text,audioPath){if(audioPath){const a=new Audio(audioPath);a.play().catch(()=>synth(text));}else synth(text)}
 function synth(text){if(!('speechSynthesis'in window))return alert('Speech synthesis not available');const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.86;speechSynthesis.cancel();speechSynthesis.speak(u)}
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
 const catNames={op:'Operations',gt:'General Things',pt:'Picturable Things',qg:'Qualities General',qo:'Qualities Opposites'};
 let momoWords=[],momoDeck=[],momoIndex=0,momoRevealed=false,momoSession={good:0,hard:0,again:0,total:0};
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
-function buildDeck(words){const cat=document.getElementById('deck-cat')?.value||'';const size=parseInt(document.getElementById('deck-size')?.value||'20',10);const store=getStore();let filtered=words.filter(w=>!cat||w.category===cat);filtered.sort((a,b)=>{const sa=store[a.word]?.status||'new',sb=store[b.word]?.status||'new';const rank={again:0,hard:1,new:2,good:3};return (rank[sa]??2)-(rank[sb]??2)});return shuffle(filtered.slice(0,size))}
+function buildDeck(words){const cat=document.getElementById('deck-cat')?.value||'';const size=parseInt(document.getElementById('deck-size')?.value||'20',10);let filtered=words.filter(w=>!cat||w.category===cat);filtered.sort((a,b)=>{const sa=getStatus(a.word),sb=getStatus(b.word);const rank={again:0,hard:1,new:2,good:3};return (rank[sa]??2)-(rank[sb]??2)});return shuffle(filtered.slice(0,size))}
 function currentWord(){return momoDeck[momoIndex]}
 function renderMomo(){const w=currentWord();if(!w){document.getElementById('card-word').textContent='No words';return}document.getElementById('card-category').textContent=w.category_en||catNames[w.category]||'';document.getElementById('card-state').textContent=momoRevealed?'答案已显示':'点击卡片看答案';document.getElementById('card-word').textContent=w.word;document.getElementById('card-ipa').textContent=w.ipa_us||w.ipa_uk||'';document.getElementById('card-zh').textContent=w.zh||'';document.getElementById('card-def').textContent=w.english_definition||'';document.getElementById('card-example-en').textContent=w.example_en||'';document.getElementById('card-example-zh').textContent=w.example_zh||'';document.getElementById('answer-block').classList.toggle('hidden',!momoRevealed);document.getElementById('progress-text').textContent=`${Math.min(momoIndex+1,momoDeck.length)} / ${momoDeck.length}`;document.getElementById('learn-bar-fill').style.width=momoDeck.length?`${Math.round((momoIndex)/momoDeck.length*100)}%`:'0%';document.getElementById('known-count').textContent=momoSession.good;document.getElementById('hard-count').textContent=momoSession.hard;document.getElementById('again-count').textContent=momoSession.again}
 function answerMomo(result){const w=currentWord();if(!w)return;if(!momoRevealed){momoRevealed=true;renderMomo();return}setWordResult(w.word,result);momoSession[result==='good'?'good':result==='hard'?'hard':'again']++;if(result==='again'||result==='hard'){momoDeck.push(w)}momoIndex++;momoRevealed=false;if(momoIndex>=momoDeck.length){document.getElementById('memory-card').innerHTML=`<div class="finish-card"><h2>今天这组完成了</h2><p>认识 ${momoSession.good} · 模糊 ${momoSession.hard} · 忘记 ${momoSession.again}</p><button class="primary-btn" onclick="location.reload()">再来一组</button></div>`;document.getElementById('learn-bar-fill').style.width='100%';return}renderMomo()}
