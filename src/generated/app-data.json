@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T13:39:10.090Z",
+  "generatedAt": "2026-05-28T13:44:24.594Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 47,
-    "avgCoverageRate": 0.948
+    "articleCount": 68,
+    "avgCoverageRate": 0.931
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 19
+      "articleCount": 28
     },
     {
       "id": "core",
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 20
+      "articleCount": 28
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 8
+      "articleCount": 12
     }
   ],
   "themes": [
@@ -689,6 +689,279 @@
       "targetWordCount": 18,
       "coverageRate": 1,
       "density": 0.138
+    },
+    {
+      "id": "phase2-materials-fast-01",
+      "title": "Fast Track: Materials That Shape Modern Objects",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Build dense IELTS-style familiarity with materials, tools, and manufactured objects.",
+      "wordCount": 232,
+      "targetWordCount": 30,
+      "coverageRate": 0.967,
+      "density": 0.129
+    },
+    {
+      "id": "phase2-textiles-core-01",
+      "title": "Balanced Practice: From Fibre to Durable Goods",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Practise a moderate-density IELTS passage about material performance and production chains.",
+      "wordCount": 180,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.1
+    },
+    {
+      "id": "phase2-design-read-01",
+      "title": "Reading Habit: How Trends Become Normal",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Support sustained reading with a lower-density IELTS-style text about social taste and design change.",
+      "wordCount": 135,
+      "targetWordCount": 9,
+      "coverageRate": 0.889,
+      "density": 0.067
+    },
+    {
+      "id": "phase2-food-fast-01",
+      "title": "Fast Track: Food Systems Beyond the Family Kitchen",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Build fast, dense exposure to IELTS-style vocabulary about catering, food services, and eating habits.",
+      "wordCount": 198,
+      "targetWordCount": 30,
+      "coverageRate": 0.9,
+      "density": 0.152
+    },
+    {
+      "id": "phase2-kitchen-core-01",
+      "title": "Balanced Practice: The Technology of Everyday Consumption",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Practise a moderate-density IELTS passage about domestic cooking and consumption habits.",
+      "wordCount": 157,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.115
+    },
+    {
+      "id": "phase2-crops-fast-01",
+      "title": "Fast Track: Crop Diversity on the Modern Table",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Deliver dense IELTS-style vocabulary about vegetables, preparation, and dietary variety.",
+      "wordCount": 137,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.131
+    },
+    {
+      "id": "phase2-housing-fast-01",
+      "title": "Fast Track: Housing, Mobility, and the Shape of Settlement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Build dense IELTS-style familiarity with housing and settlement vocabulary.",
+      "wordCount": 165,
+      "targetWordCount": 30,
+      "coverageRate": 0.933,
+      "density": 0.182
+    },
+    {
+      "id": "phase2-architecture-core-01",
+      "title": "Balanced Practice: Reading Public Space as Social Evidence",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Practise a moderate-density IELTS passage about architecture and public life.",
+      "wordCount": 124,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.145
+    },
+    {
+      "id": "phase2-city-read-01",
+      "title": "Reading Habit: Old Craft in the Contemporary City",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Support sustained reading with a lighter passage about urban heritage and skilled labour.",
+      "wordCount": 120,
+      "targetWordCount": 9,
+      "coverageRate": 1,
+      "density": 0.075
+    },
+    {
+      "id": "phase2-transport-fast-01",
+      "title": "Fast Track: Transport on Water and the Logic of Risk",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Build dense IELTS-style vocabulary about transport engineering and maritime risk.",
+      "wordCount": 178,
+      "targetWordCount": 30,
+      "coverageRate": 0.9,
+      "density": 0.169
+    },
+    {
+      "id": "phase2-logistics-core-01",
+      "title": "Balanced Practice: Why Logistics Depends on Timing",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Practise a moderate-density IELTS passage about rail and delivery systems.",
+      "wordCount": 149,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.121
+    },
+    {
+      "id": "phase2-government-fast-01",
+      "title": "Fast Track: Institutions, Power, and Public Decision-Making",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Build dense IELTS-style familiarity with government and political-institution vocabulary.",
+      "wordCount": 164,
+      "targetWordCount": 30,
+      "coverageRate": 1,
+      "density": 0.183
+    },
+    {
+      "id": "phase2-society-core-01",
+      "title": "Balanced Practice: Migration and the Meaning of Belonging",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Practise a moderate-density IELTS passage about migration, citizenship, and social identity.",
+      "wordCount": 154,
+      "targetWordCount": 18,
+      "coverageRate": 0.833,
+      "density": 0.117
+    },
+    {
+      "id": "phase2-civics-read-01",
+      "title": "Reading Habit: How Public Opinion Becomes Measurable",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Support sustained reading with a lighter IELTS-style passage about polls and public choice.",
+      "wordCount": 115,
+      "targetWordCount": 9,
+      "coverageRate": 0.778,
+      "density": 0.078
+    },
+    {
+      "id": "phase2-economy-fast-01",
+      "title": "Fast Track: The Language of Consumer Exchange",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Build dense IELTS-style familiarity with retail, taxation, and commercial vocabulary.",
+      "wordCount": 158,
+      "targetWordCount": 30,
+      "coverageRate": 0.767,
+      "density": 0.19
+    },
+    {
+      "id": "phase2-markets-fast-02",
+      "title": "Fast Track: Reading the Movement of Markets",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Build dense IELTS-style vocabulary about growth, recession, and market change.",
+      "wordCount": 170,
+      "targetWordCount": 30,
+      "coverageRate": 0.8,
+      "density": 0.176
+    },
+    {
+      "id": "phase2-business-core-01",
+      "title": "Balanced Practice: What Makes a Business Reliable",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Practise a moderate-density IELTS passage about firms, goods, and commercial trust.",
+      "wordCount": 140,
+      "targetWordCount": 18,
+      "coverageRate": 0.722,
+      "density": 0.129
+    },
+    {
+      "id": "phase2-work-core-02",
+      "title": "Balanced Practice: Why People Work under Different Conditions",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Practise a moderate-density IELTS passage about labour, wages, and incentives.",
+      "wordCount": 151,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.119
+    },
+    {
+      "id": "phase2-employment-read-01",
+      "title": "Reading Habit: The Quiet Drama of Recruitment",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Support sustained reading with a lighter IELTS-style passage about recruitment and employment change.",
+      "wordCount": 121,
+      "targetWordCount": 9,
+      "coverageRate": 0.889,
+      "density": 0.074
+    },
+    {
+      "id": "phase2-law-fast-01",
+      "title": "Fast Track: The Language of Rules and Rights",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Build dense IELTS-style familiarity with law, standards, and institutional regulation.",
+      "wordCount": 171,
+      "targetWordCount": 30,
+      "coverageRate": 0.767,
+      "density": 0.175
+    },
+    {
+      "id": "phase2-justice-fast-02",
+      "title": "Fast Track: Justice, Evidence, and Public Confidence",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Build dense IELTS-style vocabulary about investigation, trial, and public trust in justice systems.",
+      "wordCount": 151,
+      "targetWordCount": 30,
+      "coverageRate": 0.733,
+      "density": 0.199
     }
   ]
 }

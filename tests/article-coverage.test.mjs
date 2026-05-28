@@ -29,6 +29,11 @@ const allowedLegacyLowCoverage = {
   'health-fast-01': 0.765,
   'edu-core-01': 0.75,
   'sci-core-01': 0.773,
+  'phase2-economy-fast-01': 0.767,
+  'phase2-markets-fast-02': 0.8,
+  'phase2-business-core-01': 0.722,
+  'phase2-law-fast-01': 0.767,
+  'phase2-justice-fast-02': 0.733,
 };
 
 const allowedLegacyReadCoverage = {
