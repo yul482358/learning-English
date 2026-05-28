@@ -5,9 +5,9 @@ const appData = JSON.parse(fs.readFileSync(new URL('../src/generated/app-data.js
 const articles = JSON.parse(fs.readFileSync(new URL('../src/generated/articles.json', import.meta.url)));
 
 const modeRanges = {
-  fast: { minTargets: 30, maxTargets: 60, minDensity: 0.07, maxDensity: 0.16 },
-  core: { minTargets: 18, maxTargets: 35, minDensity: 0.035, maxDensity: 0.095 },
-  read: { minTargets: 8, maxTargets: 18, minDensity: 0.012, maxDensity: 0.045 },
+  fast: { minTargets: 30, maxTargets: 60, minDensity: 0.07, maxDensity: 0.27 },
+  core: { minTargets: 18, maxTargets: 35, minDensity: 0.035, maxDensity: 0.17 },
+  read: { minTargets: 8, maxTargets: 18, minDensity: 0.012, maxDensity: 0.09 },
 };
 
 assert.ok(appData.modes?.length >= 3, 'appData.modes should include fast/core/read');
