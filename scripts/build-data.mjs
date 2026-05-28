@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(process.cwd());
-const sourcePath = '/opt/data/cache/documents/doc_3732b17502f7_word.json';
+const externalSourcePath = '/opt/data/cache/documents/doc_3732b17502f7_word.json';
+const generatedVocabularyPath = path.join(root, 'src', 'generated', 'vocabulary.json');
 const outDir = path.join(root, 'src', 'generated');
 
 const POS_MAP = {
@@ -167,8 +168,27 @@ function exactMatches(content, targets, idToWord) {
   });
 }
 
-const raw = fs.readFileSync(sourcePath, 'utf8');
-const vocabulary = normalizeSource(raw);
+function readVocabularySource() {
+  if (fs.existsSync(externalSourcePath)) {
+    return {
+      mode: 'source-word-json',
+      vocabulary: normalizeSource(fs.readFileSync(externalSourcePath, 'utf8')),
+    };
+  }
+
+  if (fs.existsSync(generatedVocabularyPath)) {
+    return {
+      mode: 'committed-generated-vocabulary',
+      vocabulary: JSON.parse(fs.readFileSync(generatedVocabularyPath, 'utf8')),
+    };
+  }
+
+  throw new Error(
+    `Vocabulary source not found. Expected either ${externalSourcePath} or ${generatedVocabularyPath}.`,
+  );
+}
+
+const { mode: vocabularyMode, vocabulary } = readVocabularySource();
 const vocabById = new Map(vocabulary.map((entry) => [entry.id, entry]));
 
 const articles = articleBlueprints.map((blueprint) => {
@@ -228,6 +248,7 @@ fs.writeFileSync(path.join(outDir, 'articles.json'), JSON.stringify(articles, nu
 fs.writeFileSync(path.join(outDir, 'app-data.json'), JSON.stringify(appData, null, 2));
 
 console.log(JSON.stringify({
+  vocabularyMode,
   vocabularyCount: vocabulary.length,
   articleCount: articles.length,
   avgCoverageRate: appData.stats.avgCoverageRate,
