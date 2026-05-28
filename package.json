@@ -1,0 +1,15 @@
+{
+  "name": "learning-english-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-data.mjs",
+    "check": "npm run build && node --check src/worker.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.21.0"
+  }
+}

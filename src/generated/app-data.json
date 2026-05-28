@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-28T10:02:37.703Z",
+  "stats": {
+    "vocabularyCount": 3673,
+    "articleCount": 5,
+    "avgCoverageRate": 1
+  },
+  "themes": [
+    {
+      "id": "environment-climate",
+      "label": "Environment",
+      "description": "Climate systems, natural disasters, and sustainability."
+    },
+    {
+      "id": "geography-earth",
+      "label": "Earth Science",
+      "description": "Planetary structure, geography, and field observation."
+    },
+    {
+      "id": "education-learning",
+      "label": "Education",
+      "description": "Academic thinking, campus life, and structured learning."
+    },
+    {
+      "id": "science-technology",
+      "label": "Science & Tech",
+      "description": "Scientific discovery, chemistry, and modern innovation."
+    },
+    {
+      "id": "health-biology",
+      "label": "Health",
+      "description": "Public health, nutrition, and modern medical systems."
+    }
+  ],
+  "articleCards": [
+    {
+      "id": "env-01",
+      "title": "Climate Systems, Extreme Weather, and Human Society",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Explain how climate systems and extreme weather influence human society.",
+      "wordCount": 665,
+      "targetWordCount": 10,
+      "coverageRate": 1
+    },
+    {
+      "id": "geo-01",
+      "title": "Inside the Earth: Structure, Measurement, and Human Understanding",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Describe the structure of the Earth and how humans study it.",
+      "wordCount": 666,
+      "targetWordCount": 10,
+      "coverageRate": 1
+    },
+    {
+      "id": "health-01",
+      "title": "Lifestyle, Nutrition, and the Demands of Modern Health Systems",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Explain the relationship between lifestyle, nutrition and modern health systems.",
+      "wordCount": 633,
+      "targetWordCount": 10,
+      "coverageRate": 1
+    },
+    {
+      "id": "edu-01",
+      "title": "How Universities Shape the Habits of Thought",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Discuss how universities shape learning habits and academic thinking.",
+      "wordCount": 697,
+      "targetWordCount": 10,
+      "coverageRate": 1
+    },
+    {
+      "id": "sci-01",
+      "title": "From Scientific Theory to Everyday Technology",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Show how scientific ideas move from theory to practical technology.",
+      "wordCount": 690,
+      "targetWordCount": 10,
+      "coverageRate": 1
+    }
+  ]
+}

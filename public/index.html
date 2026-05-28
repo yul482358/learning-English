@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Reading Lab</title>
+    <meta name="description" content="Read IELTS-style articles, click vocabulary in context, and study translations with a calm Claude-inspired interface." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">IELTS Reading Lab</p>
+          <h1>Read elegant IELTS-style passages built from your vocabulary book.</h1>
+          <p class="hero-copy">
+            Explore themed reading passages, click vocabulary in context, and build intuition with bilingual support.
+          </p>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-card"><span>Articles</span><strong id="stat-articles">–</strong></div>
+          <div class="stat-card"><span>Vocabulary</span><strong id="stat-vocab">–</strong></div>
+          <div class="stat-card"><span>Coverage</span><strong id="stat-coverage">–</strong></div>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="library-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Article Library</h2>
+              <p>Choose a passage and read with focused vocabulary support.</p>
+            </div>
+            <select id="theme-filter" class="theme-filter">
+              <option value="all">All themes</option>
+            </select>
+          </div>
+          <div id="article-list" class="article-list"></div>
+        </section>
+
+        <section class="reader-panel">
+          <div id="reader-empty" class="reader-empty">
+            <h2>Pick an article to begin</h2>
+            <p>Each passage is built to cover target IELTS vocabulary in a natural academic style.</p>
+          </div>
+          <article id="reader-article" class="reader-article hidden">
+            <div class="reader-header">
+              <div>
+                <p id="reader-theme" class="reader-theme"></p>
+                <h2 id="reader-title"></h2>
+                <p id="reader-summary" class="reader-summary"></p>
+              </div>
+              <div class="reader-badges">
+                <span id="reader-wordcount" class="badge"></span>
+                <span id="reader-targets" class="badge"></span>
+              </div>
+            </div>
+            <div id="reader-content" class="reader-content"></div>
+          </article>
+        </section>
+
+        <aside class="inspector-panel">
+          <div class="inspector-card sticky">
+            <p class="eyebrow">Vocabulary inspector</p>
+            <h3 id="inspect-word">Click a highlighted word</h3>
+            <p id="inspect-pos" class="inspect-pos">Part of speech will appear here.</p>
+            <div class="inspect-block">
+              <span class="inspect-label">Chinese</span>
+              <p id="inspect-translation">本地词典与模型释义会显示在这里。</p>
+            </div>
+            <div class="inspect-block">
+              <span class="inspect-label">English explanation</span>
+              <p id="inspect-explanation">Click a target word in the passage to load context-aware help.</p>
+            </div>
+            <div class="inspect-block">
+              <span class="inspect-label">Context</span>
+              <p id="inspect-context">–</p>
+            </div>
+            <div class="inspect-block">
+              <span class="inspect-label">Dictionary note</span>
+              <p id="inspect-note">–</p>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
