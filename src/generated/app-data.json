@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T13:48:11.687Z",
+  "generatedAt": "2026-05-28T13:57:02.561Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 77,
-    "avgCoverageRate": 0.922
+    "articleCount": 86,
+    "avgCoverageRate": 0.92
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 32
+      "articleCount": 41
     },
     {
       "id": "core",
@@ -1079,6 +1079,123 @@
       "targetWordCount": 9,
       "coverageRate": 0.889,
       "density": 0.071
+    },
+    {
+      "id": "fast-only-weather-01",
+      "title": "Fast Vocabulary: Storm Systems and Regional Geography",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Maximise Fast Vocabulary coverage for weather, landform, and environmental hazard terms in a readable IELTS-style passage.",
+      "wordCount": 289,
+      "targetWordCount": 60,
+      "coverageRate": 0.85,
+      "density": 0.208
+    },
+    {
+      "id": "fast-only-water-02",
+      "title": "Fast Vocabulary: Water Movement and Environmental Process",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Cover high-volume Fast Vocabulary items about water movement, process description, and environmental states.",
+      "wordCount": 232,
+      "targetWordCount": 36,
+      "coverageRate": 0.861,
+      "density": 0.155
+    },
+    {
+      "id": "fast-only-biology-03",
+      "title": "Fast Vocabulary: Animal Reproduction and Survival",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Maximise Fast Vocabulary coverage for biology, animal development, and survival vocabulary.",
+      "wordCount": 240,
+      "targetWordCount": 60,
+      "coverageRate": 0.9,
+      "density": 0.25
+    },
+    {
+      "id": "fast-only-education-04",
+      "title": "Fast Vocabulary: Academic Life and Institutional Learning",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Maximise Fast Vocabulary coverage for school, university, and quantitative academic vocabulary.",
+      "wordCount": 256,
+      "targetWordCount": 60,
+      "coverageRate": 0.95,
+      "density": 0.234
+    },
+    {
+      "id": "fast-only-math-science-05",
+      "title": "Fast Vocabulary: Quantitative Reasoning and Scientific Method",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover major Fast Vocabulary gaps in mathematics, scientific method, and academic analysis.",
+      "wordCount": 240,
+      "targetWordCount": 59,
+      "coverageRate": 0.864,
+      "density": 0.246
+    },
+    {
+      "id": "fast-only-study-process-06",
+      "title": "Fast Vocabulary: Curriculum, Assessment, and Study Practice",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Cover Fast Vocabulary gaps for study process, assessment, and academic workflow.",
+      "wordCount": 271,
+      "targetWordCount": 60,
+      "coverageRate": 0.867,
+      "density": 0.221
+    },
+    {
+      "id": "fast-only-innovation-07",
+      "title": "Fast Vocabulary: Innovation, Invention, and Technical Application",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover Fast Vocabulary gaps around innovation, technical application, and evaluation.",
+      "wordCount": 259,
+      "targetWordCount": 40,
+      "coverageRate": 1,
+      "density": 0.154
+    },
+    {
+      "id": "fast-only-engineering-08",
+      "title": "Fast Vocabulary: Engineering Systems and Technical Control",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Maximise Fast Vocabulary coverage for engineering process, transformation, and control vocabulary.",
+      "wordCount": 222,
+      "targetWordCount": 38,
+      "coverageRate": 0.947,
+      "density": 0.171
+    },
+    {
+      "id": "fast-only-culture-language-09",
+      "title": "Fast Vocabulary: Culture, Heritage, and Language Systems",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Maximise Fast Vocabulary coverage for culture, archaeology, heritage, and language-related vocabulary.",
+      "wordCount": 247,
+      "targetWordCount": 60,
+      "coverageRate": 0.867,
+      "density": 0.243
     }
   ]
 }
