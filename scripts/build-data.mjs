@@ -1689,6 +1689,83 @@ Kitchen actions make this process visible. People cook, bake, fry, roast, toast,
 Environmental examples extend the topic. On a reef, alga and other organisms use an enzyme to process nutrients, but pollution can destruct habitat and make marine life a victim of careless consumption. Heavy pressure may squash delicate species, so researchers evaluate both diet and ecology together. Food vocabulary therefore connects the kitchen, the body, and the planet.`,
   },
 
+
+  {
+    id: 'fast-only-built-environment-41',
+    mode: 'fast',
+    theme: 'general-academic',
+    subtheme: 'architecture, civic interiors, and urban sites',
+    style: 'ielts-reading',
+    readingGoal: 'Cover built-environment vocabulary through a coherent IELTS-style passage on urban architecture.',
+    title: 'Fast Vocabulary: Architecture, Interiors, and Urban Sites',
+    targetWordIds: ['belt__noun', 'architecture__noun', 'erection__noun', 'structure__noun', 'construct__verb', 'obstruct__verb', 'establish__verb', 'build__verb', 'found__verb', 'concrete__noun', 'steel__noun', 'stability__noun', 'site__noun', 'venue__noun', 'landmark__noun', 'situated__adjective', 'apartment__noun', 'lodge__verb', 'nursery__noun', 'cradle__noun', 'porch__noun', 'layer__noun', 'pillar__noun', 'vault__noun', 'arch__noun', 'ceiling__noun', 'eaves__noun', 'chimney__noun', 'reception__noun', 'lobby__noun', 'bench__noun', 'parlour__noun', 'fireplace__noun', 'radiator__noun', 'living-room__noun', 'cabinet__noun', 'balcony__noun', 'terrace__noun__2', 'kitchen__noun', 'lavatory__noun', 'toilet__noun', 'bath__noun', 'basin__noun', 'reserve__noun', 'store__noun', 'mall__noun', 'complex__noun', 'supermarket__noun', 'booth__noun', 'casino__noun', 'studio__noun', 'downtown__noun', 'urban__adjective', 'peripheral__adjective', 'vicinity__noun'],
+    content: `Urban architecture can be read as a belt of public and private spaces rather than as isolated buildings. Before the erection of any structure, planners select a site, study the vicinity, and ask whether a landmark should be situated downtown or in a peripheral district. Engineers then construct the frame, establish safety rules, and build with concrete and steel so that stability is not left to chance. A poorly placed wall may obstruct movement, while a well designed venue can found a new civic identity.
+
+The interior vocabulary is equally systematic. An apartment may lodge a family beside a nursery that becomes the cradle of early routines. A porch, layer of insulation, pillar, vault, arch, ceiling, eaves, and chimney show how traditional forms survive inside modern design. In a hotel or cultural complex, reception staff work near a lobby with a bench, while a parlour, fireplace, radiator, living room, cabinet, balcony, terrace, kitchen, lavatory, toilet, bath, and basin reveal changing expectations of comfort.
+
+Commercial space extends the pattern. A reserve store may serve as a supply room behind a mall, supermarket, booth, casino, or studio. IELTS readers can therefore treat building words as evidence of social organisation: the urban form connects materials, rooms, commerce, and the practical decisions that make a city readable.`,
+  },
+  {
+    id: 'fast-only-construction-infrastructure-42',
+    mode: 'fast',
+    theme: 'general-academic',
+    subtheme: 'construction labour, tools, layout, and transport infrastructure',
+    style: 'ielts-reading',
+    readingGoal: 'Cover construction and infrastructure vocabulary in a high-density explanatory passage.',
+    title: 'Fast Vocabulary: Construction Labour and Infrastructure Design',
+    targetWordIds: ['room__noun', 'void__noun', 'spacious__adjective', 'airtight__adjective', 'expanse__noun', 'plaza__noun', 'castle__noun', 'carpenter__noun', 'mason__noun', 'tile__noun', 'brickwork__noun', 'suspension__noun', 'hook__noun', 'lever__noun', 'pole__noun__2', 'scaffold__noun', 'apparatus__noun', 'crane__noun', 'malfunction__verb', 'maintain__verb', 'fix__verb', 'mend__verb', 'modify__verb', 'trim__verb', 'weld__verb', 'saw__noun', 'screw__noun', 'drill__noun', 'plumb__noun', 'viaduct__noun', 'span__noun', 'dam__noun', 'assemble__verb__2', 'install__verb', 'furnish__verb', 'placement__noun', 'layout__noun', 'design__verb', 'entrance__noun', 'entry__noun', 'enter__verb', 'exit__noun', 'outside__adjective', 'outward__adjective', 'exterior__noun', 'external__adjective', 'inner__adjective', 'interior__noun', 'inward__adjective', 'internal__adjective', 'navigate__verb'],
+    content: `Construction writing often begins with space. A room is not simply a void; it may be spacious, airtight, or connected to a larger expanse such as a plaza. Even a restored castle depends on practical labour. A carpenter cuts timber, a mason repairs tile and brickwork, and the team studies suspension, every hook, lever, pole, scaffold, apparatus, and crane before heavy materials are moved. If a machine begins to malfunction, workers maintain, fix, mend, modify, trim, or weld parts rather than waiting for failure.
+
+Tools make this expertise visible. A saw, screw, drill, and plumb line help builders assemble accurate sections, while larger projects may install a viaduct, calculate the span of a bridge, or reinforce a dam. The same principles apply inside a building: teams furnish rooms only after they settle placement, layout, and design. Poor sequencing wastes money and may also create safety problems.
+
+Movement vocabulary completes the explanation. The entrance, entry point, and exit must allow people to enter, leave, and navigate without confusion. Designers compare the outside and exterior face with outward public views and external services, then examine the inner and interior rooms, inward circulation, and internal systems. For IELTS readers, infrastructure vocabulary is therefore a language of space, tool use, risk, and human movement.`,
+  },
+  {
+    id: 'fast-only-air-road-travel-43',
+    mode: 'fast',
+    theme: 'daily-life',
+    subtheme: 'air travel, tourism, road systems, and urban mobility',
+    style: 'ielts-reading',
+    readingGoal: 'Cover air, road, and tourism vocabulary in a coherent fast-mode passage.',
+    title: 'Fast Vocabulary: Air Travel and Road Mobility',
+    targetWordIds: ['voyage__noun', 'aviation__noun', 'journey__noun', 'travel__noun', 'safari__noun', 'parade__verb', 'haunt__verb', 'attraction__noun', 'memorial__noun', 'pyramid__noun', 'port__noun', 'visa__noun', 'traffic__noun', 'airline__noun', 'airplane__noun', 'helicopter__noun', 'jet__noun', 'parachute__noun', 'flight__noun', 'pilot__noun', 'passenger__noun', 'baggage__noun', 'luggage__noun', 'suitcase__noun', 'carry-on__noun', 'rack__noun', 'freight__noun', 'fare__noun', 'atlas__noun', 'route__noun', 'itinerary__noun', 'passage__noun', 'intersection__noun', 'cross__noun', 'way__noun', 'path__noun', 'lane__noun', 'avenue__noun', 'highway__noun', 'curb__noun', 'signpost__noun', 'pave__verb', 'vehicle__noun', 'auto__noun', 'express__noun', 'tram__noun', 'coach__noun', 'ambulance__noun', 'truck__noun', 'lorry__noun', 'van__noun', 'wagon__noun', 'carriage__noun', 'tractor__noun', 'cart__noun', 'pedicab__noun'],
+    content: `Modern mobility joins tourism, aviation, and road planning in one system. A long voyage or short journey may begin as ordinary travel, yet it can become a safari, a heritage tour, or a public event where visitors parade through streets that still haunt local memory. A famous attraction such as a memorial or pyramid may draw crowds through a port of entry, where a visa check and traffic control shape the first experience of a country.
+
+Air transport has its own vocabulary. An airline schedules an airplane, helicopter, or jet for each flight, while a pilot carries every passenger whose baggage, luggage, suitcase, and carry-on must fit safely on a rack. Parachute training, freight handling, and fare policy may seem separate, but all belong to the economics and safety culture of movement.
+
+Road language explains what happens after arrival. An atlas, route, itinerary, and passage guide travellers through an intersection, cross street, way, path, lane, avenue, highway, curb, and signpost. Authorities pave roads for every vehicle, from an auto, express bus, tram, coach, ambulance, truck, lorry, van, wagon, carriage, tractor, and cart to a small pedicab. In crowded regions, planners must also consider pollution, access for elderly residents, emergency response times, seasonal tourism, parking pressure, and the fairness of fares across rich and poor districts. IELTS readers can therefore discuss mobility as infrastructure, tourism, safety, and social access rather than as a list of vehicles.`,
+  },
+  {
+    id: 'fast-only-rail-maritime-logistics-44',
+    mode: 'fast',
+    theme: 'general-academic',
+    subtheme: 'rail, maritime travel, postal systems, and logistics timing',
+    style: 'ielts-reading',
+    readingGoal: 'Cover rail, maritime, postal, and logistics vocabulary through one explanatory passage.',
+    title: 'Fast Vocabulary: Rail, Maritime, and Postal Logistics',
+    targetWordIds: ['cycle__verb', 'garage__noun', 'motor__noun', 'horsepower__noun', 'wheel__noun', 'honk__noun', 'steward__noun', 'dash__verb', 'seaman__noun', 'steamer__noun', 'liner__noun', 'sail__verb', 'oar__noun', 'aboard__adverb', 'ditch__noun', 'railroad__noun', 'railway__noun', 'locomotive__noun', 'subway__noun', 'underground__adjective', 'tunnel__noun', 'rail__noun', 'depart__verb', 'arrive__verb', 'destination__noun', 'delay__noun', 'postpone__verb', 'defer__verb', 'lull__noun', 'expire__verb', 'due__adjective', 'postage__noun', 'stamp__noun', 'envelope__noun__2', 'mail__noun', 'packet__noun', 'package__noun', 'bind__verb', 'parcel__verb', 'load__verb', 'burden__verb', 'transfer__verb', 'transmit__verb', 'transit__verb', 'deliver__verb', 'convey__verb', 'speed__noun', 'velocity__noun', 'swift__adjective'],
+    content: `Logistics can be studied through everyday motion as well as through large transport networks. A commuter may cycle from a garage, check the motor, horsepower, and wheel of a car, and hear a driver honk before the morning rush begins. At sea, a steward and seaman prepare a steamer or liner to sail, while passengers dash aboard and watch an oar move a smaller boat through a harbour ditch or canal.
+
+Rail systems organise time at a larger scale. A railroad or railway depends on the locomotive, subway, underground tunnel, and rail to move people efficiently. Timetables state when trains depart and arrive at a destination, but a delay can postpone meetings, defer cargo handling, or create a lull in commercial activity. Tickets may expire, and payment may be due even when the service feels imperfect.
+
+Postal logistics uses similar principles. Postage, a stamp, an envelope, mail, packet, package, and parcel must bind information to an address, then load, transfer, transmit, travel in transit, and finally deliver value to the recipient. To burden a route with excess weight reduces speed and velocity, while a swift service must still convey goods safely. For IELTS readers, transport words therefore connect timing, risk, technology, and trust.`,
+  },
+  {
+    id: 'fast-only-civic-policy-economy-45',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'political systems, migration, welfare, and national economies',
+    style: 'ielts-reading',
+    readingGoal: 'Cover civic, national, policy, and introductory economy vocabulary in one academic passage.',
+    title: 'Fast Vocabulary: Civic Policy, Migration, and Economy',
+    targetWordIds: ['marxism__noun', 'communism__noun', 'egalitarian__adjective', 'materialism__noun', 'process__noun', 'conservative__adjective', 'meltdown__noun', 'arena__noun', 'flag__noun', 'banner__noun', 'meeting__noun', 'headquarters__noun', 'behalf__noun', 'police__noun', 'service__noun', 'office__noun', 'bureau__noun', 'department__noun', 'harness__verb', 'affect__verb', 'importance__noun', 'significance__noun', 'league__noun', 'unite__verb', 'unique__adjective', 'nation__noun', 'worldwide__adjective', 'federal__adjective', 'foreign__adjective', 'abroad__adverb', 'civil__adjective', 'emigrate__verb', 'immigrate__verb', 'reign__noun', 'puppet__noun', 'throne__noun', 'crown__noun', 'wreath__noun', 'colony__noun', 'liberty__noun', 'independence__noun', 'slum__noun', 'refuge__noun', 'asylum__noun', 'demographic__adjective', 'resident__noun', 'ethnic__adjective', 'racial__adjective', 'clan__noun', 'franchise__verb', 'entitle__verb', 'preference__noun', 'elect__verb', 'respondent__noun', 'poll__noun', 'ambition__noun', 'nominate__verb'],
+    content: `Political vocabulary becomes clearer when it is placed inside historical process. Marxism and communism promised an egalitarian order, while critics argued that materialism could reduce culture to economics. A conservative party may warn that rapid change will cause a social meltdown, yet every public arena contains a flag, banner, meeting, headquarters, and speaker who claims to act on behalf of citizens. The police service, public office, bureau, and department all try to harness authority without allowing power to affect liberty unfairly.
+
+National language adds another layer of importance and significance. A league may unite more than one nation, but each country remains unique within worldwide, federal, foreign, and domestic systems. People who live abroad may emigrate or immigrate because civil rights, work, or safety differ across borders. Older political vocabulary still matters: reign, puppet ruler, throne, crown, wreath, colony, liberty, and independence explain how power has been symbolised and challenged.
+
+Policy must also address unequal settlement. A slum may become a refuge for one resident and a place of asylum for another. Demographic change, ethnic identity, racial tension, and clan loyalty influence whether a franchise can entitle citizens to express preference, elect leaders, answer a poll as a respondent, pursue ambition, or nominate a candidate. IELTS readers can therefore link ideology, migration, and representation in one analytical framework.`,
+  },
+
 ];
 
 function clean(value) {

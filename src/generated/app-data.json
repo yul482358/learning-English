@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T16:02:50.741Z",
+  "generatedAt": "2026-05-28T16:38:30.894Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 117,
-    "avgCoverageRate": 0.929
+    "articleCount": 122,
+    "avgCoverageRate": 0.932
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 65
+      "articleCount": 70
     },
     {
       "id": "core",
@@ -1599,6 +1599,71 @@
       "targetWordCount": 35,
       "coverageRate": 1,
       "density": 0.196
+    },
+    {
+      "id": "fast-only-built-environment-41",
+      "title": "Fast Vocabulary: Architecture, Interiors, and Urban Sites",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover built-environment vocabulary through a coherent IELTS-style passage on urban architecture.",
+      "wordCount": 213,
+      "targetWordCount": 55,
+      "coverageRate": 1,
+      "density": 0.258
+    },
+    {
+      "id": "fast-only-construction-infrastructure-42",
+      "title": "Fast Vocabulary: Construction Labour and Infrastructure Design",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover construction and infrastructure vocabulary in a high-density explanatory passage.",
+      "wordCount": 210,
+      "targetWordCount": 51,
+      "coverageRate": 1,
+      "density": 0.243
+    },
+    {
+      "id": "fast-only-air-road-travel-43",
+      "title": "Fast Vocabulary: Air Travel and Road Mobility",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover air, road, and tourism vocabulary in a coherent fast-mode passage.",
+      "wordCount": 235,
+      "targetWordCount": 56,
+      "coverageRate": 1,
+      "density": 0.238
+    },
+    {
+      "id": "fast-only-rail-maritime-logistics-44",
+      "title": "Fast Vocabulary: Rail, Maritime, and Postal Logistics",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover rail, maritime, postal, and logistics vocabulary through one explanatory passage.",
+      "wordCount": 203,
+      "targetWordCount": 49,
+      "coverageRate": 1,
+      "density": 0.241
+    },
+    {
+      "id": "fast-only-civic-policy-economy-45",
+      "title": "Fast Vocabulary: Civic Policy, Migration, and Economy",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Cover civic, national, policy, and introductory economy vocabulary in one academic passage.",
+      "wordCount": 218,
+      "targetWordCount": 57,
+      "coverageRate": 1,
+      "density": 0.261
     }
   ]
 }
