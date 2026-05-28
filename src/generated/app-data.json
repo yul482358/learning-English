@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T14:24:17.776Z",
+  "generatedAt": "2026-05-28T14:34:16.058Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 104,
-    "avgCoverageRate": 0.922
+    "articleCount": 107,
+    "avgCoverageRate": 0.923
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 52
+      "articleCount": 55
     },
     {
       "id": "core",
@@ -1430,6 +1430,45 @@
       "targetWordCount": 21,
       "coverageRate": 1,
       "density": 0.117
+    },
+    {
+      "id": "fast-only-language-media-28",
+      "title": "Fast Vocabulary: Language Structure, Publication, and Public Communication",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover language-structure and media/publication vocabulary in one coherent fast passage.",
+      "wordCount": 203,
+      "targetWordCount": 36,
+      "coverageRate": 1,
+      "density": 0.177
+    },
+    {
+      "id": "fast-only-performance-29",
+      "title": "Fast Vocabulary: Performance, Recreation, and Artistic Display",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover remaining performance and arts vocabulary in a coherent fast passage.",
+      "wordCount": 200,
+      "targetWordCount": 43,
+      "coverageRate": 0.953,
+      "density": 0.215
+    },
+    {
+      "id": "fast-only-cognition-30",
+      "title": "Fast Vocabulary: Judgement, Error, and Social Interpretation",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover remaining judgement/error/emotion vocabulary in a coherent fast passage.",
+      "wordCount": 208,
+      "targetWordCount": 31,
+      "coverageRate": 0.871,
+      "density": 0.149
     }
   ]
 }

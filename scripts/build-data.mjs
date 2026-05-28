@@ -1493,6 +1493,51 @@ A second challenge is interpretation. Analysts compare cases, appreciate relevan
 
 For IELTS readers, this passage is useful because it shows how comparison supports judgement. An analogy or contrast may help the reader infer a relationship, deduce a cause, and finally conclude with reasonable confidence. Good analysis protects both the researcher and the victim of bad policy from careless assessment.`,
   },
+  {
+    id: 'fast-only-language-media-28',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'language structure, publication, and public communication',
+    style: 'ielts-reading',
+    readingGoal: 'Cover language-structure and media/publication vocabulary in one coherent fast passage.',
+    title: 'Fast Vocabulary: Language Structure, Publication, and Public Communication',
+    targetWordIds: ['phoneme__noun', 'abbreviation__noun', 'synonym__noun', 'antonym__noun', 'noun__noun', 'singular__noun', 'plural__noun', 'pronoun__noun', 'verb__noun', 'adjective__noun', 'adverb__noun', 'preposition__noun', 'conjunction__noun', 'consistent__adjective', 'complicated__adjective', 'complex__adjective', 'compile__verb', 'version__noun', 'translate__verb', 'paraphrase__verb', 'interpret__verb', 'narrate__verb', 'illuminate__verb', 'decipher__verb', 'eloquence__noun', 'communicate__verb', 'discussion__noun', 'debate__verb', 'commentary__noun', 'medium__noun', 'press__noun', 'journalist__noun', 'critic__noun', 'editor__noun', 'publish__verb', 'disseminate__verb'],
+    content: `Language study often begins with small units but quickly expands into public communication. A single phoneme may alter meaning, an abbreviation may save space, and the relationship between a synonym and an antonym may reveal how a concept shifts across context. Grammar then organises the larger system: the noun, singular and plural forms, the pronoun, verb, adjective, adverb, preposition, and conjunction all shape how a sentence works. Students must learn to keep usage consistent even when a text becomes complicated or intellectually complex.
+
+Academic communication adds another layer. Scholars compile reference material, compare one version of a document with another, translate difficult passages, paraphrase dense claims, and interpret what an author meant to narrate or illuminate. In some cases they even decipher an obscure expression before its full force becomes clear. Eloquence matters here, but so does precision, because the goal is to communicate well rather than merely sound impressive.
+
+For IELTS readers, this passage is useful because it links language analysis with public media. Discussion, debate, and commentary move through every modern medium, while the press relies on the journalist, critic, and editor to publish and disseminate ideas responsibly. The vocabulary forms one system: structure inside the sentence and communication beyond it.`,
+  },
+  {
+    id: 'fast-only-performance-29',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'performance, recreation, and artistic display',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining performance and arts vocabulary in a coherent fast passage.',
+    title: 'Fast Vocabulary: Performance, Recreation, and Artistic Display',
+    targetWordIds: ['fantasy__noun', 'pastime__noun', 'entertain__verb', 'recreation__noun', 'amuse__verb', 'gossip__noun', 'rumour__noun', 'consensus__noun', 'festival__noun', 'feast__noun', 'programme__noun', 'rehearsal__noun', 'perform__verb', 'imitate__verb', 'mimic__verb', 'simulate__verb', 'circus__noun', 'magic__noun', 'drama__noun', 'concert__noun', 'symphony__noun', 'orchestra__noun', 'ballet__noun', 'opera__noun', 'comedy__noun', 'tragedy__noun', 'animation__noun', 'film__noun', 'movie__noun', 'artist__noun', 'craftsman__noun', 'painter__noun', 'role__noun', 'scene__noun', 'stage__noun', 'gallery__noun', 'exhibition__noun', 'aesthetic__adjective', 'photograph__noun', 'portrait__noun', 'painting__noun', 'sculpture__noun', 'depict__verb'],
+    content: `Cultural life includes both serious art and ordinary recreation. People may treat a film, movie, or animation as a simple pastime, yet public entertainment often performs a larger social role. A festival or feast can build consensus within a community, while gossip and rumour spread rapidly when audiences gather around a public event. Some forms aim mainly to amuse, whereas others present fantasy, conflict, or memory in a more reflective way.
+
+Performance vocabulary helps explain these differences. A programme is prepared through rehearsal before artists perform on stage, whether the form is circus, magic, drama, concert music, symphony, orchestra, ballet, opera, comedy, or tragedy. Some performers imitate or mimic reality directly; others simulate it through costume, sound, and carefully designed scene changes. In each case the public sees not only skill but also interpretation.
+
+For IELTS readers, this passage is useful because it links art forms with the institutions that display them. The artist, craftsman, and painter may work in a gallery or exhibition space, while the photograph, portrait, painting, or sculpture depicts experience through aesthetic choices. The vocabulary becomes easier to remember when art is treated as a full cultural system rather than as a random list of genres.`,
+  },
+  {
+    id: 'fast-only-cognition-30',
+    mode: 'fast',
+    theme: 'general-academic',
+    subtheme: 'judgement, error, and social interpretation',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining judgement/error/emotion vocabulary in a coherent fast passage.',
+    title: 'Fast Vocabulary: Judgement, Error, and Social Interpretation',
+    targetWordIds: ['slope__verb', 'overlook__verb', 'irreversible__adjective', 'suburb__noun', 'burgeon__noun', 'victim__noun', 'defensive__adjective', 'squash__verb', 'fragment__noun', 'cataclysmic__adjective', 'overwhelming__adjective', 'despair__verb', 'desperate__adjective', 'hopeless__adjective', 'idiot__noun', 'compare__verb', 'disagree__verb', 'thorough__adjective', 'decide__verb', 'resolve__verb', 'overestimate__verb', 'evaluate__verb', 'flaw__noun', 'wrong__adjective', 'stumble__verb', 'contingency__noun', 'circumstance__noun', 'symbol__noun', 'sign__noun', 'accident__noun', 'experience__noun'],
+    content: `Researchers who analyse public judgement often begin with moments of failure. A policy may overlook early warning signs, allow social tension to burgeon in a growing suburb, or treat a structural flaw as if it were too minor to matter. Yet a system can slope toward crisis gradually, and once damage becomes irreversible the cost is borne by real victims rather than by abstract models. In a cataclysmic or overwhelming situation, people may become defensive, despair, seem desperate, or feel hopeless long before officials decide how to respond.
+
+Analytical language helps explain such reactions. Observers compare one circumstance with another, disagree about the cause, and attempt a thorough evaluation before they resolve what actually happened. They must not overestimate their own insight, because even experts can stumble when an unexpected contingency appears. A single accident may be treated as a symbol of wider decline, while a small sign of improvement may still be read in the wrong way.
+
+For IELTS readers, this passage is useful because it turns abstract judgement words into a coherent social explanation. Even the insult idiot reveals how quickly public discourse can collapse when evidence is weak and interpretation is careless. Experience shows that careful evaluation matters most when communities face stress and uncertainty.`,
+  },
 ];
 
 function clean(value) {
