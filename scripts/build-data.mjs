@@ -1871,6 +1871,67 @@ Negative emotion is equally important in academic passages. Agony and grief may 
 More private feelings also shape behaviour. Anxiety can make a capable student timid, envy may damage cooperation, and a jealous colleague may misread success as insult. People can feel guilty or ashamed when they believe they have violated personal values. IELTS readers benefit from this vocabulary because it helps explain motivation, mental health, conflict, and resilience without reducing human behaviour to simple labels.`,
   },
 
+  {
+    id: 'fast-only-commerce-work-resolution-53',
+    mode: 'fast',
+    theme: 'economy-business',
+    subtheme: 'commerce, employment, negotiation, and practical outcomes',
+    style: 'ielts-reading',
+    readingGoal: 'Expand fast-mode exact coverage through a coherent IELTS-style academic passage.',
+    title: 'Fast Vocabulary: Commerce, Work, and Practical Outcomes',
+    targetWordIds: ["fund__verb","donate__verb","endow__verb","chain__noun__2","voucher__noun","coupon__noun","swap__verb","consume__verb","cost__verb","decrease__noun","increase__noun","escalate__verb","enrich__verb","spare__adjective","saving__noun","lack__noun","agent__noun","entity__noun","input__noun","acquisition__noun","insure__verb","guarantee__verb","reliable__adjective","negotiation__noun","attend__verb","absent__adjective","deal__verb","dump__verb","interest__noun","instalment__noun","cheque__noun","coin__noun","shilling__noun","copper__noun","treasure__noun","possess__verb","legacy__noun","descend__verb","worthy__adjective","valuable__adjective","cheap__adjective","incentive__noun","accelerate__verb","prompt__verb","reimburse__verb","payroll__noun","remuneration__noun","earn__verb","undertaking__noun","occupation__noun","vocation__noun","workaholic__noun","personnel__noun","clerk__noun","interview__noun","r-sum__noun","recommend__verb","fire__verb","lay-off__noun","dismiss__verb"],
+    content: `Economic institutions are often judged by how they fund activity and distribute value. A charity may donate emergency money, a university may endow a research centre, and a retail chain may use a voucher or coupon to attract customers who swap one brand for another. When households consume more than expected, the cost of essentials can increase, decrease, or escalate quickly. Good policy should enrich public life, spare vulnerable groups from shock, and encourage saving where possible, especially when families already lack security.
+
+Financial systems also depend on trust. An agent may represent an entity that needs reliable input for data acquisition, insurance, and negotiation. A bank can insure a loan or guarantee payment, but clients must attend meetings rather than remain absent when a deal is being revised. If firms dump risk onto consumers, interest charges, instalment plans, a cheque, a coin, an old shilling, or copper currency become more than technical details; they reveal who is allowed to possess treasure and whose legacy may descend to the next generation.
+
+Employment completes the argument. A worthy and valuable worker should not be treated as cheap labour, so an incentive may accelerate productivity and prompt fair reimbursement through payroll and remuneration. People earn dignity through an undertaking, occupation, or vocation, yet a workaholic culture can damage health. Personnel staff, a clerk, and interview panels may recommend an applicant, but managers can also fire, impose a lay-off, or dismiss employees. IELTS readers therefore meet commerce vocabulary as a language of money, fairness, and institutional responsibility.`,
+  },
+  {
+    id: 'fast-only-work-results-communication-54',
+    mode: 'fast',
+    theme: 'economy-business',
+    subtheme: 'employment outcomes, obligations, and communication',
+    style: 'ielts-reading',
+    readingGoal: 'Expand fast-mode exact coverage through a coherent IELTS-style academic passage.',
+    title: 'Fast Vocabulary: Work Results, Obligation, and Communication',
+    targetWordIds: ["discharge__verb","resign__verb","sack__noun","result__noun","failure__noun","abortion__noun","loss__noun","opportunity__noun","chance__noun","choose__verb","change__noun","solve__verb","develop__verb","improve__verb","manage__verb","regulate__verb","sanction__noun","coordinate__verb","collaborate__verb","item__noun__2","perform__verb__2","default__verb","constraint__noun","potent__adjective","bound__adjective","obligation__noun","session__noun","contradict__verb","whisper__verb","mutter__verb","murmur__noun","mute__adjective","confine__noun","trap__noun","trick__noun","pretend__verb","fool__noun","stigma__noun","conform__verb","reconcile__verb","succumb__verb","mortgage__verb","accredit__verb","clue__noun","access__noun","anonymous__adjective","false__adjective","genuine__adjective","routine__noun","consequence__noun","demand__verb","request__noun","require__verb","petition__verb","command__verb","instruct__verb"],
+    content: `Organisations reveal their values when employment becomes uncertain. A firm may discharge a worker, accept that another will resign, or hand someone a sack after poor performance. The result may be failure, financial loss, or the abortion of a promising project, but it may also create an opportunity for reform. Managers must choose whether a chance for change can solve old problems, develop new systems, improve morale, manage risk, regulate conduct, and apply a sanction only when evidence is fair.
+
+Modern work also requires cooperation under pressure. Teams coordinate and collaborate on each item they must perform, yet a contract may default when a constraint becomes too strong. A potent rule can leave staff bound by obligation during a difficult session. In such meetings, one voice may contradict another; others whisper, mutter, or offer only a murmur because a mute culture confines criticism. A trap, trick, or habit of pretending can fool supervisors and create stigma for honest employees who refuse to conform.
+
+Ethical communication helps institutions reconcile conflict before people succumb to cynicism. A bank may mortgage property, an agency may accredit a course, and auditors may search for a clue that gives access to records. Anonymous complaints can be false or genuine, so routine investigation must consider every consequence. Citizens may demand action, submit a request, require transparency, petition leaders, command attention, or instruct officials to respond. IELTS readers therefore see workplace language as a test of accountability.`,
+  },
+  {
+    id: 'fast-only-conflict-tools-resistance-55',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'weapons, threat, resistance, and rebellion',
+    style: 'ielts-reading',
+    readingGoal: 'Expand fast-mode exact coverage through a coherent IELTS-style academic passage.',
+    title: 'Fast Vocabulary: Tools, Threats, and Resistance',
+    targetWordIds: ["burst__verb","spark__noun","twinkle__noun","gunpowder__noun","deflect__verb","flare__noun","glitter__verb","glow__verb","blade__noun","ax__noun","hammer__noun","bow__noun","arrow__noun","spear__noun","helmet__noun","equip__verb","prepare__verb","provide__verb","beat__verb","strike__verb","punch__noun","chop__verb","stab__verb","dilemma__noun","plight__noun","conspiracy__noun","destitute__adjective","famine__noun","starve__verb","deprive__verb","seize__verb","pursue__verb","threat__noun","offend__verb","aggressive__adjective","invade__verb","trespass__verb","intrude__verb","violate__verb","challenge__noun","surround__verb","enclose__verb","pause__noun","halt__verb","cease__verb","oppose__verb","oppress__verb","counter__verb","deter__verb","forbid__verb","prohibit__verb","prevent__verb","revolt__noun","betray__verb","treason__noun","rebel__noun","traitor__noun","patriot__noun"],
+    content: `Conflict vocabulary often begins with visible force, but academic reading asks why force appears. A sudden burst of violence may start from a small spark, while lights that twinkle, flare, glitter, or glow can mark either celebration or danger when gunpowder is present. Older tools such as a blade, ax, hammer, bow, arrow, spear, and helmet remind readers that societies equip fighters, prepare defences, and provide protection long before weapons are used to beat, strike, punch, chop, or stab an opponent.
+
+The causes are usually social as well as military. A dilemma may become a national plight when a conspiracy deprives a destitute population of food, creates famine, and forces families to starve. Authorities may seize supplies, pursue suspects, or identify a threat, but aggressive policing can offend citizens. An army may invade a border, trespass on private land, intrude into homes, or violate rights, turning a security challenge into a moral crisis.
+
+Responses require careful judgement. Forces may surround a town, enclose a district, pause an operation, halt movement, or cease fire. Citizens may oppose injustice, accuse leaders of oppress behaviour, counter propaganda, deter violence, forbid weapons, prohibit abuse, and prevent revenge. A revolt may begin when people believe a ruler will betray them; one group calls a rebel a traitor, while another calls the same person a patriot. IELTS readers should notice how conflict words depend on evidence and perspective.`,
+  },
+  {
+    id: 'fast-only-war-strategy-risk-56',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'strategic competition, punishment, and security risk',
+    style: 'ielts-reading',
+    readingGoal: 'Expand fast-mode exact coverage through a coherent IELTS-style academic passage.',
+    title: 'Fast Vocabulary: Strategy, Risk, and Human Cost',
+    targetWordIds: ["blame__verb","reproach__noun","terror__noun","terrible__adjective","horrible__adjective","alarm__noun","dread__verb","frighten__verb","tension__noun","turbulent__adjective","turmoil__noun","scenario__noun","occasion__noun","limit__noun","boundary__noun","rein__noun","compete__verb","contest__verb","contend__verb","rival__noun","competitor__noun","enemy__noun","strategy__noun","tactic__noun","maneuver__noun","blueprint__noun","compel__verb","order__noun__2","protest__noun","refute__verb","might__noun","force__noun","reinforce__verb","impair__verb","mitigate__verb","comfort__noun","event__noun","savage__adjective","reckless__adjective","fierce__adjective","foul__adjective","evil__noun","devil__noun","punishment__noun","execute__verb","hang__noun","sacrifice__noun","casualty__noun","bury__verb","funeral__noun","grave__noun","tomb__noun","hell__noun","maritime__adjective","landing__noun","hover__verb","proceed__verb","progress__noun","nuclear__adjective","poison__noun"],
+    content: `Public debate after a crisis often begins with blame and reproach, but serious analysis must go further. Terror may create terrible, terrific, and horrible memories that raise alarm, make citizens dread the future, and frighten children long after the violence ends. Tension can turn a turbulent region into political turmoil, so planners examine each scenario, occasion, limit, boundary, and rein on power before conflict spreads.
+
+States compete, contest influence, and contend with a rival, competitor, or enemy through strategy, tactic, maneuver, and blueprint. Leaders may compel obedience through an order, while protesters use a protest to refute official claims. Military might and force can reinforce a position, but force can also impair hospitals, schools, and trust. Humanitarian agencies try to mitigate harm and provide comfort when an event or matter happens suddenly or occurs repeatedly.
+
+The language of punishment is sensitive. A savage, reckless, fierce, or foul attack may be described as evil, and propaganda may call the opponent a devil. Yet punishment must not become revenge: states may execute prisoners, hang criminals, or demand sacrifice from soldiers, but each casualty requires families to bury the dead, hold a funeral, mark a grave, visit a tomb, or imagine hell. Maritime landing operations, aircraft that hover, and armies that proceed toward progress with nuclear or poison weapons remind IELTS readers that security vocabulary always carries cost.`,
+  },
+
 ];
 
 function clean(value) {

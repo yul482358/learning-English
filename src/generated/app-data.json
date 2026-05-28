@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T17:13:53.715Z",
+  "generatedAt": "2026-05-28T17:47:41.164Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 129,
-    "avgCoverageRate": 0.936
+    "articleCount": 133,
+    "avgCoverageRate": 0.937
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 77
+      "articleCount": 81
     },
     {
       "id": "core",
@@ -1755,6 +1755,58 @@
       "targetWordCount": 31,
       "coverageRate": 1,
       "density": 0.168
+    },
+    {
+      "id": "fast-only-commerce-work-resolution-53",
+      "title": "Fast Vocabulary: Commerce, Work, and Practical Outcomes",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 254,
+      "targetWordCount": 60,
+      "coverageRate": 0.967,
+      "density": 0.236
+    },
+    {
+      "id": "fast-only-work-results-communication-54",
+      "title": "Fast Vocabulary: Work Results, Obligation, and Communication",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 240,
+      "targetWordCount": 56,
+      "coverageRate": 0.964,
+      "density": 0.233
+    },
+    {
+      "id": "fast-only-conflict-tools-resistance-55",
+      "title": "Fast Vocabulary: Tools, Threats, and Resistance",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 232,
+      "targetWordCount": 58,
+      "coverageRate": 0.948,
+      "density": 0.25
+    },
+    {
+      "id": "fast-only-war-strategy-risk-56",
+      "title": "Fast Vocabulary: Strategy, Risk, and Human Cost",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 225,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.267
     }
   ]
 }
