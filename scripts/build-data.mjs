@@ -1223,6 +1223,216 @@ Archaeology turns that memory into evidence. Researchers excavate an antique sit
 
 Language study extends this inquiry further. Linguistics examines semantic structure, syntax, grammar, phonetics, pronunciation, intonation, inflection, dialect, accent, and the spoken utterance. It also breaks speech into the oral and verbal systems of syllables, phonemes, vowels, and consonants, then traces how an alphabet, logogram, vocabulary list, dictionary entry, idiom, phrase, clause, expression, tense, or word root carries meaning. For IELTS learners, this kind of passage is especially useful because it reads like a real academic text while covering a large number of high-value terms from culture, archaeology, and language history.`,
   },
+  {
+    id: 'fast-only-agriculture-10',
+    mode: 'fast',
+    theme: 'food-agriculture',
+    subtheme: 'crop systems and managed landscapes',
+    style: 'ielts-reading',
+    readingGoal: 'Cover agriculture and plant-management vocabulary in a coherent IELTS-style explanatory passage.',
+    title: 'Fast Vocabulary: Crop Systems and Managed Landscapes',
+    targetWordIds: ['horticulture__noun', 'cultivate__verb', 'harvest__verb', 'rear__verb', 'plough__noun', 'seed__noun', 'ripen__verb', 'terrace__noun', 'timber__noun', 'charcoal__noun', 'log__noun', 'forestry__noun', 'branch__noun', 'trunk__noun', 'bough__noun', 'root__noun', 'hay__noun', 'straw__noun', 'reed__noun', 'thorn__noun', 'weed__noun', 'grass__noun', 'meadow__noun', 'lawn__noun', 'olive__noun', 'pine__noun', 'vine__noun', 'violet__noun', 'tulip__noun', 'mint__noun', 'flora__noun', 'pattern__noun', 'classify__verb', 'organism__noun'],
+    content: `Agricultural researchers often explain that modern food production depends on both horticulture and large-scale field management. Farmers cultivate land, prepare a plough line, select seed carefully, and wait for crops to ripen before the harvest begins. In mixed systems they may also rear animals, yet plant management still dominates the landscape. On steep land, terrace farming reduces erosion, while in forest regions timber, charcoal, and cut log production must be balanced against long-term forestry goals. A tree is not merely a source of wood: its branch, trunk, bough, and root system determine how stable the soil remains after heavy rain.
+
+Rural vegetation also deserves closer attention. Hay, straw, reed beds, thorn barriers, and ordinary weed growth all reveal how a managed field differs from wild flora. Grass may spread across a meadow or a decorative lawn, while olive groves, pine woodland, vine rows, violet borders, tulip beds, and mint plots reflect very different cultivation choices. Agricultural scientists often classify such planting patterns in order to compare yield, labour, and environmental pressure.
+
+For IELTS readers, this kind of passage is useful because it joins practical farming vocabulary with wider ecological explanation. It shows how a plant organism survives inside a designed landscape rather than in isolation, and why crop systems are best understood as patterns of land use rather than single words from a list.`,
+  },
+  {
+    id: 'fast-only-astronomy-11',
+    mode: 'fast',
+    theme: 'science-technology',
+    subtheme: 'space observation and cosmic scale',
+    style: 'ielts-reading',
+    readingGoal: 'Cover astronomy and measurement vocabulary in an IELTS-style scientific passage.',
+    title: 'Fast Vocabulary: Space Observation and Cosmic Scale',
+    targetWordIds: ['galaxy__noun', 'cosmos__noun', 'universe__noun', 'interstellar__adjective', 'chart__noun', 'capable__adjective', 'secondary__adjective', 'periodically__adverb', 'beam__noun', 'perspective__noun', 'core__noun__2', 'suppose__verb', 'anticipate__verb', 'emerge__verb', 'peak__noun', 'margin__noun', 'fringe__noun', 'condition__noun', 'artificial__adjective', 'device__noun', 'technology__noun', 'calculate__verb', 'survey__noun', 'data__noun', 'variable__noun', 'parameter__noun', 'estimate__noun', 'magnet__noun', 'science-fiction__noun', 'digital__adjective'],
+    content: `Modern astronomy asks observers to think beyond ordinary human scale. A single galaxy is already difficult to imagine, yet the wider cosmos and the universe require an even broader perspective. Telescopes capable of detecting interstellar light do not simply record a picture. They convert weak radiation into data that can be recognised, charted, and compared over time. A beam from a distant object may appear only periodically, while a secondary signal can easily be mistaken for noise unless the observing conditions are carefully controlled.
+
+Researchers therefore rely on technology, artificial sensors, and precise instruments. A device mounted on a remote platform surveys one region after another, producing a chart of brightness, motion, and chemical signature. Scientists calculate whether a peak in the signal reflects the true core of an object or only activity at the outer margin or fringe. They may also suppose that a result will emerge from one model, then anticipate a different outcome when a key variable or parameter changes.
+
+For IELTS learners, this passage is valuable because it shows how scientific language works in context. Space science is not presented as fantasy, but as a careful survey of evidence in which condition, estimate, and interpretation matter as much as wonder.`,
+  },
+  {
+    id: 'fast-only-animal-habitat-12',
+    mode: 'fast',
+    theme: 'health-biology',
+    subtheme: 'habitat pressure and domestication',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining animal habitat, genetics, and survival vocabulary in a coherent academic passage.',
+    title: 'Fast Vocabulary: Habitat Pressure and Domestication',
+    targetWordIds: ['originate__verb', 'ox__noun', 'bull__noun', 'horse__noun', 'zebra__noun', 'donkey__noun', 'nest__noun', 'hive__noun', 'cage__noun', 'stable__noun', 'barn__noun', 'hedge__noun', 'gene__noun', 'intelligence__noun', 'victim__noun', 'captive__noun', 'defensive__adjective', 'undergo__verb', 'suffer__verb', 'vulnerable__adjective', 'subsistence__noun', 'exist__verb', 'exterminate__verb', 'tame__verb', 'keeper__noun', 'shepherd__noun', 'habitat__noun', 'behaviour__noun', 'mature__adjective', 'surrounding__adjective', 'environment__noun', 'adapt__verb', 'adjust__verb'],
+    content: `Animal populations do not exist in abstract diagrams; they survive within a particular habitat and under constant pressure. A species may originate in one region and later spread into another, but success depends on food, shelter, and reproduction. Wild animals build a nest, insects maintain a hive, and domesticated species may be confined to a cage, stable, or barn bordered by a hedge. These structures influence behaviour as strongly as climate does.
+
+Large grazing animals illustrate the contrast clearly. An ox, bull, horse, zebra, or donkey occupies a different relationship with humans depending on whether it is wild, captive, or partly tame. A shepherd or animal keeper reads signs of fear, aggression, and intelligence in order to prevent injury. If the surrounding environment changes too quickly, animals may undergo stress, suffer disease, or become vulnerable to predators and hunger. In extreme cases, a whole population can be driven toward subsistence living, or even exterminate its local future through habitat loss and breeding collapse.
+
+Biologists also connect these outcomes to the gene level. They ask why some lines remain mature and adaptable while others fail to adjust. For IELTS readers, this kind of passage is useful because it links environment, domestication, and survival in one explanatory frame rather than treating each term as isolated vocabulary.`,
+  },
+  {
+    id: 'fast-only-home-daily-13',
+    mode: 'core',
+    theme: 'daily-life',
+    subtheme: 'domestic space and household routines',
+    style: 'ielts-reading',
+    readingGoal: 'Cover daily-life vocabulary through a coherent passage about home design and routine.',
+    title: 'Fast Vocabulary: Domestic Space and Household Routines',
+    targetWordIds: ['tap__noun', 'broom__noun', 'make-up__noun', 'mushroom__noun', 'living-room__noun', 'kitchen__noun', 'room__noun', 'furnish__verb', 'travel__noun', 'well-being__noun', 'housewife__noun', 'household__noun', 'friendship__noun', 'groom__noun', 'feel__verb', 'friendly__adjective', 'apartment__noun', 'wardrobe__noun', 'ornament__noun', 'costume__noun', 'mess__noun', 'outward__adjective', 'inward__adjective'],
+    content: `Researchers who study domestic life often note that small household objects shape routine more than people expect. A tap that leaks, a broom left in the wrong place, or make-up scattered across a table can turn an orderly room into a mess. In many homes, the living room and kitchen operate as the social core, while storage space, furniture, and decorative choices determine how comfortably people feel within the household. To furnish an apartment well is therefore not only a matter of style but also of everyday well-being.
+
+Social roles also appear in this environment. Traditional writing may refer to a housewife, a groom preparing for a wedding, or the household members who maintain friendship through shared meals and repeated acts of care. Even simple objects such as a wardrobe, an ornament, a special costume, or food items like a mushroom can reveal how personal taste enters domestic space.
+
+For IELTS readers, this passage is useful because it turns ordinary vocabulary into a broader explanation of social life. The home has an outward appearance for visitors and an inward routine known only to residents, and both sides influence comfort, identity, and daily behaviour.`,
+  },
+  {
+    id: 'fast-only-economy-basics-14',
+    mode: 'core',
+    theme: 'economy-business',
+    subtheme: 'markets, trade, and organised production',
+    style: 'ielts-reading',
+    readingGoal: 'Cover basic economy and business vocabulary in a readable academic passage.',
+    title: 'Fast Vocabulary: Markets, Trade, and Organised Production',
+    targetWordIds: ['trade__noun', 'market__noun', 'industry__noun', 'company__noun', 'stock__noun', 'dividend__noun__2', 'accompany__verb', 'supermarket__noun', 'livestock__noun', 'stocking__noun', 'economy__noun', 'recommend__verb', 'recover__verb', 'beat__verb', 'decent__adjective', 'popularity__noun', 'department__noun', 'headquarters__noun', 'depart__verb', 'cart__noun', 'facility__noun', 'equipment__noun', 'quantity__noun', 'quality__noun', 'system__noun'],
+    content: `An economy is often described through large statistics, yet its basic structure can be understood through everyday trade. A market brings buyers and sellers together, but modern industry depends on far more than a simple exchange. A company must organise labour, equipment, departments, and transport, while its headquarters coordinates decisions made across many sites. In retail, even the supermarket cart shows how physical design accompanies commercial behaviour.
+
+Production systems vary. A livestock business differs from a grain supplier, and a stocking factory differs from a food warehouse, yet each still operates within the same economic system. Managers compare quantity with quality, monitor whether demand can recover after a weak season, and try to beat competitors without lowering standards below a decent level. They may also recommend new methods when a product gains sudden popularity.
+
+Financial language supports this explanation. Investors watch stock values and expect a dividend when profit is strong, while companion industries often accompany one another through transport, packaging, and marketing links. For IELTS readers, this passage is useful because it explains how ordinary business vocabulary fits into a wider account of organised production rather than appearing as disconnected commercial terms.`,
+  },
+  {
+    id: 'fast-only-education-core-15',
+    mode: 'core',
+    theme: 'education-learning',
+    subtheme: 'institutions, aptitude, and academic progress',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining education-learning vocabulary in a coherent explanatory passage.',
+    title: 'Fast Vocabulary: Institutions, Aptitude, and Academic Progress',
+    targetWordIds: ['education__noun', 'university__noun', 'college__noun', 'academy__noun', 'learn__verb', 'study__verb', 'aptitude__noun', 'eminent__adjective', 'anecdote__noun', 'language__noun', 'vowel__noun', 'tension__noun', 'classify__verb', 'seminar__noun', 'forum__noun', 'essay__noun', 'thesis__noun', 'curriculum__noun', 'examination__noun', 'candidate__noun', 'degree__noun', 'skill__noun'],
+    content: `Education systems differ by country, yet most of them move students through recognisable stages. A child may enter an academy or local college before later progressing to university, but in each setting the central task is to learn through repeated study. Teachers try to identify aptitude early, because a student with strong curiosity may progress more quickly once the right intellectual challenge is provided.
+
+Academic reputation also matters. An eminent scholar may use a small anecdote to explain a difficult theory, while a language teacher may classify errors in pronunciation, grammar, or the use of a single vowel sound. In advanced settings, a seminar or open forum gives learners a space to test ideas before they attempt a formal essay, examination, or thesis. Tension is common in such contexts, but structured feedback usually turns anxiety into progress.
+
+For IELTS readers, this kind of passage is useful because it shows how educational vocabulary forms a system. Institutions, degrees, curriculum design, and individual skill all belong to the same process of organised learning.`,
+  },
+  {
+    id: 'fast-only-travel-society-16',
+    mode: 'core',
+    theme: 'society-government',
+    subtheme: 'movement, roles, and awkward social space',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining society/daily crossover vocabulary in a coherent passage.',
+    title: 'Fast Vocabulary: Movement, Roles, and Awkward Social Space',
+    targetWordIds: ['voyage__noun', 'steward__noun', 'father-in-law__noun', 'coward__noun', 'dwarf__noun', 'awkward__adjective', 'maneuver__noun', 'seaman__noun', 'pillar__noun', 'flaw__noun', 'software__noun', 'mow__verb', 'lawn__noun', 'concert__noun', 'suppose__verb', 'friendly__adjective', 'travel__noun', 'department__noun'],
+    content: `Social vocabulary often becomes easier to remember when attached to a clear setting. Consider a long voyage by sea. A seaman and a steward perform different roles on the same vessel, yet both contribute to the success of the journey. A difficult maneuver in bad weather may expose a flaw in planning, and even a brave passenger may suppose for a moment that a coward would be wiser than a hero.
+
+When the journey ends, the same people return to ordinary society, where language becomes no less complex. A father-in-law at a family gathering, a friendly neighbour, or a performer at a public concert may all occupy positions that feel unexpectedly awkward. Literary descriptions sometimes refer to a dwarf beside a monumental pillar in order to exaggerate scale, but the social effect is similar: people constantly compare themselves with the structures around them.
+
+Modern public life also mixes old and new terms. Software now organises travel, tickets, and scheduling, while a transport department may oversee routes that connect one district with another. Yet many outdoor activities remain stubbornly physical. Someone may still mow a lawn, speak face to face, and discover that human discomfort cannot be solved by technical systems alone. That is why IELTS-style passages often connect movement, role, and setting in one explanation.`,
+  },
+  {
+    id: 'fast-only-geometry-17',
+    mode: 'fast',
+    theme: 'science-technology',
+    subtheme: 'measurement, diagrams, and quantitative description',
+    style: 'ielts-reading',
+    readingGoal: 'Cover mathematics, graph, geometry, and measurement vocabulary in an IELTS-style analytical passage.',
+    title: 'Fast Vocabulary: Measurement, Diagrams, and Quantitative Description',
+    targetWordIds: ['minus__adjective', 'minimum__noun', 'approximately__adverb', 'graph__noun', 'diagram__noun', 'table__noun', 'matrix__noun', 'rectangle__noun', 'cube__noun', 'angle__noun', 'triangle__noun', 'diagonal__adjective', 'straight__adjective', 'circle__noun', 'round__adjective', 'dot__noun', 'cone__noun', 'extent__noun', 'width__noun', 'length__noun', 'decimal__adjective', 'percent__noun', 'proportion__noun', 'rate__noun', 'ratio__noun', 'fraction__noun', 'scale__noun', 'ounce__noun', 'density__noun', 'curve__noun', 'formula__noun', 'term__noun', 'parameter__noun', 'variable__noun', 'estimate__noun', 'calculate__verb'],
+    content: `Academic data is often easier to understand when verbal explanation is supported by a graph, diagram, table, or matrix. Researchers may compare a minimum value with the next result, describe a fall as minus rather than positive growth, and note that a figure is only approximately correct when measurement conditions are weak. In geometry and technical drawing, a rectangle, cube, angle, triangle, diagonal line, straight edge, circle, round object, dot, or cone provides a visual model for more abstract reasoning.
+
+Quantitative description also depends on language of size and relation. Analysts refer to the extent, width, and length of an object, while decimal notation helps them express percent change, proportion, rate, ratio, and fraction with precision. They may also rely on a standard scale or even an older unit such as the ounce when historical records use mixed systems. Density, curvature, and shape matter because a small curve in a figure can change the entire interpretation of a result.
+
+For IELTS readers, this kind of passage is useful because it combines visual and mathematical vocabulary in one coherent explanation. A formula is not treated as a mysterious code: each term, parameter, and variable serves a clear role when researchers calculate an estimate from evidence.`,
+  },
+  {
+    id: 'fast-only-learning-18',
+    mode: 'fast',
+    theme: 'education-learning',
+    subtheme: 'institutions, learning, and academic reputation',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining education and knowledge vocabulary in a coherent IELTS-style passage.',
+    title: 'Fast Vocabulary: Institutions, Learning, and Academic Reputation',
+    targetWordIds: ['education__noun', 'primary__adjective', 'university__noun', 'college__noun', 'institute__noun', 'academy__noun', 'learn__verb', 'study__verb', 'acquire__verb', 'knowledge__noun', 'expertise__noun', 'elite__noun', 'wisdom__noun', 'wit__noun', 'aptitude__noun', 'excellent__adjective', 'outstanding__adjective', 'brilliant__adjective', 'prestige__noun', 'reputation__noun', 'eminent__adjective', 'respect__noun', 'certify__verb', 'platform__noun', 'candidate__noun', 'degree__noun', 'curriculum__noun', 'seminar__noun', 'forum__noun', 'essay__noun', 'thesis__noun', 'examination__noun', 'skill__noun', 'language__noun', 'classify__verb', 'vowel__noun'],
+    content: `Education systems are built in layers. Primary schooling gives learners a first structure, while a later college, institute, academy, or university offers more specialised routes. In every setting, students learn through repeated study, acquire knowledge over time, and gradually turn basic competence into expertise. Institutions also vary in prestige and reputation, which is why families often compare one campus with another before making a decision.
+
+Academic success, however, depends on more than brand value. A person with natural aptitude may progress quickly, yet disciplined practice remains essential if that learner hopes to become excellent, outstanding, or even brilliant in a demanding field. An eminent teacher may command respect not only because of a title, but because wisdom, wit, and clarity make difficult ideas easier to grasp. In formal systems, courses may certify competence, prepare a candidate for a degree, and place the student on a platform for later professional growth.
+
+This process is visible in daily academic work. A curriculum shapes what must be read, while the seminar, forum, essay, thesis, and examination all test different kinds of skill. Even language study shows the same logic: teachers classify common errors and explain how a vowel sound can change meaning. For IELTS readers, the passage is useful because it treats education as an organised system of institutions, reputation, and intellectual development.`,
+  },
+  {
+    id: 'fast-only-physics-19',
+    mode: 'fast',
+    theme: 'science-technology',
+    subtheme: 'radiation, force, and physical interaction',
+    style: 'ielts-reading',
+    readingGoal: 'Cover physical science vocabulary in a readable academic passage.',
+    title: 'Fast Vocabulary: Radiation, Force, and Physical Interaction',
+    targetWordIds: ['magnet__noun', 'terrestrial__adjective', 'celestial__adjective', 'quantum__noun', 'fahrenheit__adjective', 'mercury__noun', 'battery__noun', 'volt__noun', 'radiate__verb', 'emit__verb', 'transparent__adjective', 'hollow__adjective', 'ozone__noun', 'gravity__noun', 'friction__noun', 'eccentric__adjective', 'displace__verb', 'artificial__adjective', 'device__noun', 'instrument__noun', 'technology__noun', 'observe__verb', 'recognise__verb', 'detect__verb', 'peak__noun', 'margin__noun', 'fringe__noun', 'beam__noun', 'core__noun__2', 'range__noun', 'mount__verb', 'slope__verb', 'condition__noun', 'survey__noun', 'data__noun', 'science-fiction__noun'],
+    content: `Physical science often moves between the terrestrial world and the celestial one. A magnet in a laboratory may seem far removed from a distant planet, yet both can be studied through the same language of force, field, and interaction. Researchers discuss quantum behaviour at very small scales, but they still depend on familiar instruments such as a mercury thermometer, a battery, or a volt meter when they observe changing conditions. Temperature may be recorded in Fahrenheit, radiation may radiate from one source and emit from another, and each device must operate within known technical limits.
+
+Material properties are equally important. A transparent surface allows light to pass, a hollow structure changes resonance, and ozone in the upper atmosphere affects what kind of energy reaches the ground. Gravity and friction shape motion at ordinary scale, while eccentric movement can displace an object from its expected path. Scientists therefore recognise patterns only after they detect repeated evidence in survey data.
+
+For IELTS readers, this passage is useful because it connects abstract science to measurable observation. A beam may reach a peak before falling toward the margin or fringe of a graph, the core of a system may lie across a wide range of values, and even a mount on a sloping frame can alter a result. The language sounds technical, but it remains part of a coherent explanation rather than science fiction.`,
+  },
+  {
+    id: 'fast-only-reasoning-20',
+    mode: 'fast',
+    theme: 'general-academic',
+    subtheme: 'hypothesis, inference, and analytical judgement',
+    style: 'ielts-reading',
+    readingGoal: 'Cover abstract reasoning vocabulary in an IELTS-style academic passage.',
+    title: 'Fast Vocabulary: Hypothesis, Inference, and Analytical Judgement',
+    targetWordIds: ['deadline__noun', 'selective__adjective', 'dictate__verb', 'copy__noun', 'introduce__verb', 'elicit__verb', 'quote__verb', 'extract__noun', 'abstract__noun', 'summary__noun', 'assume__verb', 'presume__verb', 'hypothesis__noun', 'postulate__verb', 'speculate__verb', 'predict__verb', 'perceive__verb', 'detect__verb', 'discern__verb', 'conscious__adjective', 'reckon__verb', 'deem__verb', 'imply__verb', 'deliberate__verb', 'represent__verb', 'insist__verb', 'persist__verb', 'understand__verb', 'comprehend__verb', 'analyse__verb', 'diagnose__verb', 'infer__verb', 'deduce__verb', 'conclude__verb', 'analogy__noun', 'compare__verb', 'contrast__noun', 'overlap__verb', 'contradiction__noun', 'disagree__verb', 'differ__verb', 'diverse__adjective'],
+    content: `Academic reasoning depends on disciplined reading and disciplined thought. A student working toward a deadline cannot simply copy a source, dictate ideas into a notebook, or introduce a claim without evidence. Instead, the writer tries to elicit useful detail from a text, quote it accurately, and decide whether an extract, abstract, or summary best represents the original argument. Selective reading may save time, but careless compression often weakens understanding.
+
+The second stage is interpretation. Researchers assume certain conditions, presume others only cautiously, and then build a hypothesis strong enough to test. They may postulate a causal link, speculate about a hidden mechanism, or predict what should happen next. Yet serious analysis requires more than intuition: scholars perceive patterns, detect small changes, discern important contrasts, and remain conscious of error. They reckon with uncertainty, deem some evidence stronger than the rest, and deliberate before stating what the data imply.
+
+For IELTS readers, this passage is useful because it shows the whole chain of thought. A claim may represent one view while another insists on a different explanation, and disagreement does not always mean contradiction. Ideas can overlap, differ, or remain diverse without becoming incoherent. The analyst must understand, comprehend, analyse, diagnose, infer, deduce, and finally conclude through comparison, contrast, and analogy rather than guesswork alone.`,
+  },
+  {
+    id: 'fast-only-innovation-repair-21',
+    mode: 'fast',
+    theme: 'science-technology',
+    subtheme: 'evaluation, invention, and technical judgement',
+    style: 'ielts-reading',
+    readingGoal: 'Repair remaining innovation/evaluation vocabulary with a denser, more exact fast passage.',
+    title: 'Fast Vocabulary: Evaluation, Invention, and Technical Judgement',
+    targetWordIds: ['grade__verb', 'rank__noun', 'appreciate__verb', 'underestimate__verb', 'overestimate__verb', 'innovate__verb', 'invent__verb', 'discover__verb', 'disclose__verb', 'reveal__verb', 'uncover__verb', 'expose__verb', 'foundation__noun', 'apply__verb__2', 'evaluate__verb', 'accessory__noun', 'byproduct__noun', 'auxiliary__adjective', 'versatile__adjective', 'add__verb', 'accumulate__verb', 'assemble__verb', 'gather__verb', 'attach__verb', 'belong__verb', 'optics__noun', 'microscope__noun', 'lens__noun', 'technology__noun', 'device__noun', 'instrument__noun', 'tool__noun', 'facility__noun', 'equipment__noun', 'technique__noun', 'engineer__noun'],
+    content: `Technical progress is rarely judged by excitement alone. In research institutions, reviewers grade prototypes, rank competing designs, and appreciate clear evidence rather than inflated claims. They must not underestimate early promise, yet they must also avoid the habit of overestimating every novel idea. A serious engineer tries to innovate only where a real need exists, and an inventor who hopes to invent, discover, disclose, reveal, uncover, or expose something valuable must build on a reliable foundation.
+
+This process depends on application and evaluation. A designer may apply one method to optics, another to microscopy, and another to manufacturing, yet the principle remains the same: the microscope, lens, device, instrument, tool, facility, and larger equipment all belong to one technical system. Accessory parts, auxiliary controls, and even a harmless byproduct can matter if the final product is expected to be versatile in more than one setting. Engineers therefore add components carefully, accumulate evidence across trials, assemble working models, gather feedback from users, and attach each result to a practical technique rather than to abstract hype.
+
+For IELTS readers, this passage is useful because it turns innovation vocabulary into a coherent account of technical judgement. Research succeeds when evaluation is honest and when invention grows out of method rather than mere enthusiasm.`,
+  },
+  {
+    id: 'fast-only-emotion-crisis-22',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'catastrophe, response, and emotional pressure',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining crisis and emotional-response vocabulary in an academic explanatory style.',
+    title: 'Fast Vocabulary: Catastrophe, Response, and Emotional Pressure',
+    targetWordIds: ['fragment__noun', 'cataclysmic__adjective', 'overwhelming__adjective', 'despair__verb', 'desperate__adjective', 'hopeless__adjective', 'defensive__adjective', 'irreversible__adjective', 'suburb__noun', 'slope__verb', 'overlook__verb', 'extent__noun', 'adapt__verb', 'adjust__verb', 'surrounding__adjective', 'margin__noun', 'fringe__noun', 'density__noun', 'compare__verb'],
+    content: `Disaster researchers often study how human beings respond when environmental or social pressure becomes overwhelming. A cataclysmic event may destroy infrastructure in a suburb, force a hillside to slope more sharply after erosion, or make officials overlook smaller warning signs at the urban fringe. Once damage reaches an irreversible stage, the physical extent of destruction is only one part of the story. Emotional pressure also matters, because victims may despair, become desperate, or appear hopeless even before relief systems are fully organised.
+
+Academic analysis tries to avoid melodrama. It asks why defensive behaviour emerges, why one community recovers faster than another, and how people adapt or adjust when surrounding conditions change. Researchers compare patterns of response across districts, examine density of population, and decide whether a crisis remains local or spreads toward the wider margin of a region. In this context, even a single fragment of evidence can matter if it reveals how policy failed.
+
+For IELTS readers, the passage is useful because it joins emotional vocabulary with analytical explanation. The goal is not simply to describe suffering, but to resolve how social systems and physical environments interact under stress.`,
+  },
+  {
+    id: 'fast-only-marine-bio-23',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'marine ecosystems and microscopic life',
+    style: 'ielts-reading',
+    readingGoal: 'Cover reef, algae, enzyme, and related life-science vocabulary in a readable fast passage.',
+    title: 'Fast Vocabulary: Marine Ecosystems and Microscopic Life',
+    targetWordIds: ['reef__noun', 'alga__noun', 'marine__adjective', 'oxygen__noun', 'oxide__noun', 'hydrogen__noun', 'particle__noun', 'mixture__noun', 'component__noun', 'surface__noun', 'transparent__adjective', 'float__verb', 'dense__adjective', 'habitat__noun', 'vulnerable__adjective', 'exist__verb', 'survey__noun', 'measure__verb', 'data__noun', 'proportion__noun', 'rate__noun'],
+    content: `Marine ecosystems are often introduced through large visible structures such as the coral reef, yet much of their function depends on microscopic life. An alga drifting through shallow water may seem insignificant, but it supports wider chemical exchange through oxygen production, hydrogen reactions, and the formation of oxide compounds. Scientists therefore study each particle in the surrounding mixture, ask how acidic conditions affect every component, and write a formula that explains change at the water surface as well as below it.
+
+These systems are also dynamic. Transparent water does not always mean healthy water, because a dense bloom may still float unseen until conditions deteriorate. Every reef is a habitat in which organisms interact, genes spread through reproduction, and vulnerable populations struggle to exist when temperature or pollution shifts too quickly. Researchers survey these environments repeatedly, observe changes over time, and measure rates of decline or recovery with careful data analysis.
+
+For IELTS readers, this passage is useful because it links biological and chemical vocabulary in one clear explanation. The reef is not just scenery; it is a system whose condition can be calculated through proportion, rate, and repeated observation.`,
+  },
 ];
 
 function clean(value) {

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T13:57:02.561Z",
+  "generatedAt": "2026-05-28T14:18:44.651Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 86,
-    "avgCoverageRate": 0.92
+    "articleCount": 100,
+    "avgCoverageRate": 0.922
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 41
+      "articleCount": 49
     },
     {
       "id": "core",
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 32
+      "articleCount": 38
     },
     {
       "id": "read",
@@ -1196,6 +1196,188 @@
       "targetWordCount": 60,
       "coverageRate": 0.867,
       "density": 0.243
+    },
+    {
+      "id": "fast-only-agriculture-10",
+      "title": "Fast Vocabulary: Crop Systems and Managed Landscapes",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Cover agriculture and plant-management vocabulary in a coherent IELTS-style explanatory passage.",
+      "wordCount": 224,
+      "targetWordCount": 34,
+      "coverageRate": 0.971,
+      "density": 0.152
+    },
+    {
+      "id": "fast-only-astronomy-11",
+      "title": "Fast Vocabulary: Space Observation and Cosmic Scale",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover astronomy and measurement vocabulary in an IELTS-style scientific passage.",
+      "wordCount": 204,
+      "targetWordCount": 30,
+      "coverageRate": 0.9,
+      "density": 0.147
+    },
+    {
+      "id": "fast-only-animal-habitat-12",
+      "title": "Fast Vocabulary: Habitat Pressure and Domestication",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Cover remaining animal habitat, genetics, and survival vocabulary in a coherent academic passage.",
+      "wordCount": 214,
+      "targetWordCount": 33,
+      "coverageRate": 0.909,
+      "density": 0.154
+    },
+    {
+      "id": "fast-only-home-daily-13",
+      "title": "Fast Vocabulary: Domestic Space and Household Routines",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover daily-life vocabulary through a coherent passage about home design and routine.",
+      "wordCount": 193,
+      "targetWordCount": 23,
+      "coverageRate": 0.913,
+      "density": 0.119
+    },
+    {
+      "id": "fast-only-economy-basics-14",
+      "title": "Fast Vocabulary: Markets, Trade, and Organised Production",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Cover basic economy and business vocabulary in a readable academic passage.",
+      "wordCount": 193,
+      "targetWordCount": 25,
+      "coverageRate": 0.88,
+      "density": 0.13
+    },
+    {
+      "id": "fast-only-education-core-15",
+      "title": "Fast Vocabulary: Institutions, Aptitude, and Academic Progress",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Cover remaining education-learning vocabulary in a coherent explanatory passage.",
+      "wordCount": 171,
+      "targetWordCount": 22,
+      "coverageRate": 0.909,
+      "density": 0.129
+    },
+    {
+      "id": "fast-only-travel-society-16",
+      "title": "Fast Vocabulary: Movement, Roles, and Awkward Social Space",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Cover remaining society/daily crossover vocabulary in a coherent passage.",
+      "wordCount": 216,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.083
+    },
+    {
+      "id": "fast-only-geometry-17",
+      "title": "Fast Vocabulary: Measurement, Diagrams, and Quantitative Description",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover mathematics, graph, geometry, and measurement vocabulary in an IELTS-style analytical passage.",
+      "wordCount": 204,
+      "targetWordCount": 36,
+      "coverageRate": 1,
+      "density": 0.176
+    },
+    {
+      "id": "fast-only-learning-18",
+      "title": "Fast Vocabulary: Institutions, Learning, and Academic Reputation",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Cover remaining education and knowledge vocabulary in a coherent IELTS-style passage.",
+      "wordCount": 220,
+      "targetWordCount": 36,
+      "coverageRate": 0.972,
+      "density": 0.164
+    },
+    {
+      "id": "fast-only-physics-19",
+      "title": "Fast Vocabulary: Radiation, Force, and Physical Interaction",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover physical science vocabulary in a readable academic passage.",
+      "wordCount": 230,
+      "targetWordCount": 36,
+      "coverageRate": 0.861,
+      "density": 0.157
+    },
+    {
+      "id": "fast-only-reasoning-20",
+      "title": "Fast Vocabulary: Hypothesis, Inference, and Analytical Judgement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover abstract reasoning vocabulary in an IELTS-style academic passage.",
+      "wordCount": 214,
+      "targetWordCount": 42,
+      "coverageRate": 0.905,
+      "density": 0.196
+    },
+    {
+      "id": "fast-only-innovation-repair-21",
+      "title": "Fast Vocabulary: Evaluation, Invention, and Technical Judgement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Repair remaining innovation/evaluation vocabulary with a denser, more exact fast passage.",
+      "wordCount": 210,
+      "targetWordCount": 36,
+      "coverageRate": 0.917,
+      "density": 0.171
+    },
+    {
+      "id": "fast-only-emotion-crisis-22",
+      "title": "Fast Vocabulary: Catastrophe, Response, and Emotional Pressure",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover remaining crisis and emotional-response vocabulary in an academic explanatory style.",
+      "wordCount": 190,
+      "targetWordCount": 19,
+      "coverageRate": 1,
+      "density": 0.1
+    },
+    {
+      "id": "fast-only-marine-bio-23",
+      "title": "Fast Vocabulary: Marine Ecosystems and Microscopic Life",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Cover reef, algae, enzyme, and related life-science vocabulary in a readable fast passage.",
+      "wordCount": 190,
+      "targetWordCount": 21,
+      "coverageRate": 1,
+      "density": 0.111
     }
   ]
 }
