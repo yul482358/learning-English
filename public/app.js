@@ -133,7 +133,14 @@ function showPopoverLoading({ text, mode, rect }) {
 
 function updatePopover(payload, fallbackText) {
   popoverEls.translation.textContent = payload.translation || '暂无翻译';
-  popoverEls.explanation.textContent = payload.explanation || '';
+  const status = payload.source === 'model'
+    ? `Model: ${payload.config?.model || 'custom'} @ ${payload.config?.endpointHost || 'configured API'}`
+    : payload.config?.ready === false
+      ? '未检测到完整模型配置，请检查 Worker Variables/Secrets'
+      : payload.modelError
+        ? `模型调用失败：${payload.modelError}`
+        : '';
+  popoverEls.explanation.textContent = [payload.explanation || '', status].filter(Boolean).join('\n');
   popoverEls.text.textContent = payload.text || payload.word || fallbackText;
   const rect = floating.getBoundingClientRect();
   positionPopoverFromRect({

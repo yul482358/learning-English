@@ -34,6 +34,40 @@ function findVocabularyEntry(word) {
   ) || null;
 }
 
+function getModelConfig(env) {
+  const apiKey = env.OPENAI_API_KEY || env.API_KEY || env.LLM_API_KEY || env.MODEL_API_KEY;
+  const baseUrl = env.OPENAI_BASE_URL || env.API_BASE_URL || env.BASE_URL || env.LLM_BASE_URL || env.MODEL_BASE_URL;
+  const model = env.OPENAI_MODEL || env.MODEL || env.MODEL_NAME || env.LLM_MODEL;
+  const endpoint = env.OPENAI_ENDPOINT || env.API_ENDPOINT || env.LLM_ENDPOINT;
+
+  return {
+    apiKey,
+    baseUrl,
+    model,
+    endpoint: endpoint || (baseUrl ? `${baseUrl.replace(/\/$/, '')}/chat/completions` : ''),
+    hasApiKey: Boolean(apiKey),
+    hasBaseUrl: Boolean(baseUrl || endpoint),
+    hasModel: Boolean(model),
+  };
+}
+
+function modelConfigStatus(env) {
+  const config = getModelConfig(env);
+  return {
+    ready: config.hasApiKey && config.hasBaseUrl && config.hasModel,
+    hasApiKey: config.hasApiKey,
+    hasBaseUrl: config.hasBaseUrl,
+    hasModel: config.hasModel,
+    endpointHost: config.endpoint ? new URL(config.endpoint).host : null,
+    supportedVariableNames: {
+      apiKey: ['OPENAI_API_KEY', 'API_KEY', 'LLM_API_KEY', 'MODEL_API_KEY'],
+      baseUrl: ['OPENAI_BASE_URL', 'API_BASE_URL', 'BASE_URL', 'LLM_BASE_URL', 'MODEL_BASE_URL'],
+      model: ['OPENAI_MODEL', 'MODEL', 'MODEL_NAME', 'LLM_MODEL'],
+      endpoint: ['OPENAI_ENDPOINT', 'API_ENDPOINT', 'LLM_ENDPOINT'],
+    },
+  };
+}
+
 async function translateWord({ env, body }) {
   const rawText = body?.text ?? body?.word;
   const word = typeof rawText === 'string' ? rawText.trim() : '';
@@ -52,8 +86,17 @@ async function translateWord({ env, body }) {
     source: entry ? 'local-fallback' : 'missing',
   };
 
-  if (!env.OPENAI_API_KEY || !env.OPENAI_BASE_URL || !env.OPENAI_MODEL) {
-    return json(fallback);
+  const modelConfig = getModelConfig(env);
+  if (!modelConfig.hasApiKey || !modelConfig.hasBaseUrl || !modelConfig.hasModel) {
+    return json({
+      ...fallback,
+      config: {
+        ready: false,
+        hasApiKey: modelConfig.hasApiKey,
+        hasBaseUrl: modelConfig.hasBaseUrl,
+        hasModel: modelConfig.hasModel,
+      },
+    });
   }
 
   const systemPrompt = [
@@ -80,14 +123,14 @@ async function translateWord({ env, body }) {
   };
 
   try {
-    const response = await fetch(`${env.OPENAI_BASE_URL.replace(/\/$/, '')}/chat/completions`, {
+    const response = await fetch(modelConfig.endpoint, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `Bearer ${env.OPENAI_API_KEY}`,
+        authorization: `Bearer ${modelConfig.apiKey}`,
       },
       body: JSON.stringify({
-        model: env.OPENAI_MODEL,
+        model: modelConfig.model,
         temperature: 0.2,
         messages: [
           { role: 'system', content: systemPrompt },
@@ -98,7 +141,12 @@ async function translateWord({ env, body }) {
     });
 
     if (!response.ok) {
-      return json({ ...fallback, modelError: `HTTP ${response.status}` });
+      return json({
+        ...fallback,
+        source: 'model-error',
+        modelError: `HTTP ${response.status}`,
+        config: { ready: true, endpointHost: new URL(modelConfig.endpoint).host, model: modelConfig.model },
+      });
     }
 
     const payload = await response.json();
@@ -114,10 +162,16 @@ async function translateWord({ env, body }) {
       explanation: parsed.explanation || fallback.explanation,
       pos: parsed.pos || fallback.pos,
       source: 'model',
+      config: { ready: true, endpointHost: new URL(modelConfig.endpoint).host, model: modelConfig.model },
       dictionary: entry,
     });
   } catch (error) {
-    return json({ ...fallback, modelError: String(error) });
+    return json({
+      ...fallback,
+      source: 'model-error',
+      modelError: String(error),
+      config: { ready: true, endpointHost: new URL(modelConfig.endpoint).host, model: modelConfig.model },
+    });
   }
 }
 
@@ -131,6 +185,10 @@ export default {
 
     if (url.pathname === '/api/app-data') {
       return json(appData);
+    }
+
+    if (url.pathname === '/api/model-status') {
+      return json(modelConfigStatus(env));
     }
 
     if (url.pathname === '/api/articles') {
