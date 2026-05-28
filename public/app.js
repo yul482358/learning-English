@@ -81,7 +81,7 @@ function sentenceForText(articleContent, selectedText) {
 function sentenceForWord(articleContent, word) {
   const sentences = articleContent.split(/(?<=[.!?])\s+/);
   const normalized = normalizeWord(word);
-  return sentences.find((sentence) => normalizeWord(sentence).includes(normalized)) || 'Context unavailable.';
+  return sentences.find((sentence) => normalizeWord(sentence).includes(normalized)) || '暂时没有找到上下文。';
 }
 
 function currentArticle() {
@@ -153,9 +153,9 @@ function showPopoverLoading({ text, mode, rect }) {
 function updatePopover(payload, fallbackText) {
   popoverEls.translation.textContent = payload.translation || '暂无翻译';
   const status = payload.source === 'model'
-    ? `模型：${payload.config?.model || 'custom'} @ ${payload.config?.endpointHost || 'configured API'}`
+    ? `模型：${payload.config?.model || '已配置模型'} @ ${payload.config?.endpointHost || '已配置接口'}`
     : payload.config?.ready === false
-      ? '未检测到完整模型配置，请检查 Worker Variables / Secrets'
+      ? '未检测到完整模型配置，请检查 Cloudflare 的变量与机密配置'
       : payload.modelError
         ? `模型调用失败：${payload.modelError}`
         : '';
@@ -278,7 +278,6 @@ async function inspectWord(article, word, button) {
   const context = sentenceForWord(article.content, text);
   setInspectorLoading(text, context, entry, 'word');
   showPopoverLoading({ text, mode: 'word', rect: button.getBoundingClientRect() });
-  setActiveView('inspector');
 
   try {
     const payload = await requestTranslation({ text, context, mode: 'word' });

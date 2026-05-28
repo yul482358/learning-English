@@ -28,13 +28,20 @@ npm run dev
 
 ## Environment variables for translation
 
-Set these with Wrangler before deployment. The preferred names are:
+Set these in Cloudflare Workers **Production / Preview environment variables** or with Wrangler. Recommended:
 
 ```bash
 npx wrangler secret put OPENAI_API_KEY
 npx wrangler secret put OPENAI_BASE_URL
 npx wrangler secret put OPENAI_MODEL
 ```
+
+Important:
+
+- `OPENAI_API_KEY` can be a **Secret**.
+- `OPENAI_BASE_URL` and `OPENAI_MODEL` should usually be added as **plain text variables**, not secrets.
+- If Cloudflare auto-created a new Worker/Version from Git deploy and the text variables disappeared, re-add them under the deployed Worker project's **Settings → Variables and Secrets**, separately for Production/Preview if needed.
+- This repository does **not** define `OPENAI_BASE_URL` or `OPENAI_MODEL` inside `wrangler.jsonc`, so the code itself is not overwriting them.
 
 The Worker also accepts these aliases if your Cloudflare dashboard already uses custom names:
 
