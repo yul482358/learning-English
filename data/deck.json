@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-05-28T02:13:45.366792+00:00",
+  "date": "2026-05-28",
+  "title": "2026-05-28 Active English Memorization Deck",
+  "mode": "memorize → shadow → transform → recap",
+  "items": [
+    {
+      "id": "make-time-for",
+      "level": "Must memorize",
+      "pattern": "make time for + noun / doing",
+      "meaning": "为重要的事留出时间",
+      "sentences": [
+        "I need to make time for English every day.",
+        "I should make time for studying English after work.",
+        "I want to make time for things that really matter."
+      ],
+      "transform": [
+        "I need to make time for reading every night.",
+        "I should make time for speaking practice every day."
+      ],
+      "prompt": "Use make time for to describe one real plan for tonight.",
+      "tags": [
+        "collocation",
+        "gerund"
+      ]
+    },
+    {
+      "id": "make-it-easier",
+      "level": "Must memorize",
+      "pattern": "make it easier by doing...",
+      "meaning": "通过做某事让任务更容易",
+      "sentences": [
+        "I can make it easier by starting small.",
+        "I can make English learning easier by writing three simple sentences every day.",
+        "I can make it easier by putting it into my daily plan."
+      ],
+      "transform": [
+        "I can make reading easier by reading only one page first.",
+        "I can make speaking easier by recording one short answer."
+      ],
+      "prompt": "Say one thing you can do to make English easier.",
+      "tags": [
+        "sentence pattern",
+        "naturalness"
+      ]
+    },
+    {
+      "id": "not-that-just",
+      "level": "Must memorize",
+      "pattern": "It’s not that..., I just...",
+      "meaning": "不是……，只是……",
+      "sentences": [
+        "It’s not that I don’t have time. I just haven’t made a clear plan.",
+        "It’s not that I don’t want to learn English. I just don’t use it enough.",
+        "It’s not that the task is too hard. I just need to start with a smaller step."
+      ],
+      "transform": [
+        "It’s not that I don’t like reading. I just haven’t made it part of my daily routine.",
+        "It’s not that I can’t speak English. I just need more practice."
+      ],
+      "prompt": "Use It’s not that..., I just... to explain your English-learning problem.",
+      "tags": [
+        "conversation chunk",
+        "natural expression"
+      ]
+    },
+    {
+      "id": "keep-regular-habit",
+      "level": "Core review",
+      "pattern": "keep doing / keep a regular habit",
+      "meaning": "持续做某事 / 保持规律习惯",
+      "sentences": [
+        "I want to keep studying every day.",
+        "I need to keep a regular study habit.",
+        "If I keep doing a little every day, I will improve."
+      ],
+      "transform": [
+        "I want to keep reading simple English stories.",
+        "I need to keep practicing useful chunks."
+      ],
+      "prompt": "Use keep doing to describe a habit you want to build.",
+      "tags": [
+        "verb pattern",
+        "habit"
+      ]
+    },
+    {
+      "id": "remember-short-time",
+      "level": "Core review",
+      "pattern": "remember it for a short time",
+      "meaning": "短时间记住，而不是“short memory”",
+      "sentences": [
+        "I may remember it for a short time, but I will forget it later.",
+        "If I only study once, I can only remember it for a short time.",
+        "A small daily system helps me remember things for longer."
+      ],
+      "transform": [
+        "If I only read a word once, I may remember it for a short time.",
+        "If I use it in my own sentence, I can remember it for longer."
+      ],
+      "prompt": "Explain why using a sentence helps you remember a word for longer.",
+      "tags": [
+        "naturalness",
+        "memory"
+      ]
+    },
+    {
+      "id": "will-base-verb",
+      "level": "Grammar automation",
+      "pattern": "will + base verb",
+      "meaning": "will 后面直接接动词原形，不加 to",
+      "sentences": [
+        "I will read one short English story tonight.",
+        "I will watch one American video and listen to how people speak.",
+        "I will write three sentences before I go to bed."
+      ],
+      "transform": [
+        "I will practice speaking for five minutes.",
+        "I will memorize useful chunks, not only single words."
+      ],
+      "prompt": "Write three future-plan sentences without using will to.",
+      "tags": [
+        "grammar automation"
+      ]
+    },
+    {
+      "id": "memorize-words",
+      "level": "Word form",
+      "pattern": "memorize words / memory is a noun",
+      "meaning": "memorize 是动词，memory 是名词",
+      "sentences": [
+        "I don’t want to only memorize words.",
+        "I want to memorize useful chunks and use them in real sentences.",
+        "Good memory helps, but active use matters more."
+      ],
+      "transform": [
+        "I memorize better when I use the word in my own sentence.",
+        "I don’t just memorize; I practice using the words."
+      ],
+      "prompt": "Explain why memorizing words is not enough.",
+      "tags": [
+        "word form"
+      ]
+    },
+    {
+      "id": "every-day-everyday",
+      "level": "Word form",
+      "pattern": "every day vs everyday",
+      "meaning": "every day = 每天；everyday = 日常的",
+      "sentences": [
+        "I study English every day.",
+        "I want to make English part of my everyday life.",
+        "A small everyday habit can bring a big change over time."
+      ],
+      "transform": [
+        "I read English every day.",
+        "I use simple English in everyday situations."
+      ],
+      "prompt": "Make two sentences: one with every day and one with everyday.",
+      "tags": [
+        "word form"
+      ]
+    }
+  ],
+  "recap_questions": [
+    "Which sentence feels most useful today?",
+    "Can you say it without looking?",
+    "Can you change it to your own real situation?"
+  ],
+  "source_doc": "https://bytedance.feishu.cn/docx/OvqGdhol4oBbshxJM9ocx4eAnZe"
+}

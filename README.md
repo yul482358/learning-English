@@ -1,21 +1,5 @@
-# Ogden English Learning Dashboard
+# English Memory Deck
 
-Static dashboard generated from `/opt/data/ogden/learning_profile`.
+A mobile-first memorization site generated from the private Ogden learning profile.
 
-Deploy with Cloudflare Pages as a static site.
-
-## Local preview
-
-```bash
-python3 -m http.server 8080
-```
-
-## Data sync
-
-```bash
-python3 scripts/sync_learning_data.py
-```
-
-## Azure TTS
-
-Do not commit secrets. Copy `.env.example` to `.env` locally and fill in keys.
+Flow: memorize → listen/shadow → transform → recap with Hermes.

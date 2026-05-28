@@ -1,31 +1,57 @@
-const STORE_KEY='ogden850.status.v2';
-const OLD_STORE_KEYS=['ogden850.status.v1'];
-const SESSION_KEY='ogden850.session.v1';
-const getJSON=p=>fetch(p).then(r=>r.json());
-function el(tag,cls,html){const e=document.createElement(tag); if(cls)e.className=cls; if(html!==undefined)e.innerHTML=html; return e}
-function escapeText(s=''){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-function safeJS(s=''){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ')}
-function getStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'{}')}catch{return {}}}
-function setStore(s){localStorage.setItem(STORE_KEY,JSON.stringify(s))}
-function normalizeStatus(raw){
-  if(!raw)return 'new';
-  if(typeof raw==='string')return ({known:'good',learning:'hard',new:'new',good:'good',hard:'hard',again:'again'}[raw]||'new');
-  if(typeof raw==='object')return normalizeStatus(raw.status);
-  return 'new';
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const state = { deck: null, done: JSON.parse(localStorage.getItem('done-items') || '{}') };
+
+function audioPath(id){ return `audio/${id}.mp3`; }
+function saveDone(){ localStorage.setItem('done-items', JSON.stringify(state.done)); }
+
+function render(){
+  const q = $('#search').value.trim().toLowerCase();
+  const f = $('#filter').value;
+  const cards = $('#cards');
+  cards.innerHTML = '';
+  const tpl = $('#card-template');
+  const items = state.deck.items.filter(it => {
+    const hay = JSON.stringify(it).toLowerCase();
+    return (f === 'all' || it.level === f) && (!q || hay.includes(q));
+  });
+  for(const item of items){
+    const node = tpl.content.cloneNode(true);
+    const card = $('.card', node);
+    if(state.done[item.id]) card.classList.add('done-card');
+    $('.badge', node).textContent = item.level;
+    $('.pattern', node).textContent = item.pattern;
+    $('.meaning', node).textContent = item.meaning;
+    $('.audio', node).src = audioPath(item.id);
+    const done = $('.done', node);
+    done.textContent = state.done[item.id] ? '已背 ✓' : '标记已背';
+    done.classList.toggle('active', !!state.done[item.id]);
+    done.addEventListener('click', () => { state.done[item.id] = !state.done[item.id]; saveDone(); render(); });
+    const box = $('.sentences', node);
+    item.sentences.forEach((s, i) => {
+      const div = document.createElement('div');
+      div.className = 'sentence';
+      div.innerHTML = `<span class="num">${i+1}</span><p class="ghost">${s}</p><button type="button">显示 / 隐藏</button>`;
+      $('button', div).addEventListener('click', () => $('p', div).classList.toggle('reveal'));
+      box.appendChild(div);
+    });
+    const ul = $('.transform', node);
+    item.transform.forEach(s => { const li=document.createElement('li'); li.textContent=s; ul.appendChild(li); });
+    $('.prompt', node).textContent = '主动输出：' + item.prompt;
+    const tags = $('.tags', node);
+    item.tags.forEach(t => { const span=document.createElement('span'); span.className='tag'; span.textContent=t; tags.appendChild(span); });
+    cards.appendChild(node);
+  }
 }
-function getStatus(word){return normalizeStatus(getStore()[word])}
-function setWordResult(word,result){const s=getStore(); const oldRaw=s[word]||{}; const old=(oldRaw&&typeof oldRaw==='object')?oldRaw:{status:normalizeStatus(oldRaw),count:0}; const now=new Date().toISOString(); s[word]={...old,status:result,last_seen:now,count:(old.count||0)+1}; setStore(s)}
-function speak(text,audioPath){if(audioPath){const a=new Audio(audioPath);a.play().catch(()=>synth(text));}else synth(text)}
-function synth(text){if(!('speechSynthesis'in window))return alert('Speech synthesis not available');const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.86;speechSynthesis.cancel();speechSynthesis.speak(u)}
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
-const catNames={op:'Operations',gt:'General Things',pt:'Picturable Things',qg:'Qualities General',qo:'Qualities Opposites'};
-let momoWords=[],momoDeck=[],momoIndex=0,momoRevealed=false,momoSession={good:0,hard:0,again:0,total:0};
-function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
-function buildDeck(words){const cat=document.getElementById('deck-cat')?.value||'';const size=parseInt(document.getElementById('deck-size')?.value||'20',10);let filtered=words.filter(w=>!cat||w.category===cat);filtered.sort((a,b)=>{const sa=getStatus(a.word),sb=getStatus(b.word);const rank={again:0,hard:1,new:2,good:3};return (rank[sa]??2)-(rank[sb]??2)});return shuffle(filtered.slice(0,size))}
-function currentWord(){return momoDeck[momoIndex]}
-function renderMomo(){const w=currentWord();if(!w){document.getElementById('card-word').textContent='No words';return}document.getElementById('card-category').textContent=w.category_en||catNames[w.category]||'';document.getElementById('card-state').textContent=momoRevealed?'答案已显示':'点击卡片看答案';document.getElementById('card-word').textContent=w.word;document.getElementById('card-ipa').textContent=w.ipa_us||w.ipa_uk||'';document.getElementById('card-zh').textContent=w.zh||'';document.getElementById('card-def').textContent=w.english_definition||'';document.getElementById('card-example-en').textContent=w.example_en||'';document.getElementById('card-example-zh').textContent=w.example_zh||'';document.getElementById('answer-block').classList.toggle('hidden',!momoRevealed);document.getElementById('progress-text').textContent=`${Math.min(momoIndex+1,momoDeck.length)} / ${momoDeck.length}`;document.getElementById('learn-bar-fill').style.width=momoDeck.length?`${Math.round((momoIndex)/momoDeck.length*100)}%`:'0%';document.getElementById('known-count').textContent=momoSession.good;document.getElementById('hard-count').textContent=momoSession.hard;document.getElementById('again-count').textContent=momoSession.again}
-function answerMomo(result){const w=currentWord();if(!w)return;if(!momoRevealed){momoRevealed=true;renderMomo();return}setWordResult(w.word,result);momoSession[result==='good'?'good':result==='hard'?'hard':'again']++;if(result==='again'||result==='hard'){momoDeck.push(w)}momoIndex++;momoRevealed=false;if(momoIndex>=momoDeck.length){document.getElementById('memory-card').innerHTML=`<div class="finish-card"><h2>今天这组完成了</h2><p>认识 ${momoSession.good} · 模糊 ${momoSession.hard} · 忘记 ${momoSession.again}</p><button class="primary-btn" onclick="location.reload()">再来一组</button></div>`;document.getElementById('learn-bar-fill').style.width='100%';return}renderMomo()}
-async function loadMomoHome(){momoWords=await getJSON('data/words.json');const cat=document.getElementById('deck-cat');const size=document.getElementById('deck-size');function reset(){momoDeck=buildDeck(momoWords);momoIndex=0;momoRevealed=false;momoSession={good:0,hard:0,again:0,total:momoDeck.length};renderMomo()}cat.onchange=reset;size.onchange=reset;document.getElementById('memory-card').onclick=e=>{if(e.target.closest('button'))return;momoRevealed=!momoRevealed;renderMomo()};document.getElementById('speak-word').onclick=e=>{e.stopPropagation();const w=currentWord();if(w)speak(`${w.word}. ${w.example_en||''}`)};document.getElementById('again-btn').onclick=()=>answerMomo('again');document.getElementById('hard-btn').onclick=()=>answerMomo('hard');document.getElementById('good-btn').onclick=()=>answerMomo('good');reset()}
-function statusBadge(status){const text={good:'认识',hard:'模糊',again:'忘记',new:'未学'}[status]||status;return `<span class="badge status-${status}">${text}</span>`}
-async function loadWords(){const words=await getJSON('data/words.json');const root=document.getElementById('word-list');const search=document.getElementById('word-search');const cat=document.getElementById('word-cat');const status=document.getElementById('word-status');if(status){status.innerHTML='<option value="">All status</option><option value="new">未学</option><option value="again">忘记</option><option value="hard">模糊</option><option value="good">认识</option>'}function render(){const q=(search.value||'').toLowerCase();const c=cat.value;const st=status?.value||'';let list=words.filter(w=>(!c||w.category===c)&&(!st||getStatus(w.word)===st)&&(!q||[w.word,w.zh,w.english_definition,w.example_en,w.example_zh].join(' ').toLowerCase().includes(q))).slice(0,300);root.innerHTML='';list.forEach(w=>{const current=getStatus(w.word);root.appendChild(el('article','word-card',`<div class="word-head"><div><div class="word">${escapeText(w.word)}</div><div class="muted">${escapeText(w.category_en)} · ${escapeText(w.ipa_us||'')}</div></div><button class="speak" onclick="speak('${safeJS(w.word+' . '+(w.example_en||''))}')">▶</button></div><p><b>${escapeText(w.zh)}</b></p><p>${escapeText(w.english_definition||'')}</p><p class="example">${escapeText(w.example_en||'')}<br><span class="muted">${escapeText(w.example_zh||'')}</span></p><div class="word-status-row">${statusBadge(current)}<button onclick="setWordResult('${safeJS(w.word)}','hard');loadWords()" class="mini-btn">模糊</button><button onclick="setWordResult('${safeJS(w.word)}','good');loadWords()" class="mini-btn">认识</button><button onclick="setWordResult('${safeJS(w.word)}','again');loadWords()" class="mini-btn">忘记</button></div>`))})}search.oninput=render;cat.onchange=render;if(status)status.onchange=render;render()}
-async function loadStats(){const words=await getJSON('data/words.json');const counts={new:0,again:0,hard:0,good:0};words.forEach(w=>counts[getStatus(w.word)]++);const cards=document.getElementById('stats-cards');[['Total',words.length,'全部单词'],['New',counts.new,'未学'],['Again',counts.again,'忘记'],['Hard',counts.hard,'模糊'],['Good',counts.good,'认识']].forEach(([label,num,sub])=>cards.appendChild(el('div','card',`<div><div class="num">${num}</div><div class="label">${label}</div></div><div class="muted">${sub}</div>`)));const byCat={};words.forEach(w=>{byCat[w.category]??={total:0,good:0,hard:0,again:0};byCat[w.category].total++;byCat[w.category][getStatus(w.word)]??=0;byCat[w.category][getStatus(w.word)]++});document.getElementById('category-stats').innerHTML=Object.entries(byCat).map(([c,v])=>{const pct=Math.round((v.good||0)/v.total*100);return `<div class="progress-row"><div><b>${catNames[c]||c}</b><span class="muted"> ${v.good||0}/${v.total} known · ${v.hard||0} hard · ${v.again||0} again</span></div><div class="bar"><span style="width:${pct}%"></span></div></div>`}).join('');document.getElementById('clear-local').onclick=()=>{if(confirm('Clear all local word status?')){localStorage.removeItem(STORE_KEY);location.reload()}}}
+
+async function init(){
+  const res = await fetch('data/deck.json', {cache:'no-store'});
+  state.deck = await res.json();
+  $('#date').textContent = state.deck.date;
+  $('#subtitle').textContent = `${state.deck.title} · ${state.deck.mode}`;
+  $('#search').addEventListener('input', render);
+  $('#filter').addEventListener('change', render);
+  render();
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+init().catch(err => { document.body.innerHTML = `<pre style="padding:20px;color:white">Failed to load deck: ${err}</pre>`; });

@@ -1,7 +1,4 @@
-node_modules/
-test_load.js
 .env
-*.log
+node_modules
 .DS_Store
-__pycache__/
-*.pyc
+*.log
