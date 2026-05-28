@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-05-28T10:02:37.703Z",
+  "generatedAt": "2026-05-28T11:33:19.645Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 5,
-    "avgCoverageRate": 1
+    "articleCount": 6,
+    "avgCoverageRate": 0.76
   },
+  "modes": [
+    {
+      "id": "fast",
+      "label": "Fast Vocabulary",
+      "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
+      "targetRange": "30-60 target words",
+      "densityHint": "7%-16% density",
+      "articleCount": 2
+    },
+    {
+      "id": "core",
+      "label": "Balanced Practice",
+      "description": "Mid-density articles balancing reading flow and vocabulary retention.",
+      "targetRange": "18-35 target words",
+      "densityHint": "3.5%-8% density",
+      "articleCount": 2
+    },
+    {
+      "id": "read",
+      "label": "Reading Habit",
+      "description": "Lower-density passages focused on sustained reading and natural context.",
+      "targetRange": "8-18 target words",
+      "densityHint": "1.2%-3.5% density",
+      "articleCount": 2
+    }
+  ],
   "themes": [
     {
       "id": "environment-climate",
@@ -34,54 +60,82 @@
   ],
   "articleCards": [
     {
-      "id": "env-01",
-      "title": "Climate Systems, Extreme Weather, and Human Society",
+      "id": "env-fast-01",
+      "title": "Fast Track: Climate Risk and Adaptation",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
       "theme": "environment-climate",
       "themeLabel": "Environment",
-      "summary": "Explain how climate systems and extreme weather influence human society.",
-      "wordCount": 665,
-      "targetWordCount": 10,
-      "coverageRate": 1
+      "summary": "Rapidly acquire core environment vocabulary through a dense, high-support passage.",
+      "wordCount": 346,
+      "targetWordCount": 36,
+      "coverageRate": 0.722,
+      "density": 0.104
     },
     {
-      "id": "geo-01",
-      "title": "Inside the Earth: Structure, Measurement, and Human Understanding",
-      "theme": "geography-earth",
-      "themeLabel": "Earth Science",
-      "summary": "Describe the structure of the Earth and how humans study it.",
-      "wordCount": 666,
-      "targetWordCount": 10,
-      "coverageRate": 1
-    },
-    {
-      "id": "health-01",
-      "title": "Lifestyle, Nutrition, and the Demands of Modern Health Systems",
+      "id": "health-fast-01",
+      "title": "Fast Track: Nutrition, Disease, and Prevention",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
       "theme": "health-biology",
       "themeLabel": "Health",
-      "summary": "Explain the relationship between lifestyle, nutrition and modern health systems.",
-      "wordCount": 633,
-      "targetWordCount": 10,
-      "coverageRate": 1
+      "summary": "Build a dense first-pass vocabulary set for health, nutrition, and public care.",
+      "wordCount": 312,
+      "targetWordCount": 34,
+      "coverageRate": 0.765,
+      "density": 0.109
     },
     {
-      "id": "edu-01",
-      "title": "How Universities Shape the Habits of Thought",
+      "id": "edu-core-01",
+      "title": "Balanced Practice: Learning How to Think on Campus",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
       "theme": "education-learning",
       "themeLabel": "Education",
-      "summary": "Discuss how universities shape learning habits and academic thinking.",
-      "wordCount": 697,
-      "targetWordCount": 10,
-      "coverageRate": 1
+      "summary": "Balance vocabulary learning with a natural academic passage about university study.",
+      "wordCount": 290,
+      "targetWordCount": 24,
+      "coverageRate": 0.75,
+      "density": 0.083
     },
     {
-      "id": "sci-01",
-      "title": "From Scientific Theory to Everyday Technology",
+      "id": "sci-core-01",
+      "title": "Balanced Practice: From Theory to Innovation",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
       "theme": "science-technology",
       "themeLabel": "Science & Tech",
-      "summary": "Show how scientific ideas move from theory to practical technology.",
-      "wordCount": 690,
+      "summary": "Use a medium-density article to connect scientific vocabulary with practical technology.",
+      "wordCount": 251,
+      "targetWordCount": 22,
+      "coverageRate": 0.773,
+      "density": 0.088
+    },
+    {
+      "id": "env-read-01",
+      "title": "Reading Habit: Living with Climate Uncertainty",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Train sustained reading while encountering a modest number of environment words in context.",
+      "wordCount": 311,
+      "targetWordCount": 12,
+      "coverageRate": 0.75,
+      "density": 0.039
+    },
+    {
+      "id": "edu-read-01",
+      "title": "Reading Habit: Why University Culture Matters",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Develop reading stamina with a more natural education passage and lighter vocabulary load.",
+      "wordCount": 278,
       "targetWordCount": 10,
-      "coverageRate": 1
+      "coverageRate": 0.8,
+      "density": 0.036
     }
   ]
 }

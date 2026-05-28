@@ -12,9 +12,9 @@
       <header class="hero">
         <div>
           <p class="eyebrow">IELTS Reading Lab</p>
-          <h1>Read elegant IELTS-style passages built from your vocabulary book.</h1>
+          <h1>Build IELTS vocabulary with fast drills, balanced practice, and reading-habit passages.</h1>
           <p class="hero-copy">
-            Explore themed reading passages, click vocabulary in context, and build intuition with bilingual support.
+            Switch between dense word-learning passages and smoother reading training so the site matches your study goal.
           </p>
         </div>
         <div class="hero-stats" id="hero-stats">
@@ -24,16 +24,23 @@
         </div>
       </header>
 
+      <section class="mode-strip" id="mode-strip"></section>
+
       <main class="app-grid">
         <section class="library-panel">
-          <div class="panel-header">
+          <div class="panel-header panel-header-stack">
             <div>
               <h2>Article Library</h2>
-              <p>Choose a passage and read with focused vocabulary support.</p>
+              <p>Choose a study mode, then pick a themed passage with the right vocabulary density.</p>
             </div>
-            <select id="theme-filter" class="theme-filter">
-              <option value="all">All themes</option>
-            </select>
+            <div class="filters-row">
+              <select id="mode-filter" class="theme-filter">
+                <option value="all">All modes</option>
+              </select>
+              <select id="theme-filter" class="theme-filter">
+                <option value="all">All themes</option>
+              </select>
+            </div>
           </div>
           <div id="article-list" class="article-list"></div>
         </section>
@@ -41,7 +48,7 @@
         <section class="reader-panel">
           <div id="reader-empty" class="reader-empty">
             <h2>Pick an article to begin</h2>
-            <p>Each passage is built to cover target IELTS vocabulary in a natural academic style.</p>
+            <p>Fast mode helps you absorb many words quickly, while reading mode keeps the flow more natural.</p>
           </div>
           <article id="reader-article" class="reader-article hidden">
             <div class="reader-header">
@@ -51,8 +58,10 @@
                 <p id="reader-summary" class="reader-summary"></p>
               </div>
               <div class="reader-badges">
+                <span id="reader-mode" class="badge"></span>
                 <span id="reader-wordcount" class="badge"></span>
                 <span id="reader-targets" class="badge"></span>
+                <span id="reader-density" class="badge"></span>
               </div>
             </div>
             <div id="reader-content" class="reader-content"></div>

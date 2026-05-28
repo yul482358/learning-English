@@ -13,6 +13,8 @@ const els = {
   statArticles: document.getElementById('stat-articles'),
   statVocab: document.getElementById('stat-vocab'),
   statCoverage: document.getElementById('stat-coverage'),
+  modeStrip: document.getElementById('mode-strip'),
+  modeFilter: document.getElementById('mode-filter'),
   themeFilter: document.getElementById('theme-filter'),
   articleList: document.getElementById('article-list'),
   readerEmpty: document.getElementById('reader-empty'),
@@ -20,8 +22,10 @@ const els = {
   readerTheme: document.getElementById('reader-theme'),
   readerTitle: document.getElementById('reader-title'),
   readerSummary: document.getElementById('reader-summary'),
+  readerMode: document.getElementById('reader-mode'),
   readerWordcount: document.getElementById('reader-wordcount'),
   readerTargets: document.getElementById('reader-targets'),
+  readerDensity: document.getElementById('reader-density'),
   readerContent: document.getElementById('reader-content'),
   inspectWord: document.getElementById('inspect-word'),
   inspectPos: document.getElementById('inspect-pos'),
@@ -78,6 +82,10 @@ function sentenceForWord(articleContent, word) {
 
 function currentArticle() {
   return state.articleById.get(state.activeArticleId) || null;
+}
+
+function activeModeMeta(modeId) {
+  return state.appData?.modes?.find((mode) => mode.id === modeId) || null;
 }
 
 function setInspectorLoading(word, context, entry, mode = 'word') {
@@ -169,6 +177,43 @@ function renderStats() {
   els.statCoverage.textContent = `${Math.round(state.appData.stats.avgCoverageRate * 100)}%`;
 }
 
+function renderModeCards() {
+  els.modeStrip.innerHTML = '';
+  for (const mode of state.appData.modes) {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = `mode-card ${els.modeFilter.value === mode.id ? 'active' : ''}`;
+    card.innerHTML = `
+      <p class="eyebrow">${mode.label}</p>
+      <h3>${mode.articleCount} articles</h3>
+      <p>${mode.description}</p>
+      <div class="card-meta">
+        <span class="badge">${mode.targetRange}</span>
+        <span class="badge">${mode.densityHint}</span>
+      </div>
+    `;
+    card.addEventListener('click', () => {
+      els.modeFilter.value = mode.id;
+      renderModeCards();
+      renderArticleList();
+      const first = visibleArticleCards()[0];
+      if (first) renderArticle(first.id);
+    });
+    els.modeStrip.appendChild(card);
+  }
+}
+
+function renderModeOptions() {
+  const fragment = document.createDocumentFragment();
+  for (const mode of state.appData.modes) {
+    const option = document.createElement('option');
+    option.value = mode.id;
+    option.textContent = mode.label;
+    fragment.appendChild(option);
+  }
+  els.modeFilter.appendChild(fragment);
+}
+
 function renderThemeOptions() {
   const fragment = document.createDocumentFragment();
   for (const theme of state.appData.themes) {
@@ -180,10 +225,20 @@ function renderThemeOptions() {
   els.themeFilter.appendChild(fragment);
 }
 
-function renderArticleList() {
+function visibleArticleCards() {
   const activeTheme = els.themeFilter.value;
+  const activeMode = els.modeFilter.value;
+  return state.appData.articleCards.filter((card) => (activeTheme === 'all' || card.theme === activeTheme) && (activeMode === 'all' || card.mode === activeMode));
+}
+
+function renderArticleList() {
   els.articleList.innerHTML = '';
-  const cards = state.appData.articleCards.filter((card) => activeTheme === 'all' || card.theme === activeTheme);
+  const cards = visibleArticleCards();
+
+  if (!cards.length) {
+    els.articleList.innerHTML = '<p>No passages match this mode and theme yet.</p>';
+    return;
+  }
 
   for (const card of cards) {
     const button = document.createElement('button');
@@ -191,13 +246,13 @@ function renderArticleList() {
     button.className = `article-card ${card.id === state.activeArticleId ? 'active' : ''}`;
     button.innerHTML = `
       <div>
-        <p class="eyebrow">${card.themeLabel}</p>
+        <p class="eyebrow">${card.modeLabel} · ${card.themeLabel}</p>
         <h3>${card.title}</h3>
         <p>${card.summary}</p>
         <div class="card-meta">
           <span class="badge">${card.wordCount} words</span>
           <span class="badge">${card.targetWordCount} targets</span>
-          <span class="badge">${Math.round(card.coverageRate * 100)}% coverage</span>
+          <span class="badge">${Math.round(card.density * 100)}% density</span>
         </div>
       </div>`;
     button.addEventListener('click', () => renderArticle(card.id));
@@ -248,8 +303,7 @@ async function translateSelection() {
   const rect = selectionRect();
   if (!rect) return;
 
-  const wordTotal = countWords(selectedText);
-  const mode = wordTotal > 5 ? 'sentence' : 'word';
+  const mode = countWords(selectedText) > 5 ? 'sentence' : 'word';
   const text = mode === 'sentence' ? sentenceForText(article.content, selectedText) : selectedText;
   const context = mode === 'sentence' ? text : sentenceForWord(article.content, text);
   const entry = mode === 'word' ? state.vocabByWord.get(normalizeWord(text)) : null;
@@ -280,9 +334,7 @@ function scheduleSelectionTranslation() {
 
 function decorateParagraph(article, paragraph) {
   const wrapper = document.createElement('p');
-  const targetWords = article.targetWords
-    .slice()
-    .sort((a, b) => b.length - a.length);
+  const targetWords = article.targetWords.slice().sort((a, b) => b.length - a.length);
 
   let index = 0;
   while (index < paragraph.length) {
@@ -314,20 +366,36 @@ function decorateParagraph(article, paragraph) {
   return wrapper;
 }
 
+function ensureArticleVisibleOrFallback() {
+  const visibleIds = new Set(visibleArticleCards().map((card) => card.id));
+  if (visibleIds.has(state.activeArticleId)) return;
+  const first = visibleArticleCards()[0];
+  if (first) {
+    renderArticle(first.id);
+  } else {
+    state.activeArticleId = null;
+    els.readerArticle.classList.add('hidden');
+    els.readerEmpty.classList.remove('hidden');
+  }
+}
+
 function renderArticle(articleId) {
   const article = state.articleById.get(articleId);
   if (!article) return;
   state.activeArticleId = articleId;
   hidePopover();
   renderArticleList();
+  renderModeCards();
 
   els.readerEmpty.classList.add('hidden');
   els.readerArticle.classList.remove('hidden');
-  els.readerTheme.textContent = state.appData.themes.find((theme) => theme.id === article.theme)?.label || article.theme;
+  els.readerTheme.textContent = `${article.modeLabel} · ${state.appData.themes.find((theme) => theme.id === article.theme)?.label || article.theme}`;
   els.readerTitle.textContent = article.title;
   els.readerSummary.textContent = article.readingGoal;
+  els.readerMode.textContent = article.modeLabel;
   els.readerWordcount.textContent = `${article.wordCount} words`;
   els.readerTargets.textContent = `${article.targetWords.length} target words`;
+  els.readerDensity.textContent = `${Math.round(article.density * 100)}% density`;
   els.readerContent.innerHTML = '';
 
   article.content.split(/\n\n+/).forEach((paragraph) => {
@@ -353,12 +421,21 @@ async function init() {
   }
 
   renderStats();
+  renderModeOptions();
   renderThemeOptions();
+  renderModeCards();
   renderArticleList();
   renderArticle(appData.articleCards[0]?.id);
 }
 
-els.themeFilter.addEventListener('change', renderArticleList);
+function handleFiltersChanged() {
+  renderModeCards();
+  renderArticleList();
+  ensureArticleVisibleOrFallback();
+}
+
+els.modeFilter.addEventListener('change', handleFiltersChanged);
+els.themeFilter.addEventListener('change', handleFiltersChanged);
 popoverEls.close.addEventListener('click', hidePopover);
 els.readerContent.addEventListener('mouseup', scheduleSelectionTranslation);
 els.readerContent.addEventListener('touchend', scheduleSelectionTranslation);
