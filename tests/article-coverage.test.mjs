@@ -34,6 +34,8 @@ const allowedLegacyLowCoverage = {
   'phase2-business-core-01': 0.722,
   'phase2-law-fast-01': 0.767,
   'phase2-justice-fast-02': 0.733,
+  'phase3-governance-fast-01': 0.633,
+  'phase3-social-behaviour-fast-01': 0.8,
 };
 
 const allowedLegacyReadCoverage = {

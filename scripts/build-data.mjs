@@ -951,6 +951,142 @@ The system becomes fragile when controversy grows. Citizens may complain, organi
 
 This dense IELTS-style passage highlights a central argument: justice is not sustained by force alone. Institutions must oversee themselves, restrain arbitrary power, and persuade the public that legal outcomes are suitable as well as lawful.`,
   },
+
+  {
+    id: 'phase3-psychology-fast-01',
+    mode: 'fast',
+    theme: 'health-biology',
+    subtheme: 'attention, desire, and cognitive bias',
+    style: 'ielts-reading',
+    readingGoal: 'Build dense IELTS-style familiarity with psychology vocabulary about attention, desire, and judgement.',
+    title: 'Fast Track: Why the Mind Fixates on Certain Ideas',
+    targetWordIds: ['attract__verb', 'obsess__verb', 'mesmerize__verb', 'amaze__verb', 'marvel__verb', 'astonish__verb', 'involve__verb', 'bewilder__verb', 'irony__noun', 'contempt__noun', 'neglect__verb', 'disregard__verb', 'ignorance__noun', 'bias__verb', 'allure__verb', 'induce__verb', 'tempt__verb', 'convince__verb', 'reassure__verb', 'aspire__verb', 'desire__noun', 'attempt__verb', 'strive__verb', 'effort__noun', 'fulfil__verb', 'objective__noun', 'attitude__noun', 'character__noun', 'personality__noun', 'trait__noun'],
+    content: `Psychology research often begins with a simple question: why do some ideas attract attention while others are ignored? Advertisers, educators, and political strategists all rely on the fact that people can become fascinated by a message, only to obsess over it later. An image may mesmerize viewers, a surprising claim may amaze or astonish them, and an emotionally loaded narrative may involve them so deeply that they struggle to evaluate it with distance.
+
+This pattern becomes more complex when judgement enters the picture. Irony, contempt, and prior attitude all shape interpretation. People may neglect evidence, disregard inconvenient detail, or remain trapped in ignorance when a prior belief is strong enough. Researchers describe this distortion not simply as error, but as a form of bias that can be induced by design, social pressure, or selective exposure. The allure of certainty may tempt individuals to accept an explanation long before the facts justify it.
+
+At the same time, psychological life is not purely negative. People aspire to goals, invest effort, and strive to fulfil an objective that matters to them. A leader may try to convince others, while a teacher may reassure anxious students and redirect desire toward longer-term growth. In that sense, personality, character, and stable personal traits do not determine behaviour completely; they interact with context. This is why IELTS-style passages on psychology often move from individual feeling to broader systems of influence.`,
+  },
+  {
+    id: 'phase3-cognition-core-01',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'memory, perception, and mental classification',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a moderate-density IELTS-style passage about memory, perception, and mental processing.',
+    title: 'Balanced Practice: How Memory Shapes Perception',
+    targetWordIds: ['recall__verb', 'remind__verb', 'repeat__verb', 'impress__verb', 'distinguish__verb', 'differentiate__verb', 'mood__noun', 'emotion__noun', 'manner__noun', 'mind__noun', 'mental__adjective', 'stimulus__noun', 'habit__noun', 'sense__noun', 'view__noun', 'visual__adjective', 'visible__adjective', 'vague__adjective'],
+    content: `Cognitive research suggests that perception is never entirely fresh. The mind uses earlier experience to organise new information, which is why one stimulus can produce different responses in different people. A sound, an image, or a social signal may remind one person of a prior event, while another struggles to recall any connection at all. When information is repeated, it can impress itself more deeply on memory, even if the content remains weak.
+
+This process matters because the brain must distinguish between signals constantly. To differentiate what is relevant from what is distracting is a central mental task. Yet the result is influenced by mood, emotion, habit, and social manner. A visual cue may be visible to everyone in the room, but its meaning is not equally clear. In some experiments, participants report only a vague sense that something has changed, even when the object is present in full view.
+
+The IELTS-style importance of this topic lies in its method. Rather than treating memory as passive storage, the passage shows it as an active system for classification. Readers therefore encounter concrete vocabulary while following a broader argument about how human perception is structured.`,
+  },
+  {
+    id: 'phase3-public-health-fast-01',
+    mode: 'fast',
+    theme: 'health-biology',
+    subtheme: 'disease burden and public health systems',
+    style: 'ielts-reading',
+    readingGoal: 'Build dense IELTS-style vocabulary about illness, injury, and public health systems.',
+    title: 'Fast Track: How Public Health Measures Disease Burden',
+    targetWordIds: ['immune__adjective', 'symptom__noun', 'illness__noun', 'detriment__noun', 'overweight__adjective', 'hypertension__noun', 'insomnia__noun', 'allergy__noun', 'cancer__noun', 'stroke__noun', 'flu__noun', 'fever__noun', 'headache__noun', 'injure__verb', 'injury__noun', 'bleed__verb', 'bruise__noun', 'scar__noun', 'wound__noun', 'trauma__noun', 'pain__noun', 'fatigue__noun', 'hygiene__noun', 'fitness__noun', 'clinic__noun', 'physician__noun', 'surgeon__noun', 'operation__noun', 'prescription__noun', 'precaution__noun'],
+    content: `Public health writing differs from personal medical advice because it examines patterns across populations rather than a single patient. Researchers ask which symptom appears first, how often a particular illness recurs, and what long-term detriment follows when treatment arrives too late. Conditions such as overweight-related disease, hypertension, insomnia, allergy, cancer, stroke, flu, fever, and chronic headache are therefore analysed not only as biological events but also as policy challenges.
+
+The same analytical approach applies to physical injury. A person may be injured in transport, work, or domestic accidents, then bleed, develop a wound, and later carry a bruise or scar. In more severe cases, trauma and lingering pain can reduce mobility for months, while fatigue weakens recovery. The academic value of this vocabulary is that it connects bodily experience to institutional response.
+
+That response depends on systems. Hygiene campaigns, preventive fitness programmes, local clinics, and access to a physician or surgeon all influence outcomes. Where necessary, an operation and formal prescription may follow, but good policy emphasises precaution before emergency care becomes the only option. For IELTS learners, this kind of passage is useful because it combines medical detail with an argument about prevention, access, and social cost.`,
+  },
+  {
+    id: 'phase3-medicine-core-01',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'treatment systems and medical intervention',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a moderate-density IELTS-style passage about treatment systems and medical intervention.',
+    title: 'Balanced Practice: Treatment, Isolation, and the Logic of Care',
+    targetWordIds: ['therapy__noun', 'sanitary__adjective', 'curative__adjective', 'cure__verb', 'heal__verb', 'check__verb', 'transplant__verb', 'x-ray__noun', 'injection__noun', 'vaccinate__verb', 'quarantine__verb', 'segregate__verb', 'isolate__verb', 'pharmacy__noun', 'medicine__noun', 'remedy__noun', 'drug__noun', 'dose__noun'],
+    content: `Modern medicine relies on a chain of decisions rather than a single dramatic cure. A patient may enter therapy after an initial check, receive an X-ray or laboratory test, and then move toward medicine-based treatment only if the evidence supports it. Some interventions are clearly curative, while others mainly manage symptoms and support healing over time.
+
+Public health systems become especially important when infection risk rises. Authorities may vaccinate vulnerable groups, quarantine exposed individuals, or isolate confirmed cases in order to slow transmission. In older systems, officials sometimes segregated the sick more harshly, but contemporary policy is more likely to justify separation through sanitary control and measurable epidemiological benefit.
+
+The remaining vocabulary belongs to access and dosage. A pharmacy distributes medicine, remedy options, and regulated drug supplies, while clinicians determine the correct dose for each case. At the high end of intervention, specialists may transplant tissue or whole organs, reminding readers that health care ranges from the routine to the technically extraordinary. This IELTS-style passage uses precise medical nouns to support a broader claim: good care depends on systems of evidence, containment, and follow-up.`,
+  },
+  {
+    id: 'phase3-governance-fast-01',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'policy implementation and institutional coordination',
+    style: 'ielts-reading',
+    readingGoal: 'Build dense IELTS-style vocabulary about implementation, coordination, and institutional control.',
+    title: 'Fast Track: Why Policies Fail in Implementation',
+    targetWordIds: ['intervene__verb', 'impede__verb', 'designate__verb', 'assign__verb', 'distribute__verb', 'detach__verb', 'exclude__verb', 'assure__verb', 'undertake__verb', 'stipulate__verb', 'uphold__verb', 'contain__verb', 'verify__verb', 'specify__verb', 'attribute__verb', 'replace__verb', 'substitute__verb', 'integrate__verb', 'implement__verb', 'monitor__verb', 'coordinate__verb', 'cooperate__verb', 'collaborate__verb', 'restrict__verb', 'protocol__noun', 'benchmark__noun', 'criteria__noun', 'standard__noun', 'official__adjective', 'mandatory__adjective'],
+    content: `Policy debates often sound persuasive at the planning stage, yet many reforms fail once implementation begins. Governments may intervene to solve a problem, but the result can be impeded by weak administration, unclear responsibility, or poor coordination between agencies. A policy must therefore do more than announce an intention. It has to designate authority, assign duties, distribute resources, and specify how success will be measured.
+
+Institutional language becomes especially important at this stage. Officials stipulate the protocol, define a benchmark, publish criteria, and announce the standard that each office must uphold. If agencies cannot verify results or contain emerging failures, the original plan may need to be replaced or partly substituted by a more realistic model. Some systems try to integrate services so that departments cooperate rather than work in isolation, but this requires sustained collaboration rather than symbolic agreement.
+
+The passage also highlights the tension between flexibility and control. Official rules may appear too restrictive, while mandatory procedures can exclude local variation that might actually help. Nevertheless, without monitoring and shared standards, institutions struggle to assure the public that reform is real. This is why IELTS-style passages on governance often focus less on ideals than on whether systems can actually deliver what they promise.`,
+  },
+  {
+    id: 'phase3-crisis-core-01',
+    mode: 'core',
+    theme: 'environment-climate',
+    subtheme: 'crisis response and environmental recovery',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a moderate-density IELTS-style passage about environmental crisis response and recovery.',
+    title: 'Balanced Practice: Responding to Slow-Moving Environmental Crises',
+    targetWordIds: ['rescue__verb', 'restore__verb', 'rectify__verb', 'offset__verb', 'replenish__verb', 'leak__verb', 'spill__verb', 'seep__verb', 'evacuate__verb', 'saturate__verb', 'trigger__verb', 'seek__verb', 'retrieve__verb', 'testify__verb', 'adverse__adjective', 'unstable__adjective', 'ongoing__adjective', 'reasonable__adjective'],
+    content: `Environmental crises are often imagined as sudden disasters, yet many unfold slowly enough to confuse the public response. A chemical leak may begin quietly, a contaminated spill may seep into soil, and saturated ground may trigger an unstable chain of consequences before authorities decide to evacuate nearby residents. In such cases, the central challenge is not recognition alone but timing.
+
+Recovery requires several different actions that are often mistaken for one another. Emergency teams may rescue people first, but the longer process is to retrieve lost infrastructure, restore damaged systems, and rectify the institutional failures that allowed the crisis to expand. Governments may try to offset immediate harm through compensation, while environmental agencies attempt to replenish water, soil quality, or ecological stability over time.
+
+Evidence plays a crucial role throughout. Monitoring records may testify to the scale of the event, while researchers seek patterns that explain why the damage persisted. A reasonable policy response therefore combines urgent action with an ongoing plan for repair. IELTS-style passages on crisis management often reward readers who can distinguish between the short-term language of rescue and the long-term language of restoration.`,
+  },
+  {
+    id: 'phase3-social-behaviour-fast-01',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'social trust, anxiety, and group behaviour',
+    style: 'ielts-reading',
+    readingGoal: 'Build dense IELTS-style vocabulary about social trust, anxiety, stereotyping, and collective behaviour.',
+    title: 'Fast Track: Social Trust under Pressure',
+    targetWordIds: ['tolerance__noun', 'stereotype__noun', 'anxiety__noun', 'restless__adjective', 'uneasy__adjective', 'fear__noun', 'skeptical__adjective', 'hesitate__verb', 'confuse__verb', 'regret__noun', 'arbitrary__adjective', 'careless__adjective', 'rigid__adjective', 'stubborn__adjective', 'impulse__noun', 'hostile__adjective', 'volatile__adjective', 'excessive__adjective', 'doubt__noun', 'suspicion__noun', 'confidence__noun', 'sympathetic__adjective', 'thoughtful__adjective', 'considerate__adjective', 'honesty__noun', 'sincere__adjective', 'trustworthy__adjective', 'mutual__adjective', 'similar__adjective', 'concern__noun'],
+    content: `Social trust is easiest to value when it begins to disappear. In periods of uncertainty, communities often become restless, uneasy, and more vulnerable to fear. A population that once showed tolerance may fall back on stereotype, suspicion, and rigid social assumptions, especially when public information is incomplete. At such moments, people hesitate, confuse rumour with evidence, and act from impulse rather than reflection.
+
+This shift has political as well as psychological consequences. Public debate can become hostile, volatile, and excessive, while arbitrary decisions deepen doubt instead of restoring confidence. Careless communication by leaders may later produce collective regret, not because citizens are irrational, but because institutions failed to create stable conditions for judgement.
+
+The academic response to this problem is not sentimental. Researchers ask what social qualities actually support durable cooperation. Mutual respect, thoughtful dialogue, considerate leadership, honesty, sincerity, and trustworthy procedure all matter, especially when groups that appear similar on the surface still hold different fears and expectations. IELTS-style passages on social behaviour often use this vocabulary to explain why trust is not a private emotion but a public resource.`,
+  },
+  {
+    id: 'phase3-time-history-core-01',
+    mode: 'core',
+    theme: 'culture-media',
+    subtheme: 'historical periodisation and temporal framing',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a moderate-density IELTS-style passage about historical periodisation and temporal framing.',
+    title: 'Balanced Practice: How Historians Divide Time',
+    targetWordIds: ['annual__adjective', 'yearly__adjective', 'anniversary__noun', 'era__noun', 'present__adjective', 'contemporary__adjective', 'medieval__adjective', 'century__noun', 'millennium__noun', 'dawn__noun', 'midday__noun', 'midnight__noun', 'overnight__adverb', 'recent__adjective', 'prior__adjective', 'former__adjective', 'preceding__adjective', 'precedent__noun'],
+    content: `Historians do not simply describe the past; they divide it into meaningful units. Terms such as era, century, and millennium allow writers to organise vast stretches of time into manageable interpretations. Yet these divisions are never neutral. To describe a society as medieval, contemporary, recent, former, or present is already to frame it in relation to a particular narrative.
+
+Smaller units matter as well. Annual and yearly records, public anniversaries, and institutional reports often shape how later generations remember change. In some texts, metaphors such as the dawn of a movement, the midday of an empire, or the midnight of a crisis carry rhetorical force even though they are not literal chronology. Likewise, the idea that a transformation happened overnight can hide a much slower process whose roots lie in prior or preceding developments.
+
+This is why precedent matters in historical argument. A political or cultural event rarely begins from nothing; it emerges within patterns already established. The IELTS-style value of this passage is that it teaches learners to read temporal vocabulary critically, not just literally.`,
+  },
+  {
+    id: 'phase3-research-read-01',
+    mode: 'read',
+    theme: 'education-learning',
+    subtheme: 'research process and academic sequencing',
+    style: 'ielts-reading',
+    readingGoal: 'Support sustained reading with a lighter IELTS-style passage about research sequencing and academic process.',
+    title: 'Reading Habit: The Rhythm of Research Work',
+    targetWordIds: ['initially__adverb', 'meanwhile__adverb', 'simultaneous__adjective', 'ongoing__adjective', 'permanent__adjective', 'finally__adverb', 'moment__noun', 'minute__noun', 'immediately__adverb'],
+    content: `Academic research often appears linear when described in a final paper, but the lived process is less tidy. A project may initially begin with one question, while related concerns emerge meanwhile from field notes, interviews, or laboratory anomalies. Several tasks can become simultaneous even when the official timeline suggests a neat order.
+
+The pace of work also varies. Some discoveries appear immediately, while others require a long ongoing effort in which no single moment or minute seems decisive. Findings that look permanent may later need revision once stronger evidence appears.
+
+This lower-density passage reflects an important academic lesson: research is orderly in presentation, but iterative in reality. By reading these sequencing words in context, learners gain a more natural feel for how serious writing organises time.`,
+  },
 ];
 
 function clean(value) {
