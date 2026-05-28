@@ -101,9 +101,9 @@ function setActiveView(viewId) {
 
 function setInspectorLoading(word, context, entry, mode = 'word') {
   els.inspectWord.textContent = word;
-  els.inspectPos.textContent = entry?.posList?.join(', ') || (mode === 'sentence' ? '句子' : '正在加载词性…');
+  els.inspectPos.textContent = entry?.posList?.join(', ') || (mode === 'sentence' ? '句子' : '正在辨认词性…');
   els.inspectTranslation.textContent = entry?.meaningCn || '正在请求翻译…';
-  els.inspectExplanation.textContent = '正在请求上下文解释…';
+  els.inspectExplanation.textContent = '正在把语境慢慢展开…';
   els.inspectContext.textContent = context;
   els.inspectNote.textContent = entry?.notes || entry?.example || '–';
 }
@@ -282,9 +282,9 @@ async function inspectWord(article, word, button) {
   try {
     const payload = await requestTranslation({ text, context, mode: 'word' });
     els.inspectWord.textContent = payload.word || payload.text || text;
-    els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || 'unknown';
+    els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || '未知';
     els.inspectTranslation.textContent = payload.translation || entry?.meaningCn || '暂无释义';
-    els.inspectExplanation.textContent = payload.explanation || entry?.notes || 'No explanation returned.';
+    els.inspectExplanation.textContent = payload.explanation || entry?.notes || '暂时没有更多解释。';
     els.inspectContext.textContent = context;
     els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
     updatePopover(payload, text);

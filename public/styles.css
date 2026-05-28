@@ -45,8 +45,8 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 18px 22px;
-  background: var(--surface);
+  padding: 20px 24px;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(248, 242, 233, 0.94));
   border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -56,7 +56,13 @@ button {
 .brand-title {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
+  font-size: 1.72rem;
+}
+
+.brand-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .nav-links {
@@ -233,8 +239,7 @@ button {
 }
 
 .full-panel,
-.reading-room,
-.standalone-inspector {
+.reading-room {
   width: 100%;
 }
 
@@ -319,8 +324,11 @@ button {
   font-weight: 600;
 }
 
-.reader-layout {
-  display: block;
+.two-column-reading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: start;
 }
 
 .reader-panel {
@@ -389,17 +397,15 @@ button {
   background: rgba(201, 100, 66, 0.14);
 }
 
-.inspector-panel {
+.reading-side-panel {
   display: block;
 }
 
-.inspector-card {
-  padding: 28px;
-}
-
-.sticky {
+.reading-side-card {
   position: sticky;
-  top: 24px;
+  top: 50vh;
+  transform: translateY(-50%);
+  padding: 28px;
 }
 
 .inspector-card h3 {
@@ -488,8 +494,14 @@ button {
 @media (max-width: 1200px) {
   .hero,
   .home-grid,
-  .mode-strip {
+  .mode-strip,
+  .two-column-reading {
     grid-template-columns: 1fr;
+  }
+
+  .reading-side-card {
+    position: static;
+    transform: none;
   }
 }
 
