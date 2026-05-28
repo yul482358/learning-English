@@ -59,6 +59,11 @@ const themeMeta = {
   'education-learning': { label: 'Education', description: 'Academic thinking, campus life, and structured learning.' },
   'science-technology': { label: 'Science & Tech', description: 'Scientific discovery, chemistry, and modern innovation.' },
   'health-biology': { label: 'Health', description: 'Public health, nutrition, and modern medical systems.' },
+  'geography-earth': { label: 'Earth Science', description: 'Planetary structure, geography, and field observation.' },
+  'society-government': { label: 'Society', description: 'Citizenship, law, public policy, and social responsibility.' },
+  'economy-business': { label: 'Economy', description: 'Markets, trade, industry, and business decisions.' },
+  'culture-media': { label: 'Culture', description: 'Literature, media, art, and shared imagination.' },
+  'food-agriculture': { label: 'Food & Farming', description: 'Agriculture, harvest cycles, and food systems.' },
 };
 
 const articleBlueprints = [
@@ -149,6 +154,133 @@ const articleBlueprints = [
       'campus__noun', 'curriculum__noun', 'lecturer__noun', 'scholar__noun', 'academic__adjective', 'seminar__noun', 'evidence__noun', 'research__noun', 'independent__adjective', 'discussion__noun'
     ],
     content: `People often judge a university by visible signs such as buildings, rankings, or famous graduates. Those features matter, but they do not fully explain what makes one institution effective for learning. A strong university culture is created through repeated habits: serious discussion, respect for evidence, and a willingness to revise weak ideas in the light of better research. Students absorb these habits gradually, often without noticing the change.\n\nOn a campus, education happens in many places at once. A lecturer may introduce a difficult question in a formal class, but the real development of understanding can continue in a seminar, in the library, or in conversation after the lesson ends. When students are expected to support claims with evidence, they begin to realise that opinion alone is not enough. They must read carefully, compare sources, and ask whether a conclusion follows from the material available.\n\nThis environment also encourages independent judgement. A scholar is rarely praised for repeating familiar ideas without examination. Instead, academic work rewards patience, precise language, and honest uncertainty. Even when the curriculum is demanding, students often benefit from a culture that treats difficulty as a normal part of thought rather than a sign of failure. In that setting, discussion becomes a tool for refinement rather than performance.\n\nFor learners who are training reading stamina, a passage like this offers a useful balance. The vocabulary is purposeful but not overloaded, and the main challenge comes from following the argument across several paragraphs. That experience is valuable because good reading is not only about knowing more words. It is also about staying with an idea long enough to understand how each paragraph contributes to the whole.`,
+  },
+
+
+  {
+    id: 'geo-fast-01',
+    mode: 'fast',
+    theme: 'geography-earth',
+    subtheme: 'earth structure and field geography',
+    style: 'ielts-reading',
+    readingGoal: 'Rapidly build high-frequency earth-science vocabulary through a dense IELTS-style overview.',
+    title: 'Fast Track: Reading the Shape of the Earth',
+    targetWordIds: [
+      'hydrosphere__noun', 'lithosphere__noun', 'core__noun', 'crust__noun', 'mantle__noun', 'longitude__noun', 'latitude__noun', 'horizon__noun', 'altitude__noun', 'mineral__noun',
+      'quartz__noun', 'granite__noun', 'earthquake__noun', 'axis__noun', 'ocean__noun', 'tide__noun', 'mountain__noun', 'reclaim__verb', 'circulation__noun', 'exceed__verb',
+      'seasonal__adjective', 'fauna__noun', 'seal__noun', 'enhance__verb', 'research__noun', 'score__noun', 'overseas__adjective', 'withstand__verb', 'disease__noun', 'plague__noun'
+    ],
+    content: `Earth science begins with the ability to connect visible landscapes with hidden systems. A mountain, an ocean, or a distant horizon may look simple, yet each feature is shaped by forces that operate through the crust, the mantle, and the deeper core of the planet. This fast-track passage concentrates the vocabulary that IELTS learners often meet when reading about geography, geology, and field observation.\n\nThe lithosphere includes the hard outer layer of the Earth, where granite, quartz, and other mineral materials form rocks that can be studied in the field. Beneath it, the mantle moves slowly over long periods of time, while the core remains central to explanations of heat and magnetism. When stress in the crust is released suddenly, an earthquake may occur, reminding observers that even solid ground is part of a dynamic system.\n\nGeographers use latitude and longitude to describe position, while altitude helps explain why temperature and vegetation change on a mountain. The axis of the Earth influences seasonal patterns, which affect rainfall, ocean circulation, and the movement of fauna across regions. In coastal environments, the tide may expose rocks, carry sediment, or reveal how the hydrosphere interacts with the land. A seal resting on a shore can even become evidence in research on marine habitat.\n\nField research often requires patience because natural processes may exceed the scale of ordinary human experience. A cliff can withstand waves for many years before one storm changes its shape. Overseas teams may return to score erosion, reclaim old data, and enhance maps with fresh measurements. Sometimes a disease or plague among animals also reveals environmental pressure. By learning this vocabulary together, students can read physical geography as a connected story rather than a list of separate facts.`,
+  },
+  {
+    id: 'geo-core-01',
+    mode: 'core',
+    theme: 'geography-earth',
+    subtheme: 'coasts, mountains and observation',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a balanced earth-science passage with a moderate target-word load.',
+    title: 'Balanced Practice: How Landscapes Keep Their Memory',
+    targetWordIds: [
+      'ocean__noun', 'tide__noun', 'mountain__noun', 'altitude__noun', 'latitude__noun', 'longitude__noun', 'mineral__noun', 'granite__noun', 'quartz__noun', 'crust__noun',
+      'earthquake__noun', 'circulation__noun', 'seasonal__adjective', 'fauna__noun', 'research__noun', 'withstand__verb', 'horizon__noun', 'axis__noun'
+    ],
+    content: `A landscape is often described as scenery on the horizon, but for geographers it is also a record of past conditions. The shape of a mountain can reveal patterns of erosion, while the minerals inside granite or quartz may indicate how rocks formed deep within the crust. Along the coast, the ocean and the tide continually rewrite the boundary between land and water.\n\nObservation becomes more precise when researchers combine local details with wider systems. Latitude and longitude identify a place on the map, but altitude, rainfall, and seasonal temperature help explain why one hillside supports dense vegetation while another remains almost bare. Fauna respond to these differences, moving toward food, shelter, or warmer conditions when the environment changes.\n\nNatural forces also test the strength of landscapes. Some cliffs withstand waves for centuries; others collapse after heavy rain or an earthquake. These events may appear sudden, yet they are usually prepared by slow processes that have been operating for a long time. Ocean circulation, wind, gravity, and even the planet's tilted axis all contribute to the visible result.\n\nFor IELTS readers, the topic is useful because it links description with explanation. A passage may begin with a familiar scene and then ask the reader to follow evidence from field research, maps, and geological samples. The vocabulary is moderate, but each word helps build a clearer picture of how the Earth stores its history.`,
+  },
+  {
+    id: 'geo-read-01',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'slow reading of natural places',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina through a lower-density geography passage.',
+    title: 'Reading Habit: A Coastline at Low Tide',
+    targetWordIds: [
+      'ocean__noun', 'tide__noun', 'horizon__noun', 'granite__noun', 'quartz__noun', 'fauna__noun', 'seasonal__adjective', 'research__noun', 'withstand__verb'
+    ],
+    content: `At low tide, a coastline becomes a page that can be read slowly. Pools appear between stones, small animals move through patches of seaweed, and the horizon seems wider than it did a few hours earlier. To a casual visitor, the scene may be peaceful. To a researcher, it is full of evidence about how the ocean shapes land over time.\n\nSome rocks are made of granite with visible grains of quartz, and their hardness helps them withstand years of waves and wind. Other surfaces break more easily, leaving channels where water collects. Seasonal changes alter the rhythm of the coast as storms arrive, birds migrate, and different forms of fauna become easier to observe.\n\nThe value of this passage lies in its slower movement. It does not rush through many technical terms. Instead, it asks the reader to stay with one place long enough to notice relationships: water against stone, weather against habitat, and observation against explanation. A patient student can also follow the human side of the scene: the quiet path used by visitors, the small notices that protect fragile areas, and the changing light that makes the same shore feel different in the morning and evening. The passage simply rewards careful attention, and that habit is central to strong academic reading.`,
+  },
+  {
+    id: 'soc-fast-01',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'citizens, law and public decisions',
+    style: 'ielts-reading',
+    readingGoal: 'Rapidly cover civic and government vocabulary in a policy-focused passage.',
+    title: 'Fast Track: The Citizen, Law, and Public Trust',
+    targetWordIds: [
+      'republic__noun', 'socialism__noun', 'government__noun', 'statesman__noun', 'citizen__noun', 'vote__noun', 'state__verb', 'estate__noun', 'law__noun', 'crime__noun',
+      'enormity__noun', 'pitfall__noun', 'warn__verb', 'oblige__verb', 'military__adjective', 'devastate__verb', 'devote__verb', 'raise__verb', 'imminent__adjective', 'status__noun',
+      'adversity__noun', 'award__noun', 'reward__noun', 'mantle__noun', 'sphere__noun', 'ideology__noun', 'charter__noun', 'mediate__verb', 'participate__verb', 'partner__noun'
+    ],
+    content: `Modern society depends on language that describes power, duty, and public trust. A citizen may vote in a republic, criticise a government, or ask whether a law protects people fairly. In IELTS reading, these words often appear in passages about political reform, public safety, and the relationship between individuals and the state.\n\nA responsible statesman must state a policy clearly and warn the public when a risk is imminent. During adversity, the government may raise funds, devote resources to emergency services, or oblige companies to follow stricter rules. These actions can protect citizens, but they also create debate about authority, freedom, and the proper status of public institutions.\n\nThe language of law is equally important. A rise in crime may lead officials to demand stronger policing, while critics warn that hurried measures can become a pitfall if they ignore evidence. Military action is sometimes presented as necessary to defend the state, yet history shows that conflict can devastate communities long after the original decision. A charter may limit authority, and a mediator may mediate between groups that need to participate as partners.\n\nDifferent ideologies, including socialism and liberal democracy, offer different answers. One system may protect an estate through property law, while another may emphasise public reward, official award, or punishment for the enormity of abuse. A statesman wears the mantle of authority only inside a limited sphere of trust. For learners, the main task is to recognise how civic vocabulary works in argument.`,
+  },
+  {
+    id: 'soc-core-01',
+    mode: 'core',
+    theme: 'society-government',
+    subtheme: 'public policy and social responsibility',
+    style: 'ielts-reading',
+    readingGoal: 'Balance civic vocabulary with a natural argument about public responsibility.',
+    title: 'Balanced Practice: The Language of Public Responsibility',
+    targetWordIds: [
+      'government__noun', 'citizen__noun', 'vote__noun', 'law__noun', 'crime__noun', 'republic__noun', 'warn__verb', 'oblige__verb', 'devote__verb', 'raise__verb',
+      'status__noun', 'adversity__noun', 'pitfall__noun', 'state__verb', 'award__noun', 'reward__noun', 'ideology__noun', 'statesman__noun'
+    ],
+    content: `Public responsibility is not carried by government alone. A law may set minimum standards, but the success of those measures often depends on how each citizen responds. When people vote, follow rules, question weak decisions, reward honesty, and support an award for service, they help shape the moral status of public life.\n\nThis relationship becomes clearer in times of adversity. Officials may warn residents about danger, raise money for relief, or devote staff to areas where crime and poverty overlap. At the same time, each citizen may organise local support, share information, and oblige leaders to explain their choices more openly. A statesman in a republic must therefore treat public trust as a practical resource, not merely as an ideology.\n\nThere is a pitfall in treating public policy as a simple technical matter. A programme can look efficient on paper and still fail if it ignores trust, culture, or fairness. For this reason, strong societies need more than commands from the state. They need an active public that understands both rights and duties.\n\nIELTS passages on society often test this layered argument. The vocabulary is familiar enough to seem easy, but the writer may move carefully between evidence, criticism, and recommendation. Readers should notice how each paragraph states a problem and then connects it to a wider civic question.`,
+  },
+  {
+    id: 'soc-read-01',
+    mode: 'read',
+    theme: 'society-government',
+    subtheme: 'local citizenship and trust',
+    style: 'ielts-reading',
+    readingGoal: 'Sustain reading with a lighter civic passage about trust and participation.',
+    title: 'Reading Habit: A Small Meeting in a Large Society',
+    targetWordIds: [
+      'citizen__noun', 'government__noun', 'vote__noun', 'law__noun', 'status__noun', 'adversity__noun', 'participate__verb', 'partner__noun', 'warn__verb'
+    ],
+    content: `A society is often imagined through large institutions, but public trust is also built in small rooms. A local meeting about traffic, safety, or housing may not look important, yet it gives each citizen a chance to participate in decisions that shape daily life. People listen, question, and sometimes disagree before a vote is taken.\n\nThe government may provide the legal framework, and the law may define what is possible, but the atmosphere of the meeting depends on respect. A resident with low social status may still describe a problem clearly. A partner organisation may warn officials about risks that have been ignored. During adversity, these ordinary exchanges can become especially valuable because they help people feel less alone.\n\nThis kind of passage is useful for reading stamina because the argument is quiet. It does not depend on dramatic events. Instead, it shows how civic life is made through repeated habits of attention, patience, and explanation. A learner can read it for tone as much as for information, noticing how a modest example opens into a broader point about shared responsibility and public confidence. The slow movement from room, to neighbourhood, to wider public life gives the passage a structure that is easy to follow but still worth analysing carefully.`,
+  },
+  {
+    id: 'econ-core-01',
+    mode: 'core',
+    theme: 'economy-business',
+    subtheme: 'business decisions and market confidence',
+    style: 'ielts-reading',
+    readingGoal: 'Practise medium-density business vocabulary in a readable academic argument.',
+    title: 'Balanced Practice: Why Market Confidence Matters',
+    targetWordIds: [
+      'economics__noun', 'marketing__noun', 'dividend__noun__2', 'economy__noun', 'trade__noun', 'market__noun', 'industry__noun', 'company__noun', 'stock__noun', 'supermarket__noun',
+      'livestock__noun', 'horticulture__noun', 'stream__noun', 'accompany__verb', 'raise__verb', 'labour__noun', 'agriculture__noun', 'harvest__verb'
+    ],
+    content: `Market confidence is difficult to measure directly, yet it strongly influences decisions made by households and businesses. In a stable economy, a company may hire labour, expand marketing, and invest in stock for future sales. When confidence falls, the same firm may delay spending even if current trade remains acceptable.\n\nEconomics therefore treats expectation as part of real behaviour. A supermarket manager does not only respond to today's customers. She also considers livestock supply, horticulture output, agriculture costs, and whether a poor harvest will raise prices. Similar calculations occur across industry, where investment decisions often accompany forecasts about demand.\n\nShareholders look at these signals as well. A business that pays a steady dividend may appear reliable, but long-term value depends on whether it can adapt to market change. A stream of strong sales in one year does not guarantee success if competitors develop better services or if trade conditions shift.\n\nThis topic suits balanced reading because the vocabulary is practical and the argument is gradual. The reader follows a chain from consumer mood to business planning and then to broader economic performance. The pace is deliberately steady, so students can connect examples before moving to the next paragraph and can see how a financial claim becomes a social argument.`,
+  },
+  {
+    id: 'culture-read-01',
+    mode: 'read',
+    theme: 'culture-media',
+    subtheme: 'media, literature and shared imagination',
+    style: 'ielts-reading',
+    readingGoal: 'Sustain reading with a natural culture-and-media passage and light vocabulary load.',
+    title: 'Reading Habit: Stories in a Multimedia Age',
+    targetWordIds: [
+      'literature__noun', 'article__noun', 'multimedia__noun', 'science-fiction__noun', 'film__noun', 'artist__noun', 'musical__adjective', 'concert__noun', 'religion__noun', 'epic__noun', 'participate__verb'
+    ],
+    content: `Stories have never belonged to one medium. An epic might begin as oral performance, become literature, appear later as a film, and then return as a multimedia project that invites audiences to participate online. Each form changes the rhythm of attention, but the human need for shared imagination remains surprisingly stable.\n\nA newspaper article may analyse a new science fiction series, while a concert or musical performance can revive older religious or cultural traditions. The artist working today often moves between page, screen, and stage rather than staying inside a single category. This movement makes culture feel faster, but it also allows old materials to find new audiences.\n\nFor reading practice, the passage is useful because it follows an idea rather than a list of facts. The vocabulary is limited, and the main task is to understand how examples are connected. A reader who can follow that connection is preparing for the kind of cultural argument that often appears in academic tests. The final skill is patience: instead of stopping at a single example, the reader watches how the paragraph moves from old practices to new habits, and from private enjoyment to shared public meaning. This slower pace gives space for comparison and helps the student notice structure as well as vocabulary. It also reminds learners that culture passages are rarely about entertainment alone; they often ask how memory, identity, technology, and audience behaviour influence one another over time. When read slowly, such a text becomes a map of connections rather than a catalogue of events, and that is exactly the kind of map academic readers need to build.`,
+  },
+  {
+    id: 'food-core-01',
+    mode: 'core',
+    theme: 'food-agriculture',
+    subtheme: 'farming, food systems and harvest cycles',
+    style: 'ielts-reading',
+    readingGoal: 'Practise agriculture vocabulary through a balanced passage about food systems.',
+    title: 'Balanced Practice: From Seed to City Table',
+    targetWordIds: [
+      'cultivate__verb', 'harvest__verb', 'plough__noun', 'seed__noun', 'ripen__verb', 'fruit__noun', 'crop__noun', 'grain__noun', 'agriculture__noun', 'food__noun',
+      'livestock__noun', 'supermarket__noun', 'cheese__noun', 'ice-cream__noun', 'rear__verb', 'marine__adjective', 'brood__noun', 'microscope__noun'
+    ],
+    content: `Food systems begin long before a product reaches a supermarket shelf. Farmers cultivate soil, choose seed varieties, and decide when to plough a field so that each crop has the best chance to grow. Some farms focus on grain, while others rear livestock or produce fruit that must ripen before it can be harvested.\n\nModern agriculture connects these local decisions to urban life. Milk from animals may become cheese or ice cream; wheat may become bread; fresh vegetables may travel hundreds of kilometres before reaching a family kitchen. Each stage may also involve marine transport, brood management for poultry, microscope checks in safety laboratories, storage, and trust in food safety.\n\nThe harvest is therefore both a natural and an economic event. Weather can reduce output, but poor planning can waste a successful season. A city consumer may see only the final price, while farmers see a chain of risks that began months earlier.\n\nFor IELTS learners, this topic offers clear vocabulary and a familiar argument. It shows how words about fields, animals, and shops can belong to one larger system. Understanding that system helps readers move beyond individual nouns toward the relationships that academic passages often test.`,
   },
 ];
 
