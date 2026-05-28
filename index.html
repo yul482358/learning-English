@@ -3,69 +3,103 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#f5f4ed" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="English Deck" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
   <link rel="stylesheet" href="assets/style.css" />
   <title>English Memory Deck</title>
 </head>
 <body>
-  <header class="hero">
-    <div class="eyebrow">Ogden Active English</div>
-    <h1>今天要背的，不是解释，是能直接说出口的句子。</h1>
-    <p id="subtitle">根据你的学习进度生成：背诵 → 跟读 → 改造成自己的话 → 找 Hermes 复盘。</p>
-    <div class="hero-actions">
-      <a class="button primary" href="#today">开始今天背诵</a>
-      <a class="button" href="#recap">复盘流程</a>
-    </div>
-  </header>
+  <div class="app-shell">
+    <header class="topbar" aria-label="App navigation">
+      <a class="brand" href="#top" aria-label="English Deck Home">
+        <span class="brand-mark">E</span>
+        <span>English Deck</span>
+      </a>
+      <nav class="nav-pills" aria-label="Sections">
+        <a href="#today">Today</a>
+        <a href="#cards">Deck</a>
+        <a href="#recap">Recap</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="panel stats" id="today">
-      <div>
-        <span class="label">Today</span>
-        <strong id="date">Loading…</strong>
-      </div>
-      <div>
-        <span class="label">Mode</span>
-        <strong>Memorize · Shadow · Transform</strong>
-      </div>
-      <div>
-        <span class="label">Goal</span>
-        <strong>主动表达，而不是被动认识</strong>
-      </div>
-    </section>
+    <main id="top">
+      <section class="hero" id="today">
+        <div class="hero-copy">
+          <p class="overline">Ogden Active English · Daily memory</p>
+          <h1>把今天要背的句子，变成你能自然说出口的话。</h1>
+          <p id="subtitle" class="hero-subtitle">根据你的学习进度生成：背诵 → 跟读 → 改写 → 找 Hermes 复盘。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#cards">开始背诵</a>
+            <a class="button secondary" href="#install">添加到主屏幕</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Today's summary">
+          <span class="label">Today</span>
+          <strong id="date">Loading…</strong>
+          <div class="meter"><span style="width: 0%" id="progressbar"></span></div>
+          <p><span id="done-count">0</span>/<span id="total-count">0</span> 组已标记完成</p>
+        </aside>
+      </section>
 
-    <section class="toolbar panel">
-      <input id="search" type="search" placeholder="搜索 pattern / 句子 / 标签" />
-      <select id="filter">
-        <option value="all">全部</option>
-        <option value="Must memorize">Must memorize</option>
-        <option value="Core review">Core review</option>
-        <option value="Grammar automation">Grammar automation</option>
-        <option value="Word form">Word form</option>
-      </select>
-    </section>
+      <section class="install-card" id="install">
+        <div>
+          <span class="label">Mobile PWA</span>
+          <h2>像 App 一样打开</h2>
+          <p>iPhone：Safari 分享按钮 → 添加到主屏幕。Android：Chrome 菜单 → 安装应用/添加到主屏幕。</p>
+        </div>
+        <div class="install-steps" aria-hidden="true">
+          <span>1 打开</span><span>2 添加</span><span>3 跟读</span>
+        </div>
+      </section>
 
-    <section id="cards" class="cards" aria-live="polite"></section>
+      <section class="toolbar" aria-label="Deck filters">
+        <label class="search-wrap">
+          <span>Search</span>
+          <input id="search" type="search" placeholder="搜索 pattern / 句子 / 标签" autocomplete="off" />
+        </label>
+        <label class="select-wrap">
+          <span>Focus</span>
+          <select id="filter">
+            <option value="all">全部</option>
+            <option value="Must memorize">Must memorize</option>
+            <option value="Core review">Core review</option>
+            <option value="Grammar automation">Grammar automation</option>
+            <option value="Word form">Word form</option>
+          </select>
+        </label>
+      </section>
 
-    <section class="panel recap" id="recap">
-      <span class="label">After memorizing</span>
-      <h2>背完后这样找我复盘</h2>
-      <ol>
-        <li>先不要看原文，凭记忆说/写出 3–5 句。</li>
-        <li>每句至少换一个自己的真实场景。</li>
-        <li>把你的版本发给我，我会只抓最影响自然度的问题。</li>
-      </ol>
-      <div class="recap-box">
-        <strong>今天的复盘口令：</strong>
-        <p>我背完今天的网站内容了，请根据今天的 deck 考我，并批改我的改写句。</p>
-      </div>
-    </section>
-  </main>
+      <section id="cards" class="cards" aria-live="polite"></section>
+
+      <section class="recap" id="recap">
+        <span class="label">After memorizing</span>
+        <h2>背完后这样找我复盘</h2>
+        <ol>
+          <li>先不要看原文，凭记忆说/写出 3–5 句。</li>
+          <li>每句至少换一个自己的真实场景。</li>
+          <li>把你的版本发给我，我只抓最影响自然度的问题。</li>
+        </ol>
+        <div class="recap-box">
+          <strong>今天的复盘口令</strong>
+          <p>我背完今天的网站内容了，请根据今天的 deck 考我，并批改我的改写句。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="bottom-tabs" aria-label="Mobile navigation">
+    <a href="#today">Today</a>
+    <a href="#cards">Deck</a>
+    <a href="#recap">Recap</a>
+  </nav>
 
   <template id="card-template">
     <article class="card">
@@ -77,7 +111,10 @@
         <button class="done" type="button">标记已背</button>
       </div>
       <p class="meaning"></p>
-      <audio class="audio" controls preload="none"></audio>
+      <div class="audio-wrap">
+        <span>Listen & shadow</span>
+        <audio class="audio" controls preload="none"></audio>
+      </div>
       <div class="sentences"></div>
       <details>
         <summary>替换成自己的话</summary>

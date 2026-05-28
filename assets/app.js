@@ -4,6 +4,18 @@ const state = { deck: null, done: JSON.parse(localStorage.getItem('done-items') 
 
 function audioPath(id){ return `audio/${id}.mp3`; }
 function saveDone(){ localStorage.setItem('done-items', JSON.stringify(state.done)); }
+function updateProgress(){
+  if(!state.deck) return;
+  const total = state.deck.items.length;
+  const done = state.deck.items.filter(it => state.done[it.id]).length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const d = document.querySelector('#done-count');
+  const t = document.querySelector('#total-count');
+  const p = document.querySelector('#progressbar');
+  if(d) d.textContent = done;
+  if(t) t.textContent = total;
+  if(p) p.style.width = pct + '%';
+}
 
 function render(){
   const q = $('#search').value.trim().toLowerCase();
@@ -26,7 +38,7 @@ function render(){
     const done = $('.done', node);
     done.textContent = state.done[item.id] ? '已背 ✓' : '标记已背';
     done.classList.toggle('active', !!state.done[item.id]);
-    done.addEventListener('click', () => { state.done[item.id] = !state.done[item.id]; saveDone(); render(); });
+    done.addEventListener('click', () => { state.done[item.id] = !state.done[item.id]; saveDone(); updateProgress(); render(); });
     const box = $('.sentences', node);
     item.sentences.forEach((s, i) => {
       const div = document.createElement('div');
@@ -49,6 +61,7 @@ async function init(){
   state.deck = await res.json();
   $('#date').textContent = state.deck.date;
   $('#subtitle').textContent = `${state.deck.title} · ${state.deck.mode}`;
+  updateProgress();
   $('#search').addEventListener('input', render);
   $('#filter').addEventListener('change', render);
   render();
