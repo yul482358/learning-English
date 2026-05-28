@@ -14,6 +14,8 @@ for (const needle of [
   '阅读训练',
   '词语侧记',
   'reading-side-panel',
+  'reader-exit',
+  '退出阅读，返回选文',
 ]) {
   assert.ok(html.includes(needle) || appJs.includes(needle), `missing UI/navigation marker: ${needle}`);
 }

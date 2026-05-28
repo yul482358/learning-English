@@ -402,10 +402,27 @@ button {
 }
 
 .reading-side-card {
-  position: sticky;
-  top: 50vh;
+  position: fixed;
+  right: max(24px, calc((100vw - 1520px) / 2 + 24px));
+  top: 50%;
   transform: translateY(-50%);
+  width: 340px;
+  max-height: calc(100vh - 48px);
+  overflow: auto;
   padding: 28px;
+  z-index: 20;
+}
+
+.reader-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+
+.reader-exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .inspector-card h3 {
@@ -502,6 +519,8 @@ button {
   .reading-side-card {
     position: static;
     transform: none;
+    width: 100%;
+    max-height: none;
   }
 }
 
