@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T14:45:49.766Z",
+  "generatedAt": "2026-05-28T15:25:09.508Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 107,
-    "avgCoverageRate": 0.923
+    "articleCount": 112,
+    "avgCoverageRate": 0.926
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 55
+      "articleCount": 60
     },
     {
       "id": "core",
@@ -1469,6 +1469,71 @@
       "targetWordCount": 31,
       "coverageRate": 0.871,
       "density": 0.149
+    },
+    {
+      "id": "fast-only-music-sport-31",
+      "title": "Fast Vocabulary: Music, Competition, and Active Recreation",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover music, sport, and movement vocabulary in a coherent high-density IELTS-style passage.",
+      "wordCount": 227,
+      "targetWordCount": 59,
+      "coverageRate": 1,
+      "density": 0.26
+    },
+    {
+      "id": "fast-only-ball-outdoor-32",
+      "title": "Fast Vocabulary: Games, Outdoor Travel, and Recreational Movement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover ball games, outdoor recreation, and movement verbs in a readable fast passage.",
+      "wordCount": 220,
+      "targetWordCount": 57,
+      "coverageRate": 1,
+      "density": 0.259
+    },
+    {
+      "id": "fast-only-household-waste-33",
+      "title": "Fast Vocabulary: Household Goods, Cleaning, and Waste Systems",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover household objects, cleaning tools, and waste vocabulary in a dense explanatory passage.",
+      "wordCount": 196,
+      "targetWordCount": 46,
+      "coverageRate": 1,
+      "density": 0.235
+    },
+    {
+      "id": "fast-only-office-tools-34",
+      "title": "Fast Vocabulary: Office Materials and Simple Mechanisms",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Cover stationery, document, and everyday mechanism vocabulary in a coherent fast passage.",
+      "wordCount": 195,
+      "targetWordCount": 49,
+      "coverageRate": 1,
+      "density": 0.251
+    },
+    {
+      "id": "fast-only-materials-fashion-35",
+      "title": "Fast Vocabulary: Materials, Authenticity, and Fashion Display",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover material, authenticity, fashion, and decorative vocabulary in a dense academic passage.",
+      "wordCount": 196,
+      "targetWordCount": 52,
+      "coverageRate": 1,
+      "density": 0.265
     }
   ]
 }

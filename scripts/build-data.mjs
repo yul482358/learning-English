@@ -1538,6 +1538,81 @@ Analytical language helps explain such reactions. Observers compare one circumst
 
 For IELTS readers, this passage is useful because it turns abstract judgement words into a coherent social explanation. Even the insult idiot reveals how quickly public discourse can collapse when evidence is weak and interpretation is careless. Experience shows that careful evaluation matters most when communities face stress and uncertainty.`,
   },
+  {
+    id: 'fast-only-music-sport-31',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'music, competition, and active recreation',
+    style: 'ielts-reading',
+    readingGoal: 'Cover music, sport, and movement vocabulary in a coherent high-density IELTS-style passage.',
+    title: 'Fast Vocabulary: Music, Competition, and Active Recreation',
+    targetWordIds: ['commentator__noun', 'announcer__noun', 'correspondent__noun', 'messenger__noun', 'entertain__verb', 'collect__verb', 'select__verb', 'opt__verb', 'draw__verb', 'sketch__noun__2', 'depict__verb', 'describe__verb', 'improvise__verb', 'musical__adjective', 'classical__adjective', 'jazz__noun', 'rock__noun', 'hip-hop__noun', 'pop__noun', 'lyric__noun', 'band__noun', 'solo__noun', 'melody__noun', 'rhythm__noun', 'tone__noun', 'tune__noun', 'disc__noun', 'piano__noun', 'violin__noun', 'cello__noun', 'guitar__noun', 'harmonica__noun', 'trumpet__noun', 'drum__noun', 'flute__noun', 'competition__noun', 'tournament__noun', 'olympic__adjective', 'sponsor__noun', 'patron__noun', 'athlete__noun', 'champion__noun', 'spectator__noun', 'volunteer__noun', 'famous__adjective', 'well-known__adjective', 'energetic__adjective', 'vigorous__adjective', 'stadium__noun', 'gym__noun', 'training__noun', 'indoor__adjective', 'outdoor__adjective', 'motion__verb', 'mobile__adjective', 'movement__noun', 'yoga__noun', 'stretch__verb', 'strain__verb'],
+    content: `Public performance and sport often share the same vocabulary of preparation, audience, and controlled energy. A commentator, announcer, correspondent, or messenger may describe a festival designed to entertain spectators, while organisers collect proposals, select artists, and opt for a programme that can attract both a sponsor and a long-term patron. Designers draw a plan, make a sketch, and depict the event through posters before critics describe its cultural value.
+
+Music gives this setting its richest language. A musical evening may combine classical pieces with jazz, rock, hip-hop, and pop, allowing a band to move from a solo lyric to a shared melody, rhythm, tone, and tune. The sound may come from a disc or from live instruments such as the piano, violin, cello, guitar, harmonica, trumpet, drum, and flute. Skilled performers sometimes improvise, but their freedom still depends on rehearsal and discipline.
+
+Sport adds a more physical dimension. A competition, tournament, or Olympic event places the athlete and champion before a crowd, where every spectator, volunteer, famous visitor, and well-known coach helps create public attention. Whether the venue is a stadium, gym, indoor hall, or outdoor field, training must be energetic and vigorous, yet it also studies motion, mobile technique, and efficient movement. Yoga may help performers stretch without strain, showing that artistic and athletic success both depend on balance as well as excitement and patient preparation.`,
+  },
+  {
+    id: 'fast-only-ball-outdoor-32',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'games, outdoor travel, and recreational movement',
+    style: 'ielts-reading',
+    readingGoal: 'Cover ball games, outdoor recreation, and movement verbs in a readable fast passage.',
+    title: 'Fast Vocabulary: Games, Outdoor Travel, and Recreational Movement',
+    targetWordIds: ['chess__noun', 'badminton__noun', 'golf__noun', 'billiards__noun', 'soccer__noun', 'tennis__noun', 'volleyball__noun', 'hockey__noun', 'cricket__noun__2', 'goal__noun', 'bat__noun', 'racket__noun', 'kick__noun', 'knock__verb', 'flip__verb', 'pitch__verb', 'throw__verb', 'toss__verb', 'slide__verb', 'slip__verb', 'glide__verb', 'tumble__verb', 'ski__verb', 'skate__verb', 'cycling__noun', 'dive__verb', 'drift__verb', 'jump__verb', 'leap__verb', 'plunge__verb', 'spring__verb', 'hop__verb', 'bounce__verb', 'tent__noun', 'camp__noun', 'picnic__noun', 'hunt__verb', 'race__noun', 'marathon__noun', 'pedestrian__noun', 'pace__noun', 'step__noun', 'excursion__noun', 'cruise__verb', 'trip__verb', 'vacation__verb', 'hike__noun', 'jog__verb', 'stride__verb', 'wander__verb', 'linger__verb', 'lag__verb', 'climb__verb', 'pull__verb', 'drag__verb', 'bend__verb', 'bow__verb'],
+    content: `Recreation can be studied as a system of rules, movement, and social purpose. Some games, such as chess, badminton, golf, billiards, soccer, tennis, volleyball, hockey, and cricket, require players to understand space before they act. A player may chase a goal, swing a bat or racket, kick a ball, knock it across a line, flip a coin to begin, pitch a ball, throw it, toss it, or watch it bounce unpredictably.
+
+Other activities are less formal but equally demanding. On ice or snow, people may slide, slip, glide, tumble, ski, or skate, while summer exercise may include cycling, a dive into water, a jump, leap, plunge, spring, or hop over an obstacle. Even when people simply drift through a park, the body is constantly adjusting to surface, balance, and pace.
+
+Outdoor travel turns these movements into experience. A family may take a tent to camp, organise a picnic, hunt for a quiet view, or enter a race or marathon with every pedestrian moving at a different step. During an excursion, cruise, trip, vacation, or hike, travellers jog, stride, wander, linger, lag behind, climb a hill, pull or drag equipment, bend under branches, and bow to practical limits. For IELTS readers, ordinary leisure therefore becomes useful evidence of how movement vocabulary works in context and how physical choices shape public space.`,
+  },
+  {
+    id: 'fast-only-household-waste-33',
+    mode: 'fast',
+    theme: 'daily-life',
+    subtheme: 'household goods, cleaning, and waste systems',
+    style: 'ielts-reading',
+    readingGoal: 'Cover household objects, cleaning tools, and waste vocabulary in a dense explanatory passage.',
+    title: 'Fast Vocabulary: Household Goods, Cleaning, and Waste Systems',
+    targetWordIds: ['stuff__noun', 'item__noun', 'merchandise__noun', 'souvenir__noun', 'artifact__noun', 'material__noun', 'raw__adjective', 'crude__adjective', 'necessity__noun', 'outfit__adjective', 'kit__noun', 'utensil__noun', 'garbage__noun', 'rubbish__noun', 'trash__noun', 'recycle__verb', 'reuse__verb', 'litter__noun', 'waste__noun', 'junk__noun', 'landfill__noun', 'sewerage__noun', 'detergent__noun', 'lotion__noun', 'shampoo__verb', 'soap__noun', 'tub__noun', 'plug__noun', 'tap__noun', 'pipe__noun', 'tube__noun', 'mop__noun', 'broom__noun', 'sweep__verb', 'mattress__noun', 'carpet__noun', 'rug__noun', 'mat__noun', 'cushion__noun', 'pad__noun', 'blanket__noun', 'quilt__noun', 'sheet__noun', 'pillow__noun', 'sponge__noun', 'towel__noun'],
+    content: `Domestic consumption produces a surprisingly complex vocabulary. A household buys stuff, each item of merchandise serving as a necessity, a souvenir, or even an artifact of family memory. The material may be raw, crude, recycled, or carefully processed, and a travel outfit or repair kit often includes some small utensil whose value is noticed only when it is missing.
+
+Cleaning vocabulary shows how private comfort depends on public systems. Garbage, rubbish, trash, litter, waste, and junk should not simply move to a landfill without thought; responsible homes recycle and reuse what they can. Sewerage also matters, because detergent, lotion, shampoo, soap, a tub, plug, tap, pipe, or tube all connect household hygiene with wider urban infrastructure. When these systems fail, domestic life quickly becomes unpleasant.
+
+Inside the room, order is maintained through repeated physical work. A mop or broom may sweep dust from a carpet, rug, or mat, while a sponge and towel clean surfaces after use. Bedding creates another layer of comfort: the mattress, cushion, pad, blanket, quilt, sheet, and pillow all influence sleep quality. For IELTS readers, this passage shows that common household words can support an academic discussion of consumption, sanitation, and well-being.`,
+  },
+  {
+    id: 'fast-only-office-tools-34',
+    mode: 'fast',
+    theme: 'education-learning',
+    subtheme: 'office materials, labels, and simple mechanisms',
+    style: 'ielts-reading',
+    readingGoal: 'Cover stationery, document, and everyday mechanism vocabulary in a coherent fast passage.',
+    title: 'Fast Vocabulary: Office Materials and Simple Mechanisms',
+    targetWordIds: ['staple__noun', 'nail__noun', 'razor__noun', 'shave__verb', 'fuse__noun', 'cable__noun', 'cord__noun', 'strand__noun', 'match__noun', 'candle__noun', 'wax__noun', 'portfolio__noun', 'paperback__noun', 'pamphlet__noun', 'cover__noun', 'xerox__noun', 'duplicate__verb', 'memorandum__noun', 'stationery__noun', 'glue__noun', 'ink__noun', 'rubber__noun', 'scissors__noun', 'shear__noun', 'edge__noun', 'rim__noun', 'element__noun', 'factor__noun', 'section__noun', 'tag__noun', 'label__noun', 'badge__noun', 'bolt__noun', 'knob__noun', 'handle__noun', 'phone__noun', 'bell__noun', 'refrigerator__noun', 'fridge__noun', 'hurdle__noun', 'fence__noun', 'pedal__noun', 'shelf__noun', 'ladder__noun', 'lift__verb', 'stool__noun', 'drawer__noun', 'umbrella__noun', 'raincoat__noun'],
+    content: `Workplaces and schools depend on small objects whose names are often learned late. A staple, nail, fuse, cable, cord, strand, match, candle, and wax may seem unrelated, yet each belongs to a practical system of fastening, power, or emergency use. Even a razor used to shave before an interview can become part of the preparation expected in formal environments.
+
+Document culture has its own material language. A student may keep a portfolio, read a paperback, distribute a pamphlet, design a cover, make a Xerox copy, duplicate a memorandum, and store stationery with glue, ink, rubber, scissors, or a shear. The edge and rim of a page, the element and factor in a diagram, and the section, tag, label, or badge used for classification all help readers navigate information efficiently.
+
+Simple mechanisms shape the same environment. A bolt, knob, handle, phone, bell, refrigerator or fridge, shelf, ladder, stool, drawer, umbrella, and raincoat support daily routine, while a hurdle, fence, or pedal shows how objects guide movement. People lift equipment carefully because a minor tool can become a major obstacle when it is ignored. The passage therefore links everyday objects to academic ideas of organisation and design.`,
+  },
+  {
+    id: 'fast-only-materials-fashion-35',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'materials, authenticity, and fashion display',
+    style: 'ielts-reading',
+    readingGoal: 'Cover material, authenticity, fashion, and decorative vocabulary in a dense academic passage.',
+    title: 'Fast Vocabulary: Materials, Authenticity, and Fashion Display',
+    targetWordIds: ['metal__noun', 'pitch__noun', 'leather__noun', 'fiber__noun', 'knit__verb', 'weave__verb', 'canvas__noun', 'linen__noun', 'cotton__noun', 'nylon__noun', 'lumber__noun', 'wooden__adjective', 'mine__noun', 'pit__noun', 'fuel__noun', 'lubricate__verb', 'diamond__noun', 'crystal__noun', 'inferior__adjective', 'counterfeit__adjective', 'fake__adjective', 'fragile__adjective', 'miniature__adjective', 'available__adjective', 'durable__adjective', 'fashion__noun', 'style__noun', 'trend__noun', 'tendency__noun', 'current__noun__2', 'popularity__noun', 'vogue__noun', 'prevail__verb', 'model__noun', 'icon__noun', 'idol__noun', 'luxury__noun', 'extravagant__adjective', 'jewelry__noun', 'jewel__noun', 'gem__noun', 'jade__noun', 'adorn__verb', 'ornament__noun', 'embellish__verb', 'embroider__verb', 'hairdressing__noun', 'pigment__noun', 'dye__noun', 'masquerade__noun', 'veil__noun', 'costume__noun'],
+    content: `Material culture begins with substances but quickly becomes social meaning. Metal, leather, fiber, canvas, linen, cotton, nylon, lumber, and wooden products all carry different expectations of strength and comfort. Some are taken from a mine or pit, moved with fuel, and shaped by machines that must lubricate properly; others are produced when workers knit or weave fabric by hand. Even pitch, resin, or coating can alter how durable a surface becomes.
+
+Markets then judge authenticity. A diamond, crystal, jewel, gem, or jade object may be valuable, but an inferior, counterfeit, or fake version can still appear convincing. A fragile miniature may be available to ordinary buyers, while luxury goods and extravagant jewelry remain symbols of status. Fashion, style, trend, tendency, current taste, popularity, and vogue change rapidly, yet a famous model, icon, or idol can make one design prevail for a season.
+
+Display completes the process. Designers adorn a garment, add an ornament, embellish a sleeve, embroider a pattern, select pigment or dye, and coordinate hairdressing with costume. A masquerade veil may fascinate observers because it hides identity while advertising taste. For IELTS readers, this vocabulary explains how material value, social desire, and visual culture interact.`,
+  },
 ];
 
 function clean(value) {
