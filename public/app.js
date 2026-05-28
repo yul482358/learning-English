@@ -371,17 +371,19 @@ function decorateParagraph(article, paragraph) {
   return wrapper;
 }
 
+function resetReaderToEmpty() {
+  state.activeArticleId = null;
+  if (state.activeWordButton) state.activeWordButton.classList.remove('active');
+  state.activeWordButton = null;
+  hidePopover();
+  els.readerArticle.classList.add('hidden');
+  els.readerEmpty.classList.remove('hidden');
+}
+
 function ensureArticleVisibleOrFallback() {
   const visibleIds = new Set(visibleArticleCards().map((card) => card.id));
   if (visibleIds.has(state.activeArticleId)) return;
-  const first = visibleArticleCards()[0];
-  if (first) {
-    renderArticle(first.id);
-  } else {
-    state.activeArticleId = null;
-    els.readerArticle.classList.add('hidden');
-    els.readerEmpty.classList.remove('hidden');
-  }
+  resetReaderToEmpty();
 }
 
 function renderArticle(articleId) {
@@ -432,7 +434,7 @@ async function init() {
   renderThemeOptions();
   renderModeCards();
   renderArticleList();
-  renderArticle(appData.articleCards[0]?.id);
+  resetReaderToEmpty();
   setActiveView('home');
 }
 
