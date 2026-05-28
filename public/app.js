@@ -6,6 +6,7 @@ const state = {
   vocabByWord: new Map(),
   activeArticleId: null,
   activeWordButton: null,
+  selectionTimer: null,
 };
 
 const els = {
@@ -30,8 +31,43 @@ const els = {
   inspectNote: document.getElementById('inspect-note'),
 };
 
+const floating = document.createElement('div');
+floating.className = 'translation-popover hidden';
+floating.innerHTML = `
+  <div class="popover-topline">
+    <span id="popover-mode">Translation</span>
+    <button type="button" id="popover-close" aria-label="Close translation">×</button>
+  </div>
+  <div id="popover-text" class="popover-text"></div>
+  <div id="popover-translation" class="popover-translation">Loading…</div>
+  <div id="popover-explanation" class="popover-explanation"></div>
+`;
+document.body.appendChild(floating);
+
+const popoverEls = {
+  mode: document.getElementById('popover-mode'),
+  text: document.getElementById('popover-text'),
+  translation: document.getElementById('popover-translation'),
+  explanation: document.getElementById('popover-explanation'),
+  close: document.getElementById('popover-close'),
+};
+
 function normalizeWord(word) {
   return String(word || '').trim().toLowerCase();
+}
+
+function countWords(text) {
+  return (String(text).match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length;
+}
+
+function cleanSelectedText(text) {
+  return String(text || '').replace(/\s+/g, ' ').trim();
+}
+
+function sentenceForText(articleContent, selectedText) {
+  const normalizedSelection = normalizeWord(selectedText);
+  const sentences = articleContent.split(/(?<=[.!?])\s+/);
+  return sentences.find((sentence) => normalizeWord(sentence).includes(normalizedSelection)) || selectedText;
 }
 
 function sentenceForWord(articleContent, word) {
@@ -40,13 +76,84 @@ function sentenceForWord(articleContent, word) {
   return sentences.find((sentence) => normalizeWord(sentence).includes(normalized)) || 'Context unavailable.';
 }
 
-function setInspectorLoading(word, context, entry) {
+function currentArticle() {
+  return state.articleById.get(state.activeArticleId) || null;
+}
+
+function setInspectorLoading(word, context, entry, mode = 'word') {
   els.inspectWord.textContent = word;
-  els.inspectPos.textContent = entry?.posList?.join(', ') || 'Loading part of speech…';
+  els.inspectPos.textContent = entry?.posList?.join(', ') || (mode === 'sentence' ? 'sentence' : 'Loading part of speech…');
   els.inspectTranslation.textContent = entry?.meaningCn || 'Loading translation…';
   els.inspectExplanation.textContent = 'Requesting context-aware explanation…';
   els.inspectContext.textContent = context;
   els.inspectNote.textContent = entry?.notes || entry?.example || '–';
+}
+
+function positionPopoverFromRect(rect) {
+  floating.classList.remove('hidden');
+  const margin = 12;
+  const popoverWidth = Math.min(360, window.innerWidth - margin * 2);
+  floating.style.width = `${popoverWidth}px`;
+
+  const measured = floating.getBoundingClientRect();
+  let left = rect.left + rect.width / 2 - popoverWidth / 2 + window.scrollX;
+  left = Math.max(margin + window.scrollX, Math.min(left, window.scrollX + window.innerWidth - popoverWidth - margin));
+
+  let top = rect.bottom + margin + window.scrollY;
+  const estimatedHeight = measured.height || 190;
+  if (top + estimatedHeight > window.scrollY + window.innerHeight - margin) {
+    top = Math.max(window.scrollY + margin, rect.top + window.scrollY - estimatedHeight - margin);
+  }
+
+  floating.style.left = `${left}px`;
+  floating.style.top = `${top}px`;
+}
+
+function selectionRect() {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return null;
+  const range = selection.getRangeAt(0);
+  const rect = range.getBoundingClientRect();
+  if (rect.width || rect.height) return rect;
+  const rects = range.getClientRects();
+  return rects[0] || null;
+}
+
+function hidePopover() {
+  floating.classList.add('hidden');
+}
+
+function showPopoverLoading({ text, mode, rect }) {
+  popoverEls.mode.textContent = mode === 'sentence' ? 'Sentence translation' : 'Word translation';
+  popoverEls.text.textContent = text;
+  popoverEls.translation.textContent = 'Translating…';
+  popoverEls.explanation.textContent = 'Calling your configured API in the background.';
+  positionPopoverFromRect(rect);
+}
+
+function updatePopover(payload, fallbackText) {
+  popoverEls.translation.textContent = payload.translation || '暂无翻译';
+  popoverEls.explanation.textContent = payload.explanation || '';
+  popoverEls.text.textContent = payload.text || payload.word || fallbackText;
+  const rect = floating.getBoundingClientRect();
+  positionPopoverFromRect({
+    left: rect.left,
+    right: rect.right,
+    top: rect.top,
+    bottom: rect.bottom,
+    width: rect.width,
+    height: rect.height,
+  });
+}
+
+async function requestTranslation({ text, context, mode }) {
+  const response = await fetch('/api/translate', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ text, word: text, context, mode, articleId: state.activeArticleId }),
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
 }
 
 function renderStats() {
@@ -99,26 +206,69 @@ function markActiveWord(button) {
 
 async function inspectWord(article, word, button) {
   markActiveWord(button);
-  const entry = state.vocabByWord.get(normalizeWord(word));
-  const context = sentenceForWord(article.content, word);
-  setInspectorLoading(word, context, entry);
+  const text = cleanSelectedText(word);
+  const entry = state.vocabByWord.get(normalizeWord(text));
+  const context = sentenceForWord(article.content, text);
+  setInspectorLoading(text, context, entry, 'word');
+  showPopoverLoading({ text, mode: 'word', rect: button.getBoundingClientRect() });
 
   try {
-    const response = await fetch('/api/translate', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ word, context, articleId: article.id }),
-    });
-    const payload = await response.json();
-    els.inspectWord.textContent = payload.word || word;
+    const payload = await requestTranslation({ text, context, mode: 'word' });
+    els.inspectWord.textContent = payload.word || payload.text || text;
     els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || 'unknown';
     els.inspectTranslation.textContent = payload.translation || entry?.meaningCn || '暂无释义';
     els.inspectExplanation.textContent = payload.explanation || entry?.notes || 'No explanation returned.';
     els.inspectContext.textContent = context;
     els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
+    updatePopover(payload, text);
   } catch (error) {
     els.inspectExplanation.textContent = `Failed to load model help: ${error}`;
+    popoverEls.translation.textContent = '翻译加载失败';
+    popoverEls.explanation.textContent = String(error);
   }
+}
+
+async function translateSelection() {
+  const article = currentArticle();
+  const selection = window.getSelection();
+  if (!article || !selection || selection.rangeCount === 0) return;
+  const selectedText = cleanSelectedText(selection.toString());
+  if (!selectedText) return;
+
+  const range = selection.getRangeAt(0);
+  if (!els.readerContent.contains(range.commonAncestorContainer)) return;
+
+  const rect = selectionRect();
+  if (!rect) return;
+
+  const wordTotal = countWords(selectedText);
+  const mode = wordTotal > 5 ? 'sentence' : 'word';
+  const text = mode === 'sentence' ? sentenceForText(article.content, selectedText) : selectedText;
+  const context = mode === 'sentence' ? text : sentenceForWord(article.content, text);
+  const entry = mode === 'word' ? state.vocabByWord.get(normalizeWord(text)) : null;
+
+  setInspectorLoading(text, context, entry, mode);
+  showPopoverLoading({ text, mode, rect });
+
+  try {
+    const payload = await requestTranslation({ text, context, mode });
+    els.inspectWord.textContent = payload.word || payload.text || text;
+    els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || mode;
+    els.inspectTranslation.textContent = payload.translation || entry?.meaningCn || '暂无翻译';
+    els.inspectExplanation.textContent = payload.explanation || entry?.notes || '';
+    els.inspectContext.textContent = context;
+    els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
+    updatePopover(payload, text);
+  } catch (error) {
+    els.inspectExplanation.textContent = `Failed to load translation: ${error}`;
+    popoverEls.translation.textContent = '翻译加载失败';
+    popoverEls.explanation.textContent = String(error);
+  }
+}
+
+function scheduleSelectionTranslation() {
+  clearTimeout(state.selectionTimer);
+  state.selectionTimer = setTimeout(translateSelection, 160);
 }
 
 function decorateParagraph(article, paragraph) {
@@ -161,6 +311,7 @@ function renderArticle(articleId) {
   const article = state.articleById.get(articleId);
   if (!article) return;
   state.activeArticleId = articleId;
+  hidePopover();
   renderArticleList();
 
   els.readerEmpty.classList.add('hidden');
@@ -201,6 +352,20 @@ async function init() {
 }
 
 els.themeFilter.addEventListener('change', renderArticleList);
+popoverEls.close.addEventListener('click', hidePopover);
+els.readerContent.addEventListener('mouseup', scheduleSelectionTranslation);
+els.readerContent.addEventListener('touchend', scheduleSelectionTranslation);
+document.addEventListener('selectionchange', () => {
+  const selection = window.getSelection();
+  if (!selection || !cleanSelectedText(selection.toString())) return;
+  scheduleSelectionTranslation();
+});
+document.addEventListener('mousedown', (event) => {
+  if (!floating.contains(event.target) && !els.readerContent.contains(event.target)) {
+    hidePopover();
+  }
+});
+
 init().catch((error) => {
   els.articleList.innerHTML = `<p>Failed to load app data: ${error}</p>`;
 });

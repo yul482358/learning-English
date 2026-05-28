@@ -35,16 +35,20 @@ function findVocabularyEntry(word) {
 }
 
 async function translateWord({ env, body }) {
-  const word = body?.word;
+  const rawText = body?.text ?? body?.word;
+  const word = typeof rawText === 'string' ? rawText.trim() : '';
   const context = body?.context || '';
-  if (!word) return badRequest('Missing word');
+  const mode = body?.mode || (word.split(/\s+/).filter(Boolean).length > 5 ? 'sentence' : 'word');
+  if (!word) return badRequest('Missing text');
 
-  const entry = findVocabularyEntry(word);
+  const entry = mode === 'word' ? findVocabularyEntry(word) : null;
   const fallback = {
     word,
+    text: word,
+    mode,
     translation: entry?.meaningCn || '暂无本地释义',
     explanation: entry?.notes || 'No model explanation available.',
-    pos: entry?.posList?.[0] || 'unknown',
+    pos: entry?.posList?.[0] || (mode === 'sentence' ? 'sentence' : 'unknown'),
     source: entry ? 'local-fallback' : 'missing',
   };
 
@@ -53,15 +57,17 @@ async function translateWord({ env, body }) {
   }
 
   const systemPrompt = [
-    'You are an IELTS vocabulary assistant.',
+    'You are an IELTS reading translation assistant.',
     'Return concise JSON only with keys: translation, explanation, pos.',
-    'translation should be concise Chinese.',
-    'explanation should be a short English learner-friendly explanation.',
-    'pos should be a simple part of speech label such as noun, verb, adjective, adverb, phrase.',
+    'If mode is sentence, translate the whole selected sentence/text into natural Chinese and set pos to sentence.',
+    'For sentence mode, explanation should be a very brief Chinese note or an empty string.',
+    'If mode is word, translate the selected English word or short phrase into concise Chinese, explain its meaning in this context, and set pos to a simple part of speech label.',
+    'Do not add markdown.',
   ].join(' ');
 
   const userPrompt = {
-    word,
+    mode,
+    text: word,
     context,
     dictionaryHint: entry
       ? {
@@ -102,6 +108,8 @@ async function translateWord({ env, body }) {
     const parsed = JSON.parse(content);
     return json({
       word,
+      text: word,
+      mode,
       translation: parsed.translation || fallback.translation,
       explanation: parsed.explanation || fallback.explanation,
       pos: parsed.pos || fallback.pos,

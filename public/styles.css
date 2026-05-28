@@ -281,6 +281,68 @@ select {
   color: var(--muted);
 }
 
+.translation-popover {
+  position: absolute;
+  z-index: 1000;
+  max-width: calc(100vw - 24px);
+  padding: 16px;
+  border: 1px solid rgba(217, 119, 69, 0.35);
+  border-radius: 18px;
+  background: rgba(255, 250, 242, 0.98);
+  box-shadow: 0 24px 70px rgba(91, 68, 52, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.translation-popover.hidden {
+  display: none;
+}
+
+.popover-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#popover-close {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.popover-text {
+  max-height: 76px;
+  overflow: auto;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.popover-translation {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.popover-explanation {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 1200px) {
   .app-grid {
     grid-template-columns: 320px minmax(0, 1fr);
