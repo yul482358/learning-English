@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T17:47:41.164Z",
+  "generatedAt": "2026-05-28T18:24:50.930Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 133,
-    "avgCoverageRate": 0.937
+    "articleCount": 145,
+    "avgCoverageRate": 0.942
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 81
+      "articleCount": 93
     },
     {
       "id": "core",
@@ -1725,10 +1725,10 @@
       "theme": "daily-life",
       "themeLabel": "daily-life",
       "summary": "Cover family and household vocabulary in a coherent social-science style passage.",
-      "wordCount": 180,
+      "wordCount": 198,
       "targetWordCount": 30,
       "coverageRate": 1,
-      "density": 0.167
+      "density": 0.152
     },
     {
       "id": "fast-only-body-medicine-treatment-51",
@@ -1807,6 +1807,162 @@
       "targetWordCount": 60,
       "coverageRate": 1,
       "density": 0.267
+    },
+    {
+      "id": "fast-only-relationship-work-57",
+      "title": "Fast Vocabulary: Relationships, Work Roles, and Service",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 244,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.246
+    },
+    {
+      "id": "fast-only-service-professions-response-58",
+      "title": "Fast Vocabulary: Professions, Conduct, and Response",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 224,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.268
+    },
+    {
+      "id": "fast-only-argument-touch-movement-59",
+      "title": "Fast Vocabulary: Argument, Contact, and Movement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 225,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.267
+    },
+    {
+      "id": "fast-only-risk-crime-action-60",
+      "title": "Fast Vocabulary: Risk, Crime, and Institutional Action",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 237,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.253
+    },
+    {
+      "id": "fast-only-repair-recovery-civic-memory-61",
+      "title": "Fast Vocabulary: Repair, Recovery, and Civic Memory",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 226,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.265
+    },
+    {
+      "id": "fast-only-memory-personality-body-62",
+      "title": "Fast Vocabulary: Memory, Personality, and Body Description",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 232,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.259
+    },
+    {
+      "id": "fast-only-health-senses-treatment-63",
+      "title": "Fast Vocabulary: Senses, Disability, and Treatment",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 226,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.265
+    },
+    {
+      "id": "fast-only-health-recovery-emotion-64",
+      "title": "Fast Vocabulary: Treatment, Recovery, and Positive Emotion",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 231,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.26
+    },
+    {
+      "id": "fast-only-character-strength-values-65",
+      "title": "Fast Vocabulary: Character, Strength, and Values",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 226,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.265
+    },
+    {
+      "id": "fast-only-imagination-negative-character-66",
+      "title": "Fast Vocabulary: Imagination and Negative Character",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 234,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.256
+    },
+    {
+      "id": "fast-only-time-sequence-history-67",
+      "title": "Fast Vocabulary: Time, Sequence, and Historical Scale",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 224,
+      "targetWordCount": 59,
+      "coverageRate": 1,
+      "density": 0.263
+    },
+    {
+      "id": "fast-only-risk-defense-memory-68",
+      "title": "Fast Vocabulary: Risk, Defence, and Public Memory",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Expand fast-mode exact coverage through a coherent IELTS-style academic passage.",
+      "wordCount": 239,
+      "targetWordCount": 60,
+      "coverageRate": 1,
+      "density": 0.251
     }
   ]
 }
