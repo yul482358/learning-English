@@ -1765,6 +1765,111 @@ National language adds another layer of importance and significance. A league ma
 
 Policy must also address unequal settlement. A slum may become a refuge for one resident and a place of asylum for another. Demographic change, ethnic identity, racial tension, and clan loyalty influence whether a franchise can entitle citizens to express preference, elect leaders, answer a poll as a respondent, pursue ambition, or nominate a candidate. IELTS readers can therefore link ideology, migration, and representation in one analytical framework.`,
   },
+  {
+    id: 'fast-only-civic-guidance-national-perspectives-46',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'public guidance, welfare, and international viewpoints',
+    style: 'ielts-reading',
+    readingGoal: 'Cover civic guidance and national-perspective vocabulary in a dense IELTS-style passage.',
+    title: 'Fast Vocabulary: Civic Guidance and National Perspectives',
+    targetWordIds: ['checklist__noun', 'succession__noun', 'safety__noun', 'welfare__noun', 'well-being__noun', 'harmony__noun', 'steady__adjective', 'flourish__verb', 'succeed__verb', 'prospect__noun', 'viewpoint__noun', 'standpoint__noun', 'outlook__noun', 'guideline__noun', 'ethic__noun', 'suggest__verb', 'advise__verb', 'proposal__noun', 'hint__verb', 'declare__verb', 'affirm__verb', 'claim__noun', 'proclaim__verb', 'announce__verb', 'clarify__verb', 'assist__verb', 'aid__noun', 'encourage__verb', 'implement__verb', 'monitor__verb', 'admit__verb', 'african__adjective', 'european__adjective', 'latin__adjective', 'jewish__adjective', 'arabian__adjective', 'portuguese__adjective', 'roman__adjective', 'russian__adjective', 'spanish__adjective', 'swiss__adjective', 'greek__adjective', 'italian__adjective', 'soviet__adjective', 'indian__adjective', 'australia__noun', 'new-zealand__noun', 'canada__noun', 'britain__noun', 'france__noun', 'germany__noun'],
+    content: `Public policy often begins with a checklist, but successful welfare planning requires more than ticking boxes. Officials examine safety, well-being, harmony, and the steady succession of decisions that allow a community to flourish. A reform may succeed only when citizens see a realistic prospect of improvement from more than one viewpoint, standpoint, and outlook.
+
+A good guideline also contains an ethic of explanation. Experts may suggest a measure, advise a minister, draft a proposal, or hint at a hidden risk, but they must declare their evidence, affirm their values, and avoid a careless claim. Leaders sometimes proclaim a new programme or announce a target before they clarify how local offices will assist residents. Practical aid must encourage participation, implement change fairly, monitor results, and admit failure when the evidence demands revision.
+
+Comparative reading widens the frame. African, European, Latin, Jewish, Arabian, Portuguese, Roman, Russian, Spanish, Swiss, Greek, Italian, Soviet, and Indian histories show that public trust grows differently in each setting. Australia, New Zealand, Canada, Britain, France, and Germany also demonstrate that national systems can share goals while choosing different routes. IELTS readers should therefore treat civic vocabulary as a language of evidence, culture, and careful judgement rather than as a simple list of public slogans.`,
+  },
+  {
+    id: 'fast-only-economy-markets-work-47',
+    mode: 'fast',
+    theme: 'economy-business',
+    subtheme: 'markets, trade, payment, and employment',
+    style: 'ielts-reading',
+    readingGoal: 'Cover market and employment vocabulary through one compact academic explanation.',
+    title: 'Fast Vocabulary: Markets, Trade, and Work',
+    targetWordIds: ['economy__noun', 'trade__noun', 'market__noun', 'industry__noun', 'company__noun', 'firm__noun', 'enterprise__noun', 'invest__verb', 'product__noun', 'goods__noun', 'cargo__noun', 'sale__noun', 'wholesale__noun', 'auction__verb', 'bid__verb', 'transaction__noun', 'turnover__noun', 'export__verb', 'import__verb', 'quota__noun', 'share__noun', 'benefit__noun', 'dividend__noun__2', 'stock__noun', 'account__noun', 'deposit__noun', 'cash__noun', 'wealth__noun', 'salary__noun', 'income__noun', 'wage__noun', 'payment__noun', 'refund__noun', 'subsidy__noun', 'career__noun', 'profession__noun', 'job__noun', 'labour__noun', 'workforce__noun', 'employ__verb', 'hire__verb', 'retire__verb'],
+    content: `An economy can be studied through the daily movement of trade, market demand, and industry output. A company, firm, or enterprise must invest before it can offer a product, move goods, or send cargo to another region. Some firms depend on a direct sale, while others use wholesale contracts, auction stock, or bid for public work. Each transaction affects turnover and determines whether managers export, import, or obey a quota.
+
+Finance gives these activities a measurable form. A business may issue a share, pay a dividend, protect a stock account, request a deposit, or hold cash during uncertainty. These decisions influence wealth, but they also shape ordinary life through salary, income, wage levels, payment systems, refund rules, and government subsidy. A market benefit is therefore never purely abstract; it reaches households through prices and employment.
+
+Work vocabulary completes the picture. A person may build a career, enter a profession, accept a job, or join the labour force because the wider workforce needs particular skills. Employers employ people, hire new staff during expansion, and sometimes help older workers retire with dignity. IELTS passages often connect these words to inequality, technology, migration, and public policy, so learners need to read economic vocabulary as one connected system.`,
+  },
+  {
+    id: 'fast-only-law-crime-evidence-48',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'courts, crime, evidence, and rights',
+    style: 'ielts-reading',
+    readingGoal: 'Cover legal and crime vocabulary in a readable fast-mode justice passage.',
+    title: 'Fast Vocabulary: Law, Crime, and Evidence',
+    targetWordIds: ['court__noun', 'supreme__adjective', 'enact__verb', 'equity__noun', 'prosecute__verb', 'condemn__verb', 'plea__noun', 'arrest__verb', 'restrict__verb', 'commit__verb', 'sin__noun', 'vice__noun', 'bribe__noun', 'rob__verb', 'pirate__noun', 'steal__noun', 'thief__noun', 'murder__noun', 'suicide__noun', 'deceive__verb', 'cheat__verb', 'liar__noun', 'confess__verb', 'obey__verb', 'penalty__noun', 'fine__noun', 'ownership__noun', 'copyright__noun', 'privilege__noun', 'evidence__noun', 'proof__noun'],
+    content: `A legal system must balance authority with equity. A court may apply a supreme principle, while legislators enact rules that allow the state to prosecute wrongdoing without abusing power. Judges sometimes condemn a harmful act after hearing a plea, but they must also ask whether an arrest was lawful and whether to restrict freedom is proportionate.
+
+Crime vocabulary shows why precision matters. People may commit a sin in moral language or a vice in social language, but the law needs evidence of conduct. A bribe can corrupt an official; a robber may rob a shop; a pirate may steal cargo; a thief may target a home; murder and suicide require different kinds of investigation. The same system must recognise attempts to deceive, cheat, or protect a liar who refuses to confess.
+
+Rights create another layer. Citizens are expected to obey the law, yet a penalty or fine should rest on proof rather than anger. Ownership and copyright protect property, while privilege can become controversial if it allows powerful people to escape ordinary rules. For IELTS readers, legal vocabulary is useful because it links behaviour, evidence, punishment, and the public demand for justice.`,
+  },
+  {
+    id: 'fast-only-conflict-security-weapons-49',
+    mode: 'fast',
+    theme: 'society-government',
+    subtheme: 'conflict, weapons, and military security',
+    style: 'ielts-reading',
+    readingGoal: 'Cover conflict and security vocabulary through an analytical passage on modern war.',
+    title: 'Fast Vocabulary: Conflict, Security, and Weapons',
+    targetWordIds: ['violence__noun', 'conflict__noun', 'raid__noun', 'campaign__noun', 'battle__noun', 'struggle__verb', 'explosion__noun', 'bombard__verb', 'bomb__noun', 'blast__noun', 'tank__noun', 'cannon__noun', 'missile__noun', 'weapon__noun', 'pistol__noun', 'rifle__noun', 'bullet__noun', 'target__noun', 'mission__noun', 'flame__noun', 'sword__noun', 'shield__noun', 'deploy__verb', 'hit__verb', 'siege__noun', 'attack__verb', 'assault__noun', 'troop__noun', 'naval__adjective', 'fleet__noun', 'victory__noun', 'defeat__verb'],
+    content: `Modern security writing distinguishes between violence and organised conflict. A raid, campaign, or battle may appear sudden to civilians, but military planners often struggle over logistics long before the first explosion. Forces may bombard a district with a bomb, create a blast that destroys services, or move a tank, cannon, missile, and other weapon systems toward a strategic target.
+
+The vocabulary of arms has changed across history. A pistol, rifle, and bullet belong to modern infantry, while an older sword and shield still appear in cultural memory. A mission may begin when commanders deploy a troop formation to hit a bridge or protect a hospital from flame. During a siege, however, the difference between attack and assault can become blurred for people trapped inside the city.
+
+Naval power adds a further dimension. A fleet can control shipping routes, and naval pressure may influence food prices far from the battlefield. Governments often describe victory as the defeat of an enemy, yet IELTS passages usually ask readers to examine human cost, strategic risk, and post-war recovery. Conflict vocabulary is therefore analytical, not merely dramatic.`,
+  },
+  {
+    id: 'fast-only-family-household-life-50',
+    mode: 'fast',
+    theme: 'daily-life',
+    subtheme: 'family roles, households, and life stages',
+    style: 'ielts-reading',
+    readingGoal: 'Cover family and household vocabulary in a coherent social-science style passage.',
+    title: 'Fast Vocabulary: Family, Household, and Life Stages',
+    targetWordIds: ['generation__noun', 'surname__noun', 'gender__noun', 'female__noun', 'couple__noun', 'spouse__noun', 'husband__noun', 'sibling__noun', 'cousin__noun', 'nephew__noun', 'niece__noun', 'twin__adjective', 'infant__noun', 'orphan__noun', 'juvenile__adjective', 'teenager__noun', 'adolescence__noun', 'relative__noun', 'household__noun', 'chore__noun', 'tenant__noun', 'guest__noun', 'marry__verb', 'wedding__noun', 'divorce__noun', 'member__noun', 'neighborhood__noun', 'acquaintance__noun', 'friendship__noun', 'affection__noun'],
+    content: `Family vocabulary helps readers describe social change across each generation. A surname can signal ancestry, while gender expectations influence how a female child, a couple, a spouse, or a husband is treated in different societies. Relationships also extend beyond parents: a sibling, cousin, nephew, niece, or twin relative may provide emotional and practical support.
+
+Life-stage words make the pattern clearer. An infant needs intensive care; an orphan may depend on public protection; a juvenile learner and a teenager face the difficult transition of adolescence. In many cultures, each household member is expected to share a chore, respect a tenant or guest, and maintain ties with the wider neighborhood. These ordinary arrangements influence education, health, and economic opportunity.
+
+Marriage vocabulary is equally important in academic reading. Adults may marry after a wedding ceremony, but divorce can reshape housing, income, and childcare. A casual acquaintance may develop into friendship, and affection may become a source of resilience during stress. For IELTS learners, such vocabulary is not private gossip; it is the language used to analyse demographic change, welfare policy, and community stability.`,
+  },
+  {
+    id: 'fast-only-body-medicine-treatment-51',
+    mode: 'fast',
+    theme: 'health-biology',
+    subtheme: 'body systems, illness, and medical treatment',
+    style: 'ielts-reading',
+    readingGoal: 'Cover anatomy and treatment vocabulary through a fast IELTS-style health passage.',
+    title: 'Fast Vocabulary: Body Systems and Medical Treatment',
+    targetWordIds: ['bone__noun', 'skeleton__noun', 'skull__noun', 'brain__noun', 'organ__noun', 'liver__noun', 'stomach__noun', 'kidney__noun', 'lung__noun', 'muscle__noun', 'artery__noun', 'nerve__noun', 'hormone__noun', 'immune__adjective', 'pregnancy__noun', 'clone__verb', 'disable__verb', 'arthritis__noun', 'injure__verb', 'death__noun', 'fatal__adjective', 'therapy__noun', 'clinic__noun', 'cure__verb', 'transplant__verb', 'injection__noun', 'quarantine__verb', 'pharmacy__noun', 'medicine__noun', 'antibiotic__noun'],
+    content: `Medical reading often begins with anatomy. A bone belongs to the skeleton; the skull protects the brain; each organ, including the liver, stomach, kidney, and lung, performs a specialised task. A muscle moves the body, an artery carries blood, a nerve transmits signals, and a hormone helps regulate growth, stress, and reproduction. The immune system then protects these structures from infection.
+
+Health passages also discuss risk across the life course. Pregnancy requires careful monitoring, while future technologies may clone tissue rather than whole people. Disease can disable workers, arthritis can injure mobility over time, and untreated infection may lead to death or become fatal. Such outcomes explain why prevention and early diagnosis matter.
+
+Treatment vocabulary connects science with public service. A patient may receive therapy at a clinic, seek a cure, transplant damaged tissue, or need an injection during an outbreak. Authorities may quarantine exposed travellers, while a pharmacy supplies medicine or an antibiotic when bacterial infection is likely. IELTS readers should notice how body words, disease risk, and treatment systems form one argument about health care.`,
+  },
+  {
+    id: 'fast-only-emotion-personal-outlook-52',
+    mode: 'fast',
+    theme: 'daily-life',
+    subtheme: 'emotion, personality, and social outlook',
+    style: 'ielts-reading',
+    readingGoal: 'Cover positive and negative emotion vocabulary in one readable fast-mode passage.',
+    title: 'Fast Vocabulary: Emotion and Personal Outlook',
+    targetWordIds: ['optimistic__adjective', 'pessimistic__adjective', 'enthusiastic__adjective', 'happiness__noun', 'delight__verb', 'joke__noun', 'laughter__noun', 'joy__noun', 'pleasure__noun', 'friendly__adjective', 'grateful__adjective', 'gratitude__noun', 'fate__noun', 'fortune__noun', 'agony__noun', 'grief__noun', 'miserable__adjective', 'distress__noun', 'sadness__noun', 'gloomy__adjective', 'disappoint__verb', 'anger__noun', 'furious__adjective', 'rage__noun', 'hate__verb', 'anxiety__noun', 'timid__adjective', 'envy__noun', 'jealous__adjective', 'guilty__adjective', 'ashamed__adjective'],
+    content: `Psychological vocabulary allows writers to compare inner experience with social behaviour. An optimistic person may remain enthusiastic during difficulty, while a pessimistic outlook can reduce confidence before action begins. Happiness may delight a group, a joke may create laughter, and shared joy or pleasure can make a workplace more friendly. People who feel grateful often express gratitude because they recognise the role of fate, fortune, and support.
+
+Negative emotion is equally important in academic passages. Agony and grief may follow bereavement, while a miserable worker may experience distress, sadness, and a gloomy view of the future. Failed promises disappoint citizens; unfair treatment may produce anger, furious protest, rage, or even hate. These emotions can become political when they spread through a community.
+
+More private feelings also shape behaviour. Anxiety can make a capable student timid, envy may damage cooperation, and a jealous colleague may misread success as insult. People can feel guilty or ashamed when they believe they have violated personal values. IELTS readers benefit from this vocabulary because it helps explain motivation, mental health, conflict, and resilience without reducing human behaviour to simple labels.`,
+  },
 
 ];
 

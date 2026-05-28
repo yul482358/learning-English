@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T16:38:30.894Z",
+  "generatedAt": "2026-05-28T17:13:53.715Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 122,
-    "avgCoverageRate": 0.932
+    "articleCount": 129,
+    "avgCoverageRate": 0.936
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 70
+      "articleCount": 77
     },
     {
       "id": "core",
@@ -1664,6 +1664,97 @@
       "targetWordCount": 57,
       "coverageRate": 1,
       "density": 0.261
+    },
+    {
+      "id": "fast-only-civic-guidance-national-perspectives-46",
+      "title": "Fast Vocabulary: Civic Guidance and National Perspectives",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Cover civic guidance and national-perspective vocabulary in a dense IELTS-style passage.",
+      "wordCount": 206,
+      "targetWordCount": 51,
+      "coverageRate": 1,
+      "density": 0.248
+    },
+    {
+      "id": "fast-only-economy-markets-work-47",
+      "title": "Fast Vocabulary: Markets, Trade, and Work",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Cover market and employment vocabulary through one compact academic explanation.",
+      "wordCount": 204,
+      "targetWordCount": 42,
+      "coverageRate": 1,
+      "density": 0.206
+    },
+    {
+      "id": "fast-only-law-crime-evidence-48",
+      "title": "Fast Vocabulary: Law, Crime, and Evidence",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Cover legal and crime vocabulary in a readable fast-mode justice passage.",
+      "wordCount": 192,
+      "targetWordCount": 31,
+      "coverageRate": 1,
+      "density": 0.161
+    },
+    {
+      "id": "fast-only-conflict-security-weapons-49",
+      "title": "Fast Vocabulary: Conflict, Security, and Weapons",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Cover conflict and security vocabulary through an analytical passage on modern war.",
+      "wordCount": 182,
+      "targetWordCount": 32,
+      "coverageRate": 1,
+      "density": 0.176
+    },
+    {
+      "id": "fast-only-family-household-life-50",
+      "title": "Fast Vocabulary: Family, Household, and Life Stages",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover family and household vocabulary in a coherent social-science style passage.",
+      "wordCount": 180,
+      "targetWordCount": 30,
+      "coverageRate": 1,
+      "density": 0.167
+    },
+    {
+      "id": "fast-only-body-medicine-treatment-51",
+      "title": "Fast Vocabulary: Body Systems and Medical Treatment",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Cover anatomy and treatment vocabulary through a fast IELTS-style health passage.",
+      "wordCount": 177,
+      "targetWordCount": 30,
+      "coverageRate": 1,
+      "density": 0.169
+    },
+    {
+      "id": "fast-only-emotion-personal-outlook-52",
+      "title": "Fast Vocabulary: Emotion and Personal Outlook",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover positive and negative emotion vocabulary in one readable fast-mode passage.",
+      "wordCount": 185,
+      "targetWordCount": 31,
+      "coverageRate": 1,
+      "density": 0.168
     }
   ]
 }
