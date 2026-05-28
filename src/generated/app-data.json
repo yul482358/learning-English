@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-28T14:18:44.651Z",
+  "generatedAt": "2026-05-28T14:24:17.776Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 100,
+    "articleCount": 104,
     "avgCoverageRate": 0.922
   },
   "modes": [
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 49
+      "articleCount": 52
     },
     {
       "id": "core",
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 38
+      "articleCount": 39
     },
     {
       "id": "read",
@@ -1378,6 +1378,58 @@
       "targetWordCount": 21,
       "coverageRate": 1,
       "density": 0.111
+    },
+    {
+      "id": "fast-only-computing-24",
+      "title": "Fast Vocabulary: Digital Systems, Signals, and Interface Devices",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Cover computing, network, signal, and interface vocabulary in a coherent fast passage.",
+      "wordCount": 203,
+      "targetWordCount": 30,
+      "coverageRate": 0.933,
+      "density": 0.148
+    },
+    {
+      "id": "fast-only-culture-history-25",
+      "title": "Fast Vocabulary: Religious Institutions, Monarchy, and Historical Memory",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover culture and history vocabulary in a readable academic passage.",
+      "wordCount": 197,
+      "targetWordCount": 43,
+      "coverageRate": 0.86,
+      "density": 0.218
+    },
+    {
+      "id": "fast-only-language-form-26",
+      "title": "Fast Vocabulary: Pronunciation, Symbolic Form, and Word Structure",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Cover language-form vocabulary in a coherent academic passage.",
+      "wordCount": 210,
+      "targetWordCount": 32,
+      "coverageRate": 0.906,
+      "density": 0.152
+    },
+    {
+      "id": "fast-only-judgement-27",
+      "title": "Fast Vocabulary: Comparison, Judgement, and Analytic Persistence",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Cover remaining abstract judgement and comparison vocabulary in a fast academic passage.",
+      "wordCount": 180,
+      "targetWordCount": 21,
+      "coverageRate": 1,
+      "density": 0.117
     }
   ]
 }

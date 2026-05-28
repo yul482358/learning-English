@@ -1433,6 +1433,66 @@ These systems are also dynamic. Transparent water does not always mean healthy w
 
 For IELTS readers, this passage is useful because it links biological and chemical vocabulary in one clear explanation. The reef is not just scenery; it is a system whose condition can be calculated through proportion, rate, and repeated observation.`,
   },
+  {
+    id: 'fast-only-computing-24',
+    mode: 'fast',
+    theme: 'science-technology',
+    subtheme: 'digital systems, signals, and interface devices',
+    style: 'ielts-reading',
+    readingGoal: 'Cover computing, network, signal, and interface vocabulary in a coherent fast passage.',
+    title: 'Fast Vocabulary: Digital Systems, Signals, and Interface Devices',
+    targetWordIds: ['radar__noun', 'echo__noun', 'sensor__noun', 'multimedia__noun', 'network__noun', 'browser__noun', 'dial__verb', 'microcomputer__noun', 'laptop__noun', 'software__noun', 'keyboard__noun', 'screen__noun', 'loudspeaker__noun', 'microphone__noun', 'cassette__noun', 'tape__noun', 'binary__adjective', 'digital__adjective', 'wireless__adjective', 'high-definition__adjective', 'audio__adjective', 'vision__noun', 'pump__noun', 'generator__noun', 'accurate__adjective', 'precise__adjective', 'correct__adjective', 'mode__noun', 'mould__verb', 'device__noun'],
+    content: `Modern communication systems combine hardware, signal processing, and user interface design. Radar works by sending a pulse and reading the returning echo, while a sensor converts physical change into usable data. The same principle appears in multimedia networks, where a browser retrieves information from remote servers and software organises the stream for the user. Older equipment required people to dial a number or load a cassette tape by hand, whereas a microcomputer or laptop now handles many of those tasks automatically.
+
+Input and output devices make this system visible. A keyboard, screen, loudspeaker, and microphone translate between human action and machine response. Engineers describe these systems as binary at the level of code, digital in their method of storage, and increasingly wireless in the way they connect. High-definition audio and visual output raise expectations of quality, yet precision still matters more than spectacle: a correct reading must be accurate and precise before it is useful.
+
+For IELTS readers, this passage is useful because it shows that technical vocabulary forms a working system. Even a pump or generator in an industrial control network may operate in a specific mode, while careful design can mould user behaviour by making information easier to access and interpret.`,
+  },
+  {
+    id: 'fast-only-culture-history-25',
+    mode: 'fast',
+    theme: 'culture-media',
+    subtheme: 'religious institutions, monarchy, and historical memory',
+    style: 'ielts-reading',
+    readingGoal: 'Cover culture and history vocabulary in a readable academic passage.',
+    title: 'Fast Vocabulary: Religious Institutions, Monarchy, and Historical Memory',
+    targetWordIds: ['epic__noun', 'feudalism__noun', 'slavery__noun', 'engrave__verb', 'decorate__verb', 'pope__noun', 'bishop__noun', 'missionary__noun', 'priest__noun', 'bible__noun', 'church__noun', 'cathedral__noun', 'choir__noun', 'monk__noun', 'temple__noun', 'pagoda__noun', 'empire__noun', 'imperial__adjective', 'royal__adjective', 'dynasty__noun', 'chronology__noun', 'emperor__noun', 'king__noun', 'queen__noun', 'prince__noun', 'princess__noun', 'majesty__noun', 'nobility__noun', 'lord__noun', 'knight__noun', 'guardian__noun', 'nostalgia__noun', 'homesick__adjective', 'celebrity__noun', 'background__noun', 'experience__noun', 'anecdote__noun', 'incident__noun', 'thrive__verb', 'prosperity__noun', 'setback__noun', 'symbol__noun', 'sign__noun'],
+    content: `Historical writing often brings together political power, religious authority, and cultural memory. An epic narrative may describe an empire built through conquest, yet the same text can also reveal how feudalism, slavery, and court ritual shaped everyday life. Buildings help preserve this record. Walls may be engraved or decorated with symbols and signs, while a church, cathedral, choir, temple, or pagoda reflects the priorities of a community as clearly as any law code.
+
+Religious hierarchy forms another layer of explanation. A pope, bishop, missionary, priest, or monk performs a different role inside a belief system, just as a king, queen, prince, princess, emperor, or other member of the nobility performs a distinct role inside monarchy. Words such as imperial, royal, dynasty, chronology, majesty, lord, knight, and guardian all belong to this vocabulary of organised power.
+
+For IELTS readers, the passage is useful because it explains how public memory is built. Stories of celebrity, family background, personal experience, and even a small anecdote or political incident can become symbols of a larger age. Some periods thrive through prosperity, others suffer a setback, and both outcomes may later generate nostalgia or homesickness for a world that no longer exists.`,
+  },
+  {
+    id: 'fast-only-language-form-26',
+    mode: 'fast',
+    theme: 'education-learning',
+    subtheme: 'pronunciation, symbolic form, and word structure',
+    style: 'ielts-reading',
+    readingGoal: 'Cover language-form vocabulary in a coherent academic passage.',
+    title: 'Fast Vocabulary: Pronunciation, Symbolic Form, and Word Structure',
+    targetWordIds: ['knot__noun', 'pronounce__verb', 'syllable__noun', 'phoneme__noun', 'consonant__noun', 'prefix__noun', 'suffix__noun', 'logo__noun', 'nuance__noun', 'elite__noun', 'coed__adjective', 'insist__verb', 'persist__verb', 'disagree__verb', 'inquire__verb', 'recognise__verb', 'quote__verb', 'dictionary__noun', 'vocabulary__noun', 'phrase__noun', 'expression__noun', 'semantic__adjective', 'grammar__noun', 'syntax__noun', 'linguistics__noun', 'dialect__noun', 'accent__noun', 'intonation__noun', 'inflection__noun', 'alphabet__noun', 'logogram__noun', 'root__noun__2'],
+    content: `Linguists often explain that a writing system is more than a list of words. In early societies, meaning could be stored in a knot, a carved sign, or a later logo, but modern language study asks how people pronounce sounds and organise them into larger units. A syllable may contain one or more phonemes, and a consonant pattern can shift meaning even when the surrounding grammar stays stable. Students who study vocabulary soon discover that a prefix, suffix, or word root changes interpretation in systematic ways.
+
+Formal language analysis also depends on precision. Scholars examine nuance in phrase choice, semantic relation, syntax, and grammar; they compare dialect, accent, intonation, and inflection; and they use the alphabet or logogram as tools for describing structure. A dictionary does not merely define a word. It also preserves history, usage, and the logic of expression.
+
+For IELTS readers, this passage is useful because it turns technical language terms into a connected explanation. Teachers may insist on careful pronunciation, persist when learners struggle, inquire into recurring error, recognise patterns quickly, and quote good examples from real usage. Disagreement in linguistic analysis is normal, especially when an elite standard competes with ordinary speech or when labels such as coed seem to shift across time and context.`,
+  },
+  {
+    id: 'fast-only-judgement-27',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'comparison, judgement, and analytic persistence',
+    style: 'ielts-reading',
+    readingGoal: 'Cover remaining abstract judgement and comparison vocabulary in a fast academic passage.',
+    title: 'Fast Vocabulary: Comparison, Judgement, and Analytic Persistence',
+    targetWordIds: ['flaw__noun', 'wrong__adjective', 'stumble__verb', 'contingency__noun', 'victim__noun', 'thorough__adjective', 'decide__verb', 'resolve__verb', 'compare__verb', 'insist__verb', 'appreciate__verb', 'rank__noun', 'grade__verb', 'standard__noun', 'framework__noun', 'detail__noun', 'contrast__noun', 'analogy__noun', 'infer__verb', 'deduce__verb', 'conclude__verb'],
+    content: `Analytical work becomes reliable only when judgement is disciplined. A reviewer who evaluates a report must identify every flaw, ask whether a conclusion is wrong or merely incomplete, and avoid the habit of overestimating certainty. Even experienced researchers can stumble when unusual circumstances create a contingency that the original model ignored. For this reason, serious academic reading remains both comparative and thorough.
+
+A second challenge is interpretation. Analysts compare cases, appreciate relevant detail, rank competing explanations, and grade the strength of evidence against a working standard or framework. One scholar may insist on one interpretation while another supports a rival account; debate is therefore a normal part of intellectual progress rather than a sign of failure. The task is to decide what matters most and to resolve conflict without ignoring complexity.
+
+For IELTS readers, this passage is useful because it shows how comparison supports judgement. An analogy or contrast may help the reader infer a relationship, deduce a cause, and finally conclude with reasonable confidence. Good analysis protects both the researcher and the victim of bad policy from careless assessment.`,
+  },
 ];
 
 function clean(value) {
