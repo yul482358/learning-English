@@ -1,97 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IELTS Reading Lab</title>
-    <meta name="description" content="Read IELTS-style articles, click vocabulary in context, and study translations with a calm Claude-inspired interface." />
+    <title>雅思阅读实验室</title>
+    <meta name="description" content="面向中文母语者的雅思阅读与词汇训练网站，支持刷词、平衡学习、阅读训练与浮窗翻译。" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <div>
+      <header class="top-nav">
+        <div class="brand-block">
           <p class="eyebrow">IELTS Reading Lab</p>
-          <h1>Build IELTS vocabulary with fast drills, balanced practice, and reading-habit passages.</h1>
-          <p class="hero-copy">
-            Switch between dense word-learning passages and smoother reading training so the site matches your study goal.
-          </p>
+          <h1 class="brand-title">雅思阅读实验室</h1>
         </div>
-        <div class="hero-stats" id="hero-stats">
-          <div class="stat-card"><span>Articles</span><strong id="stat-articles">–</strong></div>
-          <div class="stat-card"><span>Vocabulary</span><strong id="stat-vocab">–</strong></div>
-          <div class="stat-card"><span>Coverage</span><strong id="stat-coverage">–</strong></div>
-        </div>
+        <nav class="nav-links" aria-label="主导航">
+          <button class="nav-link active" data-view="home">首页</button>
+          <button class="nav-link" data-view="library">学习空间</button>
+          <button class="nav-link" data-view="reader">阅读空间</button>
+          <button class="nav-link" data-view="inspector">词汇面板</button>
+        </nav>
       </header>
 
-      <section class="mode-strip" id="mode-strip"></section>
-
-      <main class="app-grid">
-        <section class="library-panel">
-          <div class="panel-header panel-header-stack">
-            <div>
-              <h2>Article Library</h2>
-              <p>Choose a study mode, then pick a themed passage with the right vocabulary density.</p>
-            </div>
-            <div class="filters-row">
-              <select id="mode-filter" class="theme-filter">
-                <option value="all">All modes</option>
-              </select>
-              <select id="theme-filter" class="theme-filter">
-                <option value="all">All themes</option>
-              </select>
+      <section id="view-home" class="view-section active">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">给中文母语者的雅思学习站</p>
+            <h2>把刷词、精读、阅读习惯训练拆开，让每一次学习都更轻松。</h2>
+            <p class="hero-copy">
+              你可以先用高密度文章快速记词，再进入平衡学习，最后用更自然的低密度文章训练阅读耐力与语感。
+            </p>
+            <div class="hero-actions">
+              <button class="primary-cta" data-view-jump="library">进入学习空间</button>
+              <button class="secondary-cta" data-view-jump="reader">继续阅读</button>
             </div>
           </div>
-          <div id="article-list" class="article-list"></div>
-        </section>
-
-        <section class="reader-panel">
-          <div id="reader-empty" class="reader-empty">
-            <h2>Pick an article to begin</h2>
-            <p>Fast mode helps you absorb many words quickly, while reading mode keeps the flow more natural.</p>
+          <div class="hero-stats" id="hero-stats">
+            <div class="stat-card"><span>文章数</span><strong id="stat-articles">–</strong></div>
+            <div class="stat-card"><span>词汇数</span><strong id="stat-vocab">–</strong></div>
+            <div class="stat-card"><span>覆盖率</span><strong id="stat-coverage">–</strong></div>
           </div>
-          <article id="reader-article" class="reader-article hidden">
-            <div class="reader-header">
-              <div>
-                <p id="reader-theme" class="reader-theme"></p>
-                <h2 id="reader-title"></h2>
-                <p id="reader-summary" class="reader-summary"></p>
-              </div>
-              <div class="reader-badges">
-                <span id="reader-mode" class="badge"></span>
-                <span id="reader-wordcount" class="badge"></span>
-                <span id="reader-targets" class="badge"></span>
-                <span id="reader-density" class="badge"></span>
-              </div>
-            </div>
-            <div id="reader-content" class="reader-content"></div>
+        </header>
+
+        <section class="home-grid">
+          <article class="home-card">
+            <p class="eyebrow">刷词模式</p>
+            <h3>高密度接触目标词</h3>
+            <p>适合刚开始背词、考前冲刺、快速熟悉一个主题词群。</p>
+          </article>
+          <article class="home-card">
+            <p class="eyebrow">平衡学习</p>
+            <h3>兼顾阅读和记词</h3>
+            <p>适合作为日常主学习区，既不会太密，也不会太稀。</p>
+          </article>
+          <article class="home-card">
+            <p class="eyebrow">阅读训练</p>
+            <h3>培养连续阅读习惯</h3>
+            <p>更自然的文章节奏，更少打断，更适合训练语感与耐力。</p>
           </article>
         </section>
 
-        <aside class="inspector-panel">
-          <div class="inspector-card sticky">
-            <p class="eyebrow">Vocabulary inspector</p>
-            <h3 id="inspect-word">Click a highlighted word</h3>
-            <p id="inspect-pos" class="inspect-pos">Part of speech will appear here.</p>
-            <div class="inspect-block">
-              <span class="inspect-label">Chinese</span>
-              <p id="inspect-translation">本地词典与模型释义会显示在这里。</p>
-            </div>
-            <div class="inspect-block">
-              <span class="inspect-label">English explanation</span>
-              <p id="inspect-explanation">Click a target word in the passage to load context-aware help.</p>
-            </div>
-            <div class="inspect-block">
-              <span class="inspect-label">Context</span>
-              <p id="inspect-context">–</p>
-            </div>
-            <div class="inspect-block">
-              <span class="inspect-label">Dictionary note</span>
-              <p id="inspect-note">–</p>
-            </div>
+        <section class="mode-strip" id="mode-strip"></section>
+      </section>
+
+      <section id="view-library" class="view-section">
+        <div class="section-shell">
+          <div class="section-intro">
+            <p class="eyebrow">学习空间</p>
+            <h2>先选学习目标，再挑文章</h2>
+            <p>这里适合先筛选模式、主题和文章密度，再进入阅读。</p>
           </div>
-        </aside>
-      </main>
+          <section class="library-panel full-panel">
+            <div class="panel-header panel-header-stack">
+              <div>
+                <h2>文章库</h2>
+                <p>先选择你今天要刷词、平衡学习，还是专注阅读训练。</p>
+              </div>
+              <div class="filters-row">
+                <select id="mode-filter" class="theme-filter">
+                  <option value="all">全部模式</option>
+                </select>
+                <select id="theme-filter" class="theme-filter">
+                  <option value="all">全部主题</option>
+                </select>
+              </div>
+            </div>
+            <div id="article-list" class="article-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="view-reader" class="view-section">
+        <div class="reader-layout">
+          <section class="reader-panel reading-room">
+            <div id="reader-empty" class="reader-empty">
+              <h2>请选择一篇文章开始阅读</h2>
+              <p>建议先去“学习空间”筛选适合你的模式，再进入阅读。</p>
+            </div>
+            <article id="reader-article" class="reader-article hidden">
+              <div class="reader-header">
+                <div>
+                  <p id="reader-theme" class="reader-theme"></p>
+                  <h2 id="reader-title"></h2>
+                  <p id="reader-summary" class="reader-summary"></p>
+                </div>
+                <div class="reader-badges">
+                  <span id="reader-mode" class="badge"></span>
+                  <span id="reader-wordcount" class="badge"></span>
+                  <span id="reader-targets" class="badge"></span>
+                  <span id="reader-density" class="badge"></span>
+                </div>
+              </div>
+              <div id="reader-content" class="reader-content"></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section id="view-inspector" class="view-section">
+        <div class="section-shell inspector-shell">
+          <div class="section-intro">
+            <p class="eyebrow">词汇面板</p>
+            <h2>查看单词、上下文与翻译</h2>
+            <p>点击文章中的高亮词或选中文本后，这里会同步显示解释。</p>
+          </div>
+          <aside class="inspector-panel standalone-inspector">
+            <div class="inspector-card sticky">
+              <p class="eyebrow">Vocabulary inspector</p>
+              <h3 id="inspect-word">点击文章中的高亮词</h3>
+              <p id="inspect-pos" class="inspect-pos">词性会显示在这里。</p>
+              <div class="inspect-block">
+                <span class="inspect-label">中文释义</span>
+                <p id="inspect-translation">本地词典与模型释义会显示在这里。</p>
+              </div>
+              <div class="inspect-block">
+                <span class="inspect-label">英文解释</span>
+                <p id="inspect-explanation">点击目标词，或在文章中选中文本以获得上下文帮助。</p>
+              </div>
+              <div class="inspect-block">
+                <span class="inspect-label">上下文</span>
+                <p id="inspect-context">–</p>
+              </div>
+              <div class="inspect-block">
+                <span class="inspect-label">词典备注</span>
+                <p id="inspect-note">–</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
     </div>
 
     <script type="module" src="/app.js"></script>

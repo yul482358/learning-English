@@ -7,6 +7,7 @@ const state = {
   activeArticleId: null,
   activeWordButton: null,
   selectionTimer: null,
+  activeView: 'home',
 };
 
 const els = {
@@ -33,17 +34,20 @@ const els = {
   inspectExplanation: document.getElementById('inspect-explanation'),
   inspectContext: document.getElementById('inspect-context'),
   inspectNote: document.getElementById('inspect-note'),
+  navLinks: Array.from(document.querySelectorAll('.nav-link')),
+  jumpButtons: Array.from(document.querySelectorAll('[data-view-jump]')),
+  viewSections: Array.from(document.querySelectorAll('.view-section')),
 };
 
 const floating = document.createElement('div');
 floating.className = 'translation-popover hidden';
 floating.innerHTML = `
   <div class="popover-topline">
-    <span id="popover-mode">Translation</span>
-    <button type="button" id="popover-close" aria-label="Close translation">×</button>
+    <span id="popover-mode">翻译</span>
+    <button type="button" id="popover-close" aria-label="关闭翻译浮窗">×</button>
   </div>
   <div id="popover-text" class="popover-text"></div>
-  <div id="popover-translation" class="popover-translation">Loading…</div>
+  <div id="popover-translation" class="popover-translation">加载中…</div>
   <div id="popover-explanation" class="popover-explanation"></div>
 `;
 document.body.appendChild(floating);
@@ -84,15 +88,22 @@ function currentArticle() {
   return state.articleById.get(state.activeArticleId) || null;
 }
 
-function activeModeMeta(modeId) {
-  return state.appData?.modes?.find((mode) => mode.id === modeId) || null;
+function setActiveView(viewId) {
+  state.activeView = viewId;
+  for (const section of els.viewSections) {
+    section.classList.toggle('active', section.id === `view-${viewId}`);
+  }
+  for (const link of els.navLinks) {
+    link.classList.toggle('active', link.dataset.view === viewId);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function setInspectorLoading(word, context, entry, mode = 'word') {
   els.inspectWord.textContent = word;
-  els.inspectPos.textContent = entry?.posList?.join(', ') || (mode === 'sentence' ? 'sentence' : 'Loading part of speech…');
-  els.inspectTranslation.textContent = entry?.meaningCn || 'Loading translation…';
-  els.inspectExplanation.textContent = 'Requesting context-aware explanation…';
+  els.inspectPos.textContent = entry?.posList?.join(', ') || (mode === 'sentence' ? '句子' : '正在加载词性…');
+  els.inspectTranslation.textContent = entry?.meaningCn || '正在请求翻译…';
+  els.inspectExplanation.textContent = '正在请求上下文解释…';
   els.inspectContext.textContent = context;
   els.inspectNote.textContent = entry?.notes || entry?.example || '–';
 }
@@ -132,33 +143,26 @@ function hidePopover() {
 }
 
 function showPopoverLoading({ text, mode, rect }) {
-  popoverEls.mode.textContent = mode === 'sentence' ? 'Sentence translation' : 'Word translation';
+  popoverEls.mode.textContent = mode === 'sentence' ? '整句翻译' : '单词翻译';
   popoverEls.text.textContent = text;
-  popoverEls.translation.textContent = 'Translating…';
-  popoverEls.explanation.textContent = 'Calling your configured API in the background.';
+  popoverEls.translation.textContent = '翻译中…';
+  popoverEls.explanation.textContent = '正在调用你配置的模型接口。';
   positionPopoverFromRect(rect);
 }
 
 function updatePopover(payload, fallbackText) {
   popoverEls.translation.textContent = payload.translation || '暂无翻译';
   const status = payload.source === 'model'
-    ? `Model: ${payload.config?.model || 'custom'} @ ${payload.config?.endpointHost || 'configured API'}`
+    ? `模型：${payload.config?.model || 'custom'} @ ${payload.config?.endpointHost || 'configured API'}`
     : payload.config?.ready === false
-      ? '未检测到完整模型配置，请检查 Worker Variables/Secrets'
+      ? '未检测到完整模型配置，请检查 Worker Variables / Secrets'
       : payload.modelError
         ? `模型调用失败：${payload.modelError}`
         : '';
   popoverEls.explanation.textContent = [payload.explanation || '', status].filter(Boolean).join('\n');
   popoverEls.text.textContent = payload.text || payload.word || fallbackText;
   const rect = floating.getBoundingClientRect();
-  positionPopoverFromRect({
-    left: rect.left,
-    right: rect.right,
-    top: rect.top,
-    bottom: rect.bottom,
-    width: rect.width,
-    height: rect.height,
-  });
+  positionPopoverFromRect({ left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height });
 }
 
 async function requestTranslation({ text, context, mode }) {
@@ -185,7 +189,7 @@ function renderModeCards() {
     card.className = `mode-card ${els.modeFilter.value === mode.id ? 'active' : ''}`;
     card.innerHTML = `
       <p class="eyebrow">${mode.label}</p>
-      <h3>${mode.articleCount} articles</h3>
+      <h3>${mode.articleCount} 篇文章</h3>
       <p>${mode.description}</p>
       <div class="card-meta">
         <span class="badge">${mode.targetRange}</span>
@@ -198,6 +202,7 @@ function renderModeCards() {
       renderArticleList();
       const first = visibleArticleCards()[0];
       if (first) renderArticle(first.id);
+      setActiveView('library');
     });
     els.modeStrip.appendChild(card);
   }
@@ -236,7 +241,7 @@ function renderArticleList() {
   const cards = visibleArticleCards();
 
   if (!cards.length) {
-    els.articleList.innerHTML = '<p>No passages match this mode and theme yet.</p>';
+    els.articleList.innerHTML = '<p>当前筛选条件下还没有文章。</p>';
     return;
   }
 
@@ -250,9 +255,9 @@ function renderArticleList() {
         <h3>${card.title}</h3>
         <p>${card.summary}</p>
         <div class="card-meta">
-          <span class="badge">${card.wordCount} words</span>
-          <span class="badge">${card.targetWordCount} targets</span>
-          <span class="badge">${Math.round(card.density * 100)}% density</span>
+          <span class="badge">${card.wordCount} 词</span>
+          <span class="badge">${card.targetWordCount} 个目标词</span>
+          <span class="badge">${Math.round(card.density * 100)}% 密度</span>
         </div>
       </div>`;
     button.addEventListener('click', () => renderArticle(card.id));
@@ -273,6 +278,7 @@ async function inspectWord(article, word, button) {
   const context = sentenceForWord(article.content, text);
   setInspectorLoading(text, context, entry, 'word');
   showPopoverLoading({ text, mode: 'word', rect: button.getBoundingClientRect() });
+  setActiveView('inspector');
 
   try {
     const payload = await requestTranslation({ text, context, mode: 'word' });
@@ -284,7 +290,7 @@ async function inspectWord(article, word, button) {
     els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
     updatePopover(payload, text);
   } catch (error) {
-    els.inspectExplanation.textContent = `Failed to load model help: ${error}`;
+    els.inspectExplanation.textContent = `加载模型帮助失败：${error}`;
     popoverEls.translation.textContent = '翻译加载失败';
     popoverEls.explanation.textContent = String(error);
   }
@@ -321,7 +327,7 @@ async function translateSelection() {
     els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
     updatePopover(payload, text);
   } catch (error) {
-    els.inspectExplanation.textContent = `Failed to load translation: ${error}`;
+    els.inspectExplanation.textContent = `加载翻译失败：${error}`;
     popoverEls.translation.textContent = '翻译加载失败';
     popoverEls.explanation.textContent = String(error);
   }
@@ -393,14 +399,16 @@ function renderArticle(articleId) {
   els.readerTitle.textContent = article.title;
   els.readerSummary.textContent = article.readingGoal;
   els.readerMode.textContent = article.modeLabel;
-  els.readerWordcount.textContent = `${article.wordCount} words`;
-  els.readerTargets.textContent = `${article.targetWords.length} target words`;
-  els.readerDensity.textContent = `${Math.round(article.density * 100)}% density`;
+  els.readerWordcount.textContent = `${article.wordCount} 词`;
+  els.readerTargets.textContent = `${article.targetWords.length} 个目标词`;
+  els.readerDensity.textContent = `${Math.round(article.density * 100)}% 密度`;
   els.readerContent.innerHTML = '';
 
   article.content.split(/\n\n+/).forEach((paragraph) => {
     els.readerContent.appendChild(decorateParagraph(article, paragraph));
   });
+
+  setActiveView('reader');
 }
 
 async function init() {
@@ -426,6 +434,7 @@ async function init() {
   renderModeCards();
   renderArticleList();
   renderArticle(appData.articleCards[0]?.id);
+  setActiveView('home');
 }
 
 function handleFiltersChanged() {
@@ -434,6 +443,12 @@ function handleFiltersChanged() {
   ensureArticleVisibleOrFallback();
 }
 
+els.navLinks.forEach((link) => {
+  link.addEventListener('click', () => setActiveView(link.dataset.view));
+});
+els.jumpButtons.forEach((button) => {
+  button.addEventListener('click', () => setActiveView(button.dataset.viewJump));
+});
 els.modeFilter.addEventListener('change', handleFiltersChanged);
 els.themeFilter.addEventListener('change', handleFiltersChanged);
 popoverEls.close.addEventListener('click', hidePopover);
@@ -451,5 +466,5 @@ document.addEventListener('mousedown', (event) => {
 });
 
 init().catch((error) => {
-  els.articleList.innerHTML = `<p>Failed to load app data: ${error}</p>`;
+  els.articleList.innerHTML = `<p>加载应用数据失败：${error}</p>`;
 });
