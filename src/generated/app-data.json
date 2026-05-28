@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T15:48:34.326Z",
+  "generatedAt": "2026-05-28T16:02:50.741Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 112,
-    "avgCoverageRate": 0.926
+    "articleCount": 117,
+    "avgCoverageRate": 0.929
   },
   "modes": [
     {
@@ -12,7 +12,7 @@
       "description": "High-density passages for rapid word exposure and frequent pop-up translation.",
       "targetRange": "30-60 target words",
       "densityHint": "7%-16% density",
-      "articleCount": 60
+      "articleCount": 65
     },
     {
       "id": "core",
@@ -1534,6 +1534,71 @@
       "targetWordCount": 52,
       "coverageRate": 1,
       "density": 0.265
+    },
+    {
+      "id": "fast-only-appearance-clothing-36",
+      "title": "Fast Vocabulary: Appearance, Clothing, and Visual Judgement",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Cover appearance, clothing, colour, and tailoring vocabulary through a dense IELTS-style passage.",
+      "wordCount": 226,
+      "targetWordCount": 59,
+      "coverageRate": 1,
+      "density": 0.261
+    },
+    {
+      "id": "fast-only-colour-adornment-display-37",
+      "title": "Fast Vocabulary: Colour, Adornment, and Public Display",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Cover colour, jewellery, display, and communication vocabulary in a coherent fast passage.",
+      "wordCount": 203,
+      "targetWordCount": 49,
+      "coverageRate": 1,
+      "density": 0.241
+    },
+    {
+      "id": "fast-only-food-service-produce-38",
+      "title": "Fast Vocabulary: Food Service, Produce, and Kitchen Systems",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Cover food service, produce, drinks, and kitchen vocabulary through a dense explanatory passage.",
+      "wordCount": 212,
+      "targetWordCount": 57,
+      "coverageRate": 1,
+      "density": 0.269
+    },
+    {
+      "id": "fast-only-crops-dairy-flavour-39",
+      "title": "Fast Vocabulary: Crops, Dairy, Flavour, and Cooking Actions",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Cover crops, dairy products, flavours, prepared foods, and cooking verbs in fast mode.",
+      "wordCount": 215,
+      "targetWordCount": 58,
+      "coverageRate": 1,
+      "density": 0.27
+    },
+    {
+      "id": "fast-only-cooking-process-dining-40",
+      "title": "Fast Vocabulary: Taste, Digestion, and Kitchen Processes",
+      "mode": "fast",
+      "modeLabel": "Fast Vocabulary",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Cover taste judgement, digestion, and cooking-process vocabulary in a readable fast passage.",
+      "wordCount": 179,
+      "targetWordCount": 35,
+      "coverageRate": 1,
+      "density": 0.196
     }
   ]
 }
