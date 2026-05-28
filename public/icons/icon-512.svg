@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="雅思阅读实验室图标">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d97751"/>
+      <stop offset="1" stop-color="#9b4e32"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <circle cx="406" cy="98" r="66" fill="rgba(255,250,242,.2)"/>
+  <rect x="64" y="70" width="384" height="372" rx="86" fill="url(#paper)"/>
+  <path d="M158 150h128c45 0 78 34 78 78v132H214c-43 0-76-33-76-76V170c0-11 9-20 20-20Z" fill="#fffdf8" stroke="#e7dccd" stroke-width="18"/>
+  <path d="M204 205h116M204 254h92M204 303h128" stroke="#6d6258" stroke-width="22" stroke-linecap="round" opacity=".72"/>
+  <circle cx="366" cy="151" r="48" fill="#c96442"/>
+  <path d="M349 149l14 14 28-36" fill="none" stroke="#fffaf2" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M148 389c54-54 162-54 216 0" fill="none" stroke="#c96442" stroke-width="22" stroke-linecap="round" opacity=".52"/>
+</svg>

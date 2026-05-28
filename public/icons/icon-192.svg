@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="雅思阅读实验室图标">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4d6"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d97751"/>
+      <stop offset="1" stop-color="#9b4e32"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="46" fill="#c96442"/>
+  <rect x="22" y="22" width="148" height="148" rx="34" fill="url(#paper)"/>
+  <path d="M58 58h48c16 0 28 12 28 28v52H78c-15 0-27-12-27-27V65a7 7 0 0 1 7-7Z" fill="#fffdf8" stroke="#e7dccd" stroke-width="7"/>
+  <path d="M76 76h42M76 95h34M76 114h46" stroke="#6d6258" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <circle cx="133" cy="59" r="18" fill="url(#accent)"/>
+  <path d="M127 58l5 5 10-12" fill="none" stroke="#fffaf2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 145c20-20 60-20 80 0" fill="none" stroke="#c96442" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+</svg>

@@ -10,6 +10,17 @@ const state = {
   activeView: 'home',
 };
 
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').catch((error) => {
+      console.warn('Service worker registration failed:', error);
+    });
+  });
+}
+
+registerServiceWorker();
+
 const els = {
   statArticles: document.getElementById('stat-articles'),
   statVocab: document.getElementById('stat-vocab'),
@@ -434,8 +445,11 @@ async function init() {
   renderThemeOptions();
   renderModeCards();
   renderArticleList();
+  const params = new URLSearchParams(window.location.search);
+  const requestedView = params.get('view');
+  const safeView = ['home', 'library', 'reader'].includes(requestedView) ? requestedView : 'home';
   resetReaderToEmpty();
-  setActiveView('home');
+  setActiveView(safeView);
 }
 
 function handleFiltersChanged() {

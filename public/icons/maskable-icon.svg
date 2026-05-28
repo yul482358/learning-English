@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="雅思阅读实验室可遮罩图标">
+  <rect width="512" height="512" fill="#c96442"/>
+  <circle cx="256" cy="256" r="208" fill="#fffaf2"/>
+  <path d="M178 154h116c48 0 84 36 84 84v130H230c-45 0-80-35-80-80V182c0-15 12-28 28-28Z" fill="#fffdf8" stroke="#e7dccd" stroke-width="18"/>
+  <path d="M212 216h96M212 261h76M212 306h110" stroke="#6d6258" stroke-width="21" stroke-linecap="round" opacity=".72"/>
+  <circle cx="360" cy="157" r="44" fill="#9b4e32"/>
+  <path d="M344 156l13 13 26-34" fill="none" stroke="#fffaf2" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165 389c46-48 136-48 182 0" fill="none" stroke="#c96442" stroke-width="20" stroke-linecap="round" opacity=".58"/>
+</svg>
