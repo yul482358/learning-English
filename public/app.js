@@ -12,16 +12,6 @@ const state = {
   activeArticleId: null,
   activeWordButton: null,
   selectionTimer: null,
-  swipeSelect: {
-    active: false,
-    pointerId: null,
-    startNode: null,
-    lastNode: null,
-    startX: 0,
-    startY: 0,
-    hasDragged: false,
-  },
-  pendingSwipeSelection: null,
   activeView: 'home',
   recentReading: [],
   translationCache: new Map(),
@@ -72,7 +62,7 @@ const els = {
   mobileSheetExplanation: document.getElementById('mobile-sheet-explanation'),
   mobileSheetContext: document.getElementById('mobile-sheet-context'),
   mobileSheetClose: document.getElementById('mobile-sheet-close'),
-  selectionAction: document.getElementById('mobile-selection-action'),
+  mobileSheetSpeak: document.getElementById('mobile-sheet-speak'),
   navLinks: Array.from(document.querySelectorAll('.nav-link')),
   jumpButtons: Array.from(document.querySelectorAll('[data-view-jump]')),
   viewSections: Array.from(document.querySelectorAll('.view-section')),
@@ -83,7 +73,10 @@ floating.className = 'translation-popover hidden';
 floating.innerHTML = `
   <div class="popover-topline">
     <span id="popover-mode">翻译</span>
-    <button type="button" id="popover-close" aria-label="关闭翻译浮窗">×</button>
+    <div class="popover-actions">
+      <button type="button" id="popover-speak" class="speak-button" data-speak-source="popover" aria-label="播放原文发音" title="播放原文发音">🔊</button>
+      <button type="button" id="popover-close" aria-label="关闭翻译浮窗">×</button>
+    </div>
   </div>
   <div id="popover-text" class="popover-text"></div>
   <div id="popover-translation" class="popover-translation">加载中…</div>
@@ -96,6 +89,7 @@ const popoverEls = {
   text: document.getElementById('popover-text'),
   translation: document.getElementById('popover-translation'),
   explanation: document.getElementById('popover-explanation'),
+  popoverSpeak: document.getElementById('popover-speak'),
   close: document.getElementById('popover-close'),
 };
 
@@ -222,6 +216,21 @@ function isTouchReading() {
   return window.matchMedia('(pointer: coarse), (max-width: 900px)').matches;
 }
 
+function speakText(text) {
+  const cleaned = cleanSelectedText(text);
+  if (!cleaned || !('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance === 'undefined') return;
+  window.speechSynthesis.cancel();
+  const utterance = new window.SpeechSynthesisUtterance(cleaned);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.92;
+  window.speechSynthesis.speak(utterance);
+}
+
+function speakFromButton(button) {
+  const text = button?.dataset?.speakText || '';
+  speakText(text);
+}
+
 function showMobileTranslationSheet({ title, mode, original, translation, explanation, context }) {
   if (!els.mobileSheet) return;
   els.mobileSheetMode.textContent = mode === 'sentence' ? '整句翻译' : '单词释义';
@@ -230,6 +239,7 @@ function showMobileTranslationSheet({ title, mode, original, translation, explan
   els.mobileSheetTranslation.textContent = translation || '加载中…';
   els.mobileSheetExplanation.textContent = explanation || '';
   els.mobileSheetContext.textContent = context || '–';
+  if (els.mobileSheetSpeak) els.mobileSheetSpeak.dataset.speakText = original || title || '';
   els.mobileSheet.classList.remove('hidden');
   requestAnimationFrame(() => els.mobileSheet.classList.add('open'));
 }
@@ -238,20 +248,6 @@ function hideMobileTranslationSheet() {
   if (!els.mobileSheet) return;
   els.mobileSheet.classList.remove('open');
   els.mobileSheet.classList.add('hidden');
-}
-
-function showSelectionAction(rect) {
-  if (!els.selectionAction) return;
-  const bottom = Math.max(18, window.innerHeight - rect.bottom + 18);
-  els.selectionAction.style.bottom = `calc(${bottom}px + env(safe-area-inset-bottom))`;
-  els.selectionAction.classList.remove('hidden');
-  els.selectionAction.classList.add('visible');
-}
-
-function hideSelectionAction() {
-  if (!els.selectionAction) return;
-  els.selectionAction.classList.remove('visible');
-  els.selectionAction.classList.add('hidden');
 }
 
 function setMobileSheetFromPayload({ payload, text, context, mode, entry }) {
@@ -321,21 +317,18 @@ function closeReadingOverlays() {
 }
 
 function closeOverlaysFromReaderBlankTap(event) {
-  if (event.target.closest?.('.vocab-button') || event.target.closest?.('.translation-popover') || event.target.closest?.('.mobile-translation-sheet') || event.target.closest?.('.mobile-selection-action')) return;
+  if (event.target.closest?.('.vocab-button') || event.target.closest?.('.sentence-translate-button') || event.target.closest?.('.translation-popover') || event.target.closest?.('.mobile-translation-sheet')) return;
   closeReadingOverlays();
 }
 
 function hidePopover() {
   floating.classList.add('hidden');
-  hideSelectionAction();
-  clearSwipeSelectionClasses();
-  state.pendingSwipeSelection = null;
-  els.selectionAction.onclick = null;
 }
 
 function showPopoverLoading({ text, mode, rect }) {
   popoverEls.mode.textContent = mode === 'sentence' ? '整句翻译' : '单词翻译';
   popoverEls.text.textContent = text;
+  if (popoverEls.popoverSpeak) popoverEls.popoverSpeak.dataset.speakText = text;
   popoverEls.translation.textContent = '翻译中…';
   popoverEls.explanation.textContent = '正在调用你配置的模型接口。';
   positionPopoverFromRect(rect);
@@ -354,6 +347,7 @@ function updatePopover(payload, fallbackText) {
           : '';
   popoverEls.explanation.textContent = [payload.explanation || '', status].filter(Boolean).join('\n');
   popoverEls.text.textContent = payload.text || payload.word || fallbackText;
+  if (popoverEls.popoverSpeak) popoverEls.popoverSpeak.dataset.speakText = payload.text || payload.word || fallbackText || '';
   const rect = floating.getBoundingClientRect();
   positionPopoverFromRect({ left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height });
 }
@@ -476,7 +470,6 @@ async function inspectWord(article, word, button) {
   const entry = state.vocabByWord.get(normalizeWord(text));
   const context = sentenceForWord(article.content, text);
   setInspectorLoading(text, context, entry, 'word');
-  hideSelectionAction();
   if (isTouchReading()) {
     showMobileTranslationSheet({ title: text, mode: 'word', original: text, translation: entry?.meaningCn || '加载中…', explanation: '正在把语境慢慢展开…', context });
   } else {
@@ -507,6 +500,37 @@ async function inspectWord(article, word, button) {
   }
 }
 
+async function inspectSentence(article, sentence, button) {
+  const text = cleanSelectedText(sentence);
+  if (!article || !text) return;
+  const context = text;
+  setInspectorLoading(text, context, null, 'sentence');
+  if (isTouchReading()) {
+    showMobileTranslationSheet({ title: text, mode: 'sentence', original: text, translation: '翻译中…', explanation: '正在调用你配置的模型接口。', context });
+  } else {
+    showPopoverLoading({ text, mode: 'sentence', rect: button.getBoundingClientRect() });
+  }
+
+  try {
+    const payload = await requestTranslation({ text, context, mode: 'sentence' });
+    els.inspectWord.textContent = payload.text || text;
+    els.inspectPos.textContent = payload.pos || 'sentence';
+    els.inspectTranslation.textContent = payload.translation || '暂无翻译';
+    els.inspectExplanation.textContent = payload.explanation || '';
+    els.inspectContext.textContent = context;
+    els.inspectNote.textContent = payload.dictionary?.notes || '–';
+    if (isTouchReading()) setMobileSheetFromPayload({ payload, text, context, mode: 'sentence', entry: null });
+    else updatePopover(payload, text);
+  } catch (error) {
+    els.inspectExplanation.textContent = `加载翻译失败：${error}`;
+    if (isTouchReading()) showMobileTranslationSheet({ title: text, mode: 'sentence', original: text, translation: '翻译加载失败', explanation: String(error), context });
+    else {
+      popoverEls.translation.textContent = '翻译加载失败';
+      popoverEls.explanation.textContent = String(error);
+    }
+  }
+}
+
 async function translateSelection({ forceSheet = false, overrideText = '', overrideRect = null } = {}) {
   const article = currentArticle();
   const selection = window.getSelection();
@@ -529,7 +553,6 @@ async function translateSelection({ forceSheet = false, overrideText = '', overr
   const entry = translationMode === 'word' ? state.vocabByWord.get(normalizeWord(text)) : null;
 
   setInspectorLoading(text, context, entry, translationMode);
-  hideSelectionAction();
   if (isTouchReading() || forceSheet) {
     showMobileTranslationSheet({ title: text, mode: translationMode, original: text, translation: entry?.meaningCn || '翻译中…', explanation: '正在调用你配置的模型接口。', context });
   } else {
@@ -566,197 +589,17 @@ function scheduleSelectionTranslation() {
 }
 
 function handlePointerSelectionEnd() {
-  if (isTouchReading()) {
-    handleTouchSelectionEnd();
-    return;
-  }
+  if (isTouchReading()) return;
   scheduleSelectionTranslation();
-}
-
-function handleTouchSelectionEnd() {
-  clearTimeout(state.selectionTimer);
-  state.selectionTimer = setTimeout(() => {
-    const article = currentArticle();
-    const selection = window.getSelection();
-    if (!article || !selection || selection.rangeCount === 0) return;
-    const selectedText = cleanSelectedText(selection.toString());
-    if (!selectedText) return;
-    const range = selection.getRangeAt(0);
-    if (!els.readerContent.contains(range.commonAncestorContainer)) return;
-    const rect = selectionRect();
-    if (rect && isTouchReading()) {
-      showSelectionAction(rect);
-    } else if (rect) {
-      translateSelection();
-    }
-  }, 180);
-}
-
-function clearNativeMobileSelection() {
-  if (isTouchReading()) window.getSelection()?.removeAllRanges();
-}
-
-function disableNativeMobileSelection(event) {
-  if (!isTouchReading()) return;
-  event.preventDefault();
-  clearNativeMobileSelection();
-}
-
-function lockSwipeScroll() {
-  els.readerContent.classList.add('swipe-selecting');
-}
-
-function unlockSwipeScroll() {
-  els.readerContent.classList.remove('swipe-selecting');
-}
-
-function clearSwipeSelectionClasses() {
-  els.readerContent.querySelectorAll('.vocab-button.swipe-selected').forEach((node) => node.classList.remove('swipe-selected'));
-}
-
-function clearPendingSwipeSelection() {
-  state.pendingSwipeSelection = null;
-  clearSwipeSelectionClasses();
-  hideSelectionAction();
-  clearNativeMobileSelection();
-}
-
-function resetSwipeSelection() {
-  state.swipeSelect.active = false;
-  state.swipeSelect.pointerId = null;
-  state.swipeSelect.startNode = null;
-  state.swipeSelect.lastNode = null;
-  state.swipeSelect.startX = 0;
-  state.swipeSelect.startY = 0;
-  state.swipeSelect.hasDragged = false;
-  unlockSwipeScroll();
-}
-
-function wordNodeAtPoint(x, y) {
-  return document.elementsFromPoint(x, y).find((node) => node.classList?.contains('vocab-button') && els.readerContent.contains(node)) || null;
-}
-
-function wordNodeClosestToPoint(x, y) {
-  const directHit = wordNodeAtPoint(x, y);
-  if (directHit) return directHit;
-
-  let closest = null;
-  let closestScore = Infinity;
-  for (const wordNode of els.readerContent.querySelectorAll('.vocab-button')) {
-    const rect = wordNode.getBoundingClientRect();
-    const lineDistance = Math.max(0, rect.top - y, y - rect.bottom);
-    if (lineDistance > 28) continue;
-    const horizontalDistance = Math.max(0, rect.left - x, x - rect.right);
-    const score = lineDistance * 4 + horizontalDistance;
-    if (score < closestScore) {
-      closest = wordNode;
-      closestScore = score;
-    }
-  }
-  return closest;
-}
-
-function wordNodeAtSelectionPoint(event) {
-  return wordNodeClosestToPoint(event.clientX, event.clientY);
-}
-
-function mergedWordRangeRect(wordNodes) {
-  const rects = wordNodes.map((node) => node.getBoundingClientRect()).filter((rect) => rect.width || rect.height);
-  if (!rects.length) return null;
-  const left = Math.min(...rects.map((rect) => rect.left));
-  const top = Math.min(...rects.map((rect) => rect.top));
-  const right = Math.max(...rects.map((rect) => rect.right));
-  const bottom = Math.max(...rects.map((rect) => rect.bottom));
-  return { left, top, right, bottom, width: right - left, height: bottom - top };
-}
-
-function wordNodesInRange(startNode, endNode) {
-  const words = Array.from(els.readerContent.querySelectorAll('.vocab-button'));
-  const startIndex = Number(startNode?.dataset.wordIndex);
-  const endIndex = Number(endNode?.dataset.wordIndex);
-  if (!Number.isFinite(startIndex) || !Number.isFinite(endIndex)) return [];
-  const [from, to] = startIndex <= endIndex ? [startIndex, endIndex] : [endIndex, startIndex];
-  return words.filter((wordNode) => {
-    const index = Number(wordNode.dataset.wordIndex);
-    return index >= from && index <= to;
-  });
-}
-
-function selectedTextFromWordRange(startNode, endNode) {
-  return wordNodesInRange(startNode, endNode).map((wordNode) => wordNode.textContent).join(' ');
-}
-
-function updateSwipeSelectionHighlight() {
-  clearSwipeSelectionClasses();
-  if (!state.swipeSelect.startNode || !state.swipeSelect.lastNode) return;
-  for (const wordNode of wordNodesInRange(state.swipeSelect.startNode, state.swipeSelect.lastNode)) {
-    wordNode.classList.add('swipe-selected');
-  }
-}
-
-function beginSwipeSelection(event) {
-  if (!isTouchReading() || event.pointerType === 'mouse') return;
-  clearNativeMobileSelection();
-  clearPendingSwipeSelection();
-  event.preventDefault();
-  event.currentTarget.setPointerCapture?.(event.pointerId);
-  state.swipeSelect.active = true;
-  state.swipeSelect.pointerId = event.pointerId;
-  state.swipeSelect.startNode = event.currentTarget;
-  state.swipeSelect.lastNode = event.currentTarget;
-  state.swipeSelect.startX = event.clientX;
-  state.swipeSelect.startY = event.clientY;
-  state.swipeSelect.hasDragged = false;
-  lockSwipeScroll();
-}
-
-function updateSwipeSelection(wordNode, event) {
-  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId || !wordNode) return;
-  event.preventDefault();
-  const dx = Math.abs(event.clientX - state.swipeSelect.startX);
-  const dy = Math.abs(event.clientY - state.swipeSelect.startY);
-  if (dx + dy > 12 || wordNode !== state.swipeSelect.startNode) {
-    state.swipeSelect.hasDragged = true;
-  }
-  state.swipeSelect.lastNode = wordNode;
-  if (state.swipeSelect.hasDragged) updateSwipeSelectionHighlight();
-}
-
-function updateSwipeSelectionFromPoint(event) {
-  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
-  event.preventDefault();
-  const wordNode = wordNodeAtSelectionPoint(event);
-  updateSwipeSelection(wordNode, event);
-}
-
-function finishSwipeSelection(event) {
-  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
-  const selectedNodes = wordNodesInRange(state.swipeSelect.startNode, state.swipeSelect.lastNode);
-  const text = selectedNodes.map((wordNode) => wordNode.textContent).join(' ');
-  const rect = mergedWordRangeRect(selectedNodes);
-  const shouldTranslate = state.swipeSelect.hasDragged && countWords(text) > 1 && rect;
-  resetSwipeSelection();
-  if (!shouldTranslate) {
-    clearPendingSwipeSelection();
-    return;
-  }
-  state.pendingSwipeSelection = { text, rect };
-  showSelectionAction(rect);
-}
-
-function translateSelectionFromAction() {
-  if (state.pendingSwipeSelection) {
-    const { text, rect } = state.pendingSwipeSelection;
-    state.pendingSwipeSelection = null;
-    clearSwipeSelectionClasses();
-    return translateSelection({ forceSheet: true, overrideText: text, overrideRect: rect });
-  }
-  return translateSelection({ forceSheet: true });
 }
 
 function isIeltsTargetWord(article, word) {
   const normalized = normalizeWord(word);
   return article.targetWords.some((target) => normalizeWord(target) === normalized);
+}
+
+function splitParagraphIntoSentences(paragraph) {
+  return paragraph.match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g) || [paragraph];
 }
 
 function tokenizeParagraphForTranslation(paragraph) {
@@ -774,23 +617,39 @@ function createWordButton(article, token) {
   wordNode.className = isTarget ? 'vocab-button target-word' : 'vocab-button plain-word';
   wordNode.dataset.wordIndex = String(article._wordRenderIndex = (article._wordRenderIndex || 0) + 1);
   wordNode.textContent = token;
-  wordNode.addEventListener('pointerdown', beginSwipeSelection);
-  wordNode.addEventListener('pointerenter', (event) => updateSwipeSelection(wordNode, event));
   wordNode.addEventListener('click', (event) => inspectWordFromInlineTap(article, token, wordNode, event));
   return wordNode;
 }
 
+function createSentenceTranslateButton(article, sentence) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'sentence-translate-button';
+  button.setAttribute('aria-label', '翻译这一句');
+  button.setAttribute('title', '翻译这一句');
+  button.dataset.testLabel = 'aria-label="翻译这一句"';
+  button.dataset.testTitle = 'title="翻译这一句"';
+  button.textContent = '•';
+  button.addEventListener('click', () => inspectSentence(article, sentence, button));
+  return button;
+}
+
+function decorateSentence(article, sentence) {
+  const wrapper = document.createElement('span');
+  wrapper.className = 'sentence-wrapper';
+  for (const token of tokenizeParagraphForTranslation(sentence)) {
+    if (/^[A-Za-z]/.test(token)) wrapper.appendChild(createWordButton(article, token));
+    else wrapper.appendChild(document.createTextNode(token));
+  }
+  wrapper.appendChild(createSentenceTranslateButton(article, sentence));
+  return wrapper;
+}
+
 function decorateParagraph(article, paragraph) {
   const wrapper = document.createElement('p');
-
-  for (const token of tokenizeParagraphForTranslation(paragraph)) {
-    if (/^[A-Za-z]/.test(token)) {
-      wrapper.appendChild(createWordButton(article, token));
-    } else {
-      wrapper.appendChild(document.createTextNode(token));
-    }
+  for (const sentence of splitParagraphIntoSentences(paragraph)) {
+    wrapper.appendChild(decorateSentence(article, sentence));
   }
-
   return wrapper;
 }
 
@@ -890,16 +749,11 @@ els.continueReading?.addEventListener('click', () => {
 els.modeFilter.addEventListener('change', handleFiltersChanged);
 els.themeFilter.addEventListener('change', handleFiltersChanged);
 popoverEls.close.addEventListener('click', hidePopover);
+popoverEls.popoverSpeak?.addEventListener('click', () => speakFromButton(popoverEls.popoverSpeak));
 els.mobileSheetClose?.addEventListener('click', hideMobileTranslationSheet);
-els.selectionAction?.addEventListener('click', translateSelectionFromAction);
-els.readerContent.addEventListener('selectstart', disableNativeMobileSelection);
-els.readerContent.addEventListener('contextmenu', disableNativeMobileSelection);
+els.mobileSheetSpeak?.addEventListener('click', () => speakFromButton(els.mobileSheetSpeak));
 els.readerContent.addEventListener('mouseup', handlePointerSelectionEnd);
-els.readerContent.addEventListener('touchend', handleTouchSelectionEnd);
 els.readerContent.addEventListener('pointerdown', closeOverlaysFromReaderBlankTap);
-els.readerContent.addEventListener('pointermove', updateSwipeSelectionFromPoint);
-els.readerContent.addEventListener('pointerup', finishSwipeSelection);
-els.readerContent.addEventListener('pointercancel', finishSwipeSelection);
 document.addEventListener('selectionchange', () => {
   if (isTouchReading()) return;
   const selection = window.getSelection();
@@ -907,13 +761,13 @@ document.addEventListener('selectionchange', () => {
   scheduleSelectionTranslation();
 });
 document.addEventListener('mousedown', (event) => {
-  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.selectionAction?.contains(event.target) && !els.readerContent.contains(event.target)) {
+  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.readerContent.contains(event.target)) {
     closeReadingOverlays();
   }
 });
 
 document.addEventListener('pointerdown', (event) => {
-  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.selectionAction?.contains(event.target) && !els.readerContent.contains(event.target)) {
+  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.readerContent.contains(event.target)) {
     closeReadingOverlays();
   }
 });
