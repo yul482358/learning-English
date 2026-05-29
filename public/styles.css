@@ -207,7 +207,8 @@ button {
 }
 
 .home-card,
-.mode-card {
+.mode-card,
+.recent-reading-panel {
   padding: 20px;
 }
 
@@ -218,16 +219,61 @@ button {
 }
 
 .mode-card:hover,
-.mode-card.active {
+.mode-card.active,
+.recent-reading-card:hover {
   transform: translateY(-2px);
   border-color: rgba(201, 100, 66, 0.4);
   background: rgba(201, 100, 66, 0.08);
 }
 
 .mode-card h3,
-.home-card h3 {
+.home-card h3,
+.recent-reading-panel h3 {
   margin: 0;
   font-size: 1.2rem;
+}
+
+.recent-reading-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.recent-reading-copy p,
+.recent-empty,
+.recent-reading-card span,
+.recent-reading-card small {
+  color: var(--muted);
+}
+
+.recent-reading-list {
+  display: grid;
+  gap: 10px;
+}
+
+.recent-reading-card {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.42);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.recent-reading-card strong {
+  font-size: 1rem;
+}
+
+.continue-reading:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
 }
 
 .section-shell {
@@ -512,6 +558,7 @@ button {
   .hero,
   .home-grid,
   .mode-strip,
+  .recent-reading-panel,
   .two-column-reading {
     grid-template-columns: 1fr;
   }

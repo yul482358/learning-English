@@ -1,3 +1,8 @@
+const RECENT_READING_KEY = 'ielts-reading-lab:recent-reading';
+const TRANSLATION_CACHE_KEY = 'ielts-reading-lab:translation-cache';
+const RECENT_READING_LIMIT = 5;
+const TRANSLATION_CACHE_LIMIT = 120;
+
 const state = {
   appData: null,
   articles: [],
@@ -8,6 +13,8 @@ const state = {
   activeWordButton: null,
   selectionTimer: null,
   activeView: 'home',
+  recentReading: [],
+  translationCache: new Map(),
 };
 
 function registerServiceWorker() {
@@ -45,6 +52,8 @@ const els = {
   inspectExplanation: document.getElementById('inspect-explanation'),
   inspectContext: document.getElementById('inspect-context'),
   inspectNote: document.getElementById('inspect-note'),
+  continueReading: document.getElementById('continue-reading'),
+  recentReadingList: document.getElementById('recent-reading-list'),
   navLinks: Array.from(document.querySelectorAll('.nav-link')),
   jumpButtons: Array.from(document.querySelectorAll('[data-view-jump]')),
   viewSections: Array.from(document.querySelectorAll('.view-section')),
@@ -73,6 +82,97 @@ const popoverEls = {
 
 function normalizeWord(word) {
   return String(word || '').trim().toLowerCase();
+}
+
+function readJsonStorage(key, fallback) {
+  try {
+    const raw = window.localStorage?.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function writeJsonStorage(key, value) {
+  try {
+    window.localStorage?.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    // Local storage can be unavailable in private browsing; the app should keep reading.
+  }
+}
+
+function translationCacheKey({ articleId, text, context, mode }) {
+  return JSON.stringify({ articleId: articleId || state.activeArticleId || '', text: cleanSelectedText(text), context: cleanSelectedText(context), mode });
+}
+
+function getCachedTranslation(request) {
+  return state.translationCache.get(translationCacheKey(request)) || null;
+}
+
+function cacheTranslationResult(request, payload) {
+  const key = translationCacheKey(request);
+  state.translationCache.delete(key);
+  state.translationCache.set(key, { ...payload, cached: true });
+  while (state.translationCache.size > TRANSLATION_CACHE_LIMIT) {
+    state.translationCache.delete(state.translationCache.keys().next().value);
+  }
+  writeJsonStorage(TRANSLATION_CACHE_KEY, Array.from(state.translationCache.entries()));
+}
+
+function hydrateTranslationCache() {
+  const entries = readJsonStorage(TRANSLATION_CACHE_KEY, []);
+  const safeEntries = Array.isArray(entries)
+    ? entries.filter((entry) => Array.isArray(entry) && entry.length === 2 && typeof entry[0] === 'string' && entry[1] && typeof entry[1] === 'object')
+    : [];
+  state.translationCache = new Map(safeEntries.slice(-TRANSLATION_CACHE_LIMIT));
+}
+
+function saveRecentArticle(article) {
+  const item = {
+    articleId: article.id,
+    title: article.title,
+    modeLabel: article.modeLabel,
+    themeLabel: state.appData.themes.find((theme) => theme.id === article.theme)?.label || article.theme,
+    readAt: new Date().toISOString(),
+  };
+  state.recentReading = [item, ...state.recentReading.filter((recent) => recent.articleId !== article.id)].slice(0, RECENT_READING_LIMIT);
+  writeJsonStorage(RECENT_READING_KEY, state.recentReading);
+  renderRecentReading();
+}
+
+function hydrateRecentReading() {
+  const stored = readJsonStorage(RECENT_READING_KEY, []);
+  state.recentReading = Array.isArray(stored)
+    ? stored.filter((item) => item?.articleId && state.articleById.has(item.articleId)).slice(0, RECENT_READING_LIMIT)
+    : [];
+}
+
+function renderRecentReading() {
+  if (!els.recentReadingList) return;
+  els.recentReadingList.innerHTML = '';
+  if (!state.recentReading.length) {
+    els.recentReadingList.innerHTML = '<p class="recent-empty">还没有阅读记录。先去挑一篇文章吧。</p>';
+    if (els.continueReading) els.continueReading.disabled = true;
+    return;
+  }
+
+  if (els.continueReading) els.continueReading.disabled = false;
+  for (const item of state.recentReading) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'recent-reading-card';
+
+    const meta = document.createElement('span');
+    meta.textContent = `${item.modeLabel} · ${item.themeLabel}`;
+    const title = document.createElement('strong');
+    title.textContent = item.title;
+    const date = document.createElement('small');
+    date.textContent = new Date(item.readAt).toLocaleDateString('zh-CN');
+
+    button.append(meta, title, date);
+    button.addEventListener('click', () => renderArticle(item.articleId));
+    els.recentReadingList.appendChild(button);
+  }
 }
 
 function countWords(text) {
@@ -163,13 +263,15 @@ function showPopoverLoading({ text, mode, rect }) {
 
 function updatePopover(payload, fallbackText) {
   popoverEls.translation.textContent = payload.translation || '暂无翻译';
-  const status = payload.source === 'model'
-    ? `模型：${payload.config?.model || '已配置模型'} @ ${payload.config?.endpointHost || '已配置接口'}`
-    : payload.config?.ready === false
-      ? '未检测到完整模型配置，请检查 Cloudflare 的变量与机密配置'
-      : payload.modelError
-        ? `模型调用失败：${payload.modelError}`
-        : '';
+  const status = payload.cached
+    ? '已从本地缓存读取，避免重复请求模型。'
+    : payload.source === 'model'
+      ? `模型：${payload.config?.model || '已配置模型'} @ ${payload.config?.endpointHost || '已配置接口'}`
+      : payload.config?.ready === false
+        ? '未检测到完整模型配置，请检查 Cloudflare 的变量与机密配置'
+        : payload.modelError
+          ? `模型调用失败：${payload.modelError}`
+          : '';
   popoverEls.explanation.textContent = [payload.explanation || '', status].filter(Boolean).join('\n');
   popoverEls.text.textContent = payload.text || payload.word || fallbackText;
   const rect = floating.getBoundingClientRect();
@@ -177,19 +279,25 @@ function updatePopover(payload, fallbackText) {
 }
 
 async function requestTranslation({ text, context, mode }) {
+  const request = { articleId: state.activeArticleId, text, context, mode };
+  const cached = getCachedTranslation(request);
+  if (cached) return cached;
+
   const response = await fetch('/api/translate', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ text, word: text, context, mode, articleId: state.activeArticleId }),
+    body: JSON.stringify({ text, word: text, context, mode, articleId: request.articleId }),
   });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return response.json();
+  const payload = await response.json();
+  cacheTranslationResult(request, payload);
+  return payload;
 }
 
 function renderStats() {
   els.statArticles.textContent = state.appData.stats.articleCount;
   els.statVocab.textContent = state.appData.stats.vocabularyCount;
-  els.statCoverage.textContent = `${Math.round(state.appData.stats.avgCoverageRate * 100)}%`;
+  els.statCoverage.textContent = `${Math.round(state.appData.stats.vocabularyCoverageRate * 100)}%`;
 }
 
 function renderModeCards() {
@@ -420,6 +528,7 @@ function renderArticle(articleId) {
     els.readerContent.appendChild(decorateParagraph(article, paragraph));
   });
 
+  saveRecentArticle(article);
   setActiveView('reader');
 }
 
@@ -439,12 +548,15 @@ async function init() {
     state.vocabByWord.set(entry.normalizedWord, entry);
     for (const alias of entry.aliases) state.vocabByWord.set(alias, entry);
   }
+  hydrateRecentReading();
+  hydrateTranslationCache();
 
   renderStats();
   renderModeOptions();
   renderThemeOptions();
   renderModeCards();
   renderArticleList();
+  renderRecentReading();
   const params = new URLSearchParams(window.location.search);
   const requestedView = params.get('view');
   const safeView = ['home', 'library', 'reader'].includes(requestedView) ? requestedView : 'home';
@@ -463,6 +575,11 @@ els.navLinks.forEach((link) => {
 });
 els.jumpButtons.forEach((button) => {
   button.addEventListener('click', () => setActiveView(button.dataset.viewJump));
+});
+els.continueReading?.addEventListener('click', () => {
+  const last = state.recentReading[0];
+  if (last?.articleId) renderArticle(last.articleId);
+  else setActiveView('library');
 });
 els.modeFilter.addEventListener('change', handleFiltersChanged);
 els.themeFilter.addEventListener('change', handleFiltersChanged);

@@ -42,13 +42,13 @@
             </p>
             <div class="hero-actions">
               <button class="primary-cta" data-view-jump="library">去挑一篇文章</button>
-              <button class="secondary-cta" data-view-jump="reader">回到阅读桌前</button>
+              <button class="secondary-cta continue-reading" id="continue-reading" type="button">继续上次阅读</button>
             </div>
           </div>
           <div class="hero-stats" id="hero-stats">
-            <div class="stat-card"><span>卷册篇数</span><strong id="stat-articles">–</strong></div>
+            <div class="stat-card"><span>阅读篇章</span><strong id="stat-articles">–</strong></div>
             <div class="stat-card"><span>收录词汇</span><strong id="stat-vocab">–</strong></div>
-            <div class="stat-card"><span>命中覆盖</span><strong id="stat-coverage">–</strong></div>
+            <div class="stat-card"><span id="stat-coverage-label">词汇覆盖</span><strong id="stat-coverage">–</strong></div>
           </div>
         </header>
 
@@ -70,7 +70,18 @@
           </article>
         </section>
 
-        <section class="mode-strip" id="mode-strip"></section>
+          <section class="recent-reading-panel" aria-labelledby="recent-reading-title">
+            <div class="recent-reading-copy">
+              <p class="eyebrow">最近读过</p>
+              <h3 id="recent-reading-title">把上次的阅读接回来</h3>
+              <p>这里会保存你最近打开的几篇文章。下次回来，不必重新在文章库里寻找。</p>
+            </div>
+            <div id="recent-reading-list" class="recent-reading-list">
+              <p class="recent-empty">还没有阅读记录。先去挑一篇文章吧。</p>
+            </div>
+          </section>
+
+          <section class="mode-strip" id="mode-strip"></section>
       </section>
 
       <section id="view-library" class="view-section">

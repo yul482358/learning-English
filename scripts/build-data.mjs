@@ -34,36 +34,37 @@ const THEME_RULES = {
 
 const modeMeta = {
   fast: {
-    label: 'Fast Vocabulary',
-    description: 'High-density passages for rapid word exposure and frequent pop-up translation.',
-    targetRange: '30-60 target words',
-    densityHint: '7%-16% density',
+    label: '高频刷词',
+    description: '在高密度篇章里快速遇见目标词，适合考前冲刺与主题词群复现。',
+    targetRange: '30–60 个目标词',
+    densityHint: '词汇密度 7%–16%',
   },
   core: {
-    label: 'Balanced Practice',
-    description: 'Mid-density articles balancing reading flow and vocabulary retention.',
-    targetRange: '18-35 target words',
-    densityHint: '3.5%-8% density',
+    label: '平衡精读',
+    description: '在词汇记忆与篇章理解之间保持平衡，适合作为日常主路径。',
+    targetRange: '18–35 个目标词',
+    densityHint: '词汇密度 3.5%–8%',
   },
   read: {
-    label: 'Reading Habit',
-    description: 'Lower-density passages focused on sustained reading and natural context.',
-    targetRange: '8-18 target words',
-    densityHint: '1.2%-3.5% density',
+    label: '长文阅读',
+    description: '用更低密度的自然语境训练阅读耐心、语感与持续理解。',
+    targetRange: '8–18 个目标词',
+    densityHint: '词汇密度 1.2%–3.5%',
   },
 };
 
 const themeMeta = {
-  'environment-climate': { label: 'Environment', description: 'Climate systems, natural disasters, and sustainability.' },
-  'geography-earth': { label: 'Earth Science', description: 'Planetary structure, geography, and field observation.' },
-  'education-learning': { label: 'Education', description: 'Academic thinking, campus life, and structured learning.' },
-  'science-technology': { label: 'Science & Tech', description: 'Scientific discovery, chemistry, and modern innovation.' },
-  'health-biology': { label: 'Health', description: 'Public health, nutrition, and modern medical systems.' },
-  'geography-earth': { label: 'Earth Science', description: 'Planetary structure, geography, and field observation.' },
-  'society-government': { label: 'Society', description: 'Citizenship, law, public policy, and social responsibility.' },
-  'economy-business': { label: 'Economy', description: 'Markets, trade, industry, and business decisions.' },
-  'culture-media': { label: 'Culture', description: 'Literature, media, art, and shared imagination.' },
-  'food-agriculture': { label: 'Food & Farming', description: 'Agriculture, harvest cycles, and food systems.' },
+  'environment-climate': { label: '环境与气候', description: '气候系统、自然灾害、污染治理与可持续发展。' },
+  'geography-earth': { label: '地理与地球', description: '地貌、地质、海洋、地球结构与野外观察。' },
+  'education-learning': { label: '教育与学习', description: '校园生活、学术思维、课程体系与语言学习。' },
+  'science-technology': { label: '科学与技术', description: '科学发现、实验方法、现代技术与创新系统。' },
+  'health-biology': { label: '健康与生物', description: '公共健康、营养、疾病预防、医学体系与生命科学。' },
+  'society-government': { label: '社会与治理', description: '公民、法律、公共政策、制度信任与社会责任。' },
+  'economy-business': { label: '经济与商业', description: '市场、贸易、产业、企业决策与商业信心。' },
+  'culture-media': { label: '文化与媒介', description: '文学、艺术、媒体、宗教、公共表达与共享想象。' },
+  'food-agriculture': { label: '食物与农业', description: '农业生产、收获周期、食品系统与乡村经济。' },
+  'daily-life': { label: '日常生活', description: '家庭、居住、旅行、友谊、身心状态与生活场景。' },
+  'general-academic': { label: '通识学术', description: '论证、分类、证据、研究方法与跨学科阅读。' },
 };
 
 const articleBlueprints = [
@@ -3546,11 +3547,16 @@ const articleCards = articles.map((article) => ({
   density: article.density,
 }));
 
+const vocabularyCoverageIds = new Set(articles.flatMap((article) => article.coverage.exactMatches));
+const vocabularyCoverageRate = Number((vocabularyCoverageIds.size / vocabulary.length).toFixed(3));
+
 const appData = {
   generatedAt: new Date().toISOString(),
   stats: {
     vocabularyCount: vocabulary.length,
     articleCount: articles.length,
+    vocabularyCoverageCount: vocabularyCoverageIds.size,
+    vocabularyCoverageRate,
     avgCoverageRate: Number((articles.reduce((sum, article) => sum + article.coverage.coverageRate, 0) / articles.length).toFixed(3)),
   },
   modes: Object.entries(modeMeta).map(([id, meta]) => ({
@@ -3572,5 +3578,6 @@ console.log(JSON.stringify({
   vocabularyCount: vocabulary.length,
   articleCount: articles.length,
   modeCounts: Object.fromEntries(Object.keys(modeMeta).map((mode) => [mode, articles.filter((article) => article.mode === mode).length])),
+  vocabularyCoverageRate: appData.stats.vocabularyCoverageRate,
   avgCoverageRate: appData.stats.avgCoverageRate,
 }, null, 2));
