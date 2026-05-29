@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T01:15:20.510Z",
+  "generatedAt": "2026-05-29T01:23:28.704Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 157,
-    "avgCoverageRate": 0.943
+    "articleCount": 169,
+    "avgCoverageRate": 0.945
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 43
+      "articleCount": 47
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 21
+      "articleCount": 29
     }
   ],
   "themes": [
@@ -2119,6 +2119,162 @@
       "targetWordCount": 18,
       "coverageRate": 1,
       "density": 0.102
+    },
+    {
+      "id": "batch2-academic-read-evidence-neutral-01",
+      "title": "Reading Habit: Why Evidence Is Never Neutral",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Build reading stamina through a reflective passage on evidence and neutrality.",
+      "wordCount": 171,
+      "targetWordCount": 10,
+      "coverageRate": 0.9,
+      "density": 0.058
+    },
+    {
+      "id": "batch2-academic-read-classification-02",
+      "title": "Reading Habit: The Art of Classification",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Practise sustained reading through an academic passage about classification.",
+      "wordCount": 174,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.057
+    },
+    {
+      "id": "batch2-academic-read-complexity-03",
+      "title": "Reading Habit: How Humans Explain Complexity",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Develop reading stamina with an abstract but accessible passage on complexity.",
+      "wordCount": 161,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.062
+    },
+    {
+      "id": "batch2-academic-core-research-methods-04",
+      "title": "Balanced Practice: Research Methods and Careful Interpretation",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Use a balanced academic passage to practise research-method vocabulary.",
+      "wordCount": 175,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.103
+    },
+    {
+      "id": "batch2-soc-read-public-trust-01",
+      "title": "Reading Habit: Why Institutions Matter",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Practise sustained reading through a civic passage about institutions and trust.",
+      "wordCount": 168,
+      "targetWordCount": 10,
+      "coverageRate": 0.9,
+      "density": 0.06
+    },
+    {
+      "id": "batch2-soc-read-law-everyday-02",
+      "title": "Reading Habit: The Quiet Role of Law in Everyday Life",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Develop reading habit with a lower-density passage on law and daily security.",
+      "wordCount": 170,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.059
+    },
+    {
+      "id": "batch2-soc-core-community-resilience-03",
+      "title": "Balanced Practice: Community Resilience and Public Service",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Use a balanced civic passage to practise policy and community vocabulary.",
+      "wordCount": 166,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.108
+    },
+    {
+      "id": "batch2-health-read-stress-body-01",
+      "title": "Reading Habit: How Stress Changes the Body",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Build reading stamina with a natural health passage about stress and the body.",
+      "wordCount": 169,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.059
+    },
+    {
+      "id": "batch2-health-read-medicine-evidence-02",
+      "title": "Reading Habit: Medicine, Evidence, and Public Belief",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Practise sustained reading on medicine, evidence, and public belief.",
+      "wordCount": 167,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.06
+    },
+    {
+      "id": "batch2-health-core-prevention-03",
+      "title": "Balanced Practice: Prevention and Public Health",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Use a balanced health passage to practise prevention and public-health vocabulary.",
+      "wordCount": 147,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.122
+    },
+    {
+      "id": "batch2-env-read-warmer-planet-01",
+      "title": "Reading Habit: Living with a Warmer Planet",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Develop reading habit with a lower-density climate passage about adaptation.",
+      "wordCount": 160,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.063
+    },
+    {
+      "id": "batch2-env-core-water-energy-02",
+      "title": "Balanced Practice: Water, Energy, and Adaptation",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Use a balanced environmental passage to practise climate and infrastructure vocabulary.",
+      "wordCount": 152,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.118
     }
   ]
 }

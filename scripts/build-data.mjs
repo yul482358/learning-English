@@ -2296,6 +2296,186 @@ Good design can facilitate comfort. Housing that is adjacent to transport, shops
 
 This passage connects familiar vocabulary with urban analysis. It shows that daily life is not merely private; it is organised by infrastructure, schedules, and social expectations. IELTS readers often need to follow this movement from personal experience to public explanation. The words are ordinary, but the argument asks how a city distributes time among the people who live inside it.`,
   },
+  {
+    id: 'batch2-academic-read-evidence-neutral-01',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'evidence and neutrality',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina through a reflective passage on evidence and neutrality.',
+    title: 'Reading Habit: Why Evidence Is Never Neutral',
+    targetWordIds: ['evidence__noun', 'neutral__adjective', 'method__noun', 'source__noun', 'data__noun', 'bias__verb', 'interpret__verb', 'accurate__adjective', 'reliable__adjective', 'conclude__verb'],
+    content: `Evidence is often treated as if it speaks for itself. A table of data, a photograph, or a quotation from a source may appear neutral because it seems to stand outside opinion. Yet academic reading teaches a more careful lesson: evidence always reaches the reader through a method of selection, measurement, and interpretation.
+
+This does not mean that all claims are equal. Some evidence is more accurate and reliable than other evidence. The problem is that even strong material can bias understanding if it is collected from too narrow a group or interpreted without context. A researcher may conclude that a policy works, while another reader asks who was excluded from the sample and which result was left unexplained.
+
+For students, this passage is useful because it slows down a familiar academic habit. Instead of asking only what the evidence says, readers should ask how it was produced and why it was chosen. Neutrality is not a simple condition; it is something that must be tested through comparison, transparency, and patience.`,
+  },
+  {
+    id: 'batch2-academic-read-classification-02',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'classification and knowledge',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading through an academic passage about classification.',
+    title: 'Reading Habit: The Art of Classification',
+    targetWordIds: ['classify__verb', 'category__noun', 'knowledge__noun', 'structure__noun', 'system__noun', 'pattern__noun', 'compare__verb', 'contrast__noun', 'similar__adjective', 'differentiate__verb'],
+    content: `To classify is to turn confusion into a structure that can be studied. Scientists classify species, librarians classify books, and governments classify information so that a large system becomes easier to search and manage. A category may look like a simple label, but it often shapes what kind of knowledge becomes visible.
+
+Classification depends on pattern recognition. Researchers compare objects that appear similar, then use contrast to differentiate one group from another. This process can be extremely useful. It allows doctors to identify disease, historians to organise periods, and teachers to design materials for different learners. However, every system also has limits. A category that is too broad hides important differences, while one that is too narrow may prevent people from seeing connections.
+
+For IELTS readers, the topic matters because many academic passages rely on classification before they begin an argument. Once students notice how a text groups ideas, they can follow the logic more easily. Classification is therefore not only a technical activity. It is an art of deciding which differences deserve attention.`,
+  },
+  {
+    id: 'batch2-academic-read-complexity-03',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'complexity and explanation',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading stamina with an abstract but accessible passage on complexity.',
+    title: 'Reading Habit: How Humans Explain Complexity',
+    targetWordIds: ['complex__adjective', 'cause__noun', 'factor__noun', 'process__noun', 'model__noun', 'theory__noun', 'logic__noun', 'predict__verb', 'result__noun', 'explain__verb'],
+    content: `Human beings prefer simple explanations, especially when a problem feels urgent. A single cause is easier to remember than a network of factors, and a clear result is more satisfying than a long process. Yet many social, scientific, and environmental questions are complex because several forces operate at the same time.
+
+A model helps readers manage this complexity. It does not reproduce reality perfectly, but it offers a structure for deciding which factor matters most and how one process may influence another. A theory then gives the model a wider logic. It allows researchers to explain past events and sometimes predict future change, while still accepting that prediction may fail when conditions shift.
+
+This kind of reading is demanding because it asks students to resist premature certainty. A good academic passage may not give one answer immediately. Instead, it traces relationships, qualifies claims, and shows why a neat explanation can be misleading. The reward is a more patient form of understanding.`,
+  },
+  {
+    id: 'batch2-academic-core-research-methods-04',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'research methods and interpretation',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced academic passage to practise research-method vocabulary.',
+    title: 'Balanced Practice: Research Methods and Careful Interpretation',
+    targetWordIds: ['research__noun', 'method__noun', 'hypothesis__noun', 'evidence__noun', 'data__noun', 'sample__noun', 'measure__verb', 'observe__verb', 'compare__verb', 'contrast__noun', 'derive__verb', 'result__noun', 'interpret__verb', 'conclude__verb', 'accurate__adjective', 'precise__adjective', 'reliable__adjective', 'bias__verb'],
+    content: `Research begins with a question, but it becomes academic only when the method is clear. A scholar may form a hypothesis, select a sample, observe behaviour, and measure change over time. The data that emerge from this process become evidence only when readers can understand how they were collected.
+
+Careful interpretation is necessary because the same result can support different explanations. One team may compare two groups and derive a strong conclusion, while another may point to a contrast in background conditions that could bias the finding. Researchers must interpret the pattern in accurate and precise language. Accuracy and precision matter, but they do not remove the need for judgement. Reliable work explains its limits rather than hiding them.
+
+For IELTS learners, this vocabulary appears across many subjects. A passage about education, health, or technology may still ask whether a method is valid and whether the evidence justifies the conclusion. The central reading skill is to follow the chain from question to data to interpretation. When that chain is visible, academic prose becomes less intimidating.`,
+  },
+  {
+    id: 'batch2-soc-read-public-trust-01',
+    mode: 'read',
+    theme: 'society-government',
+    subtheme: 'institutions and public trust',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading through a civic passage about institutions and trust.',
+    title: 'Reading Habit: Why Institutions Matter',
+    targetWordIds: ['government__noun', 'citizen__noun', 'law__noun', 'vote__noun', 'state__verb', 'trustworthy__adjective', 'community__noun', 'oblige__verb', 'participate__verb', 'partner__noun'],
+    content: `Institutions are easiest to notice when they fail. A delayed court decision, an unclear government rule, or a public office that ignores a citizen can make the whole system appear distant and unfair. Yet when institutions work well, they often become almost invisible. People vote, follow the law, register a business, or seek help because they assume the process will be trustworthy.
+
+This trust does not appear automatically. A state must state its rules clearly, oblige powerful groups to respect them, and allow ordinary people to participate in decisions that affect community life. When citizens are treated as partners rather than passive subjects, public institutions gain legitimacy. When they are ignored, even technically correct policies may be resisted.
+
+The topic is useful for reading practice because it connects abstract civic vocabulary with everyday experience. Institutions matter not because they are impressive buildings, but because they organise expectations. They tell people whether effort will be recognised, whether rules will be fair, and whether disagreement can be managed without violence.`,
+  },
+  {
+    id: 'batch2-soc-read-law-everyday-02',
+    mode: 'read',
+    theme: 'society-government',
+    subtheme: 'law in everyday life',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit with a lower-density passage on law and daily security.',
+    title: 'Reading Habit: The Quiet Role of Law in Everyday Life',
+    targetWordIds: ['law__noun', 'crime__noun', 'citizen__noun', 'estate__noun', 'flaw__noun', 'safeguard__verb', 'defend__verb', 'avoid__verb', 'mediate__verb', 'compromise__verb'],
+    content: `The law is often imagined through dramatic scenes of crime and punishment, but its quieter role is more common. It helps a citizen rent a home, inherit an estate, protect property, and avoid conflict when agreements become unclear. It also offers a way to correct a flaw in an agreement before resentment hardens. Much of legal order is therefore preventive rather than dramatic.
+
+A fair legal system should safeguard the weak as well as defend the rights of the powerful. It should give people procedures for complaint, evidence, and appeal before anger becomes violence. In many ordinary disputes, the best outcome is not victory but compromise. A mediator may mediate between neighbours, workers, or business partners so that relationships can continue after the dispute ends.
+
+For readers, this passage shows how legal vocabulary can support a social argument. Law is not only a set of punishments. It is a structure for making daily life predictable. When people trust that structure, they can plan, cooperate, and take risks with less fear.`,
+  },
+  {
+    id: 'batch2-soc-core-community-resilience-03',
+    mode: 'core',
+    theme: 'society-government',
+    subtheme: 'community resilience and public service',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced civic passage to practise policy and community vocabulary.',
+    title: 'Balanced Practice: Community Resilience and Public Service',
+    targetWordIds: ['community__noun', 'government__noun', 'citizen__noun', 'emergency__noun', 'service__noun', 'volunteer__noun', 'participate__verb', 'partner__noun', 'warn__verb', 'devote__verb', 'raise__verb', 'safeguard__verb', 'recovery__noun', 'infrastructure__noun', 'damage__noun', 'reliable__adjective', 'trustworthy__adjective', 'pressure__noun'],
+    content: `Community resilience becomes visible during an emergency, but it is built long before danger arrives. A government may provide public service and reliable infrastructure, yet each citizen also needs to participate in preparation. A volunteer can warn neighbours, check on older residents, and act as a partner with official agencies.
+
+The practical work is often unglamorous. Councils must raise funds, devote staff to training, safeguard records, and maintain infrastructure that may not be noticed until it fails. When damage creates pressure on roads, shelters, or communication, recovery depends on both technical repair and trustworthy social ties. A community that has planned together usually responds faster because people know where to find help.
+
+For IELTS readers, the passage links civic vocabulary with cause and effect. Resilience is not a feeling of optimism; it is a system of relationships, resources, and habits. The article also shows why public policy cannot be separated from everyday cooperation. Government action matters, but it becomes stronger when citizens understand their own role.`,
+  },
+  {
+    id: 'batch2-health-read-stress-body-01',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'stress and the body',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina with a natural health passage about stress and the body.',
+    title: 'Reading Habit: How Stress Changes the Body',
+    targetWordIds: ['brain__noun', 'physical__adjective', 'disease__noun', 'heart-attack__noun', 'pressure__noun', 'lifestyle__noun', 'exercise__noun', 'treatment__noun', 'patient__noun', 'chronic__adjective'],
+    content: `Stress is often described as a feeling, but it also has a physical life inside the body. The brain detects pressure, the heart responds, and physical strain may rise even before a person fully understands what is wrong. In short periods, this reaction can be useful because it prepares the body for action.
+
+The difficulty begins when stress becomes a lifestyle rather than a temporary response. Poor sleep, little exercise, and constant work pressure can increase the risk of chronic disease. For some people, the long-term effect may include a heart attack or other medical condition that requires treatment. A patient may then discover that the problem was not one dramatic event but years of accumulated strain.
+
+This topic is common in academic reading because it connects personal experience with biological mechanism. The passage does not treat health as a simple matter of willpower. Instead, it asks how work, family, environment, and habit enter the body. That connection makes health vocabulary more meaningful and helps students follow explanatory prose.`,
+  },
+  {
+    id: 'batch2-health-read-medicine-evidence-02',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'medicine, evidence and belief',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading on medicine, evidence, and public belief.',
+    title: 'Reading Habit: Medicine, Evidence, and Public Belief',
+    targetWordIds: ['medical__adjective', 'doctor__noun', 'hospital__noun', 'patient__noun', 'treatment__noun', 'vaccinate__verb', 'evidence__noun', 'virus__noun', 'infection__noun', 'reliable__adjective'],
+    content: `Modern medicine depends on more than a skilled doctor and a well-equipped hospital. It also depends on public belief in evidence. A treatment may be reliable, carefully tested, and recommended by specialists, but it will not help many patients if people do not trust the reasoning behind it.
+
+This problem becomes clear during a virus outbreak. Officials may explain how infection spreads and why people should vaccinate against risk, yet rumours can move faster than medical advice. A patient who fears the hospital may delay care, while another may demand treatment that evidence does not support. The challenge is therefore both scientific and communicative.
+
+Good health systems do not simply announce facts. They explain uncertainty, admit limits, and show why one recommendation is stronger than another. For readers, the passage offers a useful IELTS pattern: it begins with institutions, moves to public behaviour, and ends with the relationship between knowledge and trust. Medical vocabulary becomes part of a social argument rather than a separate list of terms.`,
+  },
+  {
+    id: 'batch2-health-core-prevention-03',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'prevention and public health',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced health passage to practise prevention and public-health vocabulary.',
+    title: 'Balanced Practice: Prevention and Public Health',
+    targetWordIds: ['health-care__noun', 'disease__noun', 'medical__adjective', 'hospital__noun', 'doctor__noun', 'patient__noun', 'prevent__verb', 'vaccinate__verb', 'infection__noun', 'virus__noun', 'population__noun', 'lifestyle__noun', 'exercise__noun', 'diet__noun', 'obesity__noun', 'diabetes__noun', 'chronic__adjective', 'treatment__noun'],
+    content: `Health-care systems are often judged by the quality of hospitals, but public health depends just as much on the ability to prevent illness. A doctor can guide a patient after disease appears, yet a population becomes healthier when people vaccinate, improve diet, and exercise before illness begins.
+
+The logic is clear during a virus outbreak. Early action can slow infection and protect people who might otherwise need emergency medical treatment. The same principle applies to chronic conditions. Poor lifestyle habits may increase obesity and diabetes over many years, creating pressure that no hospital can solve alone.
+
+For IELTS learners, this passage is valuable because it links individual choices with public systems. Prevention is not simply personal discipline. It involves food environments, education, transport, housing, and trust in medical advice. A strong health-care system therefore treats prevention as infrastructure: less visible than surgery, but essential to long-term wellbeing.`,
+  },
+  {
+    id: 'batch2-env-read-warmer-planet-01',
+    mode: 'read',
+    theme: 'environment-climate',
+    subtheme: 'living with a warmer planet',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit with a lower-density climate passage about adaptation.',
+    title: 'Reading Habit: Living with a Warmer Planet',
+    targetWordIds: ['climate__noun', 'temperature__noun', 'atmosphere__noun', 'greenhouse__noun', 'carbon-dioxide__noun', 'energy__noun', 'pollution__noun', 'sustainable__adjective', 'adapt__verb', 'community__noun'],
+    content: `A warmer planet is not experienced only through scientific charts. It is felt when a community changes its working hours, when energy bills rise, or when a city redesigns shade and transport. The atmosphere may be the starting point of climate science, but the consequences enter daily life through practical decisions.
+
+Greenhouse gases such as carbon dioxide increase temperature over time, and pollution from older energy systems makes the transition more urgent. Some changes require national planning, but many forms of adaptation are local. A town may plant trees, protect older residents during heat, or design more sustainable buildings that reduce dependence on cooling.
+
+This passage is useful because it keeps the vocabulary limited while following a complete argument. Climate change is first a physical process, then a social problem, and finally a test of planning. To adapt is not to accept failure; it is to recognise that future safety depends on decisions made before the next extreme season arrives.`,
+  },
+  {
+    id: 'batch2-env-core-water-energy-02',
+    mode: 'core',
+    theme: 'environment-climate',
+    subtheme: 'water, energy and adaptation',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced environmental passage to practise climate and infrastructure vocabulary.',
+    title: 'Balanced Practice: Water, Energy, and Adaptation',
+    targetWordIds: ['climate__noun', 'weather__noun', 'rainfall__noun', 'temperature__noun', 'drought__noun', 'flooding__noun', 'stormy__adjective', 'forecast__noun', 'energy__noun', 'sustainable__adjective', 'pollution__noun', 'ecosystem__noun', 'agriculture__noun', 'harvest__verb', 'infrastructure__noun', 'recovery__noun', 'damage__noun', 'community__noun'],
+    content: `Climate adaptation often begins with water and energy. Changes in weather, rainfall, and temperature can increase drought in one region while creating flooding in another. A stormy forecast may therefore affect not only emergency planning but also agriculture, community safety, and the timing of when farmers harvest crops.
+
+Sustainable policy must connect these systems. If energy production creates pollution, it may damage the ecosystem that supports farming and public health. If infrastructure is weak, a single season of extreme weather can interrupt roads, power, and food distribution. Recovery then becomes slower and more expensive, especially for communities that already have limited resources.
+
+For IELTS readers, the value of this passage is its systems logic. It does not treat climate as a single environmental topic. Instead, it shows how water, electricity, agriculture, and transport depend on one another. Understanding that connection helps students follow longer academic texts about risk, adaptation, and public investment.`,
+  },
 ];
 
 function clean(value) {
