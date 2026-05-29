@@ -632,8 +632,42 @@ function resetSwipeSelection() {
   unlockSwipeScroll();
 }
 
-function wordNodeFromPoint(x, y) {
+function wordNodeAtPoint(x, y) {
   return document.elementsFromPoint(x, y).find((node) => node.classList?.contains('vocab-button') && els.readerContent.contains(node)) || null;
+}
+
+function wordNodeClosestToPoint(x, y) {
+  const directHit = wordNodeAtPoint(x, y);
+  if (directHit) return directHit;
+
+  let closest = null;
+  let closestScore = Infinity;
+  for (const wordNode of els.readerContent.querySelectorAll('.vocab-button')) {
+    const rect = wordNode.getBoundingClientRect();
+    const lineDistance = Math.max(0, rect.top - y, y - rect.bottom);
+    if (lineDistance > 28) continue;
+    const horizontalDistance = Math.max(0, rect.left - x, x - rect.right);
+    const score = lineDistance * 4 + horizontalDistance;
+    if (score < closestScore) {
+      closest = wordNode;
+      closestScore = score;
+    }
+  }
+  return closest;
+}
+
+function wordNodeAtSelectionPoint(event) {
+  return wordNodeClosestToPoint(event.clientX, event.clientY);
+}
+
+function mergedWordRangeRect(wordNodes) {
+  const rects = wordNodes.map((node) => node.getBoundingClientRect()).filter((rect) => rect.width || rect.height);
+  if (!rects.length) return null;
+  const left = Math.min(...rects.map((rect) => rect.left));
+  const top = Math.min(...rects.map((rect) => rect.top));
+  const right = Math.max(...rects.map((rect) => rect.right));
+  const bottom = Math.max(...rects.map((rect) => rect.bottom));
+  return { left, top, right, bottom, width: right - left, height: bottom - top };
 }
 
 function wordNodesInRange(startNode, endNode) {
@@ -691,17 +725,16 @@ function updateSwipeSelection(wordNode, event) {
 function updateSwipeSelectionFromPoint(event) {
   if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
   event.preventDefault();
-  const wordNode = wordNodeFromPoint(event.clientX, event.clientY);
+  const wordNode = wordNodeAtSelectionPoint(event);
   updateSwipeSelection(wordNode, event);
 }
 
 function finishSwipeSelection(event) {
   if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
-  const text = selectedTextFromWordRange(state.swipeSelect.startNode, state.swipeSelect.lastNode);
-  const rect = state.swipeSelect.startNode && state.swipeSelect.lastNode
-    ? state.swipeSelect.startNode.getBoundingClientRect()
-    : null;
-  const shouldTranslate = state.swipeSelect.hasDragged && countWords(text) > 1;
+  const selectedNodes = wordNodesInRange(state.swipeSelect.startNode, state.swipeSelect.lastNode);
+  const text = selectedNodes.map((wordNode) => wordNode.textContent).join(' ');
+  const rect = mergedWordRangeRect(selectedNodes);
+  const shouldTranslate = state.swipeSelect.hasDragged && countWords(text) > 1 && rect;
   resetSwipeSelection();
   if (!shouldTranslate) {
     clearPendingSwipeSelection();
