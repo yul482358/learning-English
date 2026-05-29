@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T01:23:28.704Z",
+  "generatedAt": "2026-05-29T01:30:45.875Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 169,
-    "avgCoverageRate": 0.945
+    "articleCount": 181,
+    "avgCoverageRate": 0.947
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 47
+      "articleCount": 54
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 29
+      "articleCount": 34
     }
   ],
   "themes": [
@@ -2275,6 +2275,162 @@
       "targetWordCount": 18,
       "coverageRate": 1,
       "density": 0.118
+    },
+    {
+      "id": "batch3-soc-core-migration-urban-01",
+      "title": "Balanced Practice: Migration and Urban Belonging",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Practise IELTS civic vocabulary through a balanced passage on migration and urban belonging.",
+      "wordCount": 165,
+      "targetWordCount": 18,
+      "coverageRate": 0.889,
+      "density": 0.109
+    },
+    {
+      "id": "batch3-soc-core-justice-procedure-02",
+      "title": "Balanced Practice: Law, Procedure, and Social Trust",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Use a balanced law passage to practise institutional and legal vocabulary.",
+      "wordCount": 156,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.115
+    },
+    {
+      "id": "batch3-soc-read-memory-city-03",
+      "title": "Reading Habit: Migration, Memory, and Urban Identity",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "society-government",
+      "themeLabel": "Society",
+      "summary": "Develop reading habit through a civic passage on memory and urban identity.",
+      "wordCount": 152,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.066
+    },
+    {
+      "id": "batch3-health-core-biodiversity-01",
+      "title": "Balanced Practice: Biodiversity and Human Health",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Practise balanced health and biology vocabulary through a passage on biodiversity.",
+      "wordCount": 155,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.116
+    },
+    {
+      "id": "batch3-health-core-mental-health-02",
+      "title": "Balanced Practice: Mental Health and Daily Systems",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Use a balanced passage to connect mental health vocabulary with social conditions.",
+      "wordCount": 141,
+      "targetWordCount": 18,
+      "coverageRate": 0.944,
+      "density": 0.128
+    },
+    {
+      "id": "batch3-health-read-sleep-learning-03",
+      "title": "Reading Habit: Sleep, Memory, and Learning",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Build reading stamina with a natural health passage about sleep and learning.",
+      "wordCount": 165,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.061
+    },
+    {
+      "id": "batch3-env-core-urban-adaptation-01",
+      "title": "Balanced Practice: Urban Adaptation and Climate Risk",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Practise balanced climate vocabulary through a passage on city adaptation.",
+      "wordCount": 134,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.134
+    },
+    {
+      "id": "batch3-env-read-rivers-cities-02",
+      "title": "Reading Habit: Rivers, Cities, and the Memory of Water",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Develop reading habit through a reflective passage about water and urban memory.",
+      "wordCount": 144,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.069
+    },
+    {
+      "id": "batch3-edu-core-exams-pressure-01",
+      "title": "Balanced Practice: Examinations and Student Pressure",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Use a balanced education passage to practise examination and learning vocabulary.",
+      "wordCount": 149,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.121
+    },
+    {
+      "id": "batch3-edu-core-technology-learning-02",
+      "title": "Balanced Practice: Technology and Learning Design",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Practise a balanced education passage about technology, access, and learning design.",
+      "wordCount": 143,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.126
+    },
+    {
+      "id": "batch3-edu-read-literacy-03",
+      "title": "Reading Habit: The Changing Meaning of Literacy",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Build reading habit through a natural passage on literacy and social mobility.",
+      "wordCount": 132,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.076
+    },
+    {
+      "id": "batch3-edu-read-lifelong-learning-04",
+      "title": "Reading Habit: Lifelong Learning in a Changing Society",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "education-learning",
+      "themeLabel": "Education",
+      "summary": "Extend reading habit with a gentle passage on lifelong learning and adult adaptation.",
+      "wordCount": 154,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.065
     }
   ]
 }

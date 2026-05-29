@@ -2476,6 +2476,186 @@ Sustainable policy must connect these systems. If energy production creates poll
 
 For IELTS readers, the value of this passage is its systems logic. It does not treat climate as a single environmental topic. Instead, it shows how water, electricity, agriculture, and transport depend on one another. Understanding that connection helps students follow longer academic texts about risk, adaptation, and public investment.`,
   },
+  {
+    id: 'batch3-soc-core-migration-urban-01',
+    mode: 'core',
+    theme: 'society-government',
+    subtheme: 'migration, housing, and urban belonging',
+    style: 'ielts-reading',
+    readingGoal: 'Practise IELTS civic vocabulary through a balanced passage on migration and urban belonging.',
+    title: 'Balanced Practice: Migration and Urban Belonging',
+    targetWordIds: ['migrate__verb', 'immigrate__verb', 'emigrate__verb', 'urban__adjective', 'community__noun', 'citizen__noun', 'government__noun', 'institution__noun', 'authority__noun', 'law__noun', 'estate__noun', 'household__noun', 'service__noun', 'participate__verb', 'partner__noun', 'status__noun', 'adapt__verb', 'trustworthy__adjective'],
+    content: `Migration changes a city long before it appears in official statistics. Some families emigrate from rural regions, others immigrate from abroad, and many migrate repeatedly as work, housing, and education shift. In an urban community, the central question is not only where people live, but whether they are able to belong.
+
+A government can influence this process through law, service design, and the status it gives to newcomers. If an institution is clear and trustworthy, a household can adapt more easily: parents find schools, workers understand their rights, and residents know which authority can help with an estate or housing dispute. If the system is confusing, newcomers may remain physically present but socially distant.
+
+For IELTS readers, migration is useful because it links personal movement with civic structure. People become confident citizens when they can participate in community life and act as partners in public decisions. Urban belonging is therefore not sentimental. It depends on institutions that make settlement predictable, fair, and open to contribution.`,
+  },
+  {
+    id: 'batch3-soc-core-justice-procedure-02',
+    mode: 'core',
+    theme: 'society-government',
+    subtheme: 'law, justice, and procedure',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced law passage to practise institutional and legal vocabulary.',
+    title: 'Balanced Practice: Law, Procedure, and Social Trust',
+    targetWordIds: ['law__noun', 'crime__noun', 'court__noun', 'evidence__noun', 'citizen__noun', 'authority__noun', 'government__noun', 'state__verb', 'warn__verb', 'oblige__verb', 'mediate__verb', 'compromise__verb', 'safeguard__verb', 'defend__verb', 'avoid__verb', 'flaw__noun', 'reliable__adjective', 'trustworthy__adjective'],
+    content: `A legal system is judged not only by how it punishes crime, but by how carefully it handles procedure. A court must examine evidence, listen to a citizen, and state its reasoning in language that the public can understand. Without that openness, authority may appear arbitrary even when the final decision is legally correct.
+
+Good procedure can warn officials against haste and oblige powerful groups to respect limits. It may also mediate disputes before conflict becomes permanent. In many cases, a compromise can safeguard relationships better than a dramatic victory. The purpose of law is therefore partly to defend rights and partly to avoid social damage caused by distrust.
+
+For learners, this passage shows why legal vocabulary often appears in IELTS texts about institutions. A reliable system admits that every process may contain a flaw, then creates ways to correct it. Public trust grows when justice is not merely announced, but made visible through trustworthy procedure.`,
+  },
+  {
+    id: 'batch3-soc-read-memory-city-03',
+    mode: 'read',
+    theme: 'society-government',
+    subtheme: 'migration, memory, and urban identity',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit through a civic passage on memory and urban identity.',
+    title: 'Reading Habit: Migration, Memory, and Urban Identity',
+    targetWordIds: ['migrate__verb', 'urban__adjective', 'community__noun', 'monument__noun', 'statue__noun', 'estate__noun', 'citizen__noun', 'heritage__noun', 'contemporary__adjective', 'former__adjective'],
+    content: `A city is not only a collection of roads and buildings. It is also a place where people migrate, settle, remember, and reinterpret the past. A monument in a square or a statue outside an old estate can tell former residents that their history still matters, while newcomers may read the same object differently.
+
+Urban identity therefore changes with each generation. A contemporary community may preserve heritage while also asking whose stories were ignored. Migrant families bring new languages, habits, and expectations, and over time these details become part of the city's public memory. The result is not a single story but a layered one.
+
+This topic is useful for reading practice because it moves slowly from visible objects to social meaning. The vocabulary is limited, yet the argument is broad: a citizen belongs to a city not only by living in it, but by finding a place inside its memory.`,
+  },
+  {
+    id: 'batch3-health-core-biodiversity-01',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'biodiversity and human health',
+    style: 'ielts-reading',
+    readingGoal: 'Practise balanced health and biology vocabulary through a passage on biodiversity.',
+    title: 'Balanced Practice: Biodiversity and Human Health',
+    targetWordIds: ['biology__noun', 'species__noun', 'habitat__noun', 'ecosystem__noun', 'disease__noun', 'infection__noun', 'virus__noun', 'bacteria__noun', 'cell__noun', 'tissue__noun', 'population__noun', 'health-care__noun', 'medical__adjective', 'prevent__verb', 'research__noun', 'sample__noun', 'observe__verb', 'reliable__adjective'],
+    content: `Biology shows that human health is connected to the wider living world. A species does not exist alone; it depends on a habitat, an ecosystem, and relationships with other organisms. When these relationships are disturbed, disease risk may change in ways that health-care systems notice only later.
+
+Medical research can trace some of these links. Scientists may observe a population, collect a sample, and study whether a virus or bacteria moves more easily when habitat is damaged. At the cellular level, infection affects each cell and tissue, but the original cause may lie in land use, farming, or the loss of ecological balance.
+
+For IELTS readers, the passage is useful because it connects biology with public policy. To prevent disease is not only to treat a patient after symptoms appear. It is also to protect the environmental conditions that make reliable health possible. Biodiversity therefore becomes part of medicine, not a topic separate from it.`,
+  },
+  {
+    id: 'batch3-health-core-mental-health-02',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'mental health and daily systems',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced passage to connect mental health vocabulary with social conditions.',
+    title: 'Balanced Practice: Mental Health and Daily Systems',
+    targetWordIds: ['mental__adjective', 'brain__noun', 'emotion__noun', 'pressure__noun', 'distress__noun', 'asleep__adjective', 'lifestyle__noun', 'exercise__noun', 'diet__noun', 'patient__noun', 'doctor__noun', 'medicine__noun', 'treatment__noun', 'chronic__adjective', 'community__noun', 'service__noun', 'support__verb', 'habit__noun'],
+    content: `Mental health is sometimes treated as a private weakness, but research shows that the brain responds to social conditions. Constant pressure, poor sleep, and isolation can affect emotion, leave a person unable to fall asleep, and eventually create serious distress. A healthier lifestyle may help, yet it is rarely enough on its own.
+
+A patient may need a doctor, medicine, or long-term treatment, especially when distress becomes chronic. However, support also comes from ordinary systems: community service, stable work, safer housing, exercise spaces, and habits around diet and rest. These conditions influence whether recovery feels possible.
+
+For IELTS learners, the topic is valuable because it avoids a simple cause. Mental health is biological, psychological, and social at the same time. A good passage asks readers to follow how the mind is shaped by the body, the household, and the wider community.`,
+  },
+  {
+    id: 'batch3-health-read-sleep-learning-03',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'sleep, memory, and learning',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina with a natural health passage about sleep and learning.',
+    title: 'Reading Habit: Sleep, Memory, and Learning',
+    targetWordIds: ['brain__noun', 'asleep__adjective', 'memorial__noun', 'learn__verb', 'routine__noun', 'habit__noun', 'pressure__noun', 'emotion__noun', 'exercise__noun', 'well-being__noun'],
+    content: `Sleep is often treated as the time left after work is finished, but the brain does some of its most important work while a person is asleep. It organises memory, calms emotion, and helps learners keep what they have studied; in a sense, each rested morning becomes a small memorial to the work of the previous day. A student who tries to learn under constant pressure may therefore lose progress by ignoring rest.
+
+Healthy sleep depends partly on routine. A regular habit around light, exercise, and evening study can tell the body when to slow down. This does not mean that sleep solves every problem, but it supports well-being in a way that is easy to underestimate.
+
+For reading practice, the passage offers a gentle health argument. It begins with a familiar experience and then explains a mechanism. The main idea is simple: learning is not only what happens at a desk. It also depends on the quiet biological conditions that allow memory to settle.`,
+  },
+  {
+    id: 'batch3-env-core-urban-adaptation-01',
+    mode: 'core',
+    theme: 'environment-climate',
+    subtheme: 'urban adaptation and climate risk',
+    style: 'ielts-reading',
+    readingGoal: 'Practise balanced climate vocabulary through a passage on city adaptation.',
+    title: 'Balanced Practice: Urban Adaptation and Climate Risk',
+    targetWordIds: ['urban__adjective', 'climate__noun', 'temperature__noun', 'rainfall__noun', 'drought__noun', 'flooding__noun', 'forecast__noun', 'adapt__verb', 'sustainable__adjective', 'infrastructure__noun', 'community__noun', 'emergency__noun', 'damage__noun', 'recovery__noun', 'energy__noun', 'pollution__noun', 'weather__noun', 'coast__noun'],
+    content: `Urban adaptation begins with the recognition that climate risk is local. A coastal city may face flooding after heavy rainfall, while an inland district may experience drought, rising temperature, and dangerous weather. A forecast helps officials prepare, but preparation depends on infrastructure that has often been built for an older climate.
+
+A sustainable city must adapt before damage becomes routine. It can reduce pollution, protect energy systems, create shade, and design emergency routes that support recovery after extreme events. These actions are technical, but they are also social because every community experiences risk differently.
+
+For IELTS readers, this passage shows how environmental vocabulary connects to planning. Climate adaptation is not a single project. It is a continuing process in which roads, housing, coast protection, public health, and energy use are redesigned around changing conditions.`,
+  },
+  {
+    id: 'batch3-env-read-rivers-cities-02',
+    mode: 'read',
+    theme: 'environment-climate',
+    subtheme: 'rivers, cities, and memory',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit through a reflective passage about water and urban memory.',
+    title: 'Reading Habit: Rivers, Cities, and the Memory of Water',
+    targetWordIds: ['waterfall__noun', 'coast__noun', 'flooding__noun', 'rainfall__noun', 'weather__noun', 'community__noun', 'infrastructure__noun', 'damage__noun', 'recovery__noun', 'sustainable__adjective'],
+    content: `Water gives many cities their first reason to exist. A coast offers trade, a river valley offers movement, and even a distant waterfall can become part of a region's identity. Yet water also remembers mistakes in planning. Heavy rainfall may return to old channels, and flooding often reveals where infrastructure has ignored the shape of the land.
+
+After damage occurs, recovery is rarely only a technical matter. Engineers repair roads and drains, but a community must also decide whether to rebuild in the same way. Sustainable planning may require open space, stronger housing rules, and a better respect for local weather patterns.
+
+This passage is useful for reading habit because it moves between image and explanation. Water is beautiful, but it is also a force that tests human decisions. A city that learns from water learns to read its own history more carefully.`,
+  },
+  {
+    id: 'batch3-edu-core-exams-pressure-01',
+    mode: 'core',
+    theme: 'education-learning',
+    subtheme: 'examinations and student pressure',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced education passage to practise examination and learning vocabulary.',
+    title: 'Balanced Practice: Examinations and Student Pressure',
+    targetWordIds: ['education__noun', 'examination__noun', 'learn__verb', 'curriculum__noun', 'campus__noun', 'lecturer__noun', 'seminar__noun', 'library__noun', 'pressure__noun', 'mental__adjective', 'skill__noun', 'career__noun', 'degree__noun', 'evidence__noun', 'compare__verb', 'result__noun', 'method__noun', 'reliable__adjective'],
+    content: `Examinations can organise education, but they can also narrow it. A curriculum built around one final examination may help students learn essential knowledge, yet it may also create pressure that weakens curiosity and mental health. The challenge is to measure achievement without turning learning into fear.
+
+On a campus, a lecturer can reduce this problem by using more than one method. A seminar, library project, or practical task may give evidence of skill that a single test cannot capture. When teachers compare different forms of result, they can judge progress more reliably and support students whose strengths appear in different settings.
+
+For IELTS readers, the topic is familiar but still analytical. Examinations matter because a degree can influence a career, but education should also train judgement, patience, and reliable independent thought. The best systems use tests as tools rather than allowing tests to become the whole purpose of learning.`,
+  },
+  {
+    id: 'batch3-edu-core-technology-learning-02',
+    mode: 'core',
+    theme: 'education-learning',
+    subtheme: 'technology and learning design',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a balanced education passage about technology, access, and learning design.',
+    title: 'Balanced Practice: Technology and Learning Design',
+    targetWordIds: ['education__noun', 'learn__verb', 'language__noun', 'digital__adjective', 'software__noun', 'device__noun', 'available__adjective', 'campus__noun', 'curriculum__noun', 'lecturer__noun', 'pupil__noun', 'method__noun', 'data__noun', 'feedback__noun', 'support__verb', 'independence__noun', 'skill__noun', 'reliable__adjective'],
+    content: `Digital tools have changed education by making materials available beyond the classroom. A pupil can use a device to learn language, review a lecture, or receive feedback from software before returning to campus. These tools can support independence in learning, but only when they are designed around a clear method.
+
+Technology does not replace the curriculum or the lecturer. Data may show which exercise a learner missed, but it cannot fully understand motivation, anxiety, or cultural background. Good design therefore uses digital evidence as one source of guidance, not as a complete judgement of ability.
+
+For IELTS learners, this passage is useful because it avoids a simple argument for or against technology. The real issue is how software, teaching skill, and human support work together. Education improves when tools make learning more reliable and accessible without removing the relationships that help students persist.`,
+  },
+  {
+    id: 'batch3-edu-read-literacy-03',
+    mode: 'read',
+    theme: 'education-learning',
+    subtheme: 'literacy and social change',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit through a natural passage on literacy and social mobility.',
+    title: 'Reading Habit: The Changing Meaning of Literacy',
+    targetWordIds: ['language__noun', 'illiteracy__noun', 'education__noun', 'learn__verb', 'digital__adjective', 'skill__noun', 'career__noun', 'library__noun', 'knowledge__noun', 'community__noun'],
+    content: `Literacy once meant the ability to read a printed page and write a basic message. That meaning still matters, because illiteracy can limit education, employment, and participation in community life. Yet the modern meaning of literacy has expanded.
+
+A person now needs language skill in digital spaces as well as on paper. Students learn how to search a library, judge online knowledge, write for different audiences, and understand images, data, and instructions. These abilities can shape a career as strongly as traditional reading and writing.
+
+This passage is useful because it links a familiar educational word with social change. Literacy is no longer a single skill acquired in childhood. It is a lifelong practice of learning how information works in different settings, and it remains one of the quiet foundations of opportunity.`,
+  },
+  {
+    id: 'batch3-edu-read-lifelong-learning-04',
+    mode: 'read',
+    theme: 'education-learning',
+    subtheme: 'lifelong learning and social change',
+    style: 'ielts-reading',
+    readingGoal: 'Extend reading habit with a gentle passage on lifelong learning and adult adaptation.',
+    title: 'Reading Habit: Lifelong Learning in a Changing Society',
+    targetWordIds: ['education__noun', 'learn__verb', 'career__noun', 'skill__noun', 'degree__noun', 'knowledge__noun', 'library__noun', 'available__adjective', 'community__noun', 'support__verb'],
+    content: `Education no longer ends when a person receives a degree. In a changing economy, adults often need to learn a new skill, change career direction, or return to knowledge that once seemed unnecessary. The idea of lifelong learning recognises that modern life keeps asking people to adapt.
+
+A library, an online course, or a community workshop can make education available beyond the traditional classroom. These places support people who may not see themselves as students but still need guidance, practice, and confidence. The value is not only economic; learning can also protect dignity when work and technology change quickly.
+
+For reading habit, this passage offers a calm argument about growth. It suggests that education is not a single stage of youth, but a continuing relationship between curiosity, opportunity, and social support. A society that respects lifelong learning gives people more than training. It gives them a way to remain active in their own future.`,
+  },
 ];
 
 function clean(value) {
