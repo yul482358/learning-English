@@ -64,8 +64,11 @@ for (const needle of [
   'clearPendingSwipeSelection();',
   'els.readerContent.addEventListener(\'pointerdown\', closeOverlaysFromReaderBlankTap)',
   'state.swipeSelect',
-  'function lockSwipeScroll',
-  'function unlockSwipeScroll',
+  'function clearNativeMobileSelection',
+  'function disableNativeMobileSelection',
+  'clearNativeMobileSelection();',
+  'els.readerContent.addEventListener(\'selectstart\', disableNativeMobileSelection)',
+  'els.readerContent.addEventListener(\'contextmenu\', disableNativeMobileSelection)',
   'els.readerContent.classList.add(\'swipe-selecting\')',
   'els.readerContent.classList.remove(\'swipe-selecting\')',
   'event.preventDefault();',
@@ -102,6 +105,13 @@ assert.ok(appJs.includes('els.readerContent.addEventListener(\'pointerup\', fini
 assert.ok(css.includes('.vocab-button.swipe-selected'), 'swipe-selected words need visible selection styling');
 assert.ok(appJs.includes('wordNode.dataset.wordIndex'), 'word spans should keep sequential indices so cross-line ranges can be reconstructed');
 assert.ok(appJs.includes('document.elementsFromPoint'), 'cross-line swipe selection should hit-test by viewport coordinates, not depend on same-line pointerenter only');
+assert.ok(!appJs.includes("addEventListener('touchstart', disableNativeMobileSelection"), 'native selection blocking should not suppress touchstart because tap-to-translate relies on normal click synthesis');
+assert.ok(!appJs.includes("addEventListener('touchmove', disableNativeMobileSelection"), 'native selection blocking should not suppress touchmove globally because custom pointer selection owns drag handling');
+assert.ok(!appJs.includes("addEventListener('touchend', disableNativeMobileSelection"), 'native selection blocking should not clear selection before touchend handlers or suppress click synthesis');
+assert.ok(!appJs.includes('event.stopPropagation();'), 'mobile native selection prevention must not stop propagation and break word tap/click handlers');
+assert.ok(css.includes('@media (max-width: 900px), (pointer: coarse)'), 'native text selection should only be disabled on mobile/touch reading contexts');
+assert.ok(css.includes('.reader-content {\n    user-select: none;'), 'mobile reader content should disable native text selection');
+assert.ok(css.includes('-webkit-touch-callout: none;'), 'mobile reader content should disable iOS text callout/native selection handles');
 assert.ok(css.includes('.reader-content.swipe-selecting'), 'reader content should lock touch scrolling while actively swiping across words');
 assert.ok(css.includes('touch-action: none;'), 'active swipe selection should disable browser panning to avoid page sliding during cross-line selection');
 

@@ -592,6 +592,16 @@ function handleTouchSelectionEnd() {
   }, 180);
 }
 
+function clearNativeMobileSelection() {
+  if (isTouchReading()) window.getSelection()?.removeAllRanges();
+}
+
+function disableNativeMobileSelection(event) {
+  if (!isTouchReading()) return;
+  event.preventDefault();
+  clearNativeMobileSelection();
+}
+
 function lockSwipeScroll() {
   els.readerContent.classList.add('swipe-selecting');
 }
@@ -608,6 +618,7 @@ function clearPendingSwipeSelection() {
   state.pendingSwipeSelection = null;
   clearSwipeSelectionClasses();
   hideSelectionAction();
+  clearNativeMobileSelection();
 }
 
 function resetSwipeSelection() {
@@ -651,6 +662,7 @@ function updateSwipeSelectionHighlight() {
 
 function beginSwipeSelection(event) {
   if (!isTouchReading() || event.pointerType === 'mouse') return;
+  clearNativeMobileSelection();
   clearPendingSwipeSelection();
   event.preventDefault();
   event.currentTarget.setPointerCapture?.(event.pointerId);
@@ -847,6 +859,8 @@ els.themeFilter.addEventListener('change', handleFiltersChanged);
 popoverEls.close.addEventListener('click', hidePopover);
 els.mobileSheetClose?.addEventListener('click', hideMobileTranslationSheet);
 els.selectionAction?.addEventListener('click', translateSelectionFromAction);
+els.readerContent.addEventListener('selectstart', disableNativeMobileSelection);
+els.readerContent.addEventListener('contextmenu', disableNativeMobileSelection);
 els.readerContent.addEventListener('mouseup', handlePointerSelectionEnd);
 els.readerContent.addEventListener('touchend', handleTouchSelectionEnd);
 els.readerContent.addEventListener('pointerdown', closeOverlaysFromReaderBlankTap);
