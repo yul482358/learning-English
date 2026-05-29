@@ -55,6 +55,19 @@ for (const needle of [
   'function isIeltsTargetWord',
   'function closeReadingOverlays',
   'className = isTarget ? \'vocab-button target-word\' : \'vocab-button plain-word\'',
+  'function beginSwipeSelection',
+  'function updateSwipeSelection',
+  'function finishSwipeSelection',
+  'function wordNodeFromPoint',
+  'function clearPendingSwipeSelection',
+  'function closeOverlaysFromReaderBlankTap',
+  'clearPendingSwipeSelection();',
+  'els.readerContent.addEventListener(\'pointerdown\', closeOverlaysFromReaderBlankTap)',
+  'state.swipeSelect',
+  'document.elementsFromPoint',
+  'wordNode.dataset.wordIndex',
+  'wordNode.addEventListener(\'pointerdown\', beginSwipeSelection)',
+  'wordNode.addEventListener(\'pointerenter\', (event) => updateSwipeSelection(wordNode, event))',
   'wordNode.addEventListener(\'click\', (event) => inspectWordFromInlineTap(article, token, wordNode, event))',
   'function inspectWordFromInlineTap',
   'window.getSelection()?.toString()',
@@ -77,7 +90,10 @@ for (const needle of [
   assert.ok(css.includes(needle), `missing all-word translation CSS marker: ${needle}`);
 }
 
-assert.ok(css.includes('.vocab-button.plain-word:hover,\n.vocab-button.plain-word.active {\n  background: rgba(91, 68, 52, 0.08);'), 'plain word hover should use neutral styling, not red IELTS styling');
-assert.ok(!css.includes('.vocab-button:hover,\n.vocab-button.active,'), 'generic vocab hover should not apply red accent styling to plain words');
+assert.ok(appJs.includes('translateSelection({ forceSheet: true, overrideText'), 'swipe-selected words should translate by explicit override text instead of native long-press selection');
+assert.ok(appJs.includes('els.readerContent.addEventListener(\'pointermove\', updateSwipeSelectionFromPoint)'), 'dragging across word spans should update selection from pointer coordinates');
+assert.ok(appJs.includes('els.readerContent.addEventListener(\'pointerup\', finishSwipeSelection)'), 'swipe selection should finish on pointerup');
+assert.ok(css.includes('.vocab-button.swipe-selected'), 'swipe-selected words need visible selection styling');
+assert.ok(!css.includes('touch-action: manipulation;'), 'word spans should not use touch-action manipulation because it can block swipe selection');
 
 console.log('mobile-translation.test.mjs passed');

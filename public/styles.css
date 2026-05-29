@@ -436,7 +436,6 @@ button {
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
-  touch-action: manipulation;
 }
 
 .vocab-button.target-word {
@@ -457,6 +456,11 @@ button {
 .vocab-button.plain-word:hover,
 .vocab-button.plain-word.active {
   background: rgba(91, 68, 52, 0.08);
+}
+
+.vocab-button.swipe-selected {
+  background: rgba(91, 68, 52, 0.16);
+  box-shadow: inset 0 -0.55em 0 rgba(201, 100, 66, 0.16);
 }
 
 .reading-side-panel {

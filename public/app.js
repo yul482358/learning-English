@@ -12,6 +12,16 @@ const state = {
   activeArticleId: null,
   activeWordButton: null,
   selectionTimer: null,
+  swipeSelect: {
+    active: false,
+    pointerId: null,
+    startNode: null,
+    lastNode: null,
+    startX: 0,
+    startY: 0,
+    hasDragged: false,
+  },
+  pendingSwipeSelection: null,
   activeView: 'home',
   recentReading: [],
   translationCache: new Map(),
@@ -310,9 +320,17 @@ function closeReadingOverlays() {
   hideMobileTranslationSheet();
 }
 
+function closeOverlaysFromReaderBlankTap(event) {
+  if (event.target.closest?.('.vocab-button') || event.target.closest?.('.translation-popover') || event.target.closest?.('.mobile-translation-sheet') || event.target.closest?.('.mobile-selection-action')) return;
+  closeReadingOverlays();
+}
+
 function hidePopover() {
   floating.classList.add('hidden');
   hideSelectionAction();
+  clearSwipeSelectionClasses();
+  state.pendingSwipeSelection = null;
+  els.selectionAction.onclick = null;
 }
 
 function showPopoverLoading({ text, mode, rect }) {
@@ -489,17 +507,20 @@ async function inspectWord(article, word, button) {
   }
 }
 
-async function translateSelection({ forceSheet = false } = {}) {
+async function translateSelection({ forceSheet = false, overrideText = '', overrideRect = null } = {}) {
   const article = currentArticle();
   const selection = window.getSelection();
-  if (!article || !selection || selection.rangeCount === 0) return;
-  const selectedText = cleanSelectedText(selection.toString());
+  if (!article) return;
+  const selectedText = cleanSelectedText(overrideText || selection?.toString() || '');
   if (!selectedText) return;
 
-  const range = selection.getRangeAt(0);
-  if (!els.readerContent.contains(range.commonAncestorContainer)) return;
-
-  const rect = selectionRect();
+  let rect = overrideRect;
+  if (!rect) {
+    if (!selection || selection.rangeCount === 0) return;
+    const range = selection.getRangeAt(0);
+    if (!els.readerContent.contains(range.commonAncestorContainer)) return;
+    rect = selectionRect();
+  }
   if (!rect) return;
 
   const translationMode = countWords(selectedText) > 5 ? 'sentence' : 'word';
@@ -571,7 +592,106 @@ function handleTouchSelectionEnd() {
   }, 180);
 }
 
+function clearSwipeSelectionClasses() {
+  els.readerContent.querySelectorAll('.vocab-button.swipe-selected').forEach((node) => node.classList.remove('swipe-selected'));
+}
+
+function clearPendingSwipeSelection() {
+  state.pendingSwipeSelection = null;
+  clearSwipeSelectionClasses();
+  hideSelectionAction();
+}
+
+function resetSwipeSelection() {
+  state.swipeSelect.active = false;
+  state.swipeSelect.pointerId = null;
+  state.swipeSelect.startNode = null;
+  state.swipeSelect.lastNode = null;
+  state.swipeSelect.startX = 0;
+  state.swipeSelect.startY = 0;
+  state.swipeSelect.hasDragged = false;
+}
+
+function wordNodeFromPoint(x, y) {
+  return document.elementsFromPoint(x, y).find((node) => node.classList?.contains('vocab-button') && els.readerContent.contains(node)) || null;
+}
+
+function wordNodesInRange(startNode, endNode) {
+  const words = Array.from(els.readerContent.querySelectorAll('.vocab-button'));
+  const startIndex = Number(startNode?.dataset.wordIndex);
+  const endIndex = Number(endNode?.dataset.wordIndex);
+  if (!Number.isFinite(startIndex) || !Number.isFinite(endIndex)) return [];
+  const [from, to] = startIndex <= endIndex ? [startIndex, endIndex] : [endIndex, startIndex];
+  return words.filter((wordNode) => {
+    const index = Number(wordNode.dataset.wordIndex);
+    return index >= from && index <= to;
+  });
+}
+
+function selectedTextFromWordRange(startNode, endNode) {
+  return wordNodesInRange(startNode, endNode).map((wordNode) => wordNode.textContent).join(' ');
+}
+
+function updateSwipeSelectionHighlight() {
+  clearSwipeSelectionClasses();
+  if (!state.swipeSelect.startNode || !state.swipeSelect.lastNode) return;
+  for (const wordNode of wordNodesInRange(state.swipeSelect.startNode, state.swipeSelect.lastNode)) {
+    wordNode.classList.add('swipe-selected');
+  }
+}
+
+function beginSwipeSelection(event) {
+  if (!isTouchReading() || event.pointerType === 'mouse') return;
+  clearPendingSwipeSelection();
+  state.swipeSelect.active = true;
+  state.swipeSelect.pointerId = event.pointerId;
+  state.swipeSelect.startNode = event.currentTarget;
+  state.swipeSelect.lastNode = event.currentTarget;
+  state.swipeSelect.startX = event.clientX;
+  state.swipeSelect.startY = event.clientY;
+  state.swipeSelect.hasDragged = false;
+}
+
+function updateSwipeSelection(wordNode, event) {
+  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId || !wordNode) return;
+  const dx = Math.abs(event.clientX - state.swipeSelect.startX);
+  const dy = Math.abs(event.clientY - state.swipeSelect.startY);
+  if (dx + dy > 12 || wordNode !== state.swipeSelect.startNode) {
+    state.swipeSelect.hasDragged = true;
+  }
+  state.swipeSelect.lastNode = wordNode;
+  if (state.swipeSelect.hasDragged) updateSwipeSelectionHighlight();
+}
+
+function updateSwipeSelectionFromPoint(event) {
+  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
+  const wordNode = wordNodeFromPoint(event.clientX, event.clientY);
+  updateSwipeSelection(wordNode, event);
+}
+
+function finishSwipeSelection(event) {
+  if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
+  const text = selectedTextFromWordRange(state.swipeSelect.startNode, state.swipeSelect.lastNode);
+  const rect = state.swipeSelect.startNode && state.swipeSelect.lastNode
+    ? state.swipeSelect.startNode.getBoundingClientRect()
+    : null;
+  const shouldTranslate = state.swipeSelect.hasDragged && countWords(text) > 1;
+  resetSwipeSelection();
+  if (!shouldTranslate) {
+    clearPendingSwipeSelection();
+    return;
+  }
+  state.pendingSwipeSelection = { text, rect };
+  showSelectionAction(rect);
+}
+
 function translateSelectionFromAction() {
+  if (state.pendingSwipeSelection) {
+    const { text, rect } = state.pendingSwipeSelection;
+    state.pendingSwipeSelection = null;
+    clearSwipeSelectionClasses();
+    return translateSelection({ forceSheet: true, overrideText: text, overrideRect: rect });
+  }
   return translateSelection({ forceSheet: true });
 }
 
@@ -593,7 +713,10 @@ function createWordButton(article, token) {
   const wordNode = document.createElement('span');
   const isTarget = isIeltsTargetWord(article, token);
   wordNode.className = isTarget ? 'vocab-button target-word' : 'vocab-button plain-word';
+  wordNode.dataset.wordIndex = String(article._wordRenderIndex = (article._wordRenderIndex || 0) + 1);
   wordNode.textContent = token;
+  wordNode.addEventListener('pointerdown', beginSwipeSelection);
+  wordNode.addEventListener('pointerenter', (event) => updateSwipeSelection(wordNode, event));
   wordNode.addEventListener('click', (event) => inspectWordFromInlineTap(article, token, wordNode, event));
   return wordNode;
 }
@@ -646,6 +769,7 @@ function renderArticle(articleId) {
   els.readerTargets.textContent = `${article.targetWords.length} 个目标词`;
   els.readerDensity.textContent = `${Math.round(article.density * 100)}% 密度`;
   els.readerContent.innerHTML = '';
+  article._wordRenderIndex = 0;
 
   article.content.split(/\n\n+/).forEach((paragraph) => {
     els.readerContent.appendChild(decorateParagraph(article, paragraph));
@@ -711,6 +835,10 @@ els.mobileSheetClose?.addEventListener('click', hideMobileTranslationSheet);
 els.selectionAction?.addEventListener('click', translateSelectionFromAction);
 els.readerContent.addEventListener('mouseup', handlePointerSelectionEnd);
 els.readerContent.addEventListener('touchend', handleTouchSelectionEnd);
+els.readerContent.addEventListener('pointerdown', closeOverlaysFromReaderBlankTap);
+els.readerContent.addEventListener('pointermove', updateSwipeSelectionFromPoint);
+els.readerContent.addEventListener('pointerup', finishSwipeSelection);
+els.readerContent.addEventListener('pointercancel', finishSwipeSelection);
 document.addEventListener('selectionchange', () => {
   if (isTouchReading()) return;
   const selection = window.getSelection();
