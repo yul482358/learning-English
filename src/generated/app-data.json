@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T01:57:07.501Z",
+  "generatedAt": "2026-05-29T02:03:09.964Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 205,
-    "avgCoverageRate": 0.953
+    "articleCount": 217,
+    "avgCoverageRate": 0.956
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 64
+      "articleCount": 67
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 48
+      "articleCount": 57
     }
   ],
   "themes": [
@@ -2743,6 +2743,162 @@
       "targetWordCount": 10,
       "coverageRate": 1,
       "density": 0.068
+    },
+    {
+      "id": "batch6-geo-core-islands-navigation-01",
+      "title": "Balanced Practice: Islands, Navigation, and Field Evidence",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Strengthen geography practice with a balanced passage on islands, navigation and coastal evidence.",
+      "wordCount": 163,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.11
+    },
+    {
+      "id": "batch6-geo-read-rivers-stones-02",
+      "title": "Reading Habit: Rivers, Stones, and Slow Change",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Build reading habit through a calm geography passage on rivers, stones and time.",
+      "wordCount": 130,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.077
+    },
+    {
+      "id": "batch6-geo-read-earthquake-memory-03",
+      "title": "Reading Habit: Earthquake Lines and Community Memory",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Extend geography reading habit with a low-density passage on earthquakes and memory.",
+      "wordCount": 113,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.088
+    },
+    {
+      "id": "batch6-general-core-reading-methods-01",
+      "title": "Balanced Practice: Reading Methods and Academic Discipline",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Practise general academic vocabulary through a passage on reading methods and disciplined study.",
+      "wordCount": 149,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.134
+    },
+    {
+      "id": "batch6-general-read-notes-revision-02",
+      "title": "Reading Habit: Notes That Teach the Reader Twice",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Build reading habit through a gentle passage on note-taking and revision.",
+      "wordCount": 116,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.086
+    },
+    {
+      "id": "batch6-sci-core-laboratory-materials-01",
+      "title": "Balanced Practice: Laboratory Materials and Technological Design",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Strengthen science and technology practice through a balanced passage on laboratory evidence.",
+      "wordCount": 132,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.152
+    },
+    {
+      "id": "batch6-sci-read-magnets-devices-02",
+      "title": "Reading Habit: The Quiet Work of Magnets",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Build science reading habit with a low-density passage on magnets and devices.",
+      "wordCount": 125,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.08
+    },
+    {
+      "id": "batch6-sci-read-science-fiction-03",
+      "title": "Reading Habit: Science Fiction and Real Invention",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Extend science reading habit with a gentle passage on imagination and invention.",
+      "wordCount": 123,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.081
+    },
+    {
+      "id": "batch6-env-read-storm-warnings-01",
+      "title": "Reading Habit: Storm Warnings and Public Preparation",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Build environment reading habit through a low-density passage on storms and preparation.",
+      "wordCount": 125,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.08
+    },
+    {
+      "id": "batch6-env-read-ecology-neighbourhood-02",
+      "title": "Reading Habit: Ecology in the Neighbourhood",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "environment-climate",
+      "themeLabel": "Environment",
+      "summary": "Extend environment reading habit with a gentle passage on ecology and daily urban choices.",
+      "wordCount": 114,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.088
+    },
+    {
+      "id": "batch6-daily-read-kitchen-light-01",
+      "title": "Reading Habit: Morning Light in the Kitchen",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Build daily-life reading habit through a warm but academic passage on household routines.",
+      "wordCount": 112,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.089
+    },
+    {
+      "id": "batch6-daily-read-travel-return-02",
+      "title": "Reading Habit: The Small Ritual of Returning Home",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Extend daily-life reading habit with a passage about travel and returning home.",
+      "wordCount": 127,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.079
     }
   ]
 }

@@ -3018,6 +3018,187 @@ Public regulation can protect this confidence by setting standards for contracts
 
 For reading habit, this passage keeps the argument simple but meaningful. Markets are not machines floating above society. They are human systems in which fairness, memory, and regulation shape every exchange. A learner who follows this idea can see why economic vocabulary often carries ethical weight. Prices matter, but so do promises, shared expectations, and the quiet belief that tomorrow's exchange will still be protected by rules.`,
   },
+
+  {
+    id: 'batch6-geo-core-islands-navigation-01',
+    mode: 'core',
+    theme: 'geography-earth',
+    subtheme: 'islands, navigation and field observation',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen geography practice with a balanced passage on islands, navigation and coastal evidence.',
+    title: 'Balanced Practice: Islands, Navigation, and Field Evidence',
+    targetWordIds: ['oceania__noun', 'ocean__noun', 'tide__noun', 'latitude__noun', 'longitude__noun', 'horizon__noun', 'seaman__noun', 'overseas__adjective', 'marine__adjective', 'circulation__noun', 'seasonal__adjective', 'fauna__noun', 'seal__noun', 'research__noun', 'reclaim__verb', 'enhance__verb', 'withstand__verb', 'altitude__noun'],
+    content: `Island geography is often taught through maps, but it is also learned through movement. In Oceania, distance across the ocean can be measured by latitude and longitude, yet a seaman may also judge the horizon, the tide, and seasonal wind before deciding whether a route is safe. Overseas research therefore combines instruments with practical experience.
+
+Marine conditions shape both settlement and ecology. Ocean circulation affects temperature, food supply, and the movement of fauna. A seal colony may show whether coastal waters remain healthy, while changes in altitude on a small island can influence rainfall and vegetation. These details remind readers that islands are not isolated points; they are connected to wider systems.
+
+Human activity can complicate the picture. Some communities try to reclaim land, enhance harbours, or build structures that can withstand storms. Such projects may support trade and safety, but they can also disturb beaches and habitats. For IELTS learners, this topic is useful because it joins physical geography with human judgement.`,
+  },
+  {
+    id: 'batch6-geo-read-rivers-stones-02',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'rivers, stones and slow landscape change',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit through a calm geography passage on rivers, stones and time.',
+    title: 'Reading Habit: Rivers, Stones, and Slow Change',
+    targetWordIds: ['granite__noun', 'quartz__noun', 'mineral__noun', 'pebble__noun', 'current__noun', 'shore__noun', 'withstand__verb', 'erode__verb', 'landscape__noun', 'research__noun'],
+    content: `A river can make a landscape readable. Along the shore, a pebble may contain quartz, granite, or another mineral that has travelled far from its original rock. The current moves these fragments slowly, sorting them by weight and shape.
+
+Some stones withstand movement for years, while others erode into sand. Research on a river bank may therefore reveal both local conditions and the longer history of a valley. Nothing in the scene needs to be dramatic for it to be meaningful.
+
+This passage supports reading habit by asking for patient attention. The learner follows a small object through a larger system and sees how geography often explains change through ordinary evidence. The argument is deliberately modest, because landscapes are often understood through repeated noticing rather than through one dramatic discovery.`,
+  },
+  {
+    id: 'batch6-geo-read-earthquake-memory-03',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'earthquakes and community memory',
+    style: 'ielts-reading',
+    readingGoal: 'Extend geography reading habit with a low-density passage on earthquakes and memory.',
+    title: 'Reading Habit: Earthquake Lines and Community Memory',
+    targetWordIds: ['earthquake__noun', 'crust__noun', 'mantle__noun', 'core__noun', 'seismic__adjective', 'terrain__noun', 'mountain__noun', 'research__noun', 'disaster__noun', 'recovery__noun'],
+    content: `An earthquake is usually remembered as a sudden disaster, but its causes belong to slow movement inside the Earth. Stress builds in the crust, and deeper processes connected with the mantle and core help explain why some regions are more unstable than others.
+
+After the shaking stops, the terrain keeps a record. A road may crack near a mountain, a wall may lean, or a field may change level. Seismic research studies these signs, but communities also remember them through stories of fear, repair, and recovery.
+
+For reading practice, the passage links physical science with human memory. It shows that a natural event can be both a geological process and a social experience.`,
+  },
+  {
+    id: 'batch6-general-core-reading-methods-01',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'reading methods and academic discipline',
+    style: 'ielts-reading',
+    readingGoal: 'Practise general academic vocabulary through a passage on reading methods and disciplined study.',
+    title: 'Balanced Practice: Reading Methods and Academic Discipline',
+    targetWordIds: ['method__noun', 'approach__noun', 'scheme__noun', 'chapter__noun', 'article__noun', 'journal__noun', 'summary__noun', 'abstract__noun', 'reference__noun', 'cite__verb', 'analyse__verb', 'compare__verb', 'contrast__noun', 'evidence__noun', 'hypothesis__noun', 'conclude__verb', 'revise__verb', 'scrutinise__verb', 'thorough__adjective', 'precise__adjective'],
+    content: `Academic reading is a method, not a race. A student may begin with an abstract, read the chapter or journal article, and then write a short summary before deciding which reference to cite. This approach creates a scheme for attention, so that information is not collected randomly.
+
+The next step is to analyse the material. Readers compare sources, notice contrast, scrutinise evidence, and ask whether a hypothesis is supported. A thorough reader does not conclude too quickly, because precise language often depends on careful work to revise early assumptions. The article may look clear at first, but its argument usually becomes stronger after repeated reading.
+
+This discipline matters across subjects. Whether the text concerns science, society, or economics, the learner needs habits that slow judgement without weakening confidence. Good reading trains the mind to ask how a claim was built and why one explanation is more reliable than another.`,
+  },
+  {
+    id: 'batch6-general-read-notes-revision-02',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'notes, revision and learning memory',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit through a gentle passage on note-taking and revision.',
+    title: 'Reading Habit: Notes That Teach the Reader Twice',
+    targetWordIds: ['summary__noun', 'outline__noun', 'draft__noun', 'revise__verb', 'reference__noun', 'quote__verb', 'detail__noun', 'gist__noun', 'feedback__noun', 'improve__verb'],
+    content: `A good note is more than a record of what has been read. It helps the reader meet the same idea twice: once in the original text and again in personal language. A short summary can capture the gist, while an outline shows how details are arranged.
+
+During the effort to revise, a draft may change because feedback reveals a weak connection or a missing reference. Students also learn when to quote directly and when to paraphrase. These decisions improve not only the final paper but also the reader's understanding of each detail.
+
+This passage is quiet because the skill is quiet. Note-taking rarely feels dramatic, yet it teaches discipline, memory, and respect for evidence.`,
+  },
+  {
+    id: 'batch6-sci-core-laboratory-materials-01',
+    mode: 'core',
+    theme: 'science-technology',
+    subtheme: 'laboratory materials and technological design',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen science and technology practice through a balanced passage on laboratory evidence.',
+    title: 'Balanced Practice: Laboratory Materials and Technological Design',
+    targetWordIds: ['laboratory__noun', 'physics__noun', 'chemistry__noun', 'oxygen__noun', 'hydrogen__noun', 'oxide__noun', 'carbon-dioxide__noun', 'dioxide__noun', 'particle__noun', 'magnet__noun', 'electronics__noun', 'technology__noun', 'digital__adjective', 'invent__verb', 'microcomputer__noun', 'artificial__adjective', 'intelligence__noun', 'compose__verb', 'emission__noun', 'perspective__noun'],
+    content: `A laboratory connects observation with design. In chemistry, researchers may compare oxygen, hydrogen, carbon dioxide, and another dioxide compound to understand how an oxide forms. In physics, they may study a particle or a magnet before a material becomes useful in electronics.
+
+Technology often grows from this patient work. Engineers compose models, test emission levels, and invent devices that later appear in digital systems. The microcomputer is one example of how laboratory knowledge can enter daily life after many cycles of testing and correction.
+
+Artificial intelligence adds a new perspective to this process. It depends on data, hardware, and mathematical reasoning, but it still requires careful scientific judgement. For learners, the passage shows that science vocabulary is not a list of objects; it is a language for explaining how evidence becomes design.`,
+  },
+  {
+    id: 'batch6-sci-read-magnets-devices-02',
+    mode: 'read',
+    theme: 'science-technology',
+    subtheme: 'magnets and everyday devices',
+    style: 'ielts-reading',
+    readingGoal: 'Build science reading habit with a low-density passage on magnets and devices.',
+    title: 'Reading Habit: The Quiet Work of Magnets',
+    targetWordIds: ['magnet__noun', 'particle__noun', 'physics__noun', 'electronics__noun', 'technology__noun', 'digital__adjective', 'microcomputer__noun', 'invent__verb', 'laboratory__noun', 'device__noun'],
+    content: `A magnet seems simple when it holds a note on a refrigerator, but physics gives it a deeper meaning. At the level of the particle, magnetic behaviour helps explain how many modern systems work.
+
+In a laboratory, such knowledge can move slowly toward electronics. A device may be tested, improved, and later included in digital technology or a microcomputer. The people who invent these systems often depend on theories that are invisible in ordinary use.
+
+This passage is useful for reading habit because it connects a familiar object with hidden explanation. Science often begins in wonder, but it becomes powerful through patient measurement. A learner who stays with the example can see how ordinary tools rest on long chains of investigation, correction, and shared knowledge.`,
+  },
+  {
+    id: 'batch6-sci-read-science-fiction-03',
+    mode: 'read',
+    theme: 'science-technology',
+    subtheme: 'science fiction and technological imagination',
+    style: 'ielts-reading',
+    readingGoal: 'Extend science reading habit with a gentle passage on imagination and invention.',
+    title: 'Reading Habit: Science Fiction and Real Invention',
+    targetWordIds: ['science-fiction__noun', 'artificial__adjective', 'intelligence__noun', 'technology__noun', 'invent__verb', 'digital__adjective', 'perspective__noun', 'compose__verb', 'electronics__noun', 'laboratory__noun'],
+    content: `Science fiction often imagines a future before the laboratory can build it. A story about artificial intelligence may not predict exact machines, but it can give society a new perspective on risk, hope, and responsibility.
+
+Writers compose possible worlds, while engineers invent real systems through technology, electronics, and digital design. The two activities are different, yet both ask what kind of future people are willing to create.
+
+For reading practice, the topic is useful because it joins imagination with evidence. It reminds learners that scientific language can describe both actual machines and the ideas that guide their development. The passage also shows why speculation needs discipline: a future imagined in words still has to meet the limits of materials, cost, and human responsibility.`,
+  },
+  {
+    id: 'batch6-env-read-storm-warnings-01',
+    mode: 'read',
+    theme: 'environment-climate',
+    subtheme: 'storm warnings and public preparation',
+    style: 'ielts-reading',
+    readingGoal: 'Build environment reading habit through a low-density passage on storms and preparation.',
+    title: 'Reading Habit: Storm Warnings and Public Preparation',
+    targetWordIds: ['climate__noun', 'weather__noun', 'hurricane__noun', 'monsoon__noun', 'gust__noun', 'breeze__noun', 'thunder__noun', 'lightning__noun', 'stormy__adjective', 'forecast__noun'],
+    content: `Weather warnings turn scientific observation into public action. A forecast may mention a hurricane, a monsoon shift, or stormy conditions that begin with a breeze and end in a dangerous gust. Thunder and lightning make the risk visible, but preparation should begin earlier.
+
+Climate change can make these warnings more difficult to interpret because old seasonal patterns may no longer be reliable. Families, schools, and transport systems need time to respond before a storm arrives.
+
+This passage encourages slow reading of familiar words. It shows that weather vocabulary is not only descriptive; it also carries practical meaning for safety and planning. A clear warning can give people time to close windows, change routes, protect older neighbours, and treat natural risk as a shared civic problem.`,
+  },
+  {
+    id: 'batch6-env-read-ecology-neighbourhood-02',
+    mode: 'read',
+    theme: 'environment-climate',
+    subtheme: 'neighbourhood ecology and everyday choices',
+    style: 'ielts-reading',
+    readingGoal: 'Extend environment reading habit with a gentle passage on ecology and daily urban choices.',
+    title: 'Reading Habit: Ecology in the Neighbourhood',
+    targetWordIds: ['environment__noun', 'ecology__noun', 'ecosystem__noun', 'eco-friendly__adjective', 'pollution__noun', 'fume__noun', 'greenhouse__noun', 'decompose__verb', 'surroundings__noun', 'recover__verb'],
+    content: `Ecology is not limited to distant forests. A neighbourhood is also an ecosystem, shaped by traffic, gardens, waste, and the way people care for their surroundings. Pollution from a fume-filled road can affect health, while a greenhouse or small park may support insects and plants.
+
+Eco-friendly habits often look modest. Food waste can decompose properly, trees can reduce heat, and damaged spaces can recover if residents protect them. These choices do not solve every environmental problem, but they make responsibility visible.
+
+For learners, the passage shows how environment vocabulary can enter ordinary life. The argument is simple: care for a place begins when people notice that daily surroundings are part of a larger system.`,
+  },
+  {
+    id: 'batch6-daily-read-kitchen-light-01',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'kitchen routines and household warmth',
+    style: 'ielts-reading',
+    readingGoal: 'Build daily-life reading habit through a warm but academic passage on household routines.',
+    title: 'Reading Habit: Morning Light in the Kitchen',
+    targetWordIds: ['kitchen__noun', 'living-room__noun', 'dining-hall__noun', 'tap__noun', 'broom__noun', 'mushroom__noun', 'household__noun', 'feel__verb', 'friendly__adjective', 'well-being__noun'],
+    content: `A kitchen often reveals the rhythm of a household before anyone explains it. The tap is used before breakfast, a broom waits near the door, and a mushroom on the table may become part of a simple meal. Nearby, the living room or dining hall holds the slower conversations of the day.
+
+These details are small, but they influence well-being. A friendly space can make people feel calm, while a crowded or neglected room may create tension. Domestic design therefore has social meaning.
+
+This passage is written for reading habit. It asks learners to notice how daily vocabulary can support a gentle argument about care, routine, and the emotional shape of home.`,
+  },
+  {
+    id: 'batch6-daily-read-travel-return-02',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'travel, return and ordinary memory',
+    style: 'ielts-reading',
+    readingGoal: 'Extend daily-life reading habit with a passage about travel and returning home.',
+    title: 'Reading Habit: The Small Ritual of Returning Home',
+    targetWordIds: ['travel__noun', 'depart__verb', 'apartment__noun', 'room__noun', 'furnish__verb', 'adjacent__adjective', 'friendship__noun', 'decorate__verb', 'chill__verb', 'immediately__adverb'],
+    content: `Travel changes the meaning of return. A person may depart for only a few days, yet the apartment can feel different when the door opens again. The room, the chair, and the adjacent window seem to wait in quiet familiarity.
+
+People furnish homes with practical objects, but also with memory. A photograph may decorate a wall, and friendship may be recalled immediately through a message left on the table. Even fatigue can chill quickly when the place feels safe.
+
+This reading passage keeps the subject ordinary on purpose. It suggests that daily life is not empty of meaning; it is where movement, rest, and belonging meet. The return home also shows how familiar spaces can restore attention after noise, delay, and the small uncertainties of the road.`,
+  },
 ];
 
 function clean(value) {
