@@ -2114,6 +2114,188 @@ Crisis language also describes response. Harmful rumours can mislead families, d
 
 Public memory turns survival into learning. The capture of a city, the triumph of reform, or the effort to conquer disease may later appear on a monument, tablet, or statue. A medal and honor may seem glorious, but society should ask who contribute labour and what leaders owe them. A patrol, guard, camouflage expert, obstacle team, burrow researcher, spy analyst, scout, general, soldier, veteran, and pioneer all show that security depends on many forms of service. The passage links risk vocabulary with public memory and accountability.`,
   },
+
+
+  {
+    id: 'batch1-sci-read-automation-01',
+    mode: 'read',
+    theme: 'science-technology',
+    subtheme: 'automation and ordinary work',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina with a natural technology passage about automation and work.',
+    title: 'Reading Habit: Automation and Ordinary Work',
+    targetWordIds: ['technology__noun', 'artificial__adjective', 'intelligence__noun', 'digital__adjective', 'device__noun', 'industry__noun', 'workforce__noun', 'job__noun', 'routine__noun', 'dependent__adjective'],
+    content: `Automation is often described as a sudden technological revolution, but in many workplaces it arrives quietly. A digital device is added to a warehouse, a scheduling system changes a daily routine, or a piece of software begins to check forms that were once read by a clerk. The language of artificial intelligence can make this process sound distant and dramatic, yet its effects are usually felt through ordinary tasks.
+
+The most important question is not whether technology will remove every job. It is how an industry redesigns work when machines can perform some activities faster than people. A company may use artificial intelligence to sort information, predict demand, or guide customer service, while the workforce is asked to learn new procedures. Some workers become more productive because the device reduces repetitive labour. Others become more dependent on instructions produced by systems they do not fully understand.
+
+For readers, this topic is useful because it connects technical vocabulary with social consequence. Automation is not only about invention; it is also about training, trust, and the distribution of responsibility. A balanced society must ask which decisions should be delegated to software and which still require human judgement. The passage therefore invites slower reading rather than quick prediction. It shows how a familiar workplace can be changed by a tool that looks simple on the surface but alters the structure of work beneath it.`,
+  },
+  {
+    id: 'batch1-sci-read-data-power-02',
+    mode: 'read',
+    theme: 'science-technology',
+    subtheme: 'data, privacy and invisible power',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading on data systems and social power with a light vocabulary load.',
+    title: 'Reading Habit: Data and Invisible Power',
+    targetWordIds: ['data__noun', 'network__noun', 'digital__adjective', 'signal__noun', 'software__noun', 'system__noun', 'invisible__adjective', 'power__noun', 'method__noun', 'evidence__noun'],
+    content: `Modern life produces data even when people are not trying to communicate. A phone sends a signal, a payment enters a network, and a digital service records where a user clicked or paused. Much of this activity is invisible to the person who creates it. The result is a new kind of power: organisations can study behaviour through software before citizens fully understand what has been collected.
+
+Supporters argue that data improves services. A transport system can reduce waiting time, a hospital can recognise risk earlier, and a school can identify students who need support. In each case, the method depends on finding patterns in evidence. However, the same system can also encourage unfair decisions if the information is incomplete or if the model reflects earlier bias. A neat graph may look objective, but it still comes from human choices about what to measure and what to ignore.
+
+This is why discussions of data should not remain purely technical. They are also discussions about consent, responsibility, and the limits of prediction. Readers need to follow both sides of the argument: the practical benefits of better information and the danger of allowing invisible systems to shape public life without explanation. The vocabulary is modest, but the idea is demanding because it asks how knowledge becomes authority.`,
+  },
+  {
+    id: 'batch1-sci-read-innovation-dependence-03',
+    mode: 'read',
+    theme: 'science-technology',
+    subtheme: 'innovation and dependence',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading stamina through a reflective passage on innovation and dependence.',
+    title: 'Reading Habit: When Innovation Creates Dependence',
+    targetWordIds: ['innovate__verb', 'technology__noun', 'invent__verb', 'microcomputer__noun', 'electronics__noun', 'software__noun', 'device__noun', 'available__adjective', 'dependent__adjective', 'progress__noun'],
+    content: `Every generation learns to admire the people who invent useful tools. The microcomputer, portable electronics, and later forms of software changed how information became available to ordinary families, schools, and companies. These developments are rightly described as progress, because they reduced distance, saved time, and opened new forms of study and cooperation.
+
+Yet innovation also creates dependence. Once a society organises banking, education, transport, and communication around a digital device, the absence of that device becomes a serious problem. A student without reliable access may fall behind, a small business may lose customers, and a public office may struggle when its system fails. Technology therefore changes not only what people can do but also what they are expected to do.
+
+A mature view of innovation avoids both fear and simple celebration. It recognises that to innovate is to redesign habits, responsibilities, and forms of trust. The useful question is not whether new tools should be rejected, but how societies can keep human judgement visible inside technical systems. For IELTS-style reading, this theme is valuable because it moves from concrete examples to a more general social argument.`,
+  },
+  {
+    id: 'batch1-sci-core-experiment-evidence-04',
+    mode: 'core',
+    theme: 'science-technology',
+    subtheme: 'experiment, evidence and public trust',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced science passage to practise evidence and method vocabulary.',
+    title: 'Balanced Practice: Why Experiments Need Public Trust',
+    targetWordIds: ['experiment__noun', 'evidence__noun', 'method__noun', 'hypothesis__noun', 'theory__noun', 'laboratory__noun', 'sample__noun', 'specimen__noun', 'measure__verb', 'data__noun', 'model__noun', 'logic__noun', 'bias__verb', 'neutral__adjective', 'research__noun', 'result__noun', 'compare__verb', 'effective__adjective'],
+    content: `An experiment is more than a dramatic moment in a laboratory. It is a disciplined method for testing whether a hypothesis deserves confidence. Researchers begin with a theory, select a sample or specimen, decide what to measure, and then collect data that can be examined by others. The result matters only when the logic of the procedure is clear.
+
+Public trust depends on this clarity. If a model is presented as neutral but the original evidence is weak, the conclusion may bias policy rather than improve it. Good research therefore explains how the data were gathered, what limits remain, and whether another team could compare the findings under similar conditions. This habit of openness is especially important in medicine, climate science, and technology, where decisions can affect millions of people.
+
+For students, science reading is challenging because it often joins technical detail with institutional responsibility. A passage may ask why one method is more effective than another, or why a single result should not be treated as final proof. The central skill is to follow the chain from question to evidence to interpretation. Once that chain is visible, scientific vocabulary becomes a set of tools for careful judgement rather than a list of difficult nouns.`,
+  },
+  {
+    id: 'batch1-econ-read-prices-01',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'prices and incomplete stories',
+    style: 'ielts-reading',
+    readingGoal: 'Practise slower reading through a natural economics passage about prices and value.',
+    title: 'Reading Habit: Why Prices Tell Incomplete Stories',
+    targetWordIds: ['economy__noun', 'market__noun', 'trade__noun', 'cost__verb', 'income__noun', 'wage__noun', 'product__noun', 'customer__noun', 'exchange__noun', 'marketing__noun'],
+    content: `A price is one of the most familiar signs in modern life. It appears on a product, guides a customer, and helps a market organise exchange. Because prices are visible, people often treat them as complete explanations of value. Marketing can strengthen this impression: if something costs more, it may seem more important; if something is cheap, it may seem less worthy of attention.
+
+Economics shows why this view is too simple. A low price may depend on weak wages, hidden pollution, or an international trade system that keeps the true cost far from the buyer. A high price may reflect scarcity, marketing, or the income level of the people expected to purchase the item. In each case, the number on the label tells a story, but it does not tell the whole story.
+
+This matters because economic decisions shape moral and social life. When families compare prices, they are also making choices about time, health, and security. When governments regulate markets, they must ask whether efficiency alone is enough. The passage is useful for reading practice because it begins with an everyday object and then expands into a wider argument about value.`,
+  },
+  {
+    id: 'batch1-econ-read-work-dignity-02',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'work, dignity and economic change',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina with a lower-density article about work and economic dignity.',
+    title: 'Reading Habit: Work, Dignity, and Economic Change',
+    targetWordIds: ['job__noun', 'workforce__noun', 'labour__noun', 'wage__noun', 'salary__noun', 'company__noun', 'industry__noun', 'productive__adjective', 'income__noun', 'service__noun'],
+    content: `A job is never only a source of income. It also gives people a place in society, a reason to develop skill, and a sense that their labour is recognised. This is why changes in an industry can feel personal even when they are described in neutral economic language. A factory closure, a new service platform, or a reduced salary can alter how workers understand their own dignity.
+
+Companies often explain change through productivity. If a smaller workforce can produce more, the organisation may appear more efficient. Yet a society must ask what happens to the people who are no longer needed or whose wage remains too low to support a stable life. Economic growth is difficult to praise when many workers feel that their contribution has become invisible.
+
+The topic is common in academic reading because it joins numbers with human consequence. Employment data may show trends, but those trends represent households, routines, and expectations for the future. A careful reader should therefore follow both the economic argument and the social meaning behind it. Work is a practical activity, but it is also one way people learn whether they are valued.`,
+  },
+  {
+    id: 'batch1-econ-read-global-trade-03',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'global trade and fragile supply',
+    style: 'ielts-reading',
+    readingGoal: 'Train natural reading on trade, supply, and global economic dependence.',
+    title: 'Reading Habit: The Fragile Promise of Global Trade',
+    targetWordIds: ['global__adjective', 'trade__noun', 'market__noun', 'supply__verb', 'demand__verb', 'industry__noun', 'company__noun', 'stock__noun', 'livestock__noun', 'supermarket__noun'],
+    content: `Global trade allows a supermarket to offer fruit in winter, electronics from distant factories, and clothing assembled across several countries. To the customer, this variety may look ordinary. Behind it, however, is a complicated market in which each company depends on transport, labour, stock management, and political stability.
+
+The promise of trade is efficiency. One region can supply what another region cannot produce cheaply, and demand can support an industry far beyond its local area. Farmers may sell livestock abroad, manufacturers may reach new buyers, and consumers may enjoy lower prices. Yet the same system is fragile. A port closure, disease outbreak, or sudden rise in fuel cost can interrupt the flow of goods and reveal how dependent modern life has become on distant decisions.
+
+This passage helps readers move beyond the simple idea that global exchange is either good or bad. It creates opportunity, but it also spreads risk. A strong economy therefore needs both open connections and enough local resilience to withstand disruption. The reading challenge is to follow this balance rather than choose one side too quickly.`,
+  },
+  {
+    id: 'batch1-econ-core-consumer-choice-04',
+    mode: 'core',
+    theme: 'economy-business',
+    subtheme: 'consumer choice and market signals',
+    style: 'ielts-reading',
+    readingGoal: 'Practise balanced economics vocabulary through a passage on consumer decisions.',
+    title: 'Balanced Practice: Consumer Choice and Market Signals',
+    targetWordIds: ['market__noun', 'marketing__noun', 'customer__noun', 'product__noun', 'purchase__noun', 'demand__verb', 'supply__verb', 'economy__noun', 'company__noun', 'trade__noun', 'exchange__noun', 'cost__verb', 'income__noun', 'wage__noun', 'salary__noun', 'stock__noun', 'supermarket__noun', 'dividend__noun'],
+    content: `Consumer choice is often presented as a private matter, but each purchase also sends a signal through the market. When a customer selects one product instead of another, a company may change its stock, adjust marketing, or demand that suppliers provide more of a popular item. In this way, small decisions become part of a larger economy.
+
+The signal is not always fair or complete. A family with limited income may choose the cheapest goods even when better options would improve health. A worker whose wage or salary is low has less freedom than a wealthier buyer, although both appear equal at the supermarket shelf. The visible exchange hides differences in power, security, and information.
+
+Businesses respond to these patterns because profit and dividend expectations depend on demand. If trade conditions change or raw materials cost more, companies may supply fewer goods or raise prices. For IELTS readers, the useful point is that markets are not abstract machines. They are social systems in which consumers, workers, managers, and investors interpret signals and make choices under constraint.`,
+  },
+  {
+    id: 'batch1-econ-core-small-business-05',
+    mode: 'core',
+    theme: 'economy-business',
+    subtheme: 'small business and urban economies',
+    style: 'ielts-reading',
+    readingGoal: 'Use a medium-density article to connect business vocabulary with city life.',
+    title: 'Balanced Practice: Small Business and the City Economy',
+    targetWordIds: ['company__noun', 'economy__noun', 'industry__noun', 'market__noun', 'service__noun', 'customer__noun', 'product__noun', 'job__noun', 'labour__noun', 'workforce__noun', 'income__noun', 'wage__noun', 'purchase__noun', 'supply__verb', 'demand__verb', 'exchange__noun', 'productive__adjective', 'community__noun'],
+    content: `A small company may seem less important than a large industry, but in many cities it keeps the local economy alive. A bakery, repair shop, or design service creates a job, pays a wage, and gives a community a place where exchange feels personal rather than distant. The product may be simple, yet the social function is complex.
+
+Small businesses respond quickly to local demand. If customers change their habits, owners adjust what they supply, how they advertise, and how much labour they can afford. A productive workforce is therefore not only a matter of skill; it also depends on stable income, reliable transport, and neighbourhood trust. When rent rises too quickly, a business may close even when the market still needs its service.
+
+For reading practice, this topic is useful because it connects economic vocabulary with visible urban life. Students can see how purchase decisions, customer loyalty, and company survival influence streets, employment, and public identity. The article also shows that economic development is not measured only by national growth. It is experienced in the daily ability of ordinary firms to remain useful.`,
+  },
+  {
+    id: 'batch1-daily-read-routines-01',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'routines and identity',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit through a warm, low-density passage about ordinary routines.',
+    title: 'Reading Habit: Why Daily Routines Shape Identity',
+    targetWordIds: ['daily__adjective', 'routine__noun', 'habit__noun', 'household__noun', 'room__noun', 'kitchen__noun', 'comfort__noun', 'well-being__noun', 'feel__verb', 'friendly__adjective'],
+    content: `A daily routine can look too ordinary to deserve attention. Someone opens a kitchen window, prepares tea, checks a message, and leaves the room at the same time each morning. Yet these repeated actions slowly form a private structure. They tell a household when the day begins, where comfort can be found, and which habits support well-being.
+
+Modern life often praises dramatic change, but people also need repetition. A familiar route to school, a friendly conversation with a neighbour, or the quiet order of a living space can make a person feel more secure. These details do not solve every problem, but they reduce the sense that life is only a series of urgent tasks. A routine gives time a shape that the mind can trust.
+
+This kind of passage is useful for reading practice because it uses simple scenes to introduce a broader idea. The vocabulary is not difficult, but the argument asks readers to notice how ordinary behaviour carries meaning. Daily life is not separate from identity. It is one of the places where identity is rehearsed, protected, and sometimes gently changed.`,
+  },
+  {
+    id: 'batch1-daily-read-domestic-design-02',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'domestic space and design',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading through a quiet article about domestic space and design.',
+    title: 'Reading Habit: The Hidden Design of Domestic Life',
+    targetWordIds: ['living-room__noun', 'kitchen__noun', 'dining-hall__noun', 'room__noun', 'furnish__verb', 'decorate__verb', 'adjacent__adjective', 'tap__noun', 'broom__noun', 'household__noun'],
+    content: `The design of a home often appears natural after people have lived in it for a long time. The kitchen stands adjacent to the dining hall, a tap is placed where hands can be washed quickly, and a broom waits in a corner where it can be reached without thought. These details seem small, but they guide movement through the household.
+
+A living room also carries social meaning. Families furnish it for rest, conversation, or display, and they decorate it with objects that show memory and taste. The arrangement of each room influences who meets whom, where children study, and how guests understand the home. Domestic design therefore shapes behaviour even when no one discusses it directly.
+
+For learners, this passage offers a gentle form of academic reading. It begins with familiar objects and then turns them into evidence of a wider system. A house is not only shelter. It is a set of choices about privacy, labour, comfort, and social life. By reading slowly, students can see how ordinary nouns become part of an argument about design.`,
+  },
+  {
+    id: 'batch1-daily-core-urban-time-03',
+    mode: 'core',
+    theme: 'daily-life',
+    subtheme: 'urban time and everyday pressure',
+    style: 'ielts-reading',
+    readingGoal: 'Use a balanced daily-life passage to connect familiar vocabulary with urban analysis.',
+    title: 'Balanced Practice: Urban Time and Everyday Pressure',
+    targetWordIds: ['urban__adjective', 'travel__noun', 'commuter__noun', 'timetable__noun', 'daily__adjective', 'routine__noun', 'household__noun', 'well-being__noun', 'comfort__noun', 'room__noun', 'kitchen__noun', 'living-room__noun', 'adjacent__adjective', 'facilitate__verb', 'overwork__noun', 'uncomfortable__adjective', 'friendship__noun', 'friendly__adjective'],
+    content: `Urban life is often measured through visible systems such as roads, buildings, and public transport. Yet the deeper pressure is frequently experienced through time. A commuter follows a timetable, calculates travel delays, and returns to a household where the daily routine has already been shaped by the journey. The city enters the kitchen and living room long before anyone discusses policy.
+
+Good design can facilitate comfort. Housing that is adjacent to transport, shops, and parks gives residents more room for friendship, rest, and family care. Poor design has the opposite effect. Long travel times may create overwork, reduce well-being, and make even a friendly neighbourhood feel uncomfortable because people have too little energy to participate in it.
+
+This passage connects familiar vocabulary with urban analysis. It shows that daily life is not merely private; it is organised by infrastructure, schedules, and social expectations. IELTS readers often need to follow this movement from personal experience to public explanation. The words are ordinary, but the argument asks how a city distributes time among the people who live inside it.`,
+  },
 ];
 
 function clean(value) {

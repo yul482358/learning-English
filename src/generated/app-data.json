@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-28T18:24:50.930Z",
+  "generatedAt": "2026-05-29T01:15:20.510Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 145,
-    "avgCoverageRate": 0.942
+    "articleCount": 157,
+    "avgCoverageRate": 0.943
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 39
+      "articleCount": 43
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 13
+      "articleCount": 21
     }
   ],
   "themes": [
@@ -1963,6 +1963,162 @@
       "targetWordCount": 60,
       "coverageRate": 1,
       "density": 0.251
+    },
+    {
+      "id": "batch1-sci-read-automation-01",
+      "title": "Reading Habit: Automation and Ordinary Work",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Build reading stamina with a natural technology passage about automation and work.",
+      "wordCount": 231,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.043
+    },
+    {
+      "id": "batch1-sci-read-data-power-02",
+      "title": "Reading Habit: Data and Invisible Power",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Practise sustained reading on data systems and social power with a light vocabulary load.",
+      "wordCount": 215,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.047
+    },
+    {
+      "id": "batch1-sci-read-innovation-dependence-03",
+      "title": "Reading Habit: When Innovation Creates Dependence",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Develop reading stamina through a reflective passage on innovation and dependence.",
+      "wordCount": 186,
+      "targetWordCount": 10,
+      "coverageRate": 0.9,
+      "density": 0.054
+    },
+    {
+      "id": "batch1-sci-core-experiment-evidence-04",
+      "title": "Balanced Practice: Why Experiments Need Public Trust",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "science-technology",
+      "themeLabel": "Science & Tech",
+      "summary": "Use a balanced science passage to practise evidence and method vocabulary.",
+      "wordCount": 205,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.088
+    },
+    {
+      "id": "batch1-econ-read-prices-01",
+      "title": "Reading Habit: Why Prices Tell Incomplete Stories",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Practise slower reading through a natural economics passage about prices and value.",
+      "wordCount": 193,
+      "targetWordCount": 10,
+      "coverageRate": 0.8,
+      "density": 0.052
+    },
+    {
+      "id": "batch1-econ-read-work-dignity-02",
+      "title": "Reading Habit: Work, Dignity, and Economic Change",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Build reading stamina with a lower-density article about work and economic dignity.",
+      "wordCount": 192,
+      "targetWordCount": 10,
+      "coverageRate": 0.8,
+      "density": 0.052
+    },
+    {
+      "id": "batch1-econ-read-global-trade-03",
+      "title": "Reading Habit: The Fragile Promise of Global Trade",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Train natural reading on trade, supply, and global economic dependence.",
+      "wordCount": 180,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.056
+    },
+    {
+      "id": "batch1-econ-core-consumer-choice-04",
+      "title": "Balanced Practice: Consumer Choice and Market Signals",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Practise balanced economics vocabulary through a passage on consumer decisions.",
+      "wordCount": 176,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.102
+    },
+    {
+      "id": "batch1-econ-core-small-business-05",
+      "title": "Balanced Practice: Small Business and the City Economy",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Use a medium-density article to connect business vocabulary with city life.",
+      "wordCount": 184,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.098
+    },
+    {
+      "id": "batch1-daily-read-routines-01",
+      "title": "Reading Habit: Why Daily Routines Shape Identity",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Develop reading habit through a warm, low-density passage about ordinary routines.",
+      "wordCount": 184,
+      "targetWordCount": 10,
+      "coverageRate": 0.9,
+      "density": 0.054
+    },
+    {
+      "id": "batch1-daily-read-domestic-design-02",
+      "title": "Reading Habit: The Hidden Design of Domestic Life",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Practise sustained reading through a quiet article about domestic space and design.",
+      "wordCount": 178,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.056
+    },
+    {
+      "id": "batch1-daily-core-urban-time-03",
+      "title": "Balanced Practice: Urban Time and Everyday Pressure",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Use a balanced daily-life passage to connect familiar vocabulary with urban analysis.",
+      "wordCount": 177,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.102
     }
   ]
 }
