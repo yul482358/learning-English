@@ -3199,6 +3199,187 @@ People furnish homes with practical objects, but also with memory. A photograph 
 
 This reading passage keeps the subject ordinary on purpose. It suggests that daily life is not empty of meaning; it is where movement, rest, and belonging meet. The return home also shows how familiar spaces can restore attention after noise, delay, and the small uncertainties of the road.`,
   },
+
+  {
+    id: 'batch7-health-core-care-systems-01',
+    mode: 'core',
+    theme: 'health-biology',
+    subtheme: 'health care systems and prevention',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen health vocabulary through a balanced passage on care systems and prevention.',
+    title: 'Balanced Practice: Health Care Systems and Prevention',
+    targetWordIds: ['health-care__noun', 'medical__adjective', 'hospital__noun', 'doctor__noun', 'disease__noun', 'virus__noun', 'nutrient__noun', 'uptake__noun', 'mechanism__noun', 'biology__noun', 'brain__noun', 'heart-attack__noun', 'intensive__adjective', 'endanger__verb', 'extent__noun', 'importance__noun', 'careful__adjective', 'careless__adjective'],
+    content: `A health care system is judged not only by what happens inside a hospital, but also by how well it prevents disease before people become seriously ill. A doctor may provide medical treatment after a virus spreads, yet prevention depends on education, nutrition, and careful public planning.
+
+Biology helps explain why these choices matter. The body needs each nutrient to reach the right tissue through efficient uptake, and the brain depends on stable energy and rest. If this mechanism is weakened by careless habits, stress, or poor diet, the risk of chronic disease and heart attack may increase. In severe cases, intensive treatment becomes necessary.
+
+The extent of the problem shows the importance of prevention. A society that ignores early warning signs can endanger both individual wellbeing and public budgets. For IELTS readers, the topic is useful because it links personal habits with institutional responsibility.`,
+  },
+  {
+    id: 'batch7-health-read-hospital-night-02',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'hospital care and quiet responsibility',
+    style: 'ielts-reading',
+    readingGoal: 'Build health reading habit through a low-density passage about hospital care.',
+    title: 'Reading Habit: A Hospital at Night',
+    targetWordIds: ['hospital__noun', 'doctor__noun', 'medical__adjective', 'health-care__noun', 'disease__noun', 'intensive__adjective', 'careful__adjective', 'brain__noun', 'importance__noun', 'extent__noun'],
+    content: `A hospital at night is quieter than it is during the day, but the work remains serious. A doctor may check a patient with disease, adjust medical notes, or decide whether intensive care is needed. Health care depends on such careful routines.
+
+The importance of this work is not always visible. A small change in the brain, breathing, or temperature can show the extent of a wider problem. Staff must notice these signs before they become emergencies.
+
+This passage is useful for reading habit because it treats care as a system of attention. The language is simple, but the idea is demanding: safety often depends on people doing precise work when few others are watching.`,
+  },
+  {
+    id: 'batch7-health-read-nutrients-brain-03',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'nutrition and cognitive health',
+    style: 'ielts-reading',
+    readingGoal: 'Extend health reading habit with a gentle passage on nutrients and the brain.',
+    title: 'Reading Habit: Nutrients, the Brain, and Daily Energy',
+    targetWordIds: ['nutrient__noun', 'uptake__noun', 'biology__noun', 'brain__noun', 'mechanism__noun', 'disease__noun', 'endanger__verb', 'careful__adjective', 'medical__adjective', 'importance__noun'],
+    content: `Nutrition is often discussed as a matter of appearance, but biology gives it a deeper meaning. A nutrient must be absorbed through uptake before it can support the brain, muscles, and immune system. This mechanism is quiet but essential.
+
+Careless eating patterns may not cause disease immediately, yet they can endanger long-term health. Medical advice therefore often begins with simple habits: regular meals, enough variety, and careful attention to energy levels.
+
+For learners, the passage shows the importance of connecting everyday behaviour with scientific explanation. Food is not only taste or routine; it is part of the body's continuing work. A slower reading of this topic also helps students notice how small daily choices can become part of a larger pattern of wellbeing.`,
+  },
+  {
+    id: 'batch7-health-read-virus-community-04',
+    mode: 'read',
+    theme: 'health-biology',
+    subtheme: 'viruses and community response',
+    style: 'ielts-reading',
+    readingGoal: 'Add health reading habit through a passage on virus response and public cooperation.',
+    title: 'Reading Habit: When a Virus Tests a Community',
+    targetWordIds: ['virus__noun', 'disease__noun', 'hospital__noun', 'doctor__noun', 'health-care__noun', 'medical__adjective', 'endanger__verb', 'intensive__adjective', 'careful__adjective', 'mechanism__noun'],
+    content: `A virus tests more than the body. It also tests the habits of a community. When disease spreads quickly, a hospital may become crowded, and a doctor must make difficult medical decisions with limited time.
+
+Health care systems respond best when the public understands the mechanism of prevention. Careful hand washing, ventilation, and early reporting can reduce pressure on intensive services. Careless behaviour, by contrast, may endanger people who are already weak.
+
+This passage keeps the vocabulary moderate so that the argument remains clear. Public health is not only a technical field; it is a shared practice of attention and trust. The lesson is simple but durable: ordinary behaviour can protect people who may never meet one another.`,
+  },
+  {
+    id: 'batch7-culture-core-archives-artifacts-01',
+    mode: 'core',
+    theme: 'culture-media',
+    subtheme: 'archives, artifacts and cultural memory',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen culture vocabulary through a balanced passage on archives and public memory.',
+    title: 'Balanced Practice: Archives, Artifacts, and Cultural Memory',
+    targetWordIds: ['literature__noun', 'article__noun', 'multimedia__noun', 'artifact__noun', 'artist__noun', 'film__noun', 'chart__noun', 'academy__noun', 'literate__adjective', 'controversial__adjective', 'mediate__verb', 'impart__verb', 'participate__verb', 'partner__noun', 'charter__noun', 'headquarters__noun', 'department__noun', 'quarterly__adjective'],
+    content: `Cultural memory is preserved through more than famous monuments. A library may keep literature, a museum may protect an artifact, and a media department may turn an old film or article into a multimedia archive. Even a chart in a quarterly report can show how public attention changes over time.
+
+An academy has a special responsibility in this process. It should help citizens become literate interpreters of cultural evidence, especially when a topic is controversial. An artist may want to impart emotion, while an institution may need to mediate between history, politics, and public access.
+
+Partnership also matters. A museum headquarters may work with a school, a local partner, or a community group so that more people can participate in interpretation. A charter can protect standards, but living culture depends on shared use rather than storage alone.`,
+  },
+  {
+    id: 'batch7-culture-read-local-cinema-02',
+    mode: 'read',
+    theme: 'culture-media',
+    subtheme: 'film and local identity',
+    style: 'ielts-reading',
+    readingGoal: 'Build culture reading habit through a low-density passage about film and place.',
+    title: 'Reading Habit: A Small Cinema and the Memory of Place',
+    targetWordIds: ['film__noun', 'artist__noun', 'literature__noun', 'article__noun', 'multimedia__noun', 'participate__verb', 'partner__noun', 'mediate__verb', 'impart__verb', 'controversial__adjective'],
+    content: `A small cinema can hold more than entertainment. A film may introduce local history, borrow from literature, or inspire an article that asks why a neighbourhood changed. In a multimedia culture, such places help memory remain public.
+
+The artist does not control every meaning. Viewers participate by discussing what they saw, and a local partner may organise events that mediate between different generations. Sometimes the result is controversial because memory is never perfectly shared.
+
+For reading habit, the passage moves gently. It suggests that cultural spaces impart identity not through grand speeches, but through repeated evenings when people sit together and recognise something of their own lives. The cinema becomes a quiet classroom where belonging is learned indirectly.`,
+  },
+  {
+    id: 'batch7-culture-read-olympic-stories-03',
+    mode: 'read',
+    theme: 'culture-media',
+    subtheme: 'sport, media and shared stories',
+    style: 'ielts-reading',
+    readingGoal: 'Extend culture reading habit with a passage on Olympic stories and media attention.',
+    title: 'Reading Habit: Olympic Stories Beyond the Score',
+    targetWordIds: ['olympic__adjective', 'score__noun', 'chart__noun', 'article__noun', 'multimedia__noun', 'artist__noun', 'anticipate__verb', 'spark__noun', 'participate__verb', 'immediately__adverb'],
+    content: `An Olympic event is often remembered through a score, but media stories give the result a wider life. A chart may show performance, while an article explains pressure, training, or national expectation. Multimedia coverage can make a distant contest feel immediate.
+
+Audiences anticipate victory, but an unexpected result may spark debate. An artist might later turn the moment into a poster, a song, or a short film. In this way, people participate in sport even when they never enter the stadium.
+
+This passage reminds learners that media language often extends the meaning of an event. The result matters, yet the stories around it shape how a community remembers courage, disappointment, and hope immediately after the final whistle.`,
+  },
+  {
+    id: 'batch7-food-read-bread-grain-01',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'grain, bread and patient work',
+    style: 'ielts-reading',
+    readingGoal: 'Build food-agriculture reading habit through a low-density passage on grain and daily food.',
+    title: 'Reading Habit: Grain, Bread, and Patient Work',
+    targetWordIds: ['grain__noun', 'crop__noun', 'seed__noun', 'plough__noun', 'cultivate__verb', 'ripen__verb', 'harvest__verb', 'food__noun', 'agriculture__noun', 'market__noun'],
+    content: `A loaf of bread begins long before it reaches the market. Agriculture starts with seed, soil preparation, and the decision to use a plough where land is suitable. Farmers cultivate a crop through weather, risk, and repeated care.
+
+When grain begins to ripen, the harvest becomes a moment of both relief and pressure. Too much rain can damage food quality, while delay may reduce value. The final product looks simple, but it contains months of labour.
+
+For reading habit, this passage slows down an everyday object. Bread is not only food; it is a record of climate, skill, and patience. Such a familiar example helps learners connect rural production with the calm rhythm of daily consumption.`,
+  },
+  {
+    id: 'batch7-food-read-dairy-farm-02',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'dairy farming and food chains',
+    style: 'ielts-reading',
+    readingGoal: 'Extend food-agriculture reading habit with a passage on dairy farming and supply chains.',
+    title: 'Reading Habit: From Dairy Farm to Ice Cream',
+    targetWordIds: ['rear__verb', 'brood__noun', 'livestock__noun', 'food__noun', 'cheese__noun', 'ice-cream__noun', 'market__noun', 'agriculture__noun', 'microphone__noun', 'microscope__noun'],
+    content: `Dairy farming asks people to rear animals with patience. A brood of young animals may need shelter, and livestock require clean water, food, and regular care. Agriculture here is not a distant field but a daily relationship between people and living creatures.
+
+Milk can become cheese, yoghurt, or ice cream before it reaches the market. Science also enters the chain. A microscope can help check quality, while a microphone may be used in research that monitors animal movement or stress.
+
+This passage keeps the tone calm because food systems depend on quiet repetition. The product in a shop carries hidden work from the farm, the laboratory, and transport systems. Reading it slowly also reveals how ordinary purchases depend on many coordinated decisions made far from the shelf.`,
+  },
+  {
+    id: 'batch7-econ-read-supermarket-shelves-01',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'supermarkets and consumer choice',
+    style: 'ielts-reading',
+    readingGoal: 'Build economy-business reading habit through a passage on supermarkets and market signals.',
+    title: 'Reading Habit: What Supermarket Shelves Reveal',
+    targetWordIds: ['supermarket__noun', 'market__noun', 'trade__noun', 'economy__noun', 'economics__noun', 'company__noun', 'industry__noun', 'marketing__noun', 'stock__noun', 'stocking__noun'],
+    content: `A supermarket shelf is a small lesson in economics. The market decides which goods appear, how much stock is kept, and how quickly stocking must be adjusted when demand changes. Behind the quiet aisle are trade routes, storage costs, and the choices of each company.
+
+Marketing also shapes what shoppers notice. A label may make one product look healthy, local, or affordable, even when the wider industry is more complex. In this sense, the economy becomes visible through ordinary decisions.
+
+For reading habit, the topic is useful because it makes business vocabulary concrete. A shelf is not only a place to buy food; it is a record of supply, competition, and consumer belief.`,
+  },
+  {
+    id: 'batch7-econ-read-dividend-risk-02',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'dividends and business risk',
+    style: 'ielts-reading',
+    readingGoal: 'Extend economy-business reading habit with a low-density passage on dividends and risk.',
+    title: 'Reading Habit: Dividends, Risk, and Patient Capital',
+    targetWordIds: ['dividend__noun', 'stock__noun', 'economy__noun', 'market__noun', 'company__noun', 'industry__noun', 'trade__noun', 'economics__noun', 'mishap__noun', 'accompany__verb'],
+    content: `A dividend can make stock ownership feel simple, but the economy behind it is rarely simple. A company earns money inside a market shaped by trade, regulation, labour, and changing demand. Economics helps explain why one industry grows while another becomes fragile.
+
+Every payment can accompany a period of risk. A mishap in production, a fall in sales, or a weak export season can reduce confidence. Investors may still wait patiently if they believe the company has a sound long-term position.
+
+This passage is designed for slow reading. It shows that business language often describes time: present reward, future uncertainty, and the discipline required to connect them. The vocabulary becomes easier when learners see it inside this patient sequence rather than as isolated financial terms.`,
+  },
+  {
+    id: 'batch7-general-read-public-data-01',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'public data and careful interpretation',
+    style: 'ielts-reading',
+    readingGoal: 'Add general academic reading habit through a passage about data and interpretation.',
+    title: 'Reading Habit: Public Data and Careful Interpretation',
+    targetWordIds: ['data__noun', 'statistics__noun', 'chart__noun', 'table__noun', 'graph__noun', 'rate__noun', 'ratio__noun', 'evidence__noun', 'analyse__verb', 'interpret__verb'],
+    content: `Public data can look objective, but it still requires judgement. A chart, table, or graph may show a rate or ratio, yet the reader must ask how the statistics were collected. Evidence is not meaningful until someone knows how to interpret it.
+
+Students often need to analyse the difference between a trend and a single unusual result. A number may be accurate but still misleading if it is separated from context. Good reading therefore depends on method as well as attention.
+
+This passage gives learners a calm academic habit. Before accepting a claim, they should ask what the data show, what they hide, and what question they were designed to answer. In this way, academic reading becomes an exercise in patience rather than quick agreement.`,
+  },
 ];
 
 function clean(value) {

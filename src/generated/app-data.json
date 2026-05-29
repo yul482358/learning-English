@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T02:03:09.964Z",
+  "generatedAt": "2026-05-29T02:25:23.404Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 217,
-    "avgCoverageRate": 0.956
+    "articleCount": 229,
+    "avgCoverageRate": 0.958
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 67
+      "articleCount": 69
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 57
+      "articleCount": 67
     }
   ],
   "themes": [
@@ -2899,6 +2899,162 @@
       "targetWordCount": 10,
       "coverageRate": 1,
       "density": 0.079
+    },
+    {
+      "id": "batch7-health-core-care-systems-01",
+      "title": "Balanced Practice: Health Care Systems and Prevention",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Strengthen health vocabulary through a balanced passage on care systems and prevention.",
+      "wordCount": 145,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.124
+    },
+    {
+      "id": "batch7-health-read-hospital-night-02",
+      "title": "Reading Habit: A Hospital at Night",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Build health reading habit through a low-density passage about hospital care.",
+      "wordCount": 115,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.087
+    },
+    {
+      "id": "batch7-health-read-nutrients-brain-03",
+      "title": "Reading Habit: Nutrients, the Brain, and Daily Energy",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Extend health reading habit with a gentle passage on nutrients and the brain.",
+      "wordCount": 124,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.081
+    },
+    {
+      "id": "batch7-health-read-virus-community-04",
+      "title": "Reading Habit: When a Virus Tests a Community",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "health-biology",
+      "themeLabel": "Health",
+      "summary": "Add health reading habit through a passage on virus response and public cooperation.",
+      "wordCount": 118,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.085
+    },
+    {
+      "id": "batch7-culture-core-archives-artifacts-01",
+      "title": "Balanced Practice: Archives, Artifacts, and Cultural Memory",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Strengthen culture vocabulary through a balanced passage on archives and public memory.",
+      "wordCount": 137,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.131
+    },
+    {
+      "id": "batch7-culture-read-local-cinema-02",
+      "title": "Reading Habit: A Small Cinema and the Memory of Place",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Build culture reading habit through a low-density passage about film and place.",
+      "wordCount": 118,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.085
+    },
+    {
+      "id": "batch7-culture-read-olympic-stories-03",
+      "title": "Reading Habit: Olympic Stories Beyond the Score",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Extend culture reading habit with a passage on Olympic stories and media attention.",
+      "wordCount": 117,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.085
+    },
+    {
+      "id": "batch7-food-read-bread-grain-01",
+      "title": "Reading Habit: Grain, Bread, and Patient Work",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Build food-agriculture reading habit through a low-density passage on grain and daily food.",
+      "wordCount": 116,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.086
+    },
+    {
+      "id": "batch7-food-read-dairy-farm-02",
+      "title": "Reading Habit: From Dairy Farm to Ice Cream",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Extend food-agriculture reading habit with a passage on dairy farming and supply chains.",
+      "wordCount": 127,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.079
+    },
+    {
+      "id": "batch7-econ-read-supermarket-shelves-01",
+      "title": "Reading Habit: What Supermarket Shelves Reveal",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Build economy-business reading habit through a passage on supermarkets and market signals.",
+      "wordCount": 113,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.088
+    },
+    {
+      "id": "batch7-econ-read-dividend-risk-02",
+      "title": "Reading Habit: Dividends, Risk, and Patient Capital",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Extend economy-business reading habit with a low-density passage on dividends and risk.",
+      "wordCount": 125,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.08
+    },
+    {
+      "id": "batch7-general-read-public-data-01",
+      "title": "Reading Habit: Public Data and Careful Interpretation",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Add general academic reading habit through a passage about data and interpretation.",
+      "wordCount": 125,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.08
     }
   ]
 }
