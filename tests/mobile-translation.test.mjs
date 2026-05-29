@@ -49,4 +49,35 @@ for (const needle of [
   assert.ok(css.includes(needle), `missing mobile translation CSS marker: ${needle}`);
 }
 
+for (const needle of [
+  'function tokenizeParagraphForTranslation',
+  'function createWordButton',
+  'function isIeltsTargetWord',
+  'function closeReadingOverlays',
+  'className = isTarget ? \'vocab-button target-word\' : \'vocab-button plain-word\'',
+  'wordNode.addEventListener(\'click\', (event) => inspectWordFromInlineTap(article, token, wordNode, event))',
+  'function inspectWordFromInlineTap',
+  'window.getSelection()?.toString()',
+  'translateSelection({ forceSheet: true })',
+]) {
+  assert.ok(appJs.includes(needle), `missing all-word translation app marker: ${needle}`);
+}
+
+assert.ok(!appJs.includes('const targetWords = article.targetWords.slice().sort'), 'paragraph rendering should no longer only wrap IELTS target words');
+assert.ok(appJs.includes('for (const token of tokenizeParagraphForTranslation(paragraph))'), 'paragraph rendering should tokenize every English word for click translation');
+assert.ok(appJs.includes('showMobileTranslationSheet({ title: text, mode: translationMode'), 'selected text should open the translation sheet on mobile');
+assert.ok(appJs.includes('hideMobileTranslationSheet();'), 'blank-space close should retract the translation sheet');
+
+for (const needle of [
+  '.vocab-button.target-word',
+  '.vocab-button.plain-word',
+  '.vocab-button.plain-word:hover',
+  'box-shadow: inset 0 -0.5em 0 rgba(201, 100, 66, 0.18)',
+]) {
+  assert.ok(css.includes(needle), `missing all-word translation CSS marker: ${needle}`);
+}
+
+assert.ok(css.includes('.vocab-button.plain-word:hover,\n.vocab-button.plain-word.active {\n  background: rgba(91, 68, 52, 0.08);'), 'plain word hover should use neutral styling, not red IELTS styling');
+assert.ok(!css.includes('.vocab-button:hover,\n.vocab-button.active,'), 'generic vocab hover should not apply red accent styling to plain words');
+
 console.log('mobile-translation.test.mjs passed');

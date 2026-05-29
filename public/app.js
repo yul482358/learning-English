@@ -305,6 +305,11 @@ function selectionRect() {
   return rects[0] || null;
 }
 
+function closeReadingOverlays() {
+  hidePopover();
+  hideMobileTranslationSheet();
+}
+
 function hidePopover() {
   floating.classList.add('hidden');
   hideSelectionAction();
@@ -484,7 +489,7 @@ async function inspectWord(article, word, button) {
   }
 }
 
-async function translateSelection() {
+async function translateSelection({ forceSheet = false } = {}) {
   const article = currentArticle();
   const selection = window.getSelection();
   if (!article || !selection || selection.rangeCount === 0) return;
@@ -504,7 +509,7 @@ async function translateSelection() {
 
   setInspectorLoading(text, context, entry, translationMode);
   hideSelectionAction();
-  if (isTouchReading()) {
+  if (isTouchReading() || forceSheet) {
     showMobileTranslationSheet({ title: text, mode: translationMode, original: text, translation: entry?.meaningCn || '翻译中…', explanation: '正在调用你配置的模型接口。', context });
   } else {
     showPopoverLoading({ text, mode: translationMode, rect });
@@ -518,14 +523,14 @@ async function translateSelection() {
     els.inspectExplanation.textContent = payload.explanation || entry?.notes || '';
     els.inspectContext.textContent = context;
     els.inspectNote.textContent = payload.dictionary?.notes || entry?.notes || entry?.example || '–';
-    if (isTouchReading()) {
+    if (isTouchReading() || forceSheet) {
       setMobileSheetFromPayload({ payload, text, context, mode: translationMode, entry });
     } else {
       updatePopover(payload, text);
     }
   } catch (error) {
     els.inspectExplanation.textContent = `加载翻译失败：${error}`;
-    if (isTouchReading()) {
+    if (isTouchReading() || forceSheet) {
       showMobileTranslationSheet({ title: text, mode: translationMode, original: text, translation: '翻译加载失败', explanation: String(error), context });
     } else {
       popoverEls.translation.textContent = '翻译加载失败';
@@ -567,38 +572,40 @@ function handleTouchSelectionEnd() {
 }
 
 function translateSelectionFromAction() {
-  if (!isTouchReading()) return translateSelection();
-  return translateSelection();
+  return translateSelection({ forceSheet: true });
+}
+
+function isIeltsTargetWord(article, word) {
+  const normalized = normalizeWord(word);
+  return article.targetWords.some((target) => normalizeWord(target) === normalized);
+}
+
+function tokenizeParagraphForTranslation(paragraph) {
+  return paragraph.match(/[A-Za-z]+(?:[-'][A-Za-z]+)*|[^A-Za-z]+/g) || [];
+}
+
+function inspectWordFromInlineTap(article, token, wordNode, event) {
+  if (cleanSelectedText(window.getSelection()?.toString() || '')) return;
+  inspectWord(article, token, wordNode, event);
+}
+
+function createWordButton(article, token) {
+  const wordNode = document.createElement('span');
+  const isTarget = isIeltsTargetWord(article, token);
+  wordNode.className = isTarget ? 'vocab-button target-word' : 'vocab-button plain-word';
+  wordNode.textContent = token;
+  wordNode.addEventListener('click', (event) => inspectWordFromInlineTap(article, token, wordNode, event));
+  return wordNode;
 }
 
 function decorateParagraph(article, paragraph) {
   const wrapper = document.createElement('p');
-  const targetWords = article.targetWords.slice().sort((a, b) => b.length - a.length);
 
-  let index = 0;
-  while (index < paragraph.length) {
-    let match = null;
-    for (const word of targetWords) {
-      const regex = new RegExp(`^${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z-])`, 'i');
-      const slice = paragraph.slice(index);
-      const result = slice.match(regex);
-      if (result) {
-        match = { word: result[0], length: result[0].length };
-        break;
-      }
-    }
-
-    if (match) {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'vocab-button';
-      button.textContent = match.word;
-      button.addEventListener('click', () => inspectWord(article, match.word, button));
-      wrapper.appendChild(button);
-      index += match.length;
+  for (const token of tokenizeParagraphForTranslation(paragraph)) {
+    if (/^[A-Za-z]/.test(token)) {
+      wrapper.appendChild(createWordButton(article, token));
     } else {
-      wrapper.appendChild(document.createTextNode(paragraph[index]));
-      index += 1;
+      wrapper.appendChild(document.createTextNode(token));
     }
   }
 
@@ -625,6 +632,7 @@ function renderArticle(articleId) {
   if (!article) return;
   state.activeArticleId = articleId;
   hidePopover();
+  hideMobileTranslationSheet();
   renderArticleList();
   renderModeCards();
 
@@ -710,11 +718,14 @@ document.addEventListener('selectionchange', () => {
   scheduleSelectionTranslation();
 });
 document.addEventListener('mousedown', (event) => {
-  if (!floating.contains(event.target) && !els.readerContent.contains(event.target)) {
-    hidePopover();
+  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.selectionAction?.contains(event.target) && !els.readerContent.contains(event.target)) {
+    closeReadingOverlays();
   }
-  if (!els.mobileSheet?.contains(event.target) && !els.selectionAction?.contains(event.target) && !els.readerContent.contains(event.target)) {
-    hideSelectionAction();
+});
+
+document.addEventListener('pointerdown', (event) => {
+  if (!floating.contains(event.target) && !els.mobileSheet?.contains(event.target) && !els.selectionAction?.contains(event.target) && !els.readerContent.contains(event.target)) {
+    closeReadingOverlays();
   }
 });
 
