@@ -2837,6 +2837,187 @@ Field research teaches patience. Scientists may return periodically to score ero
 
 For learners, this passage offers a quiet form of academic reading. It asks the reader to follow a chain from stone to mountain, from mineral detail to landscape history. The vocabulary is limited, but the habit of attention is wide.`,
   },
+
+  {
+    id: 'batch5-geo-core-coasts-risk-01',
+    mode: 'core',
+    theme: 'geography-earth',
+    subtheme: 'coasts, maps and environmental risk',
+    style: 'ielts-reading',
+    readingGoal: 'Deepen geography practice through a balanced passage on coastal change and field evidence.',
+    title: 'Balanced Practice: Coasts, Maps, and Environmental Risk',
+    targetWordIds: ['ocean__noun', 'tide__noun', 'latitude__noun', 'longitude__noun', 'altitude__noun', 'horizon__noun', 'reclaim__verb', 'circulation__noun', 'seasonal__adjective', 'fauna__noun', 'seal__noun', 'enhance__verb', 'research__noun', 'score__noun', 'withstand__verb', 'disease__noun', 'plague__noun', 'marine__adjective', 'hydrosphere__noun', 'lithosphere__noun'],
+    content: `Coastal geography asks students to read land and water together. The ocean, the tide, and marine weather belong to the hydrosphere, while cliffs, beaches, and rocks belong to the lithosphere. A map may record latitude and longitude, but field research is needed to understand why one coast can withstand storms while another is rapidly changing.
+
+Observation often begins with ordinary details. A researcher may note altitude above sea level, the position of the horizon, or the way seasonal circulation carries sand along the shore. Fauna also provide evidence. A seal population may decline when food moves elsewhere, while disease or plague in coastal animals can reveal wider environmental stress.
+
+Human decisions add another layer. Some cities try to reclaim land from the sea, enhance protective barriers, or score levels of erosion after each storm. These actions may reduce immediate danger, but they can also disturb natural processes. For IELTS readers, the topic is useful because it combines maps, evidence, risk, and policy in one connected argument.`,
+  },
+  {
+    id: 'batch5-geo-core-mountains-minerals-02',
+    mode: 'core',
+    theme: 'geography-earth',
+    subtheme: 'mountains, minerals and geological time',
+    style: 'ielts-reading',
+    readingGoal: 'Practise a medium-density geography passage about rocks, mountains and time.',
+    title: 'Balanced Practice: Mountains, Minerals, and Geological Time',
+    targetWordIds: ['mountain__noun', 'mineral__noun', 'granite__noun', 'quartz__noun', 'crust__noun', 'mantle__noun', 'core__noun__2', 'earthquake__noun', 'ridge__noun', 'beam__noun', 'exceed__verb', 'periodically__adverb', 'research__noun', 'score__noun', 'overseas__adjective', 'maneuver__noun', 'withstand__verb', 'horizon__noun'],
+    content: `A mountain is not merely a high shape on the horizon. It is a visible result of forces that begin deep within the Earth. Granite and quartz may form around a fruit-like core in the crust, pressure from the mantle may lift a ridge over vast periods, and an earthquake can reveal stress that has been stored for longer than human records can easily measure.
+
+Geological time can exceed ordinary imagination, so research often depends on careful comparison. Teams may return periodically to score changes in slope, examine a mineral sample, or measure whether a ridge can withstand rain and frost. A beam of light across a rock face may even help reveal cracks that were invisible at noon.
+
+Modern fieldwork is increasingly international. An overseas team may bring instruments, maps, and a difficult maneuver plan for reaching remote sites, but the central habit remains simple: observe, compare, and revise. For learners, this passage shows how physical geography turns stone into evidence and scenery into explanation.`,
+  },
+  {
+    id: 'batch5-geo-read-mountain-weather-03',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'mountain weather and slow observation',
+    style: 'ielts-reading',
+    readingGoal: 'Build geography reading habit through a low-density passage on mountain weather.',
+    title: 'Reading Habit: Weather on a Mountain Path',
+    targetWordIds: ['mountain__noun', 'altitude__noun', 'horizon__noun', 'seasonal__adjective', 'circulation__noun', 'fauna__noun', 'withstand__verb', 'observe__verb', 'exceed__verb', 'periodically__adverb'],
+    content: `Weather on a mountain path can change before a visitor understands the reason. Higher altitude cools the air, clouds gather along the horizon, and seasonal wind patterns influence which plants and animals can remain there.
+
+Observers study these changes and observe them carefully because small signs may point to larger circulation patterns. A plant that flowers earlier than before, or fauna that move uphill, can show that local conditions are shifting. Some species withstand the change; others disappear quietly.
+
+This passage is designed for slow reading. It does not ask the learner to remember many technical terms at once. Instead, it follows observation periodically made on the same path, where details may exceed expectation precisely because they are so easy to miss.`,
+  },
+  {
+    id: 'batch5-general-core-evidence-argument-01',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'evidence, reasoning and academic caution',
+    style: 'ielts-reading',
+    readingGoal: 'Practise general academic vocabulary through a balanced passage on evidence and argument.',
+    title: 'Balanced Practice: Evidence, Argument, and Academic Caution',
+    targetWordIds: ['classify__verb', 'derive__verb', 'suppose__verb', 'mechanism__noun', 'criteria__noun', 'category__noun', 'content__noun', 'analyse__verb', 'evidence__noun', 'research__noun', 'interpret__verb', 'controversial__adjective', 'complex__adjective', 'precise__adjective', 'method__noun', 'chapter__noun', 'article__noun', 'chart__noun', 'logic__noun', 'hypothesis__noun'],
+    content: `Academic writing depends on caution as much as confidence. A writer may suppose that a pattern is meaningful, but a serious article must show evidence before it asks readers to accept a conclusion. The task is not simply to collect facts; it is to classify information into a category, identify a mechanism, and derive a claim that follows from the material.
+
+Clear criteria help this process. A chapter in a textbook may explain one criterion for judging reliability, while a research paper may use several criteria to test a hypothesis. A chart can make comparison easier, but it cannot replace the need to analyse evidence. Students must interpret the chart in relation to method, sample size, and the complex content under discussion.
+
+This discipline is especially important when a topic is controversial. Precise language protects the logic of an argument because it prevents a reader from confusing possibility with proof. For IELTS learners, the passage offers a useful academic habit: read not only for answers, but for the steps by which an answer is built.`,
+  },
+  {
+    id: 'batch5-general-core-systems-change-02',
+    mode: 'core',
+    theme: 'general-academic',
+    subtheme: 'systems, change and explanation',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen general academic reading with a systems-thinking passage.',
+    title: 'Balanced Practice: Systems, Change, and Explanation',
+    targetWordIds: ['system__noun', 'structure__noun', 'functional__adjective', 'process__noun', 'factor__noun', 'impact__noun', 'respond__verb', 'approach__noun', 'available__adjective', 'source__noun', 'scheme__noun', 'community__noun', 'individual__noun', 'environment__noun', 'sustainable__adjective', 'decline__verb', 'increase__noun', 'reduce__verb'],
+    content: `Many academic passages explain change by treating society or nature as a system. A system has structure, functional relationships, and process. When one factor changes, the impact may spread through resources, policy, community behaviour, and individual decisions. This is why a simple cause rarely produces a simple result.
+
+Consider an environment under pressure. If a source of water or land becomes less available, a community must respond through a practical approach. Some actions may reduce immediate harm, while others may increase long-term dependence on fragile sources of support. A sustainable solution usually asks how different parts of the system affect one another over time.
+
+This way of reading is useful beyond one subject. A decline in health, a change in education, or a new institutional scheme can all be analysed through relationships among parts. The reader learns to ask not only what happened, but how the process worked and why some responses were more effective than others.`,
+  },
+  {
+    id: 'batch5-general-read-careful-definition-03',
+    mode: 'read',
+    theme: 'general-academic',
+    subtheme: 'definitions and careful thought',
+    style: 'ielts-reading',
+    readingGoal: 'Develop reading habit with a gentle passage about definition and precision.',
+    title: 'Reading Habit: The Quiet Work of Definition',
+    targetWordIds: ['content__noun', 'precise__adjective', 'classify__verb', 'derive__verb', 'criteria__noun', 'analyse__verb', 'evidence__noun', 'interpret__verb', 'logic__noun', 'article__noun'],
+    content: `A definition looks small, but it can shape an entire argument. When a writer defines content, the reader learns what evidence will count and what will be left outside the discussion. A precise definition therefore protects both the effort to analyse evidence and the logic.
+
+Students often meet this problem when they classify examples. One set of criteria may include a case, while another may exclude it. From those choices, an author may derive a conclusion that seems natural only because the early definition was accepted.
+
+This passage encourages slow reading. In any academic article, the first important question may not be whether the conclusion is attractive. It may be whether the reader can interpret the key words with enough care to understand how the argument began.`,
+  },
+  {
+    id: 'batch5-food-core-supply-chains-01',
+    mode: 'core',
+    theme: 'food-agriculture',
+    subtheme: 'food supply chains and resilience',
+    style: 'ielts-reading',
+    readingGoal: 'Practise food vocabulary in a balanced passage about supply chains and risk.',
+    title: 'Balanced Practice: Food Supply Chains and Resilience',
+    targetWordIds: ['food__noun', 'agriculture__noun', 'crop__noun', 'grain__noun', 'fruit__noun', 'harvest__verb', 'cultivate__verb', 'ripen__verb', 'seed__noun', 'plough__noun', 'rear__verb', 'cheese__noun', 'ice-cream__noun', 'marine__adjective', 'trade__noun', 'market__noun', 'lack__noun', 'source__noun', 'community__noun'],
+    content: `A modern food supply chain begins long before a product reaches the market. Agriculture provides the crop, grain, fruit, and milk that later become meals, cheese, or ice cream. Farmers cultivate fields, choose seed, use a plough when appropriate, and wait for plants to ripen before they harvest.
+
+Resilience depends on variety. Some communities rear animals, while others rely on a marine source of food or imported grain. If trade fails, a region may face a lack of supply even when food exists elsewhere. This is why food planning cannot be separated from roads, energy, storage, and public communication.
+
+The topic is useful for IELTS learners because it connects everyday experience with systems thinking. A meal on the table may look simple, but behind it are climate, labour, trade, and community decisions. Reading about food therefore becomes a way to understand how ordinary life depends on hidden structures.`,
+  },
+  {
+    id: 'batch5-food-read-seasonal-fruit-02',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'seasonal fruit and rural memory',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit through a calm passage about fruit, seasons and rural knowledge.',
+    title: 'Reading Habit: Seasonal Fruit and Rural Memory',
+    targetWordIds: ['fruit__noun', 'fruit__verb', 'ripen__verb', 'harvest__verb', 'seed__noun', 'crop__noun', 'seasonal__adjective', 'community__noun', 'market__noun', 'food__noun'],
+    content: `Seasonal fruit teaches people to wait. A tree may flower early, but it will not fruit well unless weather, soil, and care remain steady. Farmers watch the crop closely as it begins to ripen, knowing that a few days can change both flavour and price.
+
+At harvest time, rural knowledge becomes visible. Families save seed, neighbours exchange advice, and the market fills with food that carries the memory of a particular season. The same fruit may taste different after a dry spring or a rainy summer.
+
+This passage offers a quiet reading rhythm. It shows that agriculture is not only production but attention. A community learns through repeated seasons, and each basket of fruit becomes evidence of patience, risk, and care.`,
+  },
+  {
+    id: 'batch5-food-read-marine-food-03',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'marine food and coastal diets',
+    style: 'ielts-reading',
+    readingGoal: 'Extend food-agriculture reading habit with a low-density passage about coastal diets.',
+    title: 'Reading Habit: Marine Food and Coastal Diets',
+    targetWordIds: ['marine__adjective', 'food__noun', 'ocean__noun', 'harvest__verb', 'community__noun', 'market__noun', 'trade__noun', 'lack__noun', 'source__noun', 'sustainable__adjective'],
+    content: `Coastal diets often depend on marine food as much as on land agriculture. The ocean provides a source that can be harvested, and communities harvest it, sold in a market, and carried inland through trade networks. When this chain works well, a community may enjoy variety and security.
+
+However, marine food is not unlimited. Overfishing, storms, or fuel problems can create a lack of supply even in towns beside the sea. A sustainable diet therefore asks people to think about seasons, catch limits, and the health of coastal waters.
+
+For learners, this passage connects geography with everyday meals. It also shows why food vocabulary often appears in wider discussions of economy, environment, and public planning.`,
+  },
+  {
+    id: 'batch5-econ-core-local-enterprise-01',
+    mode: 'core',
+    theme: 'economy-business',
+    subtheme: 'local enterprise and social value',
+    style: 'ielts-reading',
+    readingGoal: 'Add balanced economy practice through a passage on local business and resilience.',
+    title: 'Balanced Practice: Local Enterprise and Social Value',
+    targetWordIds: ['economy__noun', 'economics__noun', 'market__noun', 'trade__noun', 'industry__noun', 'company__noun', 'enterprise__noun', 'financial__adjective', 'fund__verb', 'revenue__noun', 'expense__noun', 'dividend__noun', 'stock__noun', 'marketing__noun', 'partner__noun', 'source__noun', 'community__noun', 'regulation__noun', 'invest__verb'],
+    content: `A local enterprise is often judged by revenue, but its role in the economy and in economics is wider than the balance sheet. A company may create jobs, support trade, and connect a community to a larger market. Financial help from investors can fund growth, yet growth also depends on trust, skill, and a reliable source of support.
+
+Marketing brings attention, but long-term value requires more than persuasion. A firm must manage expense, choose a reliable partner, and decide whether stock can be expanded without waste. If the industry is seasonal, leaders may need regulation that keeps competition fair during weak months. A dividend may please investors, and they may invest again, but it cannot be the only measure of success.
+
+For IELTS readers, this topic is useful because it links business vocabulary with social consequences. Local enterprise shows how economic activity can strengthen or weaken ordinary life. The best argument therefore asks not only who earns money, but what kind of resilience the market helps to build.`,
+  },
+  {
+    id: 'batch5-econ-read-family-budget-02',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'household finance and everyday decisions',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit through a low-density passage on household budgets and choice.',
+    title: 'Reading Habit: The Family Budget as a Small Economy',
+    targetWordIds: ['expense__noun', 'financial__adjective', 'saving__noun', 'market__noun', 'economy__noun', 'household__noun', 'source__noun', 'revenue__noun', 'trade__noun', 'available__adjective'],
+    content: `A household plan is a small economy. Money enters through work, saving, or another source of support, and then it is divided among food, rent, travel, education, and every necessary expense. These choices are personal, but they also reflect wider economic conditions.
+
+When prices rise in the market, a family may look for cheaper goods or reduce spending on non-essential items. The question is not revenue in the business sense, but how to use each available source of money wisely. Every household is engaged in a form of trade between present comfort and future security.
+
+This passage is useful because it brings financial vocabulary into daily life. It reminds learners that economics is not only about companies and governments. It is also about quiet decisions made at a kitchen table.`,
+  },
+  {
+    id: 'batch5-econ-read-markets-trust-03',
+    mode: 'read',
+    theme: 'economy-business',
+    subtheme: 'markets, trust and regulation',
+    style: 'ielts-reading',
+    readingGoal: 'Extend reading habit with a natural passage about markets and public trust.',
+    title: 'Reading Habit: Markets, Trust, and Fair Exchange',
+    targetWordIds: ['market__noun', 'trade__noun', 'enterprise__noun', 'company__noun', 'fund__verb', 'regulation__noun', 'partner__noun', 'revenue__noun', 'invest__verb', 'community__noun'],
+    content: `A market works best when people believe exchange is fair. A company may seek revenue, and an investor may fund and invest in growth, but both depend on trust that rules will be followed. Without that trust, trade becomes slower and more expensive.
+
+Public regulation can protect this confidence by setting standards for contracts, safety, and competition. A small enterprise also needs a reliable partner, because one broken promise can damage a whole community of buyers and sellers.
+
+For reading habit, this passage keeps the argument simple but meaningful. Markets are not machines floating above society. They are human systems in which fairness, memory, and regulation shape every exchange. A learner who follows this idea can see why economic vocabulary often carries ethical weight. Prices matter, but so do promises, shared expectations, and the quiet belief that tomorrow's exchange will still be protected by rules.`,
+  },
 ];
 
 function clean(value) {

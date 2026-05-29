@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T01:49:35.028Z",
+  "generatedAt": "2026-05-29T01:57:07.501Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 193,
-    "avgCoverageRate": 0.95
+    "articleCount": 205,
+    "avgCoverageRate": 0.953
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 58
+      "articleCount": 64
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 42
+      "articleCount": 48
     }
   ],
   "themes": [
@@ -2587,6 +2587,162 @@
       "targetWordCount": 10,
       "coverageRate": 1,
       "density": 0.081
+    },
+    {
+      "id": "batch5-geo-core-coasts-risk-01",
+      "title": "Balanced Practice: Coasts, Maps, and Environmental Risk",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Deepen geography practice through a balanced passage on coastal change and field evidence.",
+      "wordCount": 166,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.12
+    },
+    {
+      "id": "batch5-geo-core-mountains-minerals-02",
+      "title": "Balanced Practice: Mountains, Minerals, and Geological Time",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Practise a medium-density geography passage about rocks, mountains and time.",
+      "wordCount": 166,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.108
+    },
+    {
+      "id": "batch5-geo-read-mountain-weather-03",
+      "title": "Reading Habit: Weather on a Mountain Path",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Build geography reading habit through a low-density passage on mountain weather.",
+      "wordCount": 122,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.082
+    },
+    {
+      "id": "batch5-general-core-evidence-argument-01",
+      "title": "Balanced Practice: Evidence, Argument, and Academic Caution",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Practise general academic vocabulary through a balanced passage on evidence and argument.",
+      "wordCount": 175,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.114
+    },
+    {
+      "id": "batch5-general-core-systems-change-02",
+      "title": "Balanced Practice: Systems, Change, and Explanation",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Strengthen general academic reading with a systems-thinking passage.",
+      "wordCount": 157,
+      "targetWordCount": 18,
+      "coverageRate": 1,
+      "density": 0.115
+    },
+    {
+      "id": "batch5-general-read-careful-definition-03",
+      "title": "Reading Habit: The Quiet Work of Definition",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "general-academic",
+      "themeLabel": "general-academic",
+      "summary": "Develop reading habit with a gentle passage about definition and precision.",
+      "wordCount": 127,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.079
+    },
+    {
+      "id": "batch5-food-core-supply-chains-01",
+      "title": "Balanced Practice: Food Supply Chains and Resilience",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Practise food vocabulary in a balanced passage about supply chains and risk.",
+      "wordCount": 148,
+      "targetWordCount": 19,
+      "coverageRate": 1,
+      "density": 0.128
+    },
+    {
+      "id": "batch5-food-read-seasonal-fruit-02",
+      "title": "Reading Habit: Seasonal Fruit and Rural Memory",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Build reading habit through a calm passage about fruit, seasons and rural knowledge.",
+      "wordCount": 121,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.083
+    },
+    {
+      "id": "batch5-food-read-marine-food-03",
+      "title": "Reading Habit: Marine Food and Coastal Diets",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Extend food-agriculture reading habit with a low-density passage about coastal diets.",
+      "wordCount": 115,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.087
+    },
+    {
+      "id": "batch5-econ-core-local-enterprise-01",
+      "title": "Balanced Practice: Local Enterprise and Social Value",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Add balanced economy practice through a passage on local business and resilience.",
+      "wordCount": 168,
+      "targetWordCount": 19,
+      "coverageRate": 1,
+      "density": 0.113
+    },
+    {
+      "id": "batch5-econ-read-family-budget-02",
+      "title": "Reading Habit: The Family Budget as a Small Economy",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Build reading habit through a low-density passage on household budgets and choice.",
+      "wordCount": 130,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.077
+    },
+    {
+      "id": "batch5-econ-read-markets-trust-03",
+      "title": "Reading Habit: Markets, Trust, and Fair Exchange",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "economy-business",
+      "themeLabel": "Economy",
+      "summary": "Extend reading habit with a natural passage about markets and public trust.",
+      "wordCount": 146,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.068
     }
   ]
 }
