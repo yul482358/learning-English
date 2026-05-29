@@ -166,6 +166,35 @@
       </section>
     </div>
 
+    <button id="mobile-selection-action" class="mobile-selection-action hidden" type="button">翻译选中内容</button>
+
+    <section id="mobile-translation-sheet" class="mobile-translation-sheet hidden" aria-live="polite" aria-labelledby="mobile-sheet-title">
+      <div class="mobile-sheet-handle" aria-hidden="true"></div>
+      <div class="mobile-sheet-header">
+        <div>
+          <p class="eyebrow" id="mobile-sheet-mode">移动释义</p>
+          <h3 id="mobile-sheet-title">点一下高亮词，或选中一句话</h3>
+        </div>
+        <button id="mobile-sheet-close" type="button" aria-label="关闭底部释义">×</button>
+      </div>
+      <div class="mobile-sheet-block">
+        <span class="inspect-label">原文</span>
+        <p id="mobile-sheet-original">–</p>
+      </div>
+      <div class="mobile-sheet-block">
+        <span class="inspect-label">中文释义</span>
+        <p id="mobile-sheet-translation">–</p>
+      </div>
+      <div class="mobile-sheet-block">
+        <span class="inspect-label">英文解释</span>
+        <p id="mobile-sheet-explanation">–</p>
+      </div>
+      <div class="mobile-sheet-block">
+        <span class="inspect-label">上下文</span>
+        <p id="mobile-sheet-context">–</p>
+      </div>
+    </section>
+
     <script type="module" src="/app.js"></script>
   </body>
 </html>
