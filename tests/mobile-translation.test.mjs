@@ -64,8 +64,14 @@ for (const needle of [
   'clearPendingSwipeSelection();',
   'els.readerContent.addEventListener(\'pointerdown\', closeOverlaysFromReaderBlankTap)',
   'state.swipeSelect',
-  'document.elementsFromPoint',
-  'wordNode.dataset.wordIndex',
+  'function lockSwipeScroll',
+  'function unlockSwipeScroll',
+  'els.readerContent.classList.add(\'swipe-selecting\')',
+  'els.readerContent.classList.remove(\'swipe-selecting\')',
+  'event.preventDefault();',
+  'event.currentTarget.setPointerCapture?.(event.pointerId)',
+  'wordNodeFromPoint(event.clientX, event.clientY)',
+  'els.readerContent.addEventListener(\'pointermove\', updateSwipeSelectionFromPoint)',
   'wordNode.addEventListener(\'pointerdown\', beginSwipeSelection)',
   'wordNode.addEventListener(\'pointerenter\', (event) => updateSwipeSelection(wordNode, event))',
   'wordNode.addEventListener(\'click\', (event) => inspectWordFromInlineTap(article, token, wordNode, event))',
@@ -94,6 +100,9 @@ assert.ok(appJs.includes('translateSelection({ forceSheet: true, overrideText'),
 assert.ok(appJs.includes('els.readerContent.addEventListener(\'pointermove\', updateSwipeSelectionFromPoint)'), 'dragging across word spans should update selection from pointer coordinates');
 assert.ok(appJs.includes('els.readerContent.addEventListener(\'pointerup\', finishSwipeSelection)'), 'swipe selection should finish on pointerup');
 assert.ok(css.includes('.vocab-button.swipe-selected'), 'swipe-selected words need visible selection styling');
-assert.ok(!css.includes('touch-action: manipulation;'), 'word spans should not use touch-action manipulation because it can block swipe selection');
+assert.ok(appJs.includes('wordNode.dataset.wordIndex'), 'word spans should keep sequential indices so cross-line ranges can be reconstructed');
+assert.ok(appJs.includes('document.elementsFromPoint'), 'cross-line swipe selection should hit-test by viewport coordinates, not depend on same-line pointerenter only');
+assert.ok(css.includes('.reader-content.swipe-selecting'), 'reader content should lock touch scrolling while actively swiping across words');
+assert.ok(css.includes('touch-action: none;'), 'active swipe selection should disable browser panning to avoid page sliding during cross-line selection');
 
 console.log('mobile-translation.test.mjs passed');

@@ -592,6 +592,14 @@ function handleTouchSelectionEnd() {
   }, 180);
 }
 
+function lockSwipeScroll() {
+  els.readerContent.classList.add('swipe-selecting');
+}
+
+function unlockSwipeScroll() {
+  els.readerContent.classList.remove('swipe-selecting');
+}
+
 function clearSwipeSelectionClasses() {
   els.readerContent.querySelectorAll('.vocab-button.swipe-selected').forEach((node) => node.classList.remove('swipe-selected'));
 }
@@ -610,6 +618,7 @@ function resetSwipeSelection() {
   state.swipeSelect.startX = 0;
   state.swipeSelect.startY = 0;
   state.swipeSelect.hasDragged = false;
+  unlockSwipeScroll();
 }
 
 function wordNodeFromPoint(x, y) {
@@ -643,6 +652,8 @@ function updateSwipeSelectionHighlight() {
 function beginSwipeSelection(event) {
   if (!isTouchReading() || event.pointerType === 'mouse') return;
   clearPendingSwipeSelection();
+  event.preventDefault();
+  event.currentTarget.setPointerCapture?.(event.pointerId);
   state.swipeSelect.active = true;
   state.swipeSelect.pointerId = event.pointerId;
   state.swipeSelect.startNode = event.currentTarget;
@@ -650,10 +661,12 @@ function beginSwipeSelection(event) {
   state.swipeSelect.startX = event.clientX;
   state.swipeSelect.startY = event.clientY;
   state.swipeSelect.hasDragged = false;
+  lockSwipeScroll();
 }
 
 function updateSwipeSelection(wordNode, event) {
   if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId || !wordNode) return;
+  event.preventDefault();
   const dx = Math.abs(event.clientX - state.swipeSelect.startX);
   const dy = Math.abs(event.clientY - state.swipeSelect.startY);
   if (dx + dy > 12 || wordNode !== state.swipeSelect.startNode) {
@@ -665,6 +678,7 @@ function updateSwipeSelection(wordNode, event) {
 
 function updateSwipeSelectionFromPoint(event) {
   if (!state.swipeSelect.active || state.swipeSelect.pointerId !== event.pointerId) return;
+  event.preventDefault();
   const wordNode = wordNodeFromPoint(event.clientX, event.clientY);
   updateSwipeSelection(wordNode, event);
 }
