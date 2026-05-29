@@ -2656,6 +2656,187 @@ A library, an online course, or a community workshop can make education availabl
 
 For reading habit, this passage offers a calm argument about growth. It suggests that education is not a single stage of youth, but a continuing relationship between curiosity, opportunity, and social support. A society that respects lifelong learning gives people more than training. It gives them a way to remain active in their own future.`,
   },
+
+  {
+    id: 'batch4-culture-core-media-literacy-01',
+    mode: 'core',
+    theme: 'culture-media',
+    subtheme: 'media literacy and public imagination',
+    style: 'ielts-reading',
+    readingGoal: 'Strengthen culture and media vocabulary through a balanced passage on interpretation and trust.',
+    title: 'Balanced Practice: Media Literacy and Public Imagination',
+    targetWordIds: ['literature__noun', 'article__noun', 'chart__noun', 'multimedia__noun', 'controversial__adjective', 'artist__noun', 'film__noun', 'anticipate__verb', 'spark__noun', 'participate__verb', 'mediate__verb', 'impart__verb', 'partner__noun', 'academy__noun', 'literate__adjective', 'capable__adjective', 'all-round__adjective', 'aptitude__noun', 'smart__adjective', 'alumni__noun'],
+    content: `Media literacy is not simply the ability to read an article or understand a chart. In a multimedia environment, citizens must compare images, statistics, headlines, and stories before forming a judgement. A literate reader asks who created a message, what evidence it uses, and why it may spark agreement or anger in public life.
+
+This skill matters because cultural communication often becomes controversial. A film, a piece of literature, or the work of an artist can reveal social tension before political language is ready to name it. Audiences may anticipate entertainment, yet leave with questions about memory, identity, and responsibility. Good education therefore should not treat media as a distraction. It should help students mediate between emotion and evidence.
+
+An academy that values all-round development can impart habits of careful interpretation. Alumni who are capable of slow reading and smart comparison may participate more responsibly in public discussion. They can recognise when a cultural partner is offering insight, when a source is hiding weakness, and when personal aptitude must be strengthened by shared standards. In this sense, media literacy is a civic practice as well as an academic one.`,
+  },
+  {
+    id: 'batch4-culture-read-music-memory-02',
+    mode: 'read',
+    theme: 'culture-media',
+    subtheme: 'music and collective memory',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit with a gentle cultural passage on music, memory, and belonging.',
+    title: 'Reading Habit: Music, Memory, and Belonging',
+    targetWordIds: ['concert__noun', 'musical__adjective', 'hip-hop__noun', 'epic__noun', 'artist__noun', 'participate__verb', 'friendship__noun', 'community__noun', 'impart__verb', 'culture__noun'],
+    content: `A concert can feel like a private memory shared by many strangers at once. People arrive with different stories, but a musical performance gives them a temporary rhythm in common. In some cities, hip-hop has played this role especially strongly, turning local speech and daily frustration into public art.
+
+The power of music does not always depend on an epic stage or a famous artist. A small performance in a school hall can also impart friendship, confidence, and community. Listeners participate by clapping, singing, or simply paying attention. Those gestures may seem ordinary, yet they help people feel that their experience has been recognised.
+
+For reading practice, this passage moves slowly because culture is often best understood through detail. Music matters not only because it entertains, but because it stores memory. A song can remind a person of a place, a group, or a period of life that would otherwise be difficult to explain.`,
+  },
+  {
+    id: 'batch4-culture-read-belief-texts-03',
+    mode: 'read',
+    theme: 'culture-media',
+    subtheme: 'religion and public texts',
+    style: 'ielts-reading',
+    readingGoal: 'Practise sustained reading through a low-density passage on religious texts and public meaning.',
+    title: 'Reading Habit: Sacred Texts and Public Meaning',
+    targetWordIds: ['religion__noun', 'bible__noun', 'pope__noun', 'literature__noun', 'article__noun', 'mediate__verb', 'controversial__adjective', 'charter__noun', 'republic__noun', 'interpret__verb'],
+    content: `Religious language often enters public life through texts, ceremonies, and debate. The Bible, the speeches of a Pope, or a short article about faith may be read as literature by one audience and as moral guidance by another. This difference explains why religion can remain powerful even in societies that are highly modern.
+
+Public institutions in a republic sometimes try to mediate between belief and law. A charter may protect freedom of worship, while also limiting actions that harm others. Such decisions can become controversial because they involve identity as well as policy. People are not only discussing rules; they are discussing what kind of community they want to share.
+
+The reading challenge here is interpretation. A careful reader must interpret how the same text can carry historical, emotional, and political meanings at the same time. That habit is useful far beyond religious topics, because many academic passages ask students to compare meanings rather than accept the first explanation available.`,
+  },
+  {
+    id: 'batch4-food-core-soil-harvest-01',
+    mode: 'core',
+    theme: 'food-agriculture',
+    subtheme: 'soil, crops and food security',
+    style: 'ielts-reading',
+    readingGoal: 'Use food and agriculture vocabulary in a balanced passage about production and resilience.',
+    title: 'Balanced Practice: Soil, Harvest, and Food Security',
+    targetWordIds: ['agriculture__noun', 'cultivate__verb', 'harvest__verb', 'plough__noun', 'seed__noun', 'ripen__verb', 'fruit__verb', 'crop__noun', 'grain__noun', 'food__noun', 'marine__adjective', 'rear__verb', 'brood__noun', 'burrow__noun', 'fruit__noun', 'cheese__noun', 'ice-cream__noun', 'microscope__noun', 'microphone__noun'],
+    content: `Agriculture begins with simple actions, but each action belongs to a larger food system. Farmers cultivate land, choose seed, use a plough where soil conditions allow it, and wait for a crop to ripen before they harvest grain or fruit. These stages may sound traditional, yet they are closely connected with modern science and public planning.
+
+Food security depends on more than the amount produced in one season. Some regions rear animals for milk, cheese, or meat, while others depend on marine resources from rivers and coasts. A brood of young animals may need shelter, and even a small burrow can matter in studies of soil health and biodiversity. When the land is damaged, the whole system becomes less reliable.
+
+Technology now enters this picture in unexpected ways. A microscope can reveal disease in plants before visible symptoms appear, and a microphone may help researchers monitor insects or machinery in the field. Even products associated with comfort, such as ice cream, depend on long chains of farming, transport, cooling, and regulation. A balanced reading of agriculture therefore connects the field, the laboratory, and the dinner table.`,
+  },
+  {
+    id: 'batch4-food-read-market-table-02',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'markets and everyday food choices',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading habit with a natural passage on food markets and ordinary choices.',
+    title: 'Reading Habit: From Market Stall to Family Table',
+    targetWordIds: ['food__noun', 'fruit__noun', 'grain__noun', 'cheese__noun', 'harvest__verb', 'crop__noun', 'kitchen__noun', 'household__noun', 'community__noun', 'seasonal__adjective'],
+    content: `A market stall can tell a quiet story about the season. Fresh fruit may appear after a good harvest, while the price of grain can reveal whether a crop has suffered from weather or transport problems. Shoppers may not use academic language, but their choices are connected to agriculture every day.
+
+Inside a household, food becomes part of routine and memory. A kitchen stores practical decisions: what can be afforded, what is healthy, and what family members prefer. Cheese, vegetables, rice, or bread may seem ordinary, yet each item has travelled through farms, markets, and rules that protect public safety.
+
+This reading passage is deliberately calm. It asks learners to see the community behind daily meals. Seasonal abundance and shortage are not abstract economic ideas; they appear in the basket people carry home and in the conversations they have around the table.`,
+  },
+  {
+    id: 'batch4-food-read-farming-future-03',
+    mode: 'read',
+    theme: 'food-agriculture',
+    subtheme: 'future farming and ecological care',
+    style: 'ielts-reading',
+    readingGoal: 'Extend reading habit with a low-density passage on ecological farming and patience.',
+    title: 'Reading Habit: The Patience of Future Farming',
+    targetWordIds: ['agriculture__noun', 'cultivate__verb', 'seed__noun', 'ripen__verb', 'harvest__verb', 'eco-friendly__adjective', 'crop__noun', 'grain__noun', 'sustainable__adjective', 'plough__noun'],
+    content: `Future farming may depend as much on patience as on invention. A person who wants to cultivate land sustainably must think about seed quality, crop rotation, grain supply, and the time needed for plants to ripen. Quick production can be useful, but it may also weaken the resources that agriculture needs most.
+
+Eco-friendly methods often begin with small adjustments. Fields may be planted in rotation, waste may be reduced, and irrigation may be planned around dry months. These sustainable decisions are not romantic returns to the past, and even an old plough can belong to a more careful system when it is used with restraint.
+
+For learners, the passage offers a slower view of food. To harvest responsibly is to understand that every crop belongs to a living system. The future of farming will be measured not only by quantity, but also by whether the land remains generous for the next season.`,
+  },
+  {
+    id: 'batch4-daily-core-home-routines-01',
+    mode: 'core',
+    theme: 'daily-life',
+    subtheme: 'home, routines and wellbeing',
+    style: 'ielts-reading',
+    readingGoal: 'Practise daily-life vocabulary in a balanced passage about home design and wellbeing.',
+    title: 'Balanced Practice: Home, Routine, and Wellbeing',
+    targetWordIds: ['dining-hall__noun', 'living-room__noun', 'kitchen__noun', 'room__noun', 'furnish__verb', 'household__noun', 'housewife__noun', 'broom__noun', 'tap__noun', 'make-up__noun', 'mushroom__noun', 'travel__noun', 'well-being__noun', 'friendship__noun', 'friendly__adjective', 'feel__verb', 'adjacent__adjective', 'overlook__verb', 'facilitate__verb', 'pivot__noun'],
+    content: `Daily life is shaped by spaces that people often overlook. A kitchen, a living room, or a dining hall is not merely a physical room; it helps organise care, conversation, and rest. The way a household chooses to furnish these spaces can facilitate healthier routines and stronger relationships.
+
+Small objects also matter. A broom beside the door, a clean tap, a mirror used for make-up, or a mushroom bought for dinner can all become part of the rhythm of home. Traditional descriptions sometimes placed the housewife at the centre of domestic work, but modern households increasingly discuss how tasks should be shared fairly. The home becomes a pivot around which work, study, friendship, and travel are balanced.
+
+Design influences well-being in subtle ways. A friendly seat near a window may make people feel welcome, while an adjacent room can provide quiet for study or sleep. If planners overlook these ordinary details, housing may look efficient but feel harsh. A good reading of daily life therefore treats routine as evidence of social values.`,
+  },
+  {
+    id: 'batch4-daily-read-small-apartment-02',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'small apartments and ordinary dignity',
+    style: 'ielts-reading',
+    readingGoal: 'Build sustained reading through a gentle passage about compact living and care.',
+    title: 'Reading Habit: A Small Apartment with a Wide Window',
+    targetWordIds: ['apartment__noun', 'living-room__noun', 'kitchen__noun', 'furnish__verb', 'tap__noun', 'adjacent__adjective', 'well-being__noun', 'feel__verb', 'friendly__adjective', 'household__noun'],
+    content: `A small apartment can feel larger when it is arranged with care. The living room may stand adjacent to the kitchen, and a clean tap or a simple table can make daily tasks easier. None of these details is impressive by itself, but together they shape the well-being of a household.
+
+To furnish a compact home is partly an exercise in choice. A chair must be useful, a shelf must save space, and the window should help the room feel open rather than crowded. Visitors often remember whether the place felt friendly, not whether it was expensive.
+
+This passage supports reading habit because it slows attention down. It suggests that dignity can live in ordinary rooms. A home does not need to be large to hold care, privacy, and the quiet confidence of people making a place their own.`,
+  },
+  {
+    id: 'batch4-daily-read-journeys-friendship-03',
+    mode: 'read',
+    theme: 'daily-life',
+    subtheme: 'travel and friendship',
+    style: 'ielts-reading',
+    readingGoal: 'Extend reading habit with an everyday passage about travel, friendship, and mood.',
+    title: 'Reading Habit: Short Journeys and Long Friendships',
+    targetWordIds: ['travel__noun', 'friendship__noun', 'depart__verb', 'cart__noun', 'groom__noun', 'feel__verb', 'friendly__adjective', 'chill__verb', 'decorate__verb', 'immediately__adverb'],
+    content: `Not every journey is dramatic. Some forms of travel begin when friends depart from a station with one small cart of bags and no fixed plan beyond arriving safely. What remains in memory is often not the distance, but the conversation that makes the road feel shorter.
+
+Friendship changes the atmosphere of movement. A friendly joke can chill anxiety immediately, while a shared meal can decorate an ordinary evening with warmth. Even a groom travelling to a wedding may remember the quiet help of friends more clearly than the formal ceremony itself.
+
+For reading practice, the topic is familiar but useful. Everyday travel contains emotion, planning, and social support. It reminds learners that academic vocabulary does not always need a dramatic subject; ordinary life can also reveal how people manage change.`,
+  },
+  {
+    id: 'batch4-geo-core-earth-systems-01',
+    mode: 'core',
+    theme: 'geography-earth',
+    subtheme: 'earth systems and observation',
+    style: 'ielts-reading',
+    readingGoal: 'Reinforce geography vocabulary through a balanced article connecting land, sea, and measurement.',
+    title: 'Balanced Practice: Earth Systems and Patient Observation',
+    targetWordIds: ['hydrosphere__noun', 'lithosphere__noun', 'core__noun', 'crust__noun', 'mantle__noun', 'longitude__noun', 'latitude__noun', 'altitude__noun', 'horizon__noun', 'mineral__noun', 'quartz__noun', 'granite__noun', 'earthquake__noun', 'axis__noun', 'ocean__noun', 'tide__noun', 'mountain__noun', 'circulation__noun', 'seasonal__adjective', 'fauna__noun'],
+    content: `Geography becomes clearer when the Earth is seen as a set of connected systems. The lithosphere includes the crust and upper mantle, while the hydrosphere links rivers, ice, and the ocean. Deep below, the core influences magnetic fields, and at the surface a mountain or coastline records long histories of movement.
+
+Observation gives these systems practical meaning. Researchers use latitude and longitude to locate a site, altitude to explain climate differences, and the horizon to orient field notes. A sample of granite containing quartz may reveal mineral formation, while an earthquake can show how stress has built inside the crust. Even the tide offers evidence of how water responds to gravity and the planet's axis.
+
+Seasonal change adds another layer. Ocean circulation can alter temperature, rainfall, and the movement of fauna. For IELTS readers, this vocabulary is valuable because it turns scenery into explanation. A landscape is not a postcard; it is a record of forces that can be measured, compared, and interpreted.`,
+  },
+  {
+    id: 'batch4-geo-read-oceania-maps-02',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'maps, islands and Oceania',
+    style: 'ielts-reading',
+    readingGoal: 'Build reading stamina with a low-density geography passage about maps and island regions.',
+    title: 'Reading Habit: Maps, Islands, and Oceania',
+    targetWordIds: ['oceania__noun', 'ocean__noun', 'latitude__noun', 'longitude__noun', 'overseas__adjective', 'seaman__noun', 'horizon__noun', 'tide__noun', 'marine__adjective', 'circulation__noun'],
+    content: `Oceania is often imagined as scattered islands across a wide ocean, but maps show that distance can connect as well as separate. Lines of latitude and longitude help readers locate each island, while the horizon reminds travellers that geography is also experienced by the body.
+
+For an overseas researcher or an old seaman, the region cannot be understood only from a classroom map. The tide, wind, marine life, and ocean circulation shape routes, food, and settlement. A harbour may look small, yet it can hold long histories of movement between islands.
+
+This passage is useful for slow reading because it treats maps as living documents. They measure space, but they also invite questions about travel, memory, and adaptation. In island regions, geography is never merely background; it is part of culture and survival.`,
+  },
+  {
+    id: 'batch4-geo-read-stone-time-03',
+    mode: 'read',
+    theme: 'geography-earth',
+    subtheme: 'rocks, time and field attention',
+    style: 'ielts-reading',
+    readingGoal: 'Extend geography reading habit through a quiet passage on rocks and geological time.',
+    title: 'Reading Habit: Stone, Time, and Field Attention',
+    targetWordIds: ['granite__noun', 'quartz__noun', 'mineral__noun', 'crust__noun', 'mountain__noun', 'withstand__verb', 'exceed__verb', 'periodically__adverb', 'research__noun', 'score__noun'],
+    content: `A piece of granite on a mountain path may appear silent, but it carries a history that can exceed ordinary human time. Its quartz crystals and other mineral traces formed under pressure within the crust, long before the path was built or named.
+
+Field research teaches patience. Scientists may return periodically to score erosion, compare photographs, and ask why one slope can withstand rain while another fails. The work is slow because rock changes slowly, and because careful evidence matters more than dramatic claims.
+
+For learners, this passage offers a quiet form of academic reading. It asks the reader to follow a chain from stone to mountain, from mineral detail to landscape history. The vocabulary is limited, but the habit of attention is wide.`,
+  },
 ];
 
 function clean(value) {

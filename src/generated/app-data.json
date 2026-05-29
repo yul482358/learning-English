@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29T01:30:45.875Z",
+  "generatedAt": "2026-05-29T01:49:35.028Z",
   "stats": {
     "vocabularyCount": 3673,
-    "articleCount": 181,
-    "avgCoverageRate": 0.947
+    "articleCount": 193,
+    "avgCoverageRate": 0.95
   },
   "modes": [
     {
@@ -20,7 +20,7 @@
       "description": "Mid-density articles balancing reading flow and vocabulary retention.",
       "targetRange": "18-35 target words",
       "densityHint": "3.5%-8% density",
-      "articleCount": 54
+      "articleCount": 58
     },
     {
       "id": "read",
@@ -28,7 +28,7 @@
       "description": "Lower-density passages focused on sustained reading and natural context.",
       "targetRange": "8-18 target words",
       "densityHint": "1.2%-3.5% density",
-      "articleCount": 34
+      "articleCount": 42
     }
   ],
   "themes": [
@@ -2431,6 +2431,162 @@
       "targetWordCount": 10,
       "coverageRate": 1,
       "density": 0.065
+    },
+    {
+      "id": "batch4-culture-core-media-literacy-01",
+      "title": "Balanced Practice: Media Literacy and Public Imagination",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Strengthen culture and media vocabulary through a balanced passage on interpretation and trust.",
+      "wordCount": 189,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.106
+    },
+    {
+      "id": "batch4-culture-read-music-memory-02",
+      "title": "Reading Habit: Music, Memory, and Belonging",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Build reading habit with a gentle cultural passage on music, memory, and belonging.",
+      "wordCount": 154,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.065
+    },
+    {
+      "id": "batch4-culture-read-belief-texts-03",
+      "title": "Reading Habit: Sacred Texts and Public Meaning",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "culture-media",
+      "themeLabel": "Culture",
+      "summary": "Practise sustained reading through a low-density passage on religious texts and public meaning.",
+      "wordCount": 160,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.063
+    },
+    {
+      "id": "batch4-food-core-soil-harvest-01",
+      "title": "Balanced Practice: Soil, Harvest, and Food Security",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Use food and agriculture vocabulary in a balanced passage about production and resilience.",
+      "wordCount": 186,
+      "targetWordCount": 19,
+      "coverageRate": 1,
+      "density": 0.102
+    },
+    {
+      "id": "batch4-food-read-market-table-02",
+      "title": "Reading Habit: From Market Stall to Family Table",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Build reading habit with a natural passage on food markets and ordinary choices.",
+      "wordCount": 142,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.07
+    },
+    {
+      "id": "batch4-food-read-farming-future-03",
+      "title": "Reading Habit: The Patience of Future Farming",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "food-agriculture",
+      "themeLabel": "Food & Farming",
+      "summary": "Extend reading habit with a low-density passage on ecological farming and patience.",
+      "wordCount": 152,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.066
+    },
+    {
+      "id": "batch4-daily-core-home-routines-01",
+      "title": "Balanced Practice: Home, Routine, and Wellbeing",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Practise daily-life vocabulary in a balanced passage about home design and wellbeing.",
+      "wordCount": 172,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.116
+    },
+    {
+      "id": "batch4-daily-read-small-apartment-02",
+      "title": "Reading Habit: A Small Apartment with a Wide Window",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Build sustained reading through a gentle passage about compact living and care.",
+      "wordCount": 139,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.072
+    },
+    {
+      "id": "batch4-daily-read-journeys-friendship-03",
+      "title": "Reading Habit: Short Journeys and Long Friendships",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "daily-life",
+      "themeLabel": "daily-life",
+      "summary": "Extend reading habit with an everyday passage about travel, friendship, and mood.",
+      "wordCount": 131,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.076
+    },
+    {
+      "id": "batch4-geo-core-earth-systems-01",
+      "title": "Balanced Practice: Earth Systems and Patient Observation",
+      "mode": "core",
+      "modeLabel": "Balanced Practice",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Reinforce geography vocabulary through a balanced article connecting land, sea, and measurement.",
+      "wordCount": 164,
+      "targetWordCount": 20,
+      "coverageRate": 1,
+      "density": 0.122
+    },
+    {
+      "id": "batch4-geo-read-oceania-maps-02",
+      "title": "Reading Habit: Maps, Islands, and Oceania",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Build reading stamina with a low-density geography passage about maps and island regions.",
+      "wordCount": 133,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.075
+    },
+    {
+      "id": "batch4-geo-read-stone-time-03",
+      "title": "Reading Habit: Stone, Time, and Field Attention",
+      "mode": "read",
+      "modeLabel": "Reading Habit",
+      "theme": "geography-earth",
+      "themeLabel": "Earth Science",
+      "summary": "Extend geography reading habit through a quiet passage on rocks and geological time.",
+      "wordCount": 124,
+      "targetWordCount": 10,
+      "coverageRate": 1,
+      "density": 0.081
     }
   ]
 }
