@@ -40,6 +40,116 @@ button {
   padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
 }
 
+.auth-gate {
+  display: grid;
+  place-items: center;
+  min-height: min(680px, calc(100vh - 170px));
+  padding: 32px 0;
+}
+
+.auth-gate[hidden],
+[hidden] {
+  display: none !important;
+}
+
+.page-shell.locked .nav-links {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.auth-card {
+  width: min(560px, 100%);
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(248, 242, 233, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.auth-card h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+}
+
+.auth-copy {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.auth-tabs,
+.user-chip {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.auth-tab,
+.user-chip button {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.auth-tab.active,
+.user-chip button:hover {
+  background: var(--accent-soft);
+  color: #9b4e32;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.auth-form.hidden {
+  display: none;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-strong);
+  color: var(--text);
+  font: inherit;
+}
+
+.auth-message {
+  min-height: 1.5em;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.auth-message.error {
+  color: #a6402b;
+}
+
+.user-chip {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.user-chip span {
+  padding: 0 8px 0 10px;
+}
+
 .top-nav {
   display: flex;
   justify-content: space-between;

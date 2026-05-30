@@ -2,6 +2,9 @@ import articles from './generated/articles.json';
 import vocabulary from './generated/vocabulary.json';
 import appData from './generated/app-data.json';
 
+const SESSION_COOKIE = 'ielts_session';
+const SESSION_TTL_SECONDS = 60 * 60 * 24 * 30;
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
@@ -23,8 +26,295 @@ function badRequest(message, status = 400) {
   return json({ error: message }, { status });
 }
 
+function nowIso() {
+  return new Date().toISOString();
+}
+
+function randomToken(byteLength = 32) {
+  const bytes = new Uint8Array(byteLength);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function normalizeEmail(email = '') {
+  return String(email).trim().toLowerCase();
+}
+
 function normalizeWord(input = '') {
   return String(input).trim().toLowerCase();
+}
+
+function sanitizeDisplayName(input, email) {
+  const cleaned = String(input || '').trim().slice(0, 40);
+  return cleaned || email.split('@')[0] || '读者';
+}
+
+function safeUser(user) {
+  if (!user) return null;
+  return {
+    id: user.id,
+    email: user.email,
+    displayName: user.display_name || user.displayName || user.email,
+    role: user.role || 'user',
+    status: user.status || 'active',
+  };
+}
+
+function timingSafeEqualString(a, b) {
+  const left = String(a || '');
+  const right = String(b || '');
+  if (left.length !== right.length) return false;
+  let diff = 0;
+  for (let index = 0; index < left.length; index += 1) {
+    diff |= left.charCodeAt(index) ^ right.charCodeAt(index);
+  }
+  return diff === 0;
+}
+
+async function sha256Hex(value) {
+  const data = new TextEncoder().encode(String(value));
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function hashPassword(password, salt = randomToken(16)) {
+  const passwordHash = await sha256Hex(`${salt}:${password}`);
+  return `sha256$${salt}$${passwordHash}`;
+}
+
+async function verifyPassword(password, storedHash) {
+  const [, salt, expected] = String(storedHash || '').split('$');
+  if (!salt || !expected) return false;
+  const actual = await sha256Hex(`${salt}:${password}`);
+  return timingSafeEqualString(actual, expected);
+}
+
+function parseCookies(request) {
+  const cookieHeader = request.headers.get('Cookie') || '';
+  return Object.fromEntries(cookieHeader.split(';').map((part) => {
+    const [name, ...rest] = part.trim().split('=');
+    return [name, rest.join('=')];
+  }).filter(([name]) => name));
+}
+
+function setSessionCookie(token, expiresAt) {
+  return `${SESSION_COOKIE}=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Expires=${new Date(expiresAt).toUTCString()}`;
+}
+
+function clearSessionCookie() {
+  return `${SESSION_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`;
+}
+
+async function createSession({ request, env, userId }) {
+  const token = randomToken(32);
+  const tokenHash = await sha256Hex(token);
+  const id = crypto.randomUUID();
+  const createdAt = nowIso();
+  const expiresAt = new Date(Date.now() + SESSION_TTL_SECONDS * 1000).toISOString();
+  await env.DB.prepare(`
+    INSERT INTO sessions (id, user_id, token_hash, user_agent, ip, expires_at, created_at, last_seen_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `).bind(
+    id,
+    userId,
+    tokenHash,
+    request.headers.get('User-Agent') || '',
+    request.headers.get('CF-Connecting-IP') || '',
+    expiresAt,
+    createdAt,
+    createdAt,
+  ).run();
+  return { token, expiresAt };
+}
+
+async function requireAuth(request, env) {
+  if (!env.DB) return { error: badRequest('数据库尚未配置，请先绑定 Cloudflare D1。', 503) };
+  const token = parseCookies(request)[SESSION_COOKIE];
+  if (!token) return { error: badRequest('请先登录后再使用。', 401) };
+  const tokenHash = await sha256Hex(token);
+  const row = await env.DB.prepare(`
+    SELECT sessions.id AS session_id, sessions.expires_at, users.*
+    FROM sessions
+    JOIN users ON users.id = sessions.user_id
+    WHERE sessions.token_hash = ?
+    LIMIT 1
+  `).bind(tokenHash).first();
+
+  if (!row || new Date(row.expires_at).getTime() <= Date.now() || row.status !== 'active') {
+    if (row?.session_id) await env.DB.prepare('DELETE FROM sessions WHERE id = ?').bind(row.session_id).run();
+    return { error: badRequest('登录状态已失效，请重新登录。', 401) };
+  }
+
+  await env.DB.prepare('UPDATE sessions SET last_seen_at = ? WHERE id = ?').bind(nowIso(), row.session_id).run();
+  return { user: safeUser(row), sessionId: row.session_id };
+}
+
+async function consumeInviteCode(env, inviteCode, userId) {
+  const code = String(inviteCode || '').trim();
+  if (!code) return { ok: false, error: '请输入邀请码。' };
+  const invite = await env.DB.prepare('SELECT * FROM invite_codes WHERE code = ? LIMIT 1').bind(code).first();
+  if (!invite || invite.status !== 'active') return { ok: false, error: '邀请码无效。' };
+  if (invite.expires_at && new Date(invite.expires_at).getTime() <= Date.now()) return { ok: false, error: '邀请码已过期。' };
+  if (Number(invite.used_count || 0) >= Number(invite.max_uses || 10)) return { ok: false, error: '邀请码使用人数已满。' };
+
+  await env.DB.prepare(`
+    UPDATE invite_codes
+    SET used_count = used_count + 1,
+        status = CASE WHEN used_count + 1 >= max_uses THEN 'used' ELSE status END,
+        used_at = ?,
+        last_used_by = ?
+    WHERE code = ?
+  `).bind(nowIso(), userId, code).run();
+  return { ok: true };
+}
+
+async function registerUser(request, env) {
+  if (!env.DB) return badRequest('数据库尚未配置，请先绑定 Cloudflare D1。', 503);
+  const body = await request.json().catch(() => null);
+  const email = normalizeEmail(body?.email);
+  const password = String(body?.password || '');
+  if (!email || !email.includes('@')) return badRequest('请输入有效邮箱。');
+  if (password.length < 8) return badRequest('密码至少需要 8 位。');
+
+  const existing = await env.DB.prepare('SELECT id FROM users WHERE email = ? LIMIT 1').bind(email).first();
+  if (existing) return badRequest('这个邮箱已经注册，请直接登录。', 409);
+
+  const id = crypto.randomUUID();
+  const invite = await consumeInviteCode(env, body?.inviteCode, id);
+  if (!invite.ok) return badRequest(invite.error, 403);
+
+  const createdAt = nowIso();
+  const passwordHash = await hashPassword(password);
+  const displayName = sanitizeDisplayName(body?.displayName, email);
+  await env.DB.prepare(`
+    INSERT INTO users (id, email, display_name, password_hash, role, status, created_at, updated_at)
+    VALUES (?, ?, ?, ?, 'user', 'active', ?, ?)
+  `).bind(id, email, displayName, passwordHash, createdAt, createdAt).run();
+
+  const session = await createSession({ request, env, userId: id });
+  return json({ user: { id, email, displayName, role: 'user', status: 'active' } }, {
+    headers: { 'Set-Cookie': setSessionCookie(session.token, session.expiresAt) },
+  });
+}
+
+async function loginUser(request, env) {
+  if (!env.DB) return badRequest('数据库尚未配置，请先绑定 Cloudflare D1。', 503);
+  const body = await request.json().catch(() => null);
+  const email = normalizeEmail(body?.email);
+  const password = String(body?.password || '');
+  const user = await env.DB.prepare('SELECT * FROM users WHERE email = ? LIMIT 1').bind(email).first();
+  if (!user || user.status !== 'active' || !(await verifyPassword(password, user.password_hash))) {
+    return badRequest('邮箱或密码不正确。', 401);
+  }
+  const session = await createSession({ request, env, userId: user.id });
+  return json({ user: safeUser(user) }, {
+    headers: { 'Set-Cookie': setSessionCookie(session.token, session.expiresAt) },
+  });
+}
+
+async function logoutUser(request, env) {
+  if (env.DB) {
+    const token = parseCookies(request)[SESSION_COOKIE];
+    if (token) await env.DB.prepare('DELETE FROM sessions WHERE token_hash = ?').bind(await sha256Hex(token)).run();
+  }
+  return json({ ok: true }, { headers: { 'Set-Cookie': clearSessionCookie() } });
+}
+
+async function getProgress(env, userId) {
+  const [articlesResult, wordsResult, lookupsResult] = await Promise.all([
+    env.DB.prepare('SELECT * FROM article_progress WHERE user_id = ? ORDER BY last_opened_at DESC').bind(userId).all(),
+    env.DB.prepare('SELECT * FROM word_progress WHERE user_id = ? ORDER BY last_lookup_at DESC LIMIT 500').bind(userId).all(),
+    env.DB.prepare('SELECT * FROM lookup_history WHERE user_id = ? ORDER BY created_at DESC LIMIT 100').bind(userId).all(),
+  ]);
+  return json({
+    articleProgress: articlesResult.results || [],
+    wordProgress: wordsResult.results || [],
+    lookupHistory: lookupsResult.results || [],
+  });
+}
+
+async function saveArticleProgress(request, env, userId) {
+  const body = await request.json().catch(() => null);
+  const articleId = String(body?.articleId || '').trim();
+  if (!articleId) return badRequest('缺少文章 ID。');
+  const timestamp = nowIso();
+  const progressPercent = Math.max(0, Math.min(100, Number(body?.progressPercent || 0)));
+  const status = ['reading', 'completed'].includes(body?.status) ? body.status : (progressPercent >= 95 ? 'completed' : 'reading');
+  await env.DB.prepare(`
+    INSERT INTO article_progress (user_id, article_id, status, progress_percent, last_position, read_count, first_opened_at, last_opened_at, completed_at)
+    VALUES (?, ?, ?, ?, ?, 1, ?, ?, ?)
+    ON CONFLICT(user_id, article_id) DO UPDATE SET
+      status = excluded.status,
+      progress_percent = MAX(article_progress.progress_percent, excluded.progress_percent),
+      last_position = excluded.last_position,
+      read_count = article_progress.read_count + 1,
+      last_opened_at = excluded.last_opened_at,
+      completed_at = COALESCE(article_progress.completed_at, excluded.completed_at)
+  `).bind(
+    userId,
+    articleId,
+    status,
+    progressPercent,
+    String(body?.lastPosition || '').slice(0, 200),
+    timestamp,
+    timestamp,
+    status === 'completed' ? timestamp : null,
+  ).run();
+  return json({ ok: true });
+}
+
+async function saveWordProgress(request, env, userId) {
+  const body = await request.json().catch(() => null);
+  const word = normalizeWord(body?.word || body?.text);
+  if (!word) return badRequest('缺少单词。');
+  const timestamp = nowIso();
+  const status = ['new', 'learning', 'familiar', 'mastered', 'ignored'].includes(body?.status) ? body.status : 'learning';
+  const familiarity = Math.max(0, Math.min(5, Number(body?.familiarity || 0)));
+  await env.DB.prepare(`
+    INSERT INTO word_progress (user_id, word, status, familiarity, lookup_count, article_id, last_context, last_translation, first_lookup_at, last_lookup_at, updated_at)
+    VALUES (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(user_id, word) DO UPDATE SET
+      status = excluded.status,
+      familiarity = MAX(word_progress.familiarity, excluded.familiarity),
+      lookup_count = word_progress.lookup_count + 1,
+      article_id = excluded.article_id,
+      last_context = excluded.last_context,
+      last_translation = excluded.last_translation,
+      last_lookup_at = excluded.last_lookup_at,
+      updated_at = excluded.updated_at
+  `).bind(
+    userId,
+    word,
+    status,
+    familiarity,
+    String(body?.articleId || '').slice(0, 120),
+    String(body?.context || '').slice(0, 1000),
+    String(body?.translation || '').slice(0, 1000),
+    timestamp,
+    timestamp,
+    timestamp,
+  ).run();
+  return json({ ok: true });
+}
+
+async function saveLookupHistory(request, env, userId) {
+  const body = await request.json().catch(() => null);
+  const word = normalizeWord(body?.word || body?.text);
+  if (!word) return badRequest('缺少查询内容。');
+  await env.DB.prepare(`
+    INSERT INTO lookup_history (id, user_id, article_id, word, context, translation, mode, created_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `).bind(
+    crypto.randomUUID(),
+    userId,
+    String(body?.articleId || '').slice(0, 120),
+    word,
+    String(body?.context || '').slice(0, 1000),
+    String(body?.translation || '').slice(0, 1000),
+    body?.mode === 'sentence' ? 'sentence' : 'word',
+    nowIso(),
+  ).run();
+  return json({ ok: true });
 }
 
 function findVocabularyEntry(word) {
@@ -183,31 +473,39 @@ export default {
       return new Response(null, { headers: corsHeaders });
     }
 
-    if (url.pathname === '/api/app-data') {
-      return json(appData);
+    if (url.pathname === '/api/register' && request.method === 'POST') return registerUser(request, env);
+    if (url.pathname === '/api/login' && request.method === 'POST') return loginUser(request, env);
+    if (url.pathname === '/api/logout' && request.method === 'POST') return logoutUser(request, env);
+    if (url.pathname === '/api/me') {
+      const auth = await requireAuth(request, env);
+      if (auth.error) return auth.error;
+      return json({ user: auth.user });
     }
 
-    if (url.pathname === '/api/model-status') {
-      return json(modelConfigStatus(env));
-    }
+    if (url.pathname.startsWith('/api/')) {
+      const auth = await requireAuth(request, env);
+      if (auth.error) return auth.error;
 
-    if (url.pathname === '/api/articles') {
-      return json(articles);
-    }
+      if (url.pathname === '/api/app-data') return json(appData);
+      if (url.pathname === '/api/model-status') return json(modelConfigStatus(env));
+      if (url.pathname === '/api/articles') return json(articles);
+      if (url.pathname.startsWith('/api/articles/')) {
+        const id = url.pathname.split('/').pop();
+        const article = articles.find((item) => item.id === id);
+        return article ? json(article) : badRequest('Article not found', 404);
+      }
+      if (url.pathname === '/api/vocabulary') return json(vocabulary);
+      if (url.pathname === '/api/progress') return getProgress(env, auth.user.id);
+      if (url.pathname === '/api/progress/article' && request.method === 'POST') return saveArticleProgress(request, env, auth.user.id);
+      if (url.pathname === '/api/progress/word' && request.method === 'POST') return saveWordProgress(request, env, auth.user.id);
+      if (url.pathname === '/api/lookup-history' && request.method === 'POST') return saveLookupHistory(request, env, auth.user.id);
+      if (url.pathname === '/api/translate' && request.method === 'POST') {
+        const body = await request.json().catch(() => null);
+        const translated = await translateWord({ env, body });
+        return translated;
+      }
 
-    if (url.pathname.startsWith('/api/articles/')) {
-      const id = url.pathname.split('/').pop();
-      const article = articles.find((item) => item.id === id);
-      return article ? json(article) : badRequest('Article not found', 404);
-    }
-
-    if (url.pathname === '/api/vocabulary') {
-      return json(vocabulary);
-    }
-
-    if (url.pathname === '/api/translate' && request.method === 'POST') {
-      const body = await request.json().catch(() => null);
-      return translateWord({ env, body });
+      return badRequest('API not found', 404);
     }
 
     return env.ASSETS.fetch(request);
