@@ -15,6 +15,8 @@ const state = {
   activeView: 'home',
   recentReading: [],
   translationCache: new Map(),
+  currentUser: null,
+  cloudProgress: null,
 };
 
 function registerServiceWorker() {
@@ -29,6 +31,16 @@ function registerServiceWorker() {
 registerServiceWorker();
 
 const els = {
+  authGate: document.getElementById('auth-gate'),
+  appMain: document.getElementById('app-main'),
+  loginForm: document.getElementById('login-form'),
+  registerForm: document.getElementById('register-form'),
+  showLogin: document.getElementById('show-login'),
+  showRegister: document.getElementById('show-register'),
+  authMessage: document.getElementById('auth-message'),
+  userChip: document.getElementById('user-chip'),
+  currentUserName: document.getElementById('current-user-name'),
+  logoutButton: document.getElementById('logout-button'),
   statArticles: document.getElementById('stat-articles'),
   statVocab: document.getElementById('stat-vocab'),
   statCoverage: document.getElementById('stat-coverage'),
@@ -112,6 +124,161 @@ function writeJsonStorage(key, value) {
   } catch (error) {
     // Local storage can be unavailable in private browsing; the app should keep reading.
   }
+}
+
+async function apiFetch(path, options = {}) {
+  const response = await fetch(path, {
+    ...options,
+    headers: {
+      ...(options.body ? { 'content-type': 'application/json' } : {}),
+      ...(options.headers || {}),
+    },
+    credentials: 'same-origin',
+  });
+  if (response.status === 401) {
+    showAuthGate();
+    throw new Error('请先登录后再继续。');
+  }
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}));
+    throw new Error(payload.error || `HTTP ${response.status}`);
+  }
+  return response;
+}
+
+function setAuthMessage(message, isError = false) {
+  if (!els.authMessage) return;
+  els.authMessage.textContent = message || '';
+  els.authMessage.classList.toggle('error', Boolean(isError));
+}
+
+function showAuthGate() {
+  state.currentUser = null;
+  els.authGate.hidden = false;
+  els.appMain.hidden = true;
+  els.userChip.hidden = true;
+  document.querySelector('.page-shell')?.classList.add('locked');
+}
+
+function showAppForUser(user) {
+  state.currentUser = user;
+  els.authGate.hidden = true;
+  els.appMain.hidden = false;
+  els.userChip.hidden = false;
+  els.currentUserName.textContent = user?.displayName || user?.email || '读者';
+  document.querySelector('.page-shell')?.classList.remove('locked');
+}
+
+function setAuthMode(mode) {
+  const isRegister = mode === 'register';
+  els.loginForm.hidden = isRegister;
+  els.loginForm.classList.toggle('hidden', isRegister);
+  els.registerForm.hidden = !isRegister;
+  els.registerForm.classList.toggle('hidden', !isRegister);
+  els.showLogin.classList.toggle('active', !isRegister);
+  els.showRegister.classList.toggle('active', isRegister);
+  setAuthMessage('');
+}
+
+async function bootstrapAuth() {
+  try {
+    const payload = await apiFetch('/api/me').then((res) => res.json());
+    showAppForUser(payload.user);
+    return payload.user;
+  } catch (error) {
+    showAuthGate();
+    return null;
+  }
+}
+
+async function loginUser(event) {
+  event.preventDefault();
+  const form = new FormData(els.loginForm);
+  setAuthMessage('正在进入阅读室…');
+  try {
+    const payload = await apiFetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ email: form.get('email'), password: form.get('password') }),
+    }).then((res) => res.json());
+    showAppForUser(payload.user);
+    await init();
+  } catch (error) {
+    setAuthMessage(String(error.message || error), true);
+  }
+}
+
+async function registerUser(event) {
+  event.preventDefault();
+  const form = new FormData(els.registerForm);
+  setAuthMessage('正在确认邀请码…');
+  try {
+    const payload = await apiFetch('/api/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        displayName: form.get('displayName'),
+        email: form.get('email'),
+        password: form.get('password'),
+        inviteCode: form.get('inviteCode'),
+      }),
+    }).then((res) => res.json());
+    showAppForUser(payload.user);
+    await init();
+  } catch (error) {
+    setAuthMessage(String(error.message || error), true);
+  }
+}
+
+async function logoutUser() {
+  await apiFetch('/api/logout', { method: 'POST' }).catch(() => null);
+  showAuthGate();
+}
+
+function mergeRecentReadingFromCloud() {
+  const rows = state.cloudProgress?.articleProgress || [];
+  const cloudItems = rows
+    .filter((row) => state.articleById.has(row.article_id))
+    .map((row) => {
+      const article = state.articleById.get(row.article_id);
+      return {
+        articleId: article.id,
+        title: article.title,
+        modeLabel: article.modeLabel,
+        themeLabel: state.appData.themes.find((theme) => theme.id === article.theme)?.label || article.theme,
+        readAt: row.last_opened_at,
+      };
+    });
+  const byId = new Map([...state.recentReading, ...cloudItems].map((item) => [item.articleId, item]));
+  state.recentReading = Array.from(byId.values())
+    .sort((a, b) => new Date(b.readAt).getTime() - new Date(a.readAt).getTime())
+    .slice(0, RECENT_READING_LIMIT);
+  writeJsonStorage(RECENT_READING_KEY, state.recentReading);
+}
+
+async function loadCloudProgress() {
+  state.cloudProgress = await apiFetch('/api/progress').then((res) => res.json());
+  mergeRecentReadingFromCloud();
+}
+
+async function saveArticleProgress(article, extra = {}) {
+  if (!state.currentUser || !article) return;
+  await apiFetch('/api/progress/article', {
+    method: 'POST',
+    body: JSON.stringify({
+      articleId: article.id,
+      status: extra.status || 'reading',
+      progressPercent: extra.progressPercent ?? 5,
+      lastPosition: extra.lastPosition || '',
+    }),
+  }).catch((error) => console.warn('保存阅读进度失败:', error));
+}
+
+async function saveWordProgress({ word, articleId, context, translation, status = 'learning', mode = 'word' }) {
+  if (!state.currentUser || !word) return;
+  const payload = { word, articleId, context, translation, status, mode };
+  await Promise.all([
+    apiFetch('/api/progress/word', { method: 'POST', body: JSON.stringify(payload) }),
+    apiFetch('/api/lookup-history', { method: 'POST', body: JSON.stringify(payload) }),
+  ]).catch((error) => console.warn('保存查词记录失败:', error));
 }
 
 function translationCacheKey({ articleId, text, context, mode }) {
@@ -357,9 +524,8 @@ async function requestTranslation({ text, context, mode }) {
   const cached = getCachedTranslation(request);
   if (cached) return cached;
 
-  const response = await fetch('/api/translate', {
+  const response = await apiFetch('/api/translate', {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ text, word: text, context, mode, articleId: request.articleId }),
   });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -478,6 +644,7 @@ async function inspectWord(article, word, button) {
 
   try {
     const payload = await requestTranslation({ text, context, mode: 'word' });
+    await saveWordProgress({ word: text, articleId: article.id, context, translation: payload.translation, mode: 'word' });
     els.inspectWord.textContent = payload.word || payload.text || text;
     els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || '未知';
     els.inspectTranslation.textContent = payload.translation || entry?.meaningCn || '暂无释义';
@@ -513,6 +680,7 @@ async function inspectSentence(article, sentence, button) {
 
   try {
     const payload = await requestTranslation({ text, context, mode: 'sentence' });
+    await saveWordProgress({ word: text, articleId: article.id, context, translation: payload.translation, mode: 'sentence' });
     els.inspectWord.textContent = payload.text || text;
     els.inspectPos.textContent = payload.pos || 'sentence';
     els.inspectTranslation.textContent = payload.translation || '暂无翻译';
@@ -561,6 +729,7 @@ async function translateSelection({ forceSheet = false, overrideText = '', overr
 
   try {
     const payload = await requestTranslation({ text, context, mode: translationMode });
+    await saveWordProgress({ word: text, articleId: article.id, context, translation: payload.translation, mode: translationMode });
     els.inspectWord.textContent = payload.word || payload.text || text;
     els.inspectPos.textContent = payload.pos || entry?.posList?.join(', ') || translationMode;
     els.inspectTranslation.textContent = payload.translation || entry?.meaningCn || '暂无翻译';
@@ -694,14 +863,15 @@ function renderArticle(articleId) {
   });
 
   saveRecentArticle(article);
+  saveArticleProgress(article);
   setActiveView('reader');
 }
 
 async function init() {
   const [appData, articles, vocabulary] = await Promise.all([
-    fetch('/api/app-data').then((res) => res.json()),
-    fetch('/api/articles').then((res) => res.json()),
-    fetch('/api/vocabulary').then((res) => res.json()),
+    apiFetch('/api/app-data').then((res) => res.json()),
+    apiFetch('/api/articles').then((res) => res.json()),
+    apiFetch('/api/vocabulary').then((res) => res.json()),
   ]);
 
   state.appData = appData;
@@ -715,6 +885,7 @@ async function init() {
   }
   hydrateRecentReading();
   hydrateTranslationCache();
+  await loadCloudProgress();
 
   renderStats();
   renderModeOptions();
@@ -735,6 +906,11 @@ function handleFiltersChanged() {
   ensureArticleVisibleOrFallback();
 }
 
+els.showLogin?.addEventListener('click', () => setAuthMode('login'));
+els.showRegister?.addEventListener('click', () => setAuthMode('register'));
+els.loginForm?.addEventListener('submit', loginUser);
+els.registerForm?.addEventListener('submit', registerUser);
+els.logoutButton?.addEventListener('click', logoutUser);
 els.navLinks.forEach((link) => {
   link.addEventListener('click', () => setActiveView(link.dataset.view));
 });
@@ -772,6 +948,9 @@ document.addEventListener('pointerdown', (event) => {
   }
 });
 
-init().catch((error) => {
-  els.articleList.innerHTML = `<p>加载应用数据失败：${error}</p>`;
+bootstrapAuth().then((user) => {
+  if (!user) return;
+  init().catch((error) => {
+    els.articleList.innerHTML = `<p>加载应用数据失败：${error}</p>`;
+  });
 });

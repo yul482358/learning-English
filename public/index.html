@@ -30,7 +30,38 @@
           <button class="nav-link" data-view="library">选文</button>
           <button class="nav-link" data-view="reader">阅读</button>
         </nav>
+        <div class="user-chip" id="user-chip" hidden>
+          <span id="current-user-name">读者</span>
+          <button id="logout-button" type="button">退出</button>
+        </div>
       </header>
+
+      <section id="auth-gate" class="auth-gate" aria-labelledby="auth-title">
+        <article class="auth-card">
+          <p class="eyebrow">Private Reading Room</p>
+          <h2 id="auth-title">先用邀请码，打开这一间阅读室</h2>
+          <p class="auth-copy">只有被邀请的读者可以进入。登录后，你的阅读进度、查词记录和最近读过的文章会在不同设备之间同步。</p>
+          <div class="auth-tabs" role="tablist" aria-label="登录或注册">
+            <button class="auth-tab active" id="show-login" type="button">登录</button>
+            <button class="auth-tab" id="show-register" type="button">邀请码注册</button>
+          </div>
+          <form id="login-form" class="auth-form">
+            <label>邮箱<input name="email" type="email" autocomplete="email" required /></label>
+            <label>密码<input name="password" type="password" autocomplete="current-password" required /></label>
+            <button class="primary-cta" type="submit">进入阅读</button>
+          </form>
+          <form id="register-form" class="auth-form hidden" hidden>
+            <label>昵称<input name="displayName" type="text" autocomplete="name" placeholder="可以留空" /></label>
+            <label>邮箱<input name="email" type="email" autocomplete="email" required /></label>
+            <label>密码<input name="password" type="password" autocomplete="new-password" minlength="8" required /></label>
+            <label>邀请码<input name="inviteCode" type="text" autocomplete="off" required /></label>
+            <button class="primary-cta" type="submit">注册并进入</button>
+          </form>
+          <p id="auth-message" class="auth-message" role="status"></p>
+        </article>
+      </section>
+
+      <main id="app-main" hidden>
 
       <section id="view-home" class="view-section active">
         <header class="hero">
@@ -164,6 +195,7 @@
           </aside>
         </div>
       </section>
+      </main>
     </div>
 
     <section id="mobile-translation-sheet" class="mobile-translation-sheet hidden" aria-live="polite" aria-labelledby="mobile-sheet-title">
