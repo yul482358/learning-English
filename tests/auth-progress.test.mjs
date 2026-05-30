@@ -7,10 +7,13 @@ const app = fs.readFileSync(new URL('../public/app.js', import.meta.url), 'utf8'
 const styles = fs.readFileSync(new URL('../public/styles.css', import.meta.url), 'utf8');
 const wrangler = fs.readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8');
 const migration = fs.readFileSync(new URL('../migrations/0001_auth_progress.sql', import.meta.url), 'utf8');
+const createInviteSql = fs.readFileSync(new URL('../scripts/create-invite-sql.mjs', import.meta.url), 'utf8');
 
 for (const marker of [
   'CREATE TABLE IF NOT EXISTS users',
   'CREATE TABLE IF NOT EXISTS invite_codes',
+  'code TEXT PRIMARY KEY',
+  'max_uses INTEGER NOT NULL DEFAULT 10',
   'CREATE TABLE IF NOT EXISTS sessions',
   'CREATE TABLE IF NOT EXISTS article_progress',
   'CREATE TABLE IF NOT EXISTS word_progress',
@@ -30,6 +33,9 @@ for (const marker of [
   "url.pathname === '/api/progress/word'",
   "url.pathname === '/api/lookup-history'",
   'consumeInviteCode',
+  "SELECT * FROM invite_codes WHERE code = ? LIMIT 1",
+  "WHERE code = ?",
+  '邀请码使用人数已满',
   'setSessionCookie',
   'hashPassword',
 ]) {
@@ -79,5 +85,8 @@ for (const marker of [
 
 assert.ok(!wrangler.includes('REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID'), 'wrangler should not contain a placeholder D1 database id');
 assert.ok(!wrangler.includes('"d1_databases"'), 'D1 is bound in Cloudflare Dashboard for this deployment path');
+assert.ok(createInviteSql.includes('INSERT INTO invite_codes (code, label, max_uses'), 'invite helper should emit plaintext invite insert SQL');
+assert.ok(!worker.includes('code_hash'), 'worker should not require hashed invite codes');
+assert.ok(!migration.includes('code_hash'), 'migration should not require hashed invite codes');
 
 console.log('auth and progress structure checks passed');

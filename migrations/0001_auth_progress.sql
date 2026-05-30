@@ -10,9 +10,9 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS invite_codes (
-  code_hash TEXT PRIMARY KEY,
+  code TEXT PRIMARY KEY,
   label TEXT,
-  max_uses INTEGER NOT NULL DEFAULT 1,
+  max_uses INTEGER NOT NULL DEFAULT 10,
   used_count INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL DEFAULT 'active',
   expires_at TEXT,

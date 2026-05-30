@@ -152,11 +152,10 @@ async function requireAuth(request, env) {
 async function consumeInviteCode(env, inviteCode, userId) {
   const code = String(inviteCode || '').trim();
   if (!code) return { ok: false, error: '请输入邀请码。' };
-  const codeHash = await sha256Hex(code);
-  const invite = await env.DB.prepare('SELECT * FROM invite_codes WHERE code_hash = ? LIMIT 1').bind(codeHash).first();
+  const invite = await env.DB.prepare('SELECT * FROM invite_codes WHERE code = ? LIMIT 1').bind(code).first();
   if (!invite || invite.status !== 'active') return { ok: false, error: '邀请码无效。' };
   if (invite.expires_at && new Date(invite.expires_at).getTime() <= Date.now()) return { ok: false, error: '邀请码已过期。' };
-  if (Number(invite.used_count || 0) >= Number(invite.max_uses || 1)) return { ok: false, error: '邀请码已被使用。' };
+  if (Number(invite.used_count || 0) >= Number(invite.max_uses || 10)) return { ok: false, error: '邀请码使用人数已满。' };
 
   await env.DB.prepare(`
     UPDATE invite_codes
@@ -164,8 +163,8 @@ async function consumeInviteCode(env, inviteCode, userId) {
         status = CASE WHEN used_count + 1 >= max_uses THEN 'used' ELSE status END,
         used_at = ?,
         last_used_by = ?
-    WHERE code_hash = ?
-  `).bind(nowIso(), userId, codeHash).run();
+    WHERE code = ?
+  `).bind(nowIso(), userId, code).run();
   return { ok: true };
 }
 
