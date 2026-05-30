@@ -39,12 +39,23 @@ for (const needle of [
   'self.addEventListener(\'activate\'',
   'self.addEventListener(\'fetch\'',
   'CACHE_NAME',
+  'NETWORK_FIRST_GETS',
   '/api/app-data',
   '/api/articles',
   '/api/vocabulary',
 ]) {
   assert.ok(serviceWorker.includes(needle), `missing service worker marker: ${needle}`);
 }
+
+for (const staleApi of [
+  "'/api/app-data'",
+  "'/api/articles'",
+  "'/api/vocabulary'",
+]) {
+  assert.ok(!serviceWorker.slice(serviceWorker.indexOf('const APP_SHELL'), serviceWorker.indexOf('const NETWORK_FIRST_GETS')).includes(staleApi), `protected API must not be pre-cached in APP_SHELL: ${staleApi}`);
+}
+assert.ok(serviceWorker.includes('networkOnly(request)'), 'API GET requests should not fall back to stale unauthenticated cache after login');
+assert.ok(serviceWorker.includes('url.pathname.startsWith(\'/api/\')'), 'service worker should handle API GETs explicitly');
 
 for (const iconPath of [
   '../public/icons/icon-192.svg',

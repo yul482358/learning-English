@@ -825,7 +825,40 @@ button {
 
 @media (max-width: 900px) {
   .page-shell {
-    padding: 16px;
+    padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  }
+
+  .auth-gate {
+    min-height: auto;
+    padding: 12px 0 24px;
+    align-items: start;
+  }
+
+  .auth-card {
+    width: 100%;
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .auth-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .auth-tabs,
+  .user-chip {
+    width: 100%;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .auth-tab,
+  .auth-form input,
+  .auth-form button {
+    min-height: 44px;
+  }
+
+  .auth-form input {
+    font-size: 16px;
   }
 
   .top-nav,

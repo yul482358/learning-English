@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ielts-reading-lab-v1';
+const CACHE_NAME = 'ielts-reading-lab-v2';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -9,9 +9,13 @@ const APP_SHELL = [
   '/icons/icon-512.svg',
   '/icons/maskable-icon.svg',
   '/icons/apple-touch-icon.svg',
+];
+const NETWORK_FIRST_GETS = [
   '/api/app-data',
   '/api/articles',
   '/api/vocabulary',
+  '/api/me',
+  '/api/progress',
 ];
 
 self.addEventListener('install', (event) => {
@@ -45,6 +49,10 @@ async function networkFirst(request) {
   }
 }
 
+async function networkOnly(request) {
+  return fetch(request);
+}
+
 async function cacheFirst(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
@@ -63,7 +71,12 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (isNavigationRequest(request) || url.pathname.startsWith('/api/')) {
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(networkOnly(request));
+    return;
+  }
+
+  if (isNavigationRequest(request) || NETWORK_FIRST_GETS.includes(url.pathname)) {
     event.respondWith(networkFirst(request));
     return;
   }

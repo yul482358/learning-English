@@ -77,6 +77,7 @@ for (const marker of [
   '.auth-gate',
   '.auth-card',
   '.auth-form',
+  '.auth-form input {\n    font-size: 16px;',
   '.user-chip',
   '.page-shell.locked',
 ]) {
