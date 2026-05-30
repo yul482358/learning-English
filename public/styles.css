@@ -901,3 +901,132 @@ button {
     border-radius: 9px;
   }
 }
+
+/* Listening practice */
+.listening-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.35fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.listening-list {
+  display: grid;
+  gap: 12px;
+}
+
+.episode-card {
+  display: grid;
+  gap: 7px;
+  width: 100%;
+  padding: 16px 18px;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 252, 247, 0.78);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.episode-card:hover,
+.episode-card.active {
+  transform: translateY(-1px);
+  border-color: rgba(201, 100, 66, 0.42);
+  background: rgba(255, 247, 238, 0.98);
+}
+
+.episode-kicker,
+.episode-meta,
+.episode-title-en,
+.subtitle-time {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.episode-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+}
+
+.listening-player-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(248, 242, 233, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.listening-player-card h2 {
+  margin: 4px 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.listening-player {
+  width: 100%;
+  margin: 18px 0 14px;
+}
+
+.subtitle-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.subtitle-controls button {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.subtitle-controls button:hover {
+  color: #9b4e32;
+  background: var(--accent-soft);
+}
+
+.subtitle-list {
+  display: grid;
+  gap: 8px;
+  max-height: min(58vh, 620px);
+  overflow: auto;
+  padding-right: 4px;
+  scroll-behavior: smooth;
+}
+
+.subtitle-line {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.subtitle-line:hover {
+  background: rgba(201, 100, 66, 0.07);
+}
+
+.subtitle-line.active {
+  background: rgba(201, 100, 66, 0.13);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+@media (max-width: 900px) {
+  .listening-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .subtitle-list {
+    max-height: 54vh;
+  }
+}

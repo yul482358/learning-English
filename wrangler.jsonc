@@ -12,5 +12,18 @@
   },
   "vars": {
     "APP_TITLE": "IELTS Reading Lab"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ielts-reading-lab",
+      "database_id": "57da07f0-cd4c-460e-9750-9be6c8eff4c2"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "LISTENING_BUCKET",
+      "bucket_name": "ielts-listening-private"
+    }
+  ]
 }

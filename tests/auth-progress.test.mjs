@@ -85,7 +85,8 @@ for (const marker of [
 }
 
 assert.ok(!wrangler.includes('REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID'), 'wrangler should not contain a placeholder D1 database id');
-assert.ok(!wrangler.includes('"d1_databases"'), 'D1 is bound in Cloudflare Dashboard for this deployment path');
+assert.ok(wrangler.includes('"binding": "DB"'), 'D1 binding DB should be committed for Wrangler deploys');
+assert.ok(wrangler.includes('"database_name": "ielts-reading-lab"'), 'wrangler should bind the production D1 database by name');
 assert.ok(createInviteSql.includes('INSERT INTO invite_codes (code, label, max_uses'), 'invite helper should emit plaintext invite insert SQL');
 assert.ok(!worker.includes('code_hash'), 'worker should not require hashed invite codes');
 assert.ok(!migration.includes('code_hash'), 'migration should not require hashed invite codes');

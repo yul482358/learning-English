@@ -29,6 +29,7 @@
           <button class="nav-link active" data-view="home">序章</button>
           <button class="nav-link" data-view="library">选文</button>
           <button class="nav-link" data-view="reader">阅读</button>
+          <button class="nav-link" data-view="listening">听力</button>
         </nav>
         <div class="user-chip" id="user-chip" hidden>
           <span id="current-user-name">读者</span>
@@ -195,6 +196,47 @@
           </aside>
         </div>
       </section>
+      <section id="view-listening" class="view-section">
+        <div class="section-shell">
+          <div class="section-intro">
+            <p class="eyebrow">听力小径</p>
+            <h2>让声音带着句子，慢慢走进耳朵。</h2>
+            <p>先泛听，再跟着时间轴精听。每一句都可以轻点复听，字幕会随着音频安静前行。</p>
+          </div>
+          <div class="listening-layout">
+            <section class="library-panel listening-library-panel">
+              <div class="panel-header panel-header-stack">
+                <div>
+                  <h2>听力素材</h2>
+                  <p>精选短音频，适合每天留出六分钟练习英式语音、话题词汇与听力耐心。</p>
+                </div>
+              </div>
+              <div id="listening-list" class="listening-list">
+                <p class="recent-empty">正在取来听力素材…</p>
+              </div>
+            </section>
+            <section class="listening-player-card" aria-labelledby="listening-player-title">
+              <div id="listening-empty" class="reader-empty">
+                <h2>先选一段声音</h2>
+                <p>从左侧挑一段六分钟听力，播放器和同步字幕会在这里展开。</p>
+              </div>
+              <article id="listening-player-panel" class="hidden">
+                <p class="eyebrow" id="listening-source">Listening</p>
+                <h2 id="listening-player-title">听力标题</h2>
+                <p id="listening-player-meta" class="reader-summary">英式口音 · B1-B2</p>
+                <audio id="listening-player" class="listening-player" controls preload="metadata"></audio>
+                <div class="subtitle-controls">
+                  <button type="button" id="rewind-listening">后退 10 秒</button>
+                  <button type="button" id="toggle-subtitle-mode">隐藏字幕</button>
+                  <button type="button" id="return-current-subtitle">回到当前句</button>
+                </div>
+                <div id="subtitle-list" class="subtitle-list" aria-live="polite"></div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </section>
+
       </main>
     </div>
 

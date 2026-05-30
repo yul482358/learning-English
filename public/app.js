@@ -13,9 +13,18 @@ const state = {
   activeWordButton: null,
   selectionTimer: null,
   activeView: 'home',
+  listeningEpisodes: [],
+  currentEpisodeId: null,
+  currentSubtitles: [],
+  currentSubtitleIndex: -1,
+  autoFollowSubtitles: true,
+  subtitleMode: 'english',
+  listeningSaveTimer: null,
   recentReading: [],
   translationCache: new Map(),
   currentUser: null,
+  appStarted: false,
+  alreadyBootstrapped: false,
   cloudProgress: null,
 };
 
@@ -66,6 +75,17 @@ const els = {
   inspectNote: document.getElementById('inspect-note'),
   continueReading: document.getElementById('continue-reading'),
   recentReadingList: document.getElementById('recent-reading-list'),
+  listeningList: document.getElementById('listening-list'),
+  listeningEmpty: document.getElementById('listening-empty'),
+  listeningPlayerPanel: document.getElementById('listening-player-panel'),
+  listeningSource: document.getElementById('listening-source'),
+  listeningPlayerTitle: document.getElementById('listening-player-title'),
+  listeningPlayerMeta: document.getElementById('listening-player-meta'),
+  listeningPlayer: document.getElementById('listening-player'),
+  subtitleList: document.getElementById('subtitle-list'),
+  rewindListening: document.getElementById('rewind-listening'),
+  toggleSubtitleMode: document.getElementById('toggle-subtitle-mode'),
+  returnCurrentSubtitle: document.getElementById('return-current-subtitle'),
   mobileSheet: document.getElementById('mobile-translation-sheet'),
   mobileSheetMode: document.getElementById('mobile-sheet-mode'),
   mobileSheetTitle: document.getElementById('mobile-sheet-title'),
@@ -201,7 +221,7 @@ async function loginUser(event) {
       body: JSON.stringify({ email: form.get('email'), password: form.get('password') }),
     }).then((res) => res.json());
     showAppForUser(payload.user);
-    await init();
+    await startAppOnce();
   } catch (error) {
     setAuthMessage(String(error.message || error), true);
   }
@@ -222,7 +242,7 @@ async function registerUser(event) {
       }),
     }).then((res) => res.json());
     showAppForUser(payload.user);
-    await init();
+    await startAppOnce();
   } catch (error) {
     setAuthMessage(String(error.message || error), true);
   }
@@ -353,6 +373,152 @@ function renderRecentReading() {
     button.addEventListener('click', () => renderArticle(item.articleId));
     els.recentReadingList.appendChild(button);
   }
+}
+
+function formatDuration(seconds = 0) {
+  const value = Math.max(0, Math.round(Number(seconds) || 0));
+  const minutes = Math.floor(value / 60);
+  const rest = String(value % 60).padStart(2, '0');
+  return `${minutes}:${rest}`;
+}
+
+function findSubtitleIndex(subtitles, time) {
+  if (!subtitles.length) return -1;
+  const current = state.currentSubtitleIndex;
+  if (current >= 0) {
+    const active = subtitles[current];
+    if (time >= active.start && time < active.end) return current;
+    const next = subtitles[current + 1];
+    if (next && time >= next.start && time < next.end) return current + 1;
+    const prev = subtitles[current - 1];
+    if (prev && time >= prev.start && time < prev.end) return current - 1;
+  }
+  let left = 0;
+  let right = subtitles.length - 1;
+  while (left <= right) {
+    const middle = Math.floor((left + right) / 2);
+    const item = subtitles[middle];
+    if (time < item.start) right = middle - 1;
+    else if (time >= item.end) left = middle + 1;
+    else return middle;
+  }
+  return -1;
+}
+
+async function loadListeningEpisodes() {
+  if (!els.listeningList) return;
+  try {
+    const payload = await apiFetch('/api/listening/episodes').then((res) => res.json());
+    state.listeningEpisodes = payload.episodes || [];
+    renderListeningList();
+  } catch (error) {
+    els.listeningList.innerHTML = `<p class="recent-empty">听力素材暂时没有取到：${String(error.message || error)}</p>`;
+  }
+}
+
+function renderListeningList() {
+  if (!els.listeningList) return;
+  if (!state.listeningEpisodes.length) {
+    els.listeningList.innerHTML = '<p class="recent-empty">还没有听力素材。先把音频和字幕上传到 R2，再导入 D1。</p>';
+    return;
+  }
+  els.listeningList.innerHTML = '';
+  for (const episode of state.listeningEpisodes) {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'episode-card';
+    card.classList.toggle('active', episode.id === state.currentEpisodeId);
+    card.innerHTML = `
+      <span class="episode-kicker">${episode.source || 'Listening'} · ${episode.accent || '英语'}</span>
+      <strong>${episode.title_zh || episode.title}</strong>
+      <span class="episode-title-en">${episode.title}</span>
+      <span class="episode-meta">${episode.difficulty || 'B1-B2'} · ${formatDuration(episode.duration_seconds)} · ${episode.progress_percent ? `已听 ${episode.progress_percent}%` : '未开始'}</span>
+    `;
+    card.addEventListener('click', () => openListeningEpisode(episode.id));
+    els.listeningList.appendChild(card);
+  }
+}
+
+async function openListeningEpisode(episodeId) {
+  const payload = await apiFetch(`/api/listening/episodes/${encodeURIComponent(episodeId)}`).then((res) => res.json());
+  const episode = payload.episode;
+  state.currentEpisodeId = episode.id;
+  state.currentSubtitleIndex = -1;
+  state.autoFollowSubtitles = true;
+  els.listeningEmpty?.classList.add('hidden');
+  els.listeningPlayerPanel?.classList.remove('hidden');
+  els.listeningSource.textContent = episode.source || 'Listening';
+  els.listeningPlayerTitle.textContent = episode.title_zh || episode.title;
+  els.listeningPlayerMeta.textContent = `${episode.title} · ${episode.accent || '英语'} · ${episode.difficulty || 'B1-B2'} · ${formatDuration(episode.duration_seconds)}`;
+  els.listeningPlayer.src = `/api/listening/episodes/${encodeURIComponent(episode.id)}/audio`;
+  els.listeningPlayer.currentTime = Math.max(0, Number(episode.position_seconds || 0));
+  const subtitles = await apiFetch(`/api/listening/episodes/${encodeURIComponent(episode.id)}/subtitles`).then((res) => res.json());
+  state.currentSubtitles = Array.isArray(subtitles) ? subtitles : [];
+  renderSubtitleList();
+  renderListeningList();
+}
+
+function renderSubtitleList() {
+  if (!els.subtitleList) return;
+  els.subtitleList.innerHTML = '';
+  if (state.subtitleMode === 'hidden') {
+    els.subtitleList.innerHTML = '<p class="recent-empty">字幕已隐藏。先听声音，需要时再打开。</p>';
+    return;
+  }
+  state.currentSubtitles.forEach((item, index) => {
+    const line = document.createElement('button');
+    line.type = 'button';
+    line.className = 'subtitle-line';
+    line.dataset.index = String(index);
+    line.innerHTML = `<span class="subtitle-time">${formatDuration(item.start)}</span><span class="subtitle-text">${item.text}</span>`;
+    line.addEventListener('click', () => jumpToSubtitle(index));
+    els.subtitleList.appendChild(line);
+  });
+}
+
+function syncSubtitleToAudio() {
+  if (!els.listeningPlayer || state.subtitleMode === 'hidden') return;
+  const index = findSubtitleIndex(state.currentSubtitles, els.listeningPlayer.currentTime);
+  if (index === state.currentSubtitleIndex) return;
+  state.currentSubtitleIndex = index;
+  els.subtitleList?.querySelectorAll('.subtitle-line.active').forEach((node) => node.classList.remove('active'));
+  const active = els.subtitleList?.querySelector(`[data-index="${index}"]`);
+  if (active) {
+    active.classList.add('active');
+    if (state.autoFollowSubtitles) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function jumpToSubtitle(index) {
+  const item = state.currentSubtitles[index];
+  if (!item || !els.listeningPlayer) return;
+  els.listeningPlayer.currentTime = item.start;
+  els.listeningPlayer.play().catch(() => null);
+  state.autoFollowSubtitles = true;
+  syncSubtitleToAudio();
+}
+
+async function saveListeningProgress() {
+  if (!state.currentEpisodeId || !els.listeningPlayer) return;
+  await apiFetch('/api/progress/listening', {
+    method: 'POST',
+    body: JSON.stringify({
+      episodeId: state.currentEpisodeId,
+      positionSeconds: els.listeningPlayer.currentTime,
+      durationSeconds: els.listeningPlayer.duration,
+    }),
+  }).catch(() => null);
+}
+
+function scheduleListeningProgressSave() {
+  clearTimeout(state.listeningSaveTimer);
+  state.listeningSaveTimer = setTimeout(saveListeningProgress, 800);
+}
+
+function toggleSubtitleMode() {
+  state.subtitleMode = state.subtitleMode === 'hidden' ? 'english' : 'hidden';
+  if (els.toggleSubtitleMode) els.toggleSubtitleMode.textContent = state.subtitleMode === 'hidden' ? '显示字幕' : '隐藏字幕';
+  renderSubtitleList();
 }
 
 function countWords(text) {
@@ -893,9 +1059,10 @@ async function init() {
   renderModeCards();
   renderArticleList();
   renderRecentReading();
+  await loadListeningEpisodes();
   const params = new URLSearchParams(window.location.search);
   const requestedView = params.get('view');
-  const safeView = ['home', 'library', 'reader'].includes(requestedView) ? requestedView : 'home';
+  const safeView = ['home', 'library', 'reader', 'listening'].includes(requestedView) ? requestedView : 'home';
   resetReaderToEmpty();
   setActiveView(safeView);
 }
@@ -924,6 +1091,22 @@ els.continueReading?.addEventListener('click', () => {
 });
 els.modeFilter.addEventListener('change', handleFiltersChanged);
 els.themeFilter.addEventListener('change', handleFiltersChanged);
+els.listeningPlayer?.addEventListener('timeupdate', () => {
+  syncSubtitleToAudio();
+  scheduleListeningProgressSave();
+});
+els.listeningPlayer?.addEventListener('pause', saveListeningProgress);
+els.listeningPlayer?.addEventListener('ended', saveListeningProgress);
+els.subtitleList?.addEventListener('wheel', () => { state.autoFollowSubtitles = false; }, { passive: true });
+els.rewindListening?.addEventListener('click', () => {
+  if (!els.listeningPlayer) return;
+  els.listeningPlayer.currentTime = Math.max(0, els.listeningPlayer.currentTime - 10);
+});
+els.toggleSubtitleMode?.addEventListener('click', toggleSubtitleMode);
+els.returnCurrentSubtitle?.addEventListener('click', () => {
+  state.autoFollowSubtitles = true;
+  syncSubtitleToAudio();
+});
 popoverEls.close.addEventListener('click', hidePopover);
 popoverEls.popoverSpeak?.addEventListener('click', () => speakFromButton(popoverEls.popoverSpeak));
 els.mobileSheetClose?.addEventListener('click', hideMobileTranslationSheet);
@@ -948,9 +1131,20 @@ document.addEventListener('pointerdown', (event) => {
   }
 });
 
-bootstrapAuth().then((user) => {
-  if (!user) return;
-  init().catch((error) => {
+async function startAppOnce() {
+  if (state.appStarted) return;
+  state.appStarted = true;
+  try {
+    await init();
+  } catch (error) {
+    state.appStarted = false;
     els.articleList.innerHTML = `<p>加载应用数据失败：${error}</p>`;
-  });
+    throw error;
+  }
+}
+
+bootstrapAuth().then((user) => {
+  state.alreadyBootstrapped = true;
+  if (!user) return;
+  startAppOnce().catch(() => null);
 });

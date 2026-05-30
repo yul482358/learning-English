@@ -26,6 +26,21 @@ function badRequest(message, status = 400) {
   return json({ error: message }, { status });
 }
 
+function plainText(message, status = 500) {
+  return new Response(message, {
+    status,
+    headers: { 'content-type': 'text/plain; charset=utf-8', ...corsHeaders },
+  });
+}
+
+function objectHeaders(object, extra = {}) {
+  const headers = new Headers(extra);
+  if (!headers.has('content-type')) headers.set('content-type', object.httpMetadata?.contentType || 'application/octet-stream');
+  if (object.httpEtag) headers.set('etag', object.httpEtag);
+  headers.set('cache-control', 'private, max-age=3600');
+  return headers;
+}
+
 function nowIso() {
   return new Date().toISOString();
 }
@@ -317,6 +332,153 @@ async function saveLookupHistory(request, env, userId) {
   return json({ ok: true });
 }
 
+async function listListeningEpisodes(env, userId) {
+  const result = await env.DB.prepare(`
+    SELECT listening_episodes.*,
+           listening_progress.position_seconds,
+           listening_progress.progress_percent,
+           listening_progress.status AS progress_status,
+           listening_progress.last_opened_at
+    FROM listening_episodes
+    LEFT JOIN listening_progress
+      ON listening_progress.episode_id = listening_episodes.id
+     AND listening_progress.user_id = ?
+    ORDER BY COALESCE(listening_episodes.published_at, listening_episodes.created_at) DESC
+  `).bind(userId).all();
+  return json({ episodes: result.results || [] });
+}
+
+async function getListeningEpisode(env, userId, episodeId) {
+  const episode = await env.DB.prepare(`
+    SELECT listening_episodes.*,
+           listening_progress.position_seconds,
+           listening_progress.progress_percent,
+           listening_progress.status AS progress_status,
+           listening_progress.last_opened_at
+    FROM listening_episodes
+    LEFT JOIN listening_progress
+      ON listening_progress.episode_id = listening_episodes.id
+     AND listening_progress.user_id = ?
+    WHERE listening_episodes.id = ?
+    LIMIT 1
+  `).bind(userId, episodeId).first();
+  if (!episode) return badRequest('没有找到这段听力。', 404);
+  return json({ episode });
+}
+
+function parseRangeHeader(rangeHeader, size) {
+  const match = /^bytes=(\d*)-(\d*)$/.exec(rangeHeader || '');
+  if (!match) return null;
+  let start = match[1] ? Number(match[1]) : 0;
+  let end = match[2] ? Number(match[2]) : size - 1;
+  if (!match[1] && match[2]) {
+    const suffixLength = Number(match[2]);
+    start = Math.max(size - suffixLength, 0);
+    end = size - 1;
+  }
+  if (!Number.isFinite(start) || !Number.isFinite(end) || start < 0 || end < start || start >= size) return null;
+  return { start, end: Math.min(end, size - 1) };
+}
+
+async function getListeningObject(env, episodeId, fieldName) {
+  const episode = await env.DB.prepare('SELECT * FROM listening_episodes WHERE id = ? LIMIT 1').bind(episodeId).first();
+  if (!episode) return { error: badRequest('没有找到这段听力。', 404) };
+  const key = episode[fieldName];
+  if (!key) return { error: badRequest('这段素材还没有配置对应文件。', 404) };
+  if (!env.LISTENING_BUCKET) return { error: badRequest('听力素材 R2 存储桶尚未绑定。', 503) };
+  return { episode, key };
+}
+
+function rangeForR2(range) {
+  if (!range) return undefined;
+  return {
+    offset: range.start,
+    length: range.end - range.start + 1,
+  };
+}
+
+function audioResponseHeaders(object, extra = {}) {
+  return objectHeaders(object, {
+    'content-type': 'audio/mpeg',
+    'Cache-Control': 'private, max-age=0, must-revalidate',
+    ...extra,
+  });
+}
+
+async function streamListeningAudio(request, env, episodeId) {
+  const located = await getListeningObject(env, episodeId, 'audio_r2_key');
+  if (located.error) return located.error;
+  const head = await env.LISTENING_BUCKET.head(located.key);
+  if (!head) return badRequest('没有找到音频文件。', 404);
+
+  const range = parseRangeHeader(request.headers.get('Range'), Number(head.size));
+  const object = await env.LISTENING_BUCKET.get(located.key, range ? { range: rangeForR2(range) } : undefined);
+  if (!object) return badRequest('没有找到音频文件。', 404);
+
+  if (range) {
+    return new Response(object.body, {
+      status: 206,
+      headers: audioResponseHeaders(object, {
+        'Content-Range': `bytes ${range.start}-${range.end}/${head.size}`,
+        'Content-Length': String(range.end - range.start + 1),
+        'Accept-Ranges': 'bytes',
+      }),
+    });
+  }
+
+  return new Response(object.body, {
+    headers: audioResponseHeaders(object, {
+      'Content-Length': String(head.size),
+      'Accept-Ranges': 'bytes',
+    }),
+  });
+}
+
+async function getListeningSubtitles(env, episodeId, bilingual = false) {
+  const fieldName = bilingual ? 'subtitle_bilingual_json_r2_key' : 'subtitle_json_r2_key';
+  const located = await getListeningObject(env, episodeId, fieldName);
+  if (located.error) return located.error;
+  const object = await env.LISTENING_BUCKET.get(located.key);
+  if (!object) return badRequest('没有找到字幕文件。', 404);
+  return new Response(object.body, {
+    headers: objectHeaders(object, { 'content-type': 'application/json; charset=utf-8' }),
+  });
+}
+
+async function saveListeningProgress(request, env, userId) {
+  const body = await request.json().catch(() => null);
+  const episodeId = String(body?.episodeId || '').trim();
+  if (!episodeId) return badRequest('缺少听力素材 ID。');
+  const episode = await env.DB.prepare('SELECT duration_seconds FROM listening_episodes WHERE id = ? LIMIT 1').bind(episodeId).first();
+  if (!episode) return badRequest('没有找到这段听力。', 404);
+  const timestamp = nowIso();
+  const duration = Math.max(0, Number(episode.duration_seconds || body?.durationSeconds || 0));
+  const position = Math.max(0, Number(body?.positionSeconds || 0));
+  const progressPercent = duration ? Math.max(0, Math.min(100, Math.round((position / duration) * 100))) : Math.max(0, Math.min(100, Number(body?.progressPercent || 0)));
+  const status = progressPercent >= 95 ? 'completed' : 'listening';
+  await env.DB.prepare(`
+    INSERT INTO listening_progress (user_id, episode_id, position_seconds, progress_percent, status, play_count, first_opened_at, last_opened_at, completed_at)
+    VALUES (?, ?, ?, ?, ?, 1, ?, ?, ?)
+    ON CONFLICT(user_id, episode_id) DO UPDATE SET
+      position_seconds = excluded.position_seconds,
+      progress_percent = MAX(listening_progress.progress_percent, excluded.progress_percent),
+      status = excluded.status,
+      play_count = listening_progress.play_count + 1,
+      last_opened_at = excluded.last_opened_at,
+      completed_at = COALESCE(listening_progress.completed_at, excluded.completed_at)
+  `).bind(
+    userId,
+    episodeId,
+    position,
+    progressPercent,
+    status,
+    timestamp,
+    timestamp,
+    status === 'completed' ? timestamp : null,
+  ).run();
+  return json({ ok: true, progressPercent, status });
+}
+
 function findVocabularyEntry(word) {
   const normalized = normalizeWord(word);
   return vocabulary.find((entry) =>
@@ -495,8 +657,19 @@ export default {
         return article ? json(article) : badRequest('Article not found', 404);
       }
       if (url.pathname === '/api/vocabulary') return json(vocabulary);
+      if (url.pathname === '/api/listening/episodes') return listListeningEpisodes(env, auth.user.id);
+      if (url.pathname.startsWith('/api/listening/episodes/')) {
+        const parts = url.pathname.split('/').filter(Boolean);
+        const episodeId = parts[3];
+        const action = parts[4];
+        if (!episodeId) return badRequest('缺少听力素材 ID。');
+        if (!action) return getListeningEpisode(env, auth.user.id, episodeId);
+        if (action === 'audio') return streamListeningAudio(request, env, episodeId);
+        if (action === 'subtitles') return getListeningSubtitles(env, episodeId, url.searchParams.get('kind') === 'bilingual');
+      }
       if (url.pathname === '/api/progress') return getProgress(env, auth.user.id);
       if (url.pathname === '/api/progress/article' && request.method === 'POST') return saveArticleProgress(request, env, auth.user.id);
+      if (url.pathname === '/api/progress/listening' && request.method === 'POST') return saveListeningProgress(request, env, auth.user.id);
       if (url.pathname === '/api/progress/word' && request.method === 'POST') return saveWordProgress(request, env, auth.user.id);
       if (url.pathname === '/api/lookup-history' && request.method === 'POST') return saveLookupHistory(request, env, auth.user.id);
       if (url.pathname === '/api/translate' && request.method === 'POST') {

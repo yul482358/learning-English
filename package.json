@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/build-data.mjs",
     "check": "npm run build && node --check src/worker.js",
+    "import:listening": "node scripts/import-listening.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
