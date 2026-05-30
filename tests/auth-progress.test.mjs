@@ -77,6 +77,7 @@ for (const marker of [
   assert.ok(styles.includes(marker), `missing auth style marker: ${marker}`);
 }
 
-assert.ok(wrangler.includes('"binding": "DB"'), 'wrangler should document the D1 DB binding');
+assert.ok(!wrangler.includes('REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID'), 'wrangler should not contain a placeholder D1 database id');
+assert.ok(!wrangler.includes('"d1_databases"'), 'D1 is bound in Cloudflare Dashboard for this deployment path');
 
 console.log('auth and progress structure checks passed');
